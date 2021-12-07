@@ -1,0 +1,11 @@
+[{
+	"type":"ecology",
+	"entity":"OBJECT",
+	"document":{
+		"@id":"https://localhost/schema#Object",
+		"@context":{
+			"ID":{"@id":"https://www.schema.org/text"},
+			"type":["human","natural"]
+		}
+	}
+}]
