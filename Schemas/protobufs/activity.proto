@@ -1,0 +1,18 @@
+/* An act willfully engaged in or performed by an agent. */
+
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+message Activity {
+  string identifier = 1;
+  Agent agent = 2;
+  Location location = 3;
+  DateTime start_dt = 4;
+  DateTime end_dt = 5;
+  string code_ipcc = 6; // IPCC category code 
+  string objective = 7; // reason why the agent engaged in the activity
+  repeated google.protobuf.Any inputs = 8; // TODO: refine this
+  repeated google.protobuf.Any outputs = 9; // TODO: refine this
+}
+

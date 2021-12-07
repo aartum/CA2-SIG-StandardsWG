@@ -1,0 +1,9 @@
+/* An entity with the capacity to act willfully. */
+
+syntax = "proto3";
+
+message Agent {
+  string identifier = 1;
+  string name = 2;
+  repeated Agent agents = 3; 
+}

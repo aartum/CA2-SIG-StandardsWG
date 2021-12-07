@@ -1,0 +1,22 @@
+/* Messages carrying date and time information, according to the ISO 8601 standard. */
+
+message DateTime {
+  Date date = 1;
+  Time time = 2;
+}
+
+message Date {
+  sint32 year = 1; // using signed integer type here to allow denotion of years prior to 1 BC (see ISO 8601)
+  uint32 month = 2;
+  uint32 day = 3;
+}
+
+message Time {
+  uint32 hour = 1;
+  uint32 minute = 2;
+  float second = 3; // using type 'float' here to allow for decimals indicating milliseconds
+  string time_zone = 4; // TODO: define a TimeZone message instead.
+}
+
+// TODO: add messages for time intervals (see ISO 8601 standard).
+// TODO: What about referential times, e.g. "before" or "after"?
