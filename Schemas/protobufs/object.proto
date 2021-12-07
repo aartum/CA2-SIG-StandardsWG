@@ -1,0 +1,10 @@
+/* Anything of which the state can be expressed/described in terms of its modifiable properties. */
+/* Anything that can assume at least two different states. */
+/* Anything with modifiable/variable properties that can be used to describe its state. */
+
+syntax = "proto3";
+
+message Object {
+  string identifier = 1;
+  string description = 2; 
+}

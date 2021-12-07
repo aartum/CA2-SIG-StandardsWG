@@ -1,0 +1,26 @@
+/* Message to specify a location or an address. */
+
+syntax = "proto3";
+
+message Location {
+  Coordinate lat_long = 1;
+  Area area = 3;
+  string country = 4;
+  string state = 5; // or province, prefecture
+  string city = 6; // or town
+  string suburb = 7;
+  string street_name = 8;
+  string street_number = 9;
+  string development = 10; // e.g. name of residential complex
+  string unit = 11; // e.g. unit "45b" of <development>
+  string what3words = 12; // https://what3words.com/
+}
+
+message Area {
+  repeated Coordinate coords = 1;
+}
+
+message Coordinate {
+  sint64 longitude = 1;
+  sint64 latitude = 2;
+}

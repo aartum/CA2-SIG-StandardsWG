@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+
+message State {
+  string identifier = 1;
+  Object object = 2; // The object that the state is describing.
+  DateTime date_time = 3;
+  repeated ParVal par_vals = 4;
+}
+
+message ParVal {
+  string id_parameter = 1; 
+  bytes value = 2;
+}
