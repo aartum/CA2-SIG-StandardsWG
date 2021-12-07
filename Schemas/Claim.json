@@ -1,0 +1,10 @@
+[{
+	"type":"Claim",
+	"entity":"CLAIM",
+	"document":{
+		"@id":"https://localhost/schema#Claim",
+		"@context":{
+			"ID":{"@id":"https://www.schema.org/text"}
+		}
+	}
+}]
