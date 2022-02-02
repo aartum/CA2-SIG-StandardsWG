@@ -2,7 +2,7 @@
 
 syntax = "proto3";
 
-message Claim {
+message ImpactClaim {
   string identifier = 1;
   Agent claimant = 2;
   State state_before = 3;

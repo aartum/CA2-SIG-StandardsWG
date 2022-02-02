@@ -6,13 +6,20 @@ import "google/protobuf/any.proto";
 
 message Activity {
   string identifier = 1;
-  Agent agent = 2;
-  Location location = 3;
-  DateTime start_dt = 4;
-  DateTime end_dt = 5;
-  string code_ipcc = 6; // IPCC category code 
-  string objective = 7; // reason why the agent engaged in the activity
+  string description = 2;
+  Agent agent = 3;
+  Location location = 4;
+  DateTime start_dt = 5;
+  DateTime end_dt = 6;
+  string code_ipcc = 7; // IPCC category code 
+  string objective = 8; // reason why the agent engaged in the activity
   repeated google.protobuf.Any inputs = 8; // TODO: refine this
   repeated google.protobuf.Any outputs = 9; // TODO: refine this
 }
 
+/* Add field to link to the ImpactClaim and State(s) pertaining to this activity? 
+E.g. has_impact_on <environment/state>
+ImpactClaim impact_claim 
+All activities have impacts - there is no activity that does not have an impact.
+
+*/
