@@ -1,0 +1,4 @@
+message ParVal {
+  string id_parameter = 1; 
+  bytes value = 2;
+}

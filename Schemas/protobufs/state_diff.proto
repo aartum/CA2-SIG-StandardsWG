@@ -1,0 +1,7 @@
+
+message StateDiff {
+	string identifier = 1;
+	Environment environment = 2; // The environment to which the state belongs.
+	AccountingPeriod acc_period = 3;
+	repeated ParVal par_vals = 4;
+}
