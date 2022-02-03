@@ -2,8 +2,17 @@
 
 syntax = "proto3";
 
+enum AgentType {
+	NATURAL_PERSON = 1;
+	LEGAL_PERSON = 2;
+}
+
 message Agent {
   string identifier = 1;
   string name = 2;
-  repeated Agent agents = 3; 
+  AgentType type = 3; 
+  repeated Agent agents = 4; 
+  repeated Credential credentials = 5;
 }
+
+/* TODO: Define a Credential class */

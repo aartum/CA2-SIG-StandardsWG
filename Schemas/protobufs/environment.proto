@@ -4,7 +4,7 @@
 
 syntax = "proto3";
 
-message Object {
+message Environment {
   string identifier = 1;
   string description = 2; 
 }
