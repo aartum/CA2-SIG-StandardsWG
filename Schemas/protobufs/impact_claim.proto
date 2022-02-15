@@ -10,14 +10,12 @@ enum ImpactPathwayPosition {
 	EFFECT = 5;
 }
 
-
 message ImpactClaim {
   string identifier = 1;
   Agent claimant = 2;
-  State state_before = 3;
-  State state_after = 4;
-  ImpactPathwayPosition imp_pw_pos = 5;
   repeated Activity activities = 6;
+  StateDiff state_diff = 3;
+  ImpactPathwayPosition imp_pw_pos = 5;
 }
 
 /* Although no fields in protobufs are required, the implementation should only validate ImpactClaim instances that have content in all fields. */

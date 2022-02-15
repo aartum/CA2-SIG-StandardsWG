@@ -8,7 +8,3 @@ message State {
   repeated ParVal par_vals = 4;
 }
 
-message ParVal {
-  string id_parameter = 1; 
-  bytes value = 2;
-}
