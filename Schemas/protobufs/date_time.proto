@@ -1,5 +1,7 @@
 /* Messages carrying date and time information, according to the ISO 8601 standard. */
 
+syntax="proto3";
+
 message DateTime {
   Date date = 1;
   Time time = 2;
