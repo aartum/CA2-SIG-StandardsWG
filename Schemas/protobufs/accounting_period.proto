@@ -1,0 +1,6 @@
+
+message AccountingPeriod {
+	DateTime start_date = 1;
+	DateTime end_date = 2;
+	String label = 3;
+}
