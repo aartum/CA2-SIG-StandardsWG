@@ -1,9 +1,6 @@
 /* Messages carrying date and time information, according to the ISO 8601 standard. */
 
-message DateTime {
-  Date date = 1;
-  Time time = 2;
-}
+syntax = "proto3";
 
 message Date {
   sint32 year = 1; // using signed integer type here to allow denotion of years prior to 1 BC (see ISO 8601)
@@ -18,5 +15,9 @@ message Time {
   string time_zone = 4; // TODO: define a TimeZone message instead.
 }
 
+message DateTime {
+  Date date = 1;
+  Time time = 2;
+}
 // TODO: add messages for time intervals (see ISO 8601 standard).
 // TODO: What about referential times, e.g. "before" or "after"?
