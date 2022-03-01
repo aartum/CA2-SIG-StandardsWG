@@ -5,8 +5,8 @@ syntax = "proto3";
 package base;
 
 enum AgentType {
-	NATURAL_PERSON = 1;
-	LEGAL_PERSON = 2;
+	NATURAL_PERSON = 0;
+	LEGAL_PERSON = 1;
 }
 
 message Agent {
@@ -14,7 +14,7 @@ message Agent {
   string name = 2;
   AgentType type = 3; 
   repeated Agent agents = 4; 
-  repeated Credential credentials = 5;
+//  repeated Credential credentials = 5;
 }
 
 /* TODO: Define a Credential class */

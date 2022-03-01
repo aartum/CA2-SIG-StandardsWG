@@ -2,14 +2,18 @@
 
 syntax = "proto3";
 
+import "g_agent.proto";
+import "h_activity.proto";
+import "j_state_diff.proto";
+
 package base;
 
 enum ImpactPathwayPosition {
-	DRIVER = 1;
-	PRESSURE = 2;
-	STATE = 3;
-	EXPOSURE = 4;
-	EFFECT = 5;
+	DRIVER = 0;
+	PRESSURE = 1;
+	STATE = 2;
+	EXPOSURE = 3;
+	EFFECT = 4;
 }
 
 message ImpactClaim {
