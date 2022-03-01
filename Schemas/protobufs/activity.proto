@@ -11,7 +11,7 @@ message Activity {
   Location location = 4;
   DateTime start_dt = 5;
   DateTime end_dt = 6;
-  string code_ipcc = 7; // IPCC category code 
+  ActivityClass activity_class = 10;
   string objective = 8; // reason why the agent engaged in the activity
   repeated google.protobuf.Any inputs = 8; // TODO: refine this
   repeated google.protobuf.Any outputs = 9; // TODO: refine this
