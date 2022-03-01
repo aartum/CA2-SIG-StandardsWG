@@ -5,6 +5,11 @@ syntax = "proto3";
 package base;
 
 import "google/protobuf/any.proto";
+import "a_date_time";
+import "b_location.proto";
+import "f_activity_class.proto";
+import "g_agent.proto";
+
 
 message Activity {
   string identifier = 1;
