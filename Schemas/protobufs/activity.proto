@@ -2,6 +2,8 @@
 
 syntax = "proto3";
 
+package base;
+
 import "google/protobuf/any.proto";
 
 message Activity {

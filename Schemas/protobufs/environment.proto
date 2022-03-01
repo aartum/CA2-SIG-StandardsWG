@@ -4,6 +4,8 @@
 
 syntax = "proto3";
 
+package base;
+
 message Environment {
   string identifier = 1;
   string description = 2; 
