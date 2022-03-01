@@ -1,3 +1,6 @@
+syntax = "proto3";
+
+package base;
 
 message AccountingPeriod {
 	DateTime start_date = 1;

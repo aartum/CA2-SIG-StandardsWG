@@ -2,6 +2,17 @@
 
 syntax = "proto3";
 
+package base;
+
+message Coordinate {
+  sint64 longitude = 1;
+  sint64 latitude = 2;
+}
+
+message Area {
+  repeated Coordinate coords = 1;
+}
+
 message Location {
   Coordinate lat_long = 1;
   Area area = 3;
@@ -16,11 +27,6 @@ message Location {
   string what3words = 12; // https://what3words.com/
 }
 
-message Area {
-  repeated Coordinate coords = 1;
-}
 
-message Coordinate {
-  sint64 longitude = 1;
-  sint64 latitude = 2;
-}
+
+

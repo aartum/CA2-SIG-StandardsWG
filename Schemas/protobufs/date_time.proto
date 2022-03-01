@@ -2,6 +2,8 @@
 
 syntax = "proto3";
 
+package base;
+
 message Date {
   sint32 year = 1; // using signed integer type here to allow denotion of years prior to 1 BC (see ISO 8601)
   uint32 month = 2;
