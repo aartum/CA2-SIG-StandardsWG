@@ -5,4 +5,5 @@ package base;
 message ParVal {
   string id_parameter = 1; 
   bytes value = 2;
+  string unit = 3;
 }
