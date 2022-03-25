@@ -7,6 +7,7 @@ package base;
 import "google/protobuf/any.proto";
 import "a_date_time";
 import "b_location.proto";
+import "c1_modality.proto";
 import "f_activity_class.proto";
 import "g_agent.proto";
 
@@ -15,6 +16,7 @@ message Activity {
   string identifier = 1;
   string description = 2;
   Agent agent = 3;
+  Modality modality = 11;
   Location location = 4;
   DateTime start_dt = 5;
   DateTime end_dt = 6;
