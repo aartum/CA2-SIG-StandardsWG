@@ -3,6 +3,6 @@ syntax = "proto3";
 package base;
 
 enum Modality {
-  COUNTERFACTUAL = 1;
-  REAL = 0;
+  COUNTERFACTUAL = 0;
+  REAL = 1;
 }
