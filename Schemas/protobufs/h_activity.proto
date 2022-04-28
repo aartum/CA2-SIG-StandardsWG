@@ -5,7 +5,7 @@ syntax = "proto3";
 package base;
 
 import "google/protobuf/any.proto";
-import "a_date_time";
+import "a_date_time.proto";
 import "b_location.proto";
 import "c1_modality.proto";
 import "f_activity_class.proto";
@@ -21,7 +21,7 @@ message Activity {
   DateTime start_dt = 5;
   DateTime end_dt = 6;
   ActivityClass activity_class = 10;
-  string objective = 8; // reason why the agent engaged in the activity
+  string objective = 7; // reason why the agent engaged in the activity
   repeated google.protobuf.Any inputs = 8; // TODO: refine this
   repeated google.protobuf.Any outputs = 9; // TODO: refine this
 }
