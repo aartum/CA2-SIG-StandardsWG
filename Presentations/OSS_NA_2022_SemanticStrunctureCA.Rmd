@@ -3,7 +3,9 @@ title: "An Open Source Exploration of a Semantic Structure for Climate Accountin
 author: "Hyperledger CA2SIG Standards WG"
 date: "26/04/2022"
 output:
-  ioslides_presentation: 
+  slidy_presentation:
+    incremental: yes
+  ioslides_presentation:
     toc: yes
     incremental: yes
     keep_md: yes
@@ -23,7 +25,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- decide when to use 'semantic structure', 'ontology' or 'taxonomy'--> 
 
-As the world accelerates towards decarbonisation, the need for climate impact accounting at scale becomes more pressing. One of the greatest challenges in this regard is the description, comparison and aggregation of impact claims due to the multitude of existing accounting and reporting standards. The reconciliation and aggregation of these claims, in the interest of climate impact “bookkeeping” at a global scale, requires a common underlying semantic structure – which currently does not exist. The Standards Working Group (Standards WG) of the Hyperledger Climate Action and Accounting Special Interest Group (CA2-SIG) aims to lay out such a semantic structure. Working from the premise that agents engage in activities that impact environments, the WG is actively searching out standards to distil their semantic structures into an ontology that most adequately describes these elements and the relationships between them. The ontology is by design open source, collaborative, dynamic and technology agnostic. The presentation will provide an overview of the WG's work to date, introduce the latest version of the basic ontology, and demonstrate the ontology's application by means of an exemplary use case.
+As the world accelerates towards decarbonisation, the need for climate impact accounting at scale becomes more pressing. One of the greatest challenges in this regard is the description, comparison and aggregation of impact claims due to the multitude of existing accounting and reporting standards. The reconciliation and aggregation of these claims, in the interest of climate impact “bookkeeping” at a global scale, requires a common underlying semantic structure – which currently does not exist. 
+
+The Standards Working Group (Standards WG) of the Hyperledger Climate Action and Accounting Special Interest Group (CA2-SIG) aims to lay out such a semantic structure. Working from the premise that agents engage in activities that impact environments, the WG is actively searching out standards to distil their semantic structures into an ontology that most adequately describes these elements and the relationships between them. The ontology is by design open source, collaborative, dynamic and technology agnostic. 
+
+The presentation will provide:
+* an overview of the WG's work to date, 
+* introduce the latest version of the basic ontology, and 
+* demonstrate the ontology's application by means of an exemplary use case.
 
 <!--
 1. Background. 
@@ -37,8 +46,6 @@ As the world accelerates towards decarbonisation, the need for climate impact ac
 
 # The challenge
 
-##
-
 <!--
 As the world accelerates towards decarbonisation, the need for climate impact accounting at scale becomes more pressing. One of the greatest challenges in this regard is the description, comparison and aggregation of impact claims due to the multitude of existing accounting and reporting standards. The reconciliation and aggregation of these claims, in the interest of climate impact “bookkeeping” at a global scale, requires a common underlying semantic structure – which currently does not exist.
 -->
@@ -47,10 +54,11 @@ As the world accelerates towards decarbonisation, the need for climate impact ac
 
 What is the difference between 'semantic structure', 'ontology' and 'taxonomy'?
 
-# Standards
 ___
 
-### Different standards have different aims
+# Standards
+
+## Different standards have different aims
 
 <!-- extract or derive objectives of each standard -->
 
@@ -67,7 +75,7 @@ Project or institutional focus
 
 ___
 
-### Standards use different metrics
+## Standards use different metrics
 
 <!-- extract or derive metrics used of various standard (see GHG protocol for performance standard approach -->
 
@@ -79,7 +87,7 @@ Carbon sinks vs. carbon emission (question of 'net zero')
 
 ___
 
-### Examples of standards in use
+## Examples of standards in use
 
 Sustainability Accounting Standards Board
 
@@ -99,11 +107,13 @@ IR
 
 ___
 
-### Example: Comparison of standards
+## Example: Comparison of standards
 
 Implied taxonomy or semantic structure 
 
 Compare two reports (same company) or two companies according to two standards 
+
+___
 
 ## The need for a "deep" shared taxonomy
 
@@ -112,13 +122,11 @@ Html example (power of consensus on profoundly simple, opportunity-generating, e
 FIN sector example (OMFIF article) <!-- CJP check -->
 
 
-# A semantic Structure for Climate Accounting
+# A semantic structure for climate accounting
 
-## Premise of our taxonomy
+## Premise of our ontology
 
 Agent - activity - environment
-
-### Applicability to *Impact Accounting* in general 
 
 ### Agent
 
@@ -126,17 +134,23 @@ Agent - activity - environment
 
 ### Environment
 
+### Applicability to *impact accounting* in general 
+
+___
+
+## Ontology diagram
+
+___
 
 ## How we envision our ontology can be used: Rosetta Stone
 
-* A standard is a query
+All operations require standardisation as a starting point
 
-* all operations require standardisation as a starting point
-
+<!-- * A standard is a query -->
 
 ### Use of the ontology: Translation
 
 ### Use of the ontology: Operation
 
 
-
+# How to get involved
