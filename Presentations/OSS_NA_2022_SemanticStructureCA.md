@@ -15,9 +15,7 @@ output:
     fonttheme: professionalfonts
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 # Abstract
 
