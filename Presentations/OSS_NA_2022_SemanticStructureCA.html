@@ -33,7 +33,12 @@ Hyperledger CA2SIG Standards WG
 <!-- decide when to use 'semantic structure', 'ontology' or 'taxonomy'-->
 <p>As the world accelerates towards decarbonisation, the need for climate impact accounting at scale becomes more pressing. One of the greatest challenges in this regard is the description, comparison and aggregation of impact claims due to the multitude of existing accounting and reporting standards. The reconciliation and aggregation of these claims, in the interest of climate impact “bookkeeping” at a global scale, requires a common underlying semantic structure – which currently does not exist.</p>
 <p>The Standards Working Group (Standards WG) of the Hyperledger Climate Action and Accounting Special Interest Group (CA2-SIG) aims to lay out such a semantic structure. Working from the premise that agents engage in activities that impact environments, the WG is actively searching out standards to distil their semantic structures into an ontology that most adequately describes these elements and the relationships between them. The ontology is by design open source, collaborative, dynamic and technology agnostic.</p>
-<p>The presentation will provide: * an overview of the WG’s work to date, * introduce the latest version of the basic ontology, and * demonstrate the ontology’s application by means of an exemplary use case.</p>
+<p>The presentation will provide:</p>
+<ul class="incremental">
+<li>an overview of the WG’s work to date,</li>
+<li>introduce the latest version of the basic ontology, and</li>
+<li>demonstrate the ontology’s application by means of an exemplary use case.</li>
+</ul>
 <!--
 1. Background. 
 2. Brief overview of existing standards. 
@@ -48,19 +53,58 @@ Hyperledger CA2SIG Standards WG
 <h1>The challenge</h1>
 <!--
 As the world accelerates towards decarbonisation, the need for climate impact accounting at scale becomes more pressing. One of the greatest challenges in this regard is the description, comparison and aggregation of impact claims due to the multitude of existing accounting and reporting standards. The reconciliation and aggregation of these claims, in the interest of climate impact “bookkeeping” at a global scale, requires a common underlying semantic structure – which currently does not exist.
+
+Standards, protocols, taxonomies and ontologies
+What is the difference between 'semantic structure', 'ontology' and 'taxonomy'?
 -->
-<h2 id="standards-protocols-taxonomies-and-ontologies">Standards, protocols, taxonomies and ontologies</h2>
-<p>What is the difference between ‘semantic structure’, ‘ontology’ and ‘taxonomy’?</p>
+<h2 id="description">Description</h2>
+<p>Describing impact is a challenge because different terms mean different things to different people.</p>
+<p>The term <em>environment</em></p>
+<p>Terms <em>Climate neutral</em> and <em>Carbon Neutral</em></p>
+</div>
+<div class="slide section level1">
+
+<h2 id="comparison">Comparison</h2>
+<p>Comparing is difficult because there are different standards …</p>
+<p>Even when terms are the same (e.g. 6 Kyoto gasses), calculation methods may differ</p>
+<p>(stove methods)</p>
+<p>(Brickstar vs. TACS)</p>
+</div>
+<div class="slide section level1">
+
+<h2 id="aggregation">Aggregation</h2>
+<p>It follows that aggregation is difficult when description and comparison are problematic …</p>
+<p>If assumption are not made explicit …</p>
+<p>Uncertainty leads to semantic ascent which reduces accuracy</p>
 </div>
 <div id="standards" class="slide section level1">
 <h1>Standards</h1>
 <h2 id="different-standards-have-different-aims">Different standards have different aims</h2>
 <!-- extract or derive objectives of each standard -->
-<p>Perspective of Investor</p>
-<p>Compliance to international treaties (EU, Paris)</p>
-<p>Compliance to local laws and regulations</p>
-<p>Voluntary climate action – narrow or broad context</p>
-<p>Project or institutional focus</p>
+<h3 id="what-are-standards-for">What are standards for?</h3>
+<p>Standards are agreements to guide “common and repeated use of rules, conditions, guidelines or characteristics for products or related processes and production methods, and related management systems practices”</p>
+<p>Standards aggregate norms that help shape interests, constrain behavior, prescribe actions, and support a logic of appropriateness and consequences.</p>
+<p>Norms are social constructs that emerge from persuasion, cascade through acceptance, and internalize compliant behavior.</p>
+<p>Standard documents include “definition of terms; classification of components; delineation of procedures; specification of dimensions, materials, performance, designs, or operations; measurement of quality and quantity; test methods and sampling procedures; or descriptions of fit and measurements of size or strength.”</p>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Technical_standard" class="uri">https://en.wikipedia.org/wiki/Technical_standard</a> + “Developing Operational Requirements: A Guide to the Cost-Effective and Efficient Communication of Needs” (PDF). US Department of Homeland Security. November 2008</p>
+</div>
+<div class="slide section level1">
+
+<h3 id="examples-of-interests">Examples of interests</h3>
+<h4 id="perspective-of-investor">Perspective of investor</h4>
+<p>Announced at COP26 in November 2021, the ISSB is a first step in developing a global, baseline, corporate reporting standard on climate change and sustainability. It aims to provide investors and other capital market participants with information about companies’ sustainability-related risks and opportunities to help them make informed decisions. <em>Forging the path to international standards in sustainable finance. 2022 OMFIF.</em> [<a href="https://www.omfif.org/forging-the-path-to-international-standards-in-sustainable-finance/" class="uri">https://www.omfif.org/forging-the-path-to-international-standards-in-sustainable-finance/</a>]</p>
+<h4 id="regulatory-perspective">Regulatory perspective</h4>
+<p>Compliance to international treaties (EU, Paris) and local laws and regulations</p>
+<p>“The Paris Agreement sets out a global framework to avoid dangerous climate change by limiting global warming to well below 2°C and pursuing efforts to limit it to 1.5°C. It also aims to strengthen countries’ ability to deal with the impacts of climate change and support them in their efforts.”</p>
+</div>
+<div class="slide section level1">
+
+<h4 id="voluntary-climate-action">Voluntary climate action</h4>
+<p>“The Gold Standard (GSF) was established in 2003 by WWF and other international NGOs to ensure projects that reduced carbon emissions featured the highest levels of environmental integrity and also contributed to sustainable development.”</p>
+<p>“The VCS Program allows certified projects to turn their greenhouse gas (GHG) emission reductions and removals into tradable carbon credits.”</p>
+<p>(– narrow or broad context)</p>
+<h4 id="project-or-institutional-focus">Project or institutional focus</h4>
+<p>GHG Project protocol vs CAS</p>
 </div>
 <div class="slide section level1">
 
@@ -73,6 +117,7 @@ As the world accelerates towards decarbonisation, the need for climate impact ac
 <div class="slide section level1">
 
 <h2 id="examples-of-standards-in-use">Examples of standards in use</h2>
+<!-- Kyle -->
 <p>Sustainability Accounting Standards Board</p>
 <p>Task Force on Climate-Related Financial Disclosure</p>
 <p>Global Reporting Initiative (GRI) - * Universal standards, sector standards, topic standards</p>
@@ -84,6 +129,7 @@ As the world accelerates towards decarbonisation, the need for climate impact ac
 <div class="slide section level1">
 
 <h2 id="example-comparison-of-standards">Example: Comparison of standards</h2>
+<p>(Alex) CDM: <a href="https://cdm.unfccc.int/filestorage/e/x/t/extfile-20210921115752581-reg_stan04_v03.0.pdf/reg_stan04_v03.0?t=QjB8cmM0ZDRnfDBV7GVs5k5cf3k7WEJwicbL" class="uri">https://cdm.unfccc.int/filestorage/e/x/t/extfile-20210921115752581-reg_stan04_v03.0.pdf/reg_stan04_v03.0?t=QjB8cmM0ZDRnfDBV7GVs5k5cf3k7WEJwicbL</a></p>
 <p>Implied taxonomy or semantic structure</p>
 <p>Compare two reports (same company) or two companies according to two standards</p>
 </div>
@@ -91,16 +137,21 @@ As the world accelerates towards decarbonisation, the need for climate impact ac
 
 <h2 id="the-need-for-a-deep-shared-taxonomy">The need for a “deep” shared taxonomy</h2>
 <p>Html example (power of consensus on profoundly simple, opportunity-generating, enabling standards)</p>
+<p>Burners Lee</p>
 <p>FIN sector example (OMFIF article) <!-- CJP check --></p>
 </div>
 <div id="a-semantic-structure-for-climate-accounting" class="slide section level1">
 <h1>A semantic structure for climate accounting</h1>
 <h2 id="premise-of-our-ontology">Premise of our ontology</h2>
+<p>(Not another standard )</p>
 <p>Agent - activity - environment</p>
 <h3 id="agent">Agent</h3>
 <h3 id="activity">Activity</h3>
 <h3 id="environment">Environment</h3>
 <h3 id="applicability-to-impact-accounting-in-general">Applicability to <em>impact accounting</em> in general</h3>
+<p>(skuif)</p>
+<p>Carbon tunnel vision</p>
+<p>planetary well-being</p>
 </div>
 <div class="slide section level1">
 
@@ -108,14 +159,24 @@ As the world accelerates towards decarbonisation, the need for climate impact ac
 </div>
 <div class="slide section level1">
 
-<h2 id="how-we-envision-our-ontology-can-be-used-rosetta-stone">How we envision our ontology can be used: Rosetta Stone</h2>
+<h2 id="how-we-envision-our-ontology-can-be-used">How we envision our ontology can be used:</h2>
 <p>All operations require standardisation as a starting point</p>
-<!-- * A standard is a query -->
-<h3 id="use-of-the-ontology-translation">Use of the ontology: Translation</h3>
-<h3 id="use-of-the-ontology-operation">Use of the ontology: Operation</h3>
+<!-- * A standard is a query OR a presentation -->
+<!-- VC presentation according to a standard -->
+<h3 id="use-of-the-ontology-description">Use of the ontology: Description</h3>
+<p>The ontology helps us be precise …..</p>
+<h3 id="use-of-the-ontology-camparison">Use of the ontology: Camparison</h3>
+<p>The ontology helps translate …. (Rosetta Stone)</p>
+<h3 id="use-of-the-ontology-aggregation">Use of the ontology: Aggregation</h3>
+<p>Improve the IWA …..</p>
+<p>It follows that the more precise and comparable, …</p>
 </div>
-<div id="how-to-get-involved" class="slide section level1">
-<h1>How to get involved</h1>
+<div id="whats-next-and-how-to-get-involved" class="slide section level1">
+<h1>What’s next and how to get involved</h1>
+<p>(what’s next)</p>
+<p>(feedback)</p>
+<p>(contacts, and channels)</p>
+<p>(wiki)</p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
