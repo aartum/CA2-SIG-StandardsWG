@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting">
+    <Prefix name="" IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>https://wiki.hyperledger.org/display/CASIG/Standards+WG</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#auditor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#claim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#claimant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#operator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#owner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#standard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#state"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#auditsClaim"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasClaimant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOutputParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProcedure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#impactsState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isApplicableToParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPerformedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStatementAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makesClaim"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performsActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#prescribesMethodology"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesInstrument"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#agentType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAccountingPeriod"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#parameterDefinition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#unitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#amount_of_co2_in_atmosphere"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#amount_of_wood_burned_per_person"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#distance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#duration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#humidity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#location"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#temperature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#temperature_sensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#time"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#AgentType"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#ImpactPathwayPosition"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#MethodologyType"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#Modality"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#auditor"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#claimant"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#operator"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#owner"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#standard"/>
+        <Class IRI="#procedure"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#amount_of_co2_in_atmosphere"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#amount_of_wood_burned_per_person"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#distance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#duration"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#humidity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#location"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#temperature"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#parameter"/>
+        <NamedIndividual IRI="#time"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasClaimant"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <ObjectProperty IRI="#usesInstrument"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#auditsClaim"/>
+        <Class IRI="#auditor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAgent"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasClaimant"/>
+        <Class IRI="#claim"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInputParameter"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOutputParameter"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProcedure"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impactsState"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedWith"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStatementAbout"/>
+        <Class IRI="#claim"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#makesClaim"/>
+        <Class IRI="#claimant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performsActivity"/>
+        <Class IRI="#role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#prescribesMethodology"/>
+        <Class IRI="#standard"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesInstrument"/>
+        <Class IRI="#role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#auditsClaim"/>
+        <Class IRI="#claim"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAgent"/>
+        <Class IRI="#role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasClaimant"/>
+        <Class IRI="#claimant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInputParameter"/>
+        <Class IRI="#parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOutputParameter"/>
+        <Class IRI="#parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProcedure"/>
+        <Class IRI="#procedure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasState"/>
+        <Class IRI="#state"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#impactsState"/>
+        <Class IRI="#state"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isApplicableToParameter"/>
+        <Class IRI="#parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPerformedWith"/>
+        <Class IRI="#instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isStatementAbout"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#makesClaim"/>
+        <Class IRI="#claim"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#measures"/>
+        <Class IRI="#parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performsActivity"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesInstrument"/>
+        <Class IRI="#instrument"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#unitOfMeasure"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#agentType"/>
+        <Class IRI="#role"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class IRI="#role"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#parameterDefinition"/>
+        <Class IRI="#parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#unitOfMeasure"/>
+        <Class IRI="#parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#agentType"/>
+        <DataOneOf>
+            <Literal>LEGAL_PERSON</Literal>
+            <Literal>NATURAL_PERSON</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAccountingPeriod"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#parameterDefinition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#unitOfMeasure"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DatatypeDefinition>
+        <Datatype IRI="#AgentType"/>
+        <DataOneOf>
+            <Literal>LEGAL_PERSON</Literal>
+            <Literal>NATURAL_PERSON</Literal>
+        </DataOneOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#ImpactPathwayPosition"/>
+        <DataOneOf>
+            <Literal>DRIVER</Literal>
+            <Literal>EFFECT</Literal>
+            <Literal>EXPOSURE</Literal>
+            <Literal>PRESSURE</Literal>
+            <Literal>STATE</Literal>
+        </DataOneOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#MethodologyType"/>
+        <DataOneOf>
+            <Literal>CALCULATION</Literal>
+            <Literal>MEASUREMENT</Literal>
+            <Literal>SOURCE</Literal>
+        </DataOneOf>
+    </DatatypeDefinition>
+    <DatatypeDefinition>
+        <Datatype IRI="#Modality"/>
+        <DataOneOf>
+            <Literal>COUNTERFACTUAL</Literal>
+            <Literal>REAL</Literal>
+        </DataOneOf>
+    </DatatypeDefinition>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
