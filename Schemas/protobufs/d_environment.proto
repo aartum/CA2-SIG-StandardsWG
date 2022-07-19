@@ -6,7 +6,12 @@ syntax = "proto3";
 
 package base;
 
+import "c_par_val.proto";
+
 message Environment {
   string identifier = 1;
   string description = 2; 
+  //Area area = 3;
+  //repeated Area exclusions = 4;
+  repeated string ids_parameters = 5; // The defining parameters of the environment.
 }

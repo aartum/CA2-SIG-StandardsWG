@@ -3,12 +3,11 @@ syntax = "proto3";
 package base;
 
 import "c_par_val.proto";
-import "d_environment.proto";
-import "e_accounting_period.proto";
+import "i_state.proto";
 
 message StateDiff {
 	string identifier = 1;
-	Environment environment = 2; // The environment to which the state belongs.
-	AccountingPeriod acc_period = 3;
-	repeated ParVal par_vals = 4;
+	string id_state_1 = 2;
+	string id_state_2 = 3;
+	repeated string ids_parvals = 4;
 }

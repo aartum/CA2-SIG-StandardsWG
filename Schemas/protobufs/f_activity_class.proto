@@ -5,8 +5,8 @@ syntax = "proto3";
 package base;
 
 message ActivityClass {
-	string registry = 1; //e.g. IPCC registry or another registry
+	string registry = 1; // E.g.. IPCC registry or another registry.
 	string registry_version = 2;
-	string activity_code = 3; // IPCC code in case 'registry' is IPCC, otherwise the code appropriate to the registry
+	string activity_code = 3; // IPCC code in case 'registry' is IPCC, otherwise the code appropriate to the registry.
 }
 

@@ -13,7 +13,7 @@ message Agent {
   string identifier = 1;
   string name = 2;
   AgentType type = 3; 
-  repeated Agent agents = 4; 
+  repeated string ids_agents = 4; 
 //  repeated Credential credentials = 5;
 }
 

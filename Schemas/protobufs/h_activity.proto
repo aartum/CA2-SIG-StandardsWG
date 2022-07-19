@@ -4,31 +4,25 @@ syntax = "proto3";
 
 package base;
 
-import "google/protobuf/any.proto";
 import "a_date_time.proto";
 import "b_location.proto";
 import "c1_modality.proto";
 import "f_activity_class.proto";
-import "g_agent.proto";
 
 
 message Activity {
   string identifier = 1;
-  string description = 2;
-  Agent agent = 3;
+  string objective = 2; // Reason why the agent engaged in the activity.
+  string procedure = 12;
+  string id_agent = 3;
   Modality modality = 11;
   Location location = 4;
   DateTime start_dt = 5;
   DateTime end_dt = 6;
   ActivityClass activity_class = 10;
-  string objective = 7; // reason why the agent engaged in the activity
-  repeated google.protobuf.Any inputs = 8; // TODO: refine this
-  repeated google.protobuf.Any outputs = 9; // TODO: refine this
+  repeated string ids_instruments = 13;
+  repeated string ids_input_parvals = 8; 
+  repeated string ids_output_parvals = 9; 
+  repeated string ids_activities = 14;
+  // 7
 }
-
-/* Add field to link to the ImpactClaim and State(s) pertaining to this activity? 
-E.g. has_impact_on <environment/state>
-ImpactClaim impact_claim 
-All activities have impacts - there is no activity that does not have an impact.
-
-*/
