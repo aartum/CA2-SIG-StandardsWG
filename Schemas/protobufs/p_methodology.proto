@@ -17,5 +17,6 @@ message Methodology {
 	string procedure = 3; // Only applicable if MethodologyType = "MEASUREMENT".
 	string source = 4; // Only applicable if MethodologyType = "SOURCE".
 	Calculation calculation = 5; // Only applicable if MethodologyType = "CALCULATION".
-	
 }
+
+/* Consider extracting "procedure" and "source" into classes of their own. */

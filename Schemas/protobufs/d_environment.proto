@@ -6,8 +6,6 @@ syntax = "proto3";
 
 package base;
 
-import "c_par_val.proto";
-
 message Environment {
   string identifier = 1;
   string description = 2; 

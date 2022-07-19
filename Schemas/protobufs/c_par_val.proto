@@ -22,6 +22,7 @@ message ParVal {
  float conf_upper_bound = 4;
  string id_methodology = 5;
  DateTime timestamp = 6;
- Agent agent = 7;
- string notes = 8;
+ string id_agent = 7; // The id of the agent who performed the measurement/calculation, if any.
+ string id_instrument = 8; // The id of the sensor that performed the measurement OR with which the measurement was performed by the agent.
+ string notes = 9;
 }
