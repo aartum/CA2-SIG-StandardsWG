@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package base;
+
+import "n_calculation.proto";
+
+enum MethodologyType {
+	MEASUREMENT = 0;
+	CALCULATION = 1;
+	SOURCE = 2;
+}
+
+message Methodology {
+	string identifier = 1;
+	MethodologyType type = 2;
+	repeated string ids_parameters = 6; // The parameters to which this methodology applies.
+	string procedure = 3; // Only applicable if MethodologyType = "MEASUREMENT".
+	string source = 4; // Only applicable if MethodologyType = "SOURCE".
+	Calculation calculation = 5; // Only applicable if MethodologyType = "CALCULATION".
+	
+}

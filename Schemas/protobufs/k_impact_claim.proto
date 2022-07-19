@@ -2,11 +2,9 @@
 
 syntax = "proto3";
 
-import "g_agent.proto";
-import "h_activity.proto";
-import "j_state_diff.proto";
-
 package base;
+
+import "e_accounting_period.proto";
 
 enum ImpactPathwayPosition {
 	DRIVER = 0;
@@ -18,10 +16,13 @@ enum ImpactPathwayPosition {
 
 message ImpactClaim {
   string identifier = 1;
-  Agent claimant = 2;
-  repeated Activity activities = 6;
-  StateDiff state_diff = 3;
-  ImpactPathwayPosition imp_pw_pos = 5;
+  string id_agent_claimant = 2;
+  Period accounting_period = 3;
+  repeated string ids_activities = 7;
+  string id_methodology = 4; // The id of the instance of the "Methodology" class that represents the applicable accounting standard.
+  string id_statediff = 5;
+  ImpactPathwayPosition imp_pw_pos = 6;
+  repeated string ids_impactclaims = 8;
 }
 
 /* Although no fields in protobufs are required, the implementation should only validate ImpactClaim instances that have content in all fields. */
