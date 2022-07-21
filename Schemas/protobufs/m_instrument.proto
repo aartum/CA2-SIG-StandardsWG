@@ -14,8 +14,8 @@ message Instrument {
  string make = 7;
  string model = 8;
  Date date_manufactured = 9;
- float precision = 10; // if instrument is a measurement instrument
- float accuracy = 11; // if instrument is a measurement instrument
- DateTime calibrated_on = 12; // if instrument is a measurement instrument
- Agent calibrated_by = 13; // if instrument is a measurement instrument
+ float precision = 10; // If instrument is a measurement instrument.
+ float accuracy = 11; // If instrument is a measurement instrument.
+ DateTime calibrated_on = 12; // If instrument is a measurement instrument.
+ string id_agent_calibrator = 13; // If instrument is a measurement instrument.
 }
