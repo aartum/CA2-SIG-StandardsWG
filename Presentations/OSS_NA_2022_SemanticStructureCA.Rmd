@@ -3,6 +3,14 @@ title: "An Open Source Exploration of a Semantic Structure for Climate Accountin
 author: "Christiaan Pauw and Alex Howard"
 date: "01/06/2022"
 output:
+  powerpoint_presentation:
+  ioslides_presentation:
+    toc: yes
+    incremental: yes
+    keep_md: yes
+  slidy_presentation: 
+    incremental: yes
+    keep_md: yes
   beamer_presentation:
     toc: no
     includes:
@@ -12,13 +20,6 @@ output:
     slide_level: 2
     colortheme: whale
     fonttheme: professionalfonts
-  ioslides_presentation:
-    toc: yes
-    incremental: yes
-    keep_md: yes
-  slidy_presentation: 
-    incremental: yes
-    keep_md: yes
 header-includes:
   - \AtBeginDocument{\title[A Semantic Structure for Climate Accounting]{An Open Source Exploration of a Semantic Structure for Climate Accounting}}
   - \setbeamertemplate{section in toc}[]
