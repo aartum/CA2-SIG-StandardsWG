@@ -2,12 +2,24 @@ syntax = "proto3";
 
 package base;
 
+import "c_par_val.proto"
+
+message Formula {
+	string expression = 1;
+	repeated ExpressionSymbol symbols;
+}
+
+message ExpressionSymbol {
+	string symbol = 1;
+	Parameter id_parameter = 2;
+}
+
 message Variable {
- string symbol = 1; // The symbol that represents this variable in the formula field of the associated calculation class instance.
- string id_parval = 2;
+	ExpressionSymbol symbol = 1; 
+	string id_parval = 2;
 }
 
 message Calculation {
- string formula = 1;
- repeated Variable values = 2;
+	Formula formula = 1;
+	repeated Variable values = 2;
 }
