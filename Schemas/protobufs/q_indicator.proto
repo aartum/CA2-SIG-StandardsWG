@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package base;
+
+import "a_date_time.proto";
+import "n_calculation.proto"
+
+message Indicator {
+	string identifier = 1;
+	string label = 2;
+	string definition = 3;
+	string registry = 4;
+	string registry_version = 5;
+	string code_in_registry = 6;
+	string unit_of_measure = 7;
+	string rationale = 8;
+	float precision = 9;
+	Calculation calculation = 10;
+}
+
+message IndicVal {
+	string id_indicator = 1;
+	bytes value = 9;
+	float confidence_level = 2;
+	float conf_lower_bound = 3;
+	float conf_upper_bound = 4;
+	DateTime timestamp = 6;
+	string id_agent = 7; // The id of the agent who performed the calculation, if any.
+	string notes = 9;
+}

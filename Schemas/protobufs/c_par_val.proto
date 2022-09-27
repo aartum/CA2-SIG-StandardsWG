@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package base;
 
+import "a_date_time.proto";
+
 message Parameter {
  string identifier = 1;
  string label = 2;
