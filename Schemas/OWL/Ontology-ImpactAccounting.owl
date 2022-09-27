@@ -23,10 +23,10 @@
         <Class IRI="#agent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#auditor"/>
+        <Class IRI="#audit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claim"/>
+        <Class IRI="#auditor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#claimant"/>
@@ -35,7 +35,13 @@
         <Class IRI="#environment"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#event"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#instrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#measure"/>
     </Declaration>
     <Declaration>
         <Class IRI="#operator"/>
@@ -59,49 +65,55 @@
         <Class IRI="#state"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#claim(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#claim(v)"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#auditsClaim"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAgent"/>
+        <ObjectProperty IRI="#enactsRole"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasClaimant"/>
+        <ObjectProperty IRI="#engagesInActivity"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasInputParameter"/>
+        <ObjectProperty IRI="#guidesActivity"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasOutputParameter"/>
+        <ObjectProperty IRI="#guidesClaim"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasProcedure"/>
+        <ObjectProperty IRI="#hasInputParameters"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasState"/>
+        <ObjectProperty IRI="#hasOutputParameters"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#impactsState"/>
+        <ObjectProperty IRI="#impactsEnvironment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isApplicableToParameter"/>
+        <ObjectProperty IRI="#isDefinedByParameters"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isPerformedWith"/>
+        <ObjectProperty IRI="#isPerformedWithInstrument"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isStatementAbout"/>
+        <ObjectProperty IRI="#isStatementAboutThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#makesClaim"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#measures"/>
+        <ObjectProperty IRI="#operatesInstrument"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#performsActivity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#prescribesMethodology"/>
+        <ObjectProperty IRI="#ownsThing"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesInstrument"/>
@@ -161,12 +173,20 @@
         <Datatype IRI="#Modality"/>
     </Declaration>
     <SubClassOf>
+        <Class IRI="#audit"/>
+        <Class IRI="#activity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#auditor"/>
         <Class IRI="#role"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#claimant"/>
         <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#measure"/>
+        <Class IRI="#activity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#operator"/>
@@ -179,6 +199,10 @@
     <SubClassOf>
         <Class IRI="#standard"/>
         <Class IRI="#procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#claim(v)"/>
+        <Class IRI="#activity"/>
     </SubClassOf>
     <ClassAssertion>
         <Class IRI="#parameter"/>
@@ -213,128 +237,148 @@
         <NamedIndividual IRI="#time"/>
     </ClassAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasClaimant"/>
+        <ObjectProperty IRI="#impactsEnvironment"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <ObjectProperty IRI="#usesInstrument"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#auditsClaim"/>
         <Class IRI="#auditor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAgent"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="#enactsRole"/>
+        <Class IRI="#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasClaimant"/>
-        <Class IRI="#claim"/>
+        <ObjectProperty IRI="#engagesInActivity"/>
+        <Class IRI="#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasInputParameter"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="#guidesActivity"/>
+        <Class IRI="#procedure"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasOutputParameter"/>
-        <Class IRI="#activity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasProcedure"/>
-        <Class IRI="#activity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasState"/>
-        <Class IRI="#environment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#impactsState"/>
-        <Class IRI="#activity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPerformedWith"/>
-        <Class IRI="#activity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isStatementAbout"/>
-        <Class IRI="#claim"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#makesClaim"/>
-        <Class IRI="#claimant"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#performsActivity"/>
-        <Class IRI="#role"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#prescribesMethodology"/>
+        <ObjectProperty IRI="#guidesClaim"/>
         <Class IRI="#standard"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInputParameters"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOutputParameters"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impactsEnvironment"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impactsEnvironment"/>
+        <Class IRI="#event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDefinedByParameters"/>
+        <Class IRI="#environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedWithInstrument"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStatementAboutThing"/>
+        <Class IRI="#claim(n)"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
+        <Class IRI="#state"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#makesClaim"/>
+        <Class IRI="#claimant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operatesInstrument"/>
+        <Class IRI="#operator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ownsThing"/>
+        <Class IRI="#owner"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#usesInstrument"/>
-        <Class IRI="#role"/>
+        <Class IRI="#agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#auditsClaim"/>
-        <Class IRI="#claim"/>
+        <Class IRI="#claim(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAgent"/>
+        <ObjectProperty IRI="#enactsRole"/>
         <Class IRI="#role"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasClaimant"/>
-        <Class IRI="#claimant"/>
+        <ObjectProperty IRI="#engagesInActivity"/>
+        <Class IRI="#activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasInputParameter"/>
+        <ObjectProperty IRI="#guidesActivity"/>
+        <Class IRI="#activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#guidesClaim"/>
+        <Class IRI="#claim(n)"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInputParameters"/>
         <Class IRI="#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasOutputParameter"/>
+        <ObjectProperty IRI="#hasOutputParameters"/>
         <Class IRI="#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasProcedure"/>
-        <Class IRI="#procedure"/>
+        <ObjectProperty IRI="#impactsEnvironment"/>
+        <Class IRI="#environment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasState"/>
-        <Class IRI="#state"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#impactsState"/>
-        <Class IRI="#state"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isApplicableToParameter"/>
+        <ObjectProperty IRI="#isDefinedByParameters"/>
         <Class IRI="#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPerformedWith"/>
+        <ObjectProperty IRI="#isPerformedWithInstrument"/>
         <Class IRI="#instrument"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isStatementAbout"/>
+        <ObjectProperty IRI="#isStatementAboutThing"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#makesClaim"/>
-        <Class IRI="#claim"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#measures"/>
+        <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
         <Class IRI="#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#performsActivity"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="#makesClaim"/>
+        <Class IRI="#claim(n)"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operatesInstrument"/>
+        <Class IRI="#instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ownsThing"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usesInstrument"/>
         <Class IRI="#instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="#activity"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#unitOfMeasure"/>
