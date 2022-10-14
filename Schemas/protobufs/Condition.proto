@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package base;
+
+import "c_par_val.proto";
+
+message Condition {
+  Parameter parameter = 1;
+  google.protobuf.Any value =  2; 
+  string logical_operator = 3;
+}
