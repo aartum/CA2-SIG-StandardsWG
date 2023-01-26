@@ -3,15 +3,21 @@ syntax = "proto3";
 package base;
 
 import "a_date_time.proto";
-import "c_par_val.proto";
 import "c1_modality.proto";
-import "d_environment.proto";
 
 message State {
-  string identifier = 1;
-  string id_environment = 2; // The id of the environment to which the state belongs.
-  Modality modality = 3; // I.e., counterfactual or real.
-  DateTime date_time = 4; // The moment of measurement.
-  repeated string ids_parvals = 5;
+	string identifier = 1;
+	string id_parameter = 1;
+	string id_environment = 2; // The id of the environment for which the parameter was measured/calculated.
+	string id_methodology = 5; // The id of a methodology encoded as an instance of the 'Control' class.
+	string id_agent = 7; // The id of the agent who performed the measurement/calculation, if any.
+	string id_instrument = 8; // The id of the sensor that performed the measurement OR with which the measurement was performed by the agent.
+	Modality modality = 3; // I.e., counterfactual or real.
+	DateTime timestamp = 4; // The moment of measurement.
+	bytes value = 9;
 }
 
+ 
+ 
+
+ 
