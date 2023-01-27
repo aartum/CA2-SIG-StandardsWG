@@ -2,12 +2,21 @@ syntax = "proto3";
 
 package base;
 
-import "c_par_val.proto";
 import "i_state.proto";
+
+// Pass by value version:
+
+message StateDiff {
+	State state_1 = 2;
+	State state_2 = 3;
+}
+
+/ * Pass by reference version:
 
 message StateDiff {
 	string identifier = 1;
 	string id_state_1 = 2;
 	string id_state_2 = 3;
-	repeated string ids_parvals = 4;
 }
+
+*/

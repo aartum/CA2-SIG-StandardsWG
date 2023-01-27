@@ -1,10 +1,16 @@
 /* Conveys the details of an impact claim made by an agent. */
 
+/* Note: Although no fields in protobufs are required, the implementation should only validate ImpactClaim instances that have content in all fields. */
+
 syntax = "proto3";
 
 package base;
 
+import "c2_control.proto";
 import "e_accounting_period.proto";
+import "g_agent.proto";
+import "h_activity.proto";
+import "j_state_diff.proto";
 
 enum ImpactPathwayPosition {
 	DRIVER = 0;
@@ -14,15 +20,29 @@ enum ImpactPathwayPosition {
 	EFFECT = 4;
 }
 
+// Pass by value version:
+
+message ImpactClaim {
+  Agent claimant = 2;
+  Period accounting_period = 3;
+  repeated Activity activities = 7;
+  Control methodology = 4; // An instance of the Control class that represents the applicable accounting standard.
+  StateDiff state_diff = 5;
+  ImpactPathwayPosition imp_pw_pos = 6;
+  repeated ImpactClaim impact_claims = 8;
+}
+
+/* Pass by reference version: 
+
 message ImpactClaim {
   string identifier = 1;
   string id_agent_claimant = 2;
   Period accounting_period = 3;
   repeated string ids_activities = 7;
-  string id_methodology = 4; // The id of the instance of the "Methodology" class that represents the applicable accounting standard.
+  string id_methodology = 4; 
   string id_statediff = 5;
   ImpactPathwayPosition imp_pw_pos = 6;
   repeated string ids_impactclaims = 8;
 }
 
-/* Although no fields in protobufs are required, the implementation should only validate ImpactClaim instances that have content in all fields. */
+*/
