@@ -1,0 +1,36 @@
+
+/* Note: Indicators must also be expressed using the 'Parameter' class. */
+
+syntax = "proto3";
+
+package base;
+
+//Pass by value version:
+
+message Parameter {
+ string label = 2;
+ string definition = 3;
+ string registry = 4;
+ string registry_version = 5;
+ string code_in_registry = 6;
+ string unit_of_measure = 7;
+ string rationale = 8;
+ float precision = 9;
+}
+
+
+/* Pass by reference version:
+
+message Parameter {
+ string identifier = 1;
+ string label = 2;
+ string definition = 3;
+ string registry = 4;
+ string registry_version = 5;
+ string code_in_registry = 6;
+ string unit_of_measure = 7;
+ string rationale = 8;
+ float precision = 9;
+}
+
+*/

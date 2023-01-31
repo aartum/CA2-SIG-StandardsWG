@@ -1,5 +1,7 @@
 /* An entity with the capacity to act willfully. */
 
+/* TODO: Define a Credential class */
+
 syntax = "proto3";
 
 package base;
@@ -9,12 +11,22 @@ enum AgentType {
 	LEGAL_PERSON = 1;
 }
 
+// Pass by value version:
+
+message Agent {
+  string identifier = 1; // e.g., full name and surname or ID number.
+  AgentType type = 3; 
+  repeated Agent agents = 4; 
+//  repeated Credential credentials = 5;
+}
+
+/* Pass by reference version:
+
 message Agent {
   string identifier = 1;
-  string name = 2;
   AgentType type = 3; 
   repeated string ids_agents = 4; 
 //  repeated Credential credentials = 5;
 }
 
-/* TODO: Define a Credential class */
+*/

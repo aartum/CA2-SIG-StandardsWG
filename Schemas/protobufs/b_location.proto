@@ -29,4 +29,42 @@ message Location {
 
 
 
+/*
+// Suggestion to update to this:
+
+message Location {
+	string reference_system = 1; // e.g., WSG 84, street address, what-three-words.
+	string type = 2; // e.g. point, line, polygon, polyhedron.
+	bytes coordinates = 3; // if type=point, provide only one set of coordinates; if type=line, provide at least two; if type = polygon, provide at least three, etc.
+}
+
+message CoordinateWGS84 {
+	sint64 longitude = 1;
+	sint64 latitude = 2;
+	sint64 altitude = 3;
+}
+
+message CoordinateW3W {
+	string word1 = 1;
+	string word2 = 2;
+	string word3 - 3;
+}
+
+message CoordinateStreetAddr {
+  string country = 4;
+  string state = 5; // or province, prefecture
+  string city = 6; // or town
+  string suburb = 7;
+  string street_name = 8;
+  string street_number = 9;
+  string development = 10; // e.g. name of residential complex
+  string unit = 11; // e.g. unit "45b" of <development>
+}
+
+*/
+
+
+
+
+
 

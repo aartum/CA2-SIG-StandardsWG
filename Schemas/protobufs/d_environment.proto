@@ -6,6 +6,17 @@ syntax = "proto3";
 
 package base;
 
+import "c_parameter.proto";
+
+// Pass by value version:
+
+message Environment {
+  string description = 2; 
+  repeated Parameter parameters = 5; // The defining parameters of the environment.
+}
+
+/* Pass by reference version:
+
 message Environment {
   string identifier = 1;
   string description = 2; 
@@ -13,3 +24,5 @@ message Environment {
   //repeated Area exclusions = 4;
   repeated string ids_parameters = 5; // The defining parameters of the environment.
 }
+
+*/

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package base;
 
-import "c_par_val.proto"
+import "i_state.proto"
 
 message Formula {
 	string expression = 1;
@@ -11,12 +11,12 @@ message Formula {
 
 message ExpressionSymbol {
 	string symbol = 1;
-	Parameter id_parameter = 2;
+	Parameter parameter = 2;
 }
 
 message Variable {
 	ExpressionSymbol symbol = 1; 
-	string id_parval = 2;
+	State par_val = 2;
 }
 
 message Calculation {

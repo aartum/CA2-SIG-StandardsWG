@@ -1,0 +1,42 @@
+/* 
+Axiom: A control limits or directs a thing.
+*/
+
+message Control {
+  string mode = 1; // binding (obligatory) or non-binding (non-obligatory)
+  google.protobuf.Any subject = 2;
+  google.protobuf.Any value =  3;
+  string logical_operator = 4; // less than, greater than, equal to, include, exclude, etc.
+  State condition = 5; // The state that must exist for this control to be applicable. 
+  repeated Control controls = 6;
+}
+
+
+/*
+
+
+A procedure is a set of interrelated activities.
+A procedure is a set of activities and conditions that determine/define the chronological relationship between the activities; a procedure is therefore not a subclass of 'Control', but an instance of 'Control'.
+
+To define a procedure you'll use Control as follows:
+mode = 'binding'
+subject = ActivityB.startDate
+value = ActivityA.endDate
+operator = '>'
+condition = (some State instance)
+controls = [NULL]
+
+
+
+A constraint specifies a requirement to be met by an owl::thing.
+A constraint creates a context of validity.
+
+To define a constraint you'll use Control as follows:
+mode = 'binding'
+subject = ActivityX.input[[litres_of_water]]
+value = 500
+operator = '<='
+controls = [NULL]
+
+
+*/

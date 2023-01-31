@@ -32,6 +32,12 @@
         <Class IRI="#claimant"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#developer"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#environment"/>
     </Declaration>
     <Declaration>
@@ -185,6 +191,10 @@
         <Class IRI="#role"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#developer"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#measure"/>
         <Class IRI="#activity"/>
     </SubClassOf>
@@ -197,8 +207,12 @@
         <Class IRI="#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#standard"/>
         <Class IRI="#procedure"/>
+        <Class IRI="#control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#standard"/>
+        <Class IRI="#instrument"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#claim(v)"/>
@@ -251,10 +265,6 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#engagesInActivity"/>
         <Class IRI="#agent"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#guidesActivity"/>
-        <Class IRI="#procedure"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#guidesClaim"/>
