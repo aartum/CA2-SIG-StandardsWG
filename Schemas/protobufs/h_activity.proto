@@ -21,13 +21,12 @@ message Activity {
   Agent agent = 3;
   Modality modality = 11;
   Location location = 4;
-  DateTime start_dt = 5;
-  DateTime end_dt = 6;
+  Period period = 5;
   ActivityClass activity_class = 10;
   repeated Control controls = 11; e.g., the procedure or the objective of the activity.
   repeated Instrument instruments = 13;
-  repeated State inputs = 8; 
-  repeated State outputs = 9; 
+  repeated google.protobuf.Any inputs = 8; 
+  repeated google.protobuf.Any outputs = 9; 
   repeated Activity activities = 14;
 }
 
@@ -39,8 +38,7 @@ message Activity {
   string id_agent = 3;
   Modality modality = 11;
   Location location = 4;
-  DateTime start_dt = 5;
-  DateTime end_dt = 6;
+  Period period = 5;
   ActivityClass activity_class = 10;
   repeated string ids_controls = 11;
   repeated string ids_instruments = 13;
