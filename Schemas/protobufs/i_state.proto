@@ -15,34 +15,57 @@ import "g2_instrument.proto";
 message State {
 	Parameter parameter = 1;
 	Environment environment = 2; // The environment for which the parameter was measured/calculated.
-	Control methodology = 5; // The measurement methodology that was followed (encoded as an instance of the 'Control' class).
-	Agent agent = 7; // The agent who performed the measurement/calculation, if any.
-	Instrument instrument = 8; // The sensor that performed the measurement OR the instrument with which the measurement was performed by the agent.
+	Activity provenance = 5; // The activity through which the value of the state was determined.
 	Modality modality = 3; // I.e., counterfactual or real.
-	DateTime timestamp = 4; // The moment of measurement.
-	bytes value = 9; // The actual result of the measurement.
+	Period period = 4; // The moment/period of validity (which may be different than the moment of measurement/calculation)
+	google.protobuf.Any value = 9; // The actual result of the measurement/calculation/estimation/sourcing.
 }
 
-
-/ * Pass by reference version:
+/* Pass by reference version:
 
 message State {
 	string identifier = 1;
 	string id_parameter = 1;
 	string id_environment = 2; // The id of the environment for which the parameter was measured/calculated.
-	string id_methodology = 5; // The id of the measurement methodology encoded as an instance of the 'Control' class.
-	string id_agent = 7; // The id of the agent who performed the measurement/calculation, if any.
-	string id_instrument = 8; // The id of the sensor that performed the measurement OR with which the measurement was performed by the agent.
+	string id_activity_provenance = 5;
 	Modality modality = 3; // I.e., counterfactual or real.
-	DateTime timestamp = 4; // The moment of measurement.
-	bytes value = 9; // The actual result of the measurement.
+	Period period = 4; // The moment/period of validity (which may be different than the moment of measurement/calculation)
+	google.protobuf.Any value = 9; // The actual result of the measurement.
 }
 
 */
+ 
+
+/*
+
+Example of a provenance activity (WORK IN PROGRESS. NOT COMPLETE YET. TODO.).
+
+message Activity {
+  string description = 2; // e.g. "Determination of the value of parameter P at time T."
+  Agent agent = 3; // The person/agent who calculated/estimated/measured/sourced the value.
+  Modality modality = 11; // Will always be 'REAL' in this case.
+  Location location = 4; // Relevant for measurements.
+  Period period = 5; // Relevant for measurements.
+  ActivityClass activity_class = 10;  // E.g. {registry = "AIAO Value Determination Activities"; registry_version = 1.0.0; activity_code = 2}
+  
+  repeated Control controls = 11; e.g., the procedure or the objective of the activity.
+  repeated Instrument instruments = 13; // e.g. the instruments with which the measurement was conducted
+  repeated google.protobuf.Any inputs = 8; 
+  repeated google.protobuf.Any outputs = 9; 
+  repeated Activity activities = 14;
+}
+ 
+ In the case of calculation, 
+	'controls' will be an instance of the Calculation class;
+	
+*/
+ 
+ 
+ 
+
 
  
  
  
  
-
  

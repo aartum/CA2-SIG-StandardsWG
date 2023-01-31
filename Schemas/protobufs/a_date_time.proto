@@ -21,5 +21,10 @@ message DateTime {
   Date date = 1;
   Time time = 2;
 }
+
+message Period {
+  DateTime start = 1;
+  DateTime end = 2;
+}
 // TODO: add messages for time intervals (see ISO 8601 standard).
 // TODO: What about referential times, e.g. "before" or "after"?

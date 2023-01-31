@@ -5,21 +5,161 @@ package base;
 import "i_state.proto"
 
 message Formula {
-	string expression = 1;
+	string expression = 1; // e.g. z = x + y
 	repeated ExpressionSymbol symbols;
 }
 
 message ExpressionSymbol {
-	string symbol = 1;
+	string symbol = 1; //e.g., x, z, y
 	Parameter parameter = 2;
-}
-
-message Variable {
-	ExpressionSymbol symbol = 1; 
-	State par_val = 2;
 }
 
 message Calculation {
 	Formula formula = 1;
-	repeated Variable values = 2;
+	repeated Variable values = 2; //e.g., [{symbol = "x"; value = {SomeStateObject}}, {symbol = "y"; value = {SomeOtherStateObject}}]
 }
+
+message Variable { //TODO: Maybe rename to something like 'SymbolValue'?
+	string symbol = 1; 
+	State value = 2;
+}
+
+
+/*
+
+// Example: Calculate the average of Parameter P between <t1> and <t2>.
+// Note 1: Each observation of P is an instance of 'State'.
+// Note 2: (TODO) In production we'll have an operator, such as 'avg', to denote this very basic operation, akin to the operator 'sum' as we use below; for demonstration purposes, however, we'll pretend the operator 'avg' does not exist, so we'll have to show verifiers how we go about calculating it.
+
+
+Calculation{
+	formula = Formula{
+				expression = "z = sum(x)/n";
+				symbols = [ExpressionSymbol{
+								symbol = 'x';
+								parameter = Parameter{"SomeParameterP"; ...};},
+						   ExpressionSymbol{
+								symbol = 'n';
+								parameter = Parameter{"The number of observations of Parameter P between <t1> and <t2>."; ...}}];};
+	values = [Variable{symbol = "x";
+					   value = State{
+									parameter = Parameter{"SomeParameterP"; ...};
+									environment = Environment{"SomeEnvironmentE"; ...}
+									provenance = Activity{<The measurement activity.>}
+									modality = 'REAL';
+									period = NULL;
+									value = [State{period = <meas. ts. 1>; value = 8.1},
+											 State{period = <meas. ts. 2>; value = 7.2},
+											 State{period = <meas. ts. 3>; value = 7.3},
+											 State{period = <meas. ts. 4>; value = 7.8},
+											 State{period = <meas. ts. 5>; value = 7.2}];}},
+			  Variable{symbol = "n";
+					   value = State{
+									parameter = Parameter{"The number of observations of Parameter P between <t1> and <t2>."; ...};
+									environment = Environment{"SomeEnvironmentE"; ...}
+									provenance = Activity{<The measurement activity.>}
+									modality = '???';
+									period = ???;
+									value = 5;}}]
+}
+
+
+
+
+
+Activity {
+  description = "Calculation of the average of Parameter P between <t1> and <t2>.";
+  ...
+  activity_class = ActivityClass{
+						registry = "AIAO Value Determination Activities"
+						registry_version = 1.0.0;
+						activity_code = 1;};
+  ...
+  controls = [
+				Formula{
+					expression = "z = sum(x)/n";
+					symbols = [ExpressionSymbol{
+									symbol = 'x';
+									parameter = Parameter{"SomeParameterP"; ...};},
+							   ExpressionSymbol{
+									symbol = 'n';
+									parameter = Parameter{"The number of observations of Parameter P between <t1> and <t2>."; ...}}];}
+  ];
+  ...
+  inputs = [
+			Variable{symbol = "x";
+				     value = State{
+								parameter = Parameter{"SomeParameterP"; ...};
+								environment = Environment{"SomeEnvironmentE"; ...}
+								provenance = Activity{<The measurement activity.>}
+								modality = 'REAL';
+								period = NULL;
+								value = [State{period = <meas. ts. 1>; value = 8.1},
+										 State{period = <meas. ts. 2>; value = 7.2},
+										 State{period = <meas. ts. 3>; value = 7.3},
+										 State{period = <meas. ts. 4>; value = 7.8},
+										 State{period = <meas. ts. 5>; value = 7.2}];
+								}
+			},
+			Variable{symbol = "n";
+				   value = State{
+								parameter = Parameter{"The number of observations of Parameter P between <t1> and <t2>."; ...};
+								environment = Environment{"SomeEnvironmentE"; ...}
+								provenance = Activity{<The measurement activity.>}
+								modality = '???';
+								period = ???;
+								value = 5;}}];
+  outputs = [
+	State{
+		parameter = Parameter{"Average of Parameter P between <t1> and <t2>."; ...};
+		environment = Environment{"SomeEnvironmentE"; ...}
+		provenance = Activity{<The calculation activity.>}
+		modality = '???';
+		period = Period {start = <t1>; end = <t2>};
+		value = 7.52;
+	}  
+  ]; 
+}
+
+
+z = sum(x)/n
+
+Average {
+	formula = (1/n) * sum(x);
+	x = State{
+								parameter = Parameter{"SomeParameterP"; ...};
+								environment = Environment{"SomeEnvironmentE"; ...}
+								provenance = Activity{<The measurement activity.>}
+								modality = 'REAL';
+								period = NULL;
+								value = [State{period = <meas. ts. 1>; value = 8.1},
+										 State{period = <meas. ts. 2>; value = 7.2},
+										 State{period = <meas. ts. 3>; value = 7.3},
+										 State{period = <meas. ts. 4>; value = 7.8},
+										 State{period = <meas. ts. 5>; value = 7.2}];
+								}
+	n = State{
+								parameter = Parameter{"The number of observations of Parameter P between <t1> and <t2>."; ...};
+								environment = Environment{"SomeEnvironmentE"; ...}
+								provenance = Activity{<The measurement activity.>}
+								modality = '???';
+								period = ???;
+								value = 5;}
+	z = State{
+		parameter = Parameter{"Average of Parameter P between <t1> and <t2>."; ...};
+		environment = Environment{"SomeEnvironmentE"; ...}
+		provenance = Activity{<The calculation activity.>}
+		modality = '???';
+		period = Period {start = <t1>; end = <t2>};
+	}  
+}
+
+*/
+
+
+
+
+
+
+
+

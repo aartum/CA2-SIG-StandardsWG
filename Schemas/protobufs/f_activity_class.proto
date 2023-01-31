@@ -10,3 +10,19 @@ message ActivityClass {
 	string activity_code = 3; // IPCC code in case 'registry' is IPCC, otherwise the code appropriate to the registry.
 }
 
+
+/ *
+
+Our own special Registry:
+	Name: AIAO Value Determination Activities
+	Version = 1.0.0
+	Contents:
+	Activty    |   Code
+	CALCULATE      1
+	MEASURE		   2
+	SOURCE	 	   3
+	ESTIMATE	   4
+
+*/
+
+
