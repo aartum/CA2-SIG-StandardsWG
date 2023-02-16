@@ -18,6 +18,7 @@ message State {
 	Activity provenance = 5; // The activity through which the value of the state was determined.
 	Modality modality = 3; // I.e., counterfactual or real.
 	Period period = 4; // The moment/period of validity (which may be different than the moment of measurement/calculation)
+	repeated State states = 10;
 	google.protobuf.Any value = 9; // The actual result of the measurement/calculation/estimation/sourcing.
 }
 
