@@ -25,8 +25,8 @@ message Activity {
   ActivityClass activity_class = 10;
   repeated Control controls = 11; e.g., the procedure or the objective of the activity.
   repeated Instrument instruments = 13;
-  repeated google.protobuf.Any inputs = 8; 
-  repeated google.protobuf.Any outputs = 9; 
+  repeated Parameter inputs = 8; 
+  repeated Parameter outputs = 9; 
   repeated Activity activities = 14;
 }
 
