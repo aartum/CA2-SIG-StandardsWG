@@ -14,14 +14,14 @@ message ExpressionSymbol {
 	Parameter parameter = 2;
 }
 
-message Calculation {
-	Formula formula = 1;
-	repeated Variable values = 2; //e.g., [{symbol = "x"; value = {SomeStateObject}}, {symbol = "y"; value = {SomeOtherStateObject}}]
-}
-
 message Variable { //TODO: Maybe rename to something like 'SymbolValue'?
 	string symbol = 1; 
 	State value = 2;
+}
+
+message Calculation {
+	Formula formula = 1;
+	repeated Variable values = 2; //e.g., [{symbol = "x"; value = {SomeStateObject}}, {symbol = "y"; value = {SomeOtherStateObject}}]
 }
 
 
