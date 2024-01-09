@@ -9,6 +9,7 @@ package base;
 enum AgentType {
 	NATURAL_PERSON = 0;
 	LEGAL_PERSON = 1;
+ 	CYBER_PERSONA =2;
 }
 
 // Pass by value version:
