@@ -13,25 +13,24 @@ import "g2_instrument.proto";
 // Pass by value version:
 
 message State {
-	Parameter parameter = 1;
-	Environment environment = 2; // The environment for which the parameter was measured/calculated.
+	Parameter parameter = 1; // Via an Environment object, i.e. Environment.parameters[4].
 	Activity provenance = 5; // The activity through which the value of the state was determined.
 	Modality modality = 3; // I.e., counterfactual or real.
 	Period period = 4; // The moment/period of validity (which may be different than the moment of measurement/calculation)
-	repeated State states = 10;
 	google.protobuf.Any value = 9; // The actual result of the measurement/calculation/estimation/sourcing.
+	repeated State states = 10;
 }
 
 /* Pass by reference version:
 
 message State {
-	string identifier = 1;
-	string id_parameter = 1;
-	string id_environment = 2; // The id of the environment for which the parameter was measured/calculated.
+	string identifier = 6;
+	string id_parameter = 1; 
 	string id_activity_provenance = 5;
 	Modality modality = 3; // I.e., counterfactual or real.
 	Period period = 4; // The moment/period of validity (which may be different than the moment of measurement/calculation)
 	google.protobuf.Any value = 9; // The actual result of the measurement.
+	repeated State states = 10;
 }
 
 */
