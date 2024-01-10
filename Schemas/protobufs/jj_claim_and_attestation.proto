@@ -1,0 +1,16 @@
+message Claim {
+	Agent claimant = 1;
+	google.protobuf.Any subject = 2;
+	google.protobuf.Any verb = 3;
+	google.protobuf.Any object = 4;
+	google.protobuf.Any context = 5;
+	repeated google.protobuf.Any attestations = 6;
+}
+
+
+message Attestation {
+	google.protobuf.Any subject = 1;
+	string description = 2;
+	google.protobuf.Any content = 3;
+	repeated Attestation attestations = 4;
+}

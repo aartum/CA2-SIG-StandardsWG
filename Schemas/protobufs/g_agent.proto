@@ -6,17 +6,20 @@ syntax = "proto3";
 
 package base;
 
+import "aa_classification.proto";
+
+
 enum AgentType {
 	NATURAL_PERSON = 0;
 	LEGAL_PERSON = 1;
- 	CYBER_PERSONA =2;
+ 	CYBER_PERSONA = 2;
 }
 
 // Pass by value version:
 
 message Agent {
   string identifier = 1; // e.g., full name and surname or ID number.
-  AgentType type = 3; 
+  repeated Classification classifications = 3; // E.g., the AgentType enum can be used as a classification system.
   repeated Agent agents = 4; 
 //  repeated Credential credentials = 5;
 }
@@ -25,7 +28,7 @@ message Agent {
 
 message Agent {
   string identifier = 1;
-  AgentType type = 3; 
+  repeated Classification classifications = 3; 
   repeated string ids_agents = 4; 
 //  repeated Credential credentials = 5;
 }

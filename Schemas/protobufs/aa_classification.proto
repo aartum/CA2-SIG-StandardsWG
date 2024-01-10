@@ -1,15 +1,22 @@
-/* Links the activity to some registry that provides impact values etc. for the activity. */
-
 syntax = "proto3";
 
 package base;
 
+message Classification {
+	string system = 1; //The name or identifier of the classification system, e.g. "CDM Sectoral Scopes".
+	string version = 2; //The version of the classification system in use here, e.g. "1.4".
+	string value = 3; //The value (type/group/class/code) of the thing in question according to the system and version identified above, e.g. "Afforestation and Reforestation".
+}
+
+
+/*
+//Older version:
 message ActivityClass {
 	string registry = 1; // E.g.. IPCC registry or another registry.
 	string registry_version = 2;
 	string activity_code = 3; // IPCC code in case 'registry' is IPCC, otherwise the code appropriate to the registry.
 }
-
+*/
 
 / *
 
@@ -24,5 +31,3 @@ Our own special Registry:
 	ESTIMATE	   4
 
 */
-
-

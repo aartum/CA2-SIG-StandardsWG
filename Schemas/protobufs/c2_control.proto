@@ -1,6 +1,10 @@
-/* 
-Axiom: A control limits or directs a thing.
-*/
+/* Axiom: A control limits or directs a thing. */
+
+syntax = "proto3";
+
+package base;
+
+import "i_state.proto"; // TODO: We'll have to move this definition of Control to after the definition of state...
 
 message Control {
   string mode = 1; // binding (obligatory) or non-binding (non-obligatory)
@@ -33,7 +37,7 @@ A constraint creates a context of validity.
 
 To define a constraint you'll use Control as follows:
 mode = 'binding'
-subject = ActivityX.input[[litres_of_water]]
+subject = ActivityX.input[['litres_of_water']]
 value = 500
 operator = '<='
 controls = [NULL]

@@ -1,32 +1,31 @@
 /* An act willfully engaged in or performed by an agent. */
 
-// TODO: how to capture the role(s) that each agent fulfils w.r.t. this activity?
-
 syntax = "proto3";
 
 package base;
 
 import "a_date_time.proto";
+import "aa_classification.proto";
 import "b_location.proto";
 import "c1_modality.proto";
 import "c2_control.proto";
-import "f_activity_class.proto";
 import "g_agent.proto";
 import "g2_instrument.proto";
+import "g1_agent_role.proto";
 
 // Pass by value version:
 
 message Activity {
   string description = 2;
-  Agent agent = 3;
+  repeated AgentRole agents = 3;
   Modality modality = 11;
   Location location = 4;
   Period period = 5;
-  ActivityClass activity_class = 10;
-  repeated Control controls = 11; e.g., the procedure or the objective of the activity.
+  repeated Classification classifications = 10; 
+  repeated Control controls = 11; e.g., the procedure or the objective of the activity, or the methodologies to which it is subjected.
   repeated Instrument instruments = 13;
-  repeated Parameter inputs = 8; 
-  repeated Parameter outputs = 9; 
+  repeated google.protobuf.Any inputs = 8; 
+  repeated google.protobuf.Any outputs = 9; 
   repeated Activity activities = 14;
 }
 
@@ -35,15 +34,15 @@ message Activity {
 message Activity {
   string identifier = 1;
   string description = 2;
-  string id_agent = 3;
+  repeated AgentRole agents = 3;
   Modality modality = 11;
   Location location = 4;
   Period period = 5;
-  ActivityClass activity_class = 10;
+  repeated Classification classifications = 10; 
   repeated string ids_controls = 11;
   repeated string ids_instruments = 13;
-  repeated string ids_input_parvals = 8; 
-  repeated string ids_output_parvals = 9; 
+  repeated google.protobuf.Any inputs = 8; 
+  repeated google.protobuf.Any outputs = 9; 
   repeated string ids_activities = 14;
 }
 

@@ -5,24 +5,20 @@ syntax = "proto3";
 package base;
 
 import "a_date_time.proto";
+import "aa_classification.proto";
 import "g_agent.proto";
 
 // Pass by value version:
 
 message Instrument {
- string identifier = 1;
  string label = 2;
  string description = 3;
- string registry = 4;
- string registry_version = 5;
- string instrument_code = 6;
+ repeated Classification classifications = 4;
  string make = 7;
  string model = 8;
  Date date_manufactured = 9;
  float precision = 10; // If instrument is a measurement instrument.
  float accuracy = 11; // If instrument is a measurement instrument.
- DateTime calibrated_on = 12; // If instrument is a measurement instrument.
- Agent calibrator = 13; // If instrument is a measurement instrument.
 }
 
 /* Pass by reference version:
@@ -31,16 +27,21 @@ message Instrument {
  string identifier = 1;
  string label = 2;
  string description = 3;
- string registry = 4;
- string registry_version = 5;
- string instrument_code = 6;
+ repeated Classification classifications = 4;
  string make = 7;
  string model = 8;
  Date date_manufactured = 9;
  float precision = 10; // If instrument is a measurement instrument.
  float accuracy = 11; // If instrument is a measurement instrument.
- DateTime calibrated_on = 12; // If instrument is a measurement instrument.
- string id_agent_calibrator = 13; // If instrument is a measurement instrument.
 }
 
 */
+
+
+/*
+ TODO.
+ Details about the calibration should be submitted as accompanying claims (Report objects), not be part of this definition of Instrument here.
+ DateTime calibrated_on = 12; // If instrument is a measurement instrument.
+ Agent calibrator = 13; // If instrument is a measurement instrument.
+ */
+ 
