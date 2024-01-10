@@ -12,17 +12,21 @@ import "c_parameter.proto";
 
 message Environment {
   string description = 2; 
+  Location location = 6; 
   repeated Parameter parameters = 5; // The defining parameters of the environment.
+  repeated Environment environments = 7;
 }
+//TODO. Location is actually a special type of parameter... OR is it a control in this case, as in the Environment is restricted to this Location?
+
 
 /* Pass by reference version:
 
 message Environment {
   string identifier = 1;
   string description = 2; 
-  //Area area = 3;
-  //repeated Area exclusions = 4;
+  Location location = 6; //TODO. Location is actually a special type of parameter...
   repeated string ids_parameters = 5; // The defining parameters of the environment.
+  repeated string ids_environments = 7;
 }
 
 */
