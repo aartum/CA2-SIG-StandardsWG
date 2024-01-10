@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package base;
+
+import "g_agent.proto";
+
+// Pass by value version:
+
+message AgentRole {
+	Agent agent = 1;
+	repeated string roles = 2;
+}
+
+/* Pass by reference version:
+
+message AgentRole {
+	string id_agent = 1;
+	repeated string roles = 2;
+}
+
+*/
