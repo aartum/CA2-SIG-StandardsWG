@@ -5,7 +5,6 @@ package base;
 import "a_date_time.proto";
 
 message AccountingPeriod {
-	DateTime start_date = 1;
-	DateTime end_date = 2;
+	Period period = 1;
 	string label = 3;
 }
