@@ -52,7 +52,7 @@ message CoordinateW3W {
 
 message CoordinateStreetAddr {
   string country = 4;
-  string state = 5; // or province, prefecture
+  string state = 5; // or province/prefecture
   string city = 6; // or town
   string suburb = 7;
   string street_name = 8;
