@@ -19,7 +19,8 @@ enum AgentType {
 
 message Agent {
   string identifier = 1; // e.g., full name and surname or ID number.
-  repeated Classification classifications = 3; // E.g., the AgentType enum can be used as a classification system.
+  AgentType type = 2;
+  repeated Classification classifications = 3; 
   repeated Agent agents = 4; 
 //  repeated Credential credentials = 5;
 }
