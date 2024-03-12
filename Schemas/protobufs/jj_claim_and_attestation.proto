@@ -4,13 +4,13 @@ message Claim {
 	google.protobuf.Any verb = 3;
 	google.protobuf.Any object = 4;
 	google.protobuf.Any context = 5;
-	repeated google.protobuf.Any attestations = 6;
 }
 
 
 message Attestation {
-	google.protobuf.Any subject = 1;
-	string description = 2;
+	string description = 1;	
+ 	google.protobuf.Any subject = 2; // Claim.subject
 	google.protobuf.Any content = 3;
+ 	// TODO: claim_medium or attestation_medium or just 'medium'.
 	repeated Attestation attestations = 4;
 }
