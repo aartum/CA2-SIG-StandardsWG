@@ -23,6 +23,7 @@ enum ImpactPathwayPosition {
 // Pass by value version:
 
 message ImpactClaim {
+  repeated Identification identifications = 1;
   Agent claimant = 2;
   Period accounting_period = 3;
   repeated Activity activities = 7;
@@ -35,7 +36,7 @@ message ImpactClaim {
 /* Pass by reference version: 
 
 message ImpactClaim {
-  string identifier = 1;
+  repeated Identification identifications = 1;
   string id_agent_claimant = 2;
   Period accounting_period = 3;
   repeated string ids_activities = 7;

@@ -16,6 +16,7 @@ import "g1_agent_role.proto";
 // Pass by value version:
 
 message Activity {
+  repeated Identification identifications = 1;
   string description = 2;
   repeated AgentRole agents = 3;
   Modality modality = 11;
@@ -32,7 +33,7 @@ message Activity {
 /* Pass by reference version:
 
 message Activity {
-  string identifier = 1;
+  repeated Identification identifications = 1;
   string description = 2;
   repeated AgentRole agents = 3;
   Modality modality = 11;

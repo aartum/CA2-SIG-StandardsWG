@@ -7,6 +7,7 @@ import "i_state.proto";
 // Pass by value version:
 
 message StateDiff {
+    repeated Identification identifications = 1;
 	State state_1 = 2;
 	State state_2 = 3;
 }
@@ -14,7 +15,7 @@ message StateDiff {
 / * Pass by reference version:
 
 message StateDiff {
-	string identifier = 1;
+	repeated Identification identifications = 1;
 	string id_state_1 = 2;
 	string id_state_2 = 3;
 }

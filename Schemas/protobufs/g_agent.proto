@@ -18,7 +18,7 @@ enum AgentType {
 // Pass by value version:
 
 message Agent {
-  string identifier = 1; // e.g., full name and surname or ID number.
+  repeated Identification identifications = 1; // e.g., full name and surname or ID number.
   AgentType type_agent = 2;
   repeated Classification classifications = 3; 
   repeated Agent agents = 4; 
@@ -28,7 +28,7 @@ message Agent {
 /* Pass by reference version:
 
 message Agent {
-  string identifier = 1;
+  repeated Identification identifications = 1;
   repeated Classification classifications = 3; 
   repeated string ids_agents = 4; 
 //  repeated Credential credentials = 5;

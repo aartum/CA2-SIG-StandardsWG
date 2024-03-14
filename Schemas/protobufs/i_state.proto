@@ -13,6 +13,7 @@ import "g2_instrument.proto";
 // Pass by value version:
 
 message State {
+    repeated Identification identifications = 1;
 	Parameter parameter = 1; // Via an Environment object, i.e. Environment.parameters[4].
 	Activity provenance = 5; // The activity through which the value of the state was determined.
 	Modality modality = 3; // I.e., counterfactual or real.
@@ -24,7 +25,7 @@ message State {
 /* Pass by reference version:
 
 message State {
-	string identifier = 6;
+	repeated Identification identifications = 1;
 	string id_parameter = 1; 
 	string id_activity_provenance = 5;
 	Modality modality = 3; // I.e., counterfactual or real.

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package base;
+
+message Identification {
+	string system = 1; //The name of the identification system, e.g. "South African National Natural Persons Registry".
+	string version = 2; //The version of the identification system in use here, if relevant, e.g. "1.4".
+	string identifier = 3; //The value of the thing in question according to the system and version identified above, e.g. "9111258877414".
+}

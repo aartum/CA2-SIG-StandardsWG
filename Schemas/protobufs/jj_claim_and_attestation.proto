@@ -1,4 +1,5 @@
 message Claim {
+    repeated Identification identifications = 1;
 	Agent claimant = 1;
 	google.protobuf.Any subject = 2;
 	google.protobuf.Any verb = 3;
@@ -8,6 +9,7 @@ message Claim {
 
 
 message Attestation {
+    repeated Identification identifications = 1;
 	string description = 1;	
  	google.protobuf.Any subject = 2; // Claim.subject
 	google.protobuf.Any content = 3;

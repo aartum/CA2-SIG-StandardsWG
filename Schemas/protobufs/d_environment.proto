@@ -11,6 +11,7 @@ import "c_parameter.proto";
 // Pass by value version:
 
 message Environment {
+  repeated Identification identifications = 1;
   string description = 2; 
   Location location = 6; 
   repeated Parameter parameters = 5; // The defining parameters of the environment.
@@ -22,7 +23,7 @@ message Environment {
 /* Pass by reference version:
 
 message Environment {
-  string identifier = 1;
+  repeated Identification identifications = 1;
   string description = 2; 
   Location location = 6; //TODO. Location is actually a special type of parameter...
   repeated string ids_parameters = 5; // The defining parameters of the environment.

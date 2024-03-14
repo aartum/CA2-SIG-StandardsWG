@@ -14,7 +14,8 @@ message Area {
 }
 
 message Location {
-  Coordinate lat_long = 1;
+  repeated Identification identifications = 1;
+  Coordinate lat_long = 2;
   Area area = 3;
   string country = 4;
   string state = 5; // or province, prefecture
