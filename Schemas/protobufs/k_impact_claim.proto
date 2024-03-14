@@ -27,7 +27,7 @@ message ImpactClaim {
   Period accounting_period = 3;
   repeated Activity activities = 7;
   Control methodology = 4; // An instance of the Control class that represents the applicable accounting standard.
-  StateDiff state_diff = 5;
+  repeated StateDiff state_diffs = 5;
   ImpactPathwayPosition imp_pw_pos = 6;
   repeated ImpactClaim impact_claims = 8;
 }
@@ -40,7 +40,7 @@ message ImpactClaim {
   Period accounting_period = 3;
   repeated string ids_activities = 7;
   string id_methodology = 4; 
-  string id_statediff = 5;
+  repeated string ids_statediff = 5;
   ImpactPathwayPosition imp_pw_pos = 6;
   repeated string ids_impactclaims = 8;
 }
