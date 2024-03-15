@@ -6,5 +6,5 @@ import "a_date_time.proto";
 
 message AccountingPeriod {
 	Period period = 1;
-	string label = 3;
+	repeated Identification identifications = 1;
 }
