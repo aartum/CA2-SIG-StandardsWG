@@ -83,10 +83,10 @@
         <Class IRI="#location"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#measurement_statemenr"/>
+        <Class IRI="#measurement_system"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#mesurement_instrumenr"/>
+        <Class IRI="#mesurement_instrument"/>
     </Declaration>
     <Declaration>
         <Class IRI="#natural_process"/>
@@ -113,7 +113,7 @@
         <Class IRI="#role"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#spatial_paramerter"/>
+        <Class IRI="#spatial_parameter"/>
     </Declaration>
     <Declaration>
         <Class IRI="#spatial_reference_system"/>
@@ -122,10 +122,10 @@
         <Class IRI="#state"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#temoral_reference_system"/>
+        <Class IRI="#temporal_parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#temporal_parameter"/>
+        <Class IRI="#temporal_reference_system"/>
     </Declaration>
     <Declaration>
         <Class IRI="#time_position"/>
@@ -146,7 +146,7 @@
         <Class IRI="#audit_(v)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </Declaration>
     <Declaration>
         <Class IRI="#claim_(v)"/>
@@ -308,7 +308,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#extent"/>
-        <Class IRI="#spatial_paramerter"/>
+        <Class IRI="#spatial_parameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#formula"/>
@@ -324,11 +324,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#identity_claim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#indicator"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#instant"/>
@@ -340,14 +340,14 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#location"/>
-        <Class IRI="#spatial_paramerter"/>
+        <Class IRI="#spatial_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#measurement_statemenr"/>
+        <Class IRI="#measurement_system"/>
         <Class IRI="#control_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#mesurement_instrumenr"/>
+        <Class IRI="#mesurement_instrument"/>
         <Class IRI="#instrument"/>
     </SubClassOf>
     <SubClassOf>
@@ -379,20 +379,20 @@
         <Class IRI="#control_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#spatial_paramerter"/>
+        <Class IRI="#spatial_parameter"/>
         <Class IRI="#parameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#spatial_reference_system"/>
-        <Class IRI="#measurement_statemenr"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#temoral_reference_system"/>
-        <Class IRI="#measurement_statemenr"/>
+        <Class IRI="#measurement_system"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#temporal_parameter"/>
         <Class IRI="#parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_reference_system"/>
+        <Class IRI="#measurement_system"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#time_position"/>
@@ -412,7 +412,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#audit_(n)"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#audit_(v)"/>
@@ -424,7 +424,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#impact_claim_(n)"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#measure_(v)"/>
@@ -432,7 +432,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#report_(n)"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#report_(v)"/>
@@ -464,7 +464,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#spatial_reference_system"/>
-        <Class IRI="#temoral_reference_system"/>
+        <Class IRI="#temporal_reference_system"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#parameter"/>
@@ -516,7 +516,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#guidesClaim"/>
-        <Class IRI="#mesurement_instrumenr"/>
+        <Class IRI="#mesurement_instrument"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasInputParameters"/>
@@ -544,7 +544,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isStatementAboutThing"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
@@ -572,7 +572,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#auditsClaim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#enactsRole"/>
@@ -588,7 +588,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#guidesClaim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasInputParameters"/>
@@ -620,7 +620,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#makesClaim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#operatesInstrument"/>
