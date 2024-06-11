@@ -23,19 +23,28 @@
         <Class IRI="#agent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#audit"/>
+        <Class IRI="#area"/>
     </Declaration>
     <Declaration>
         <Class IRI="#auditor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#calculate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#calibrator"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#claimant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#control"/>
+        <Class IRI="#class"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#developer"/>
+        <Class IRI="#classification_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#duration"/>
     </Declaration>
     <Declaration>
         <Class IRI="#environment"/>
@@ -44,10 +53,43 @@
         <Class IRI="#event"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#extent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#formula"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geocentric_datum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geodetic_datum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identity_claim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#indicator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instant"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#instrument"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#measure"/>
+        <Class IRI="#line"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#measurement_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mesurement_instrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_process"/>
     </Declaration>
     <Declaration>
         <Class IRI="#operator"/>
@@ -59,22 +101,76 @@
         <Class IRI="#parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#procedure"/>
+        <Class IRI="#period"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#project_developer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#role"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#standard"/>
+        <Class IRI="#spatial_parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_reference_system"/>
     </Declaration>
     <Declaration>
         <Class IRI="#state"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#temporal_parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claim(v)"/>
+        <Class IRI="#temporal_reference_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#time_position"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#validate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#verifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#audit_(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#audit_(v)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#claim_(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#claim_(v)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#control_(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#impact_claim_(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#measure_(v)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#process_(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#report_(n)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#report_(v)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#verify_(v)"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#auditsClaim"/>
@@ -179,11 +275,19 @@
         <Datatype IRI="#Modality"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#audit"/>
-        <Class IRI="#activity"/>
+        <Class IRI="#area"/>
+        <Class IRI="#extent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#auditor"/>
+        <Class IRI="#verifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#calculate"/>
+        <Class IRI="#activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#calibrator"/>
         <Class IRI="#role"/>
     </SubClassOf>
     <SubClassOf>
@@ -191,12 +295,64 @@
         <Class IRI="#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#developer"/>
-        <Class IRI="#role"/>
+        <Class IRI="#class"/>
+        <Class IRI="#parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#measure"/>
-        <Class IRI="#activity"/>
+        <Class IRI="#classification_system"/>
+        <Class IRI="#control_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#duration"/>
+        <Class IRI="#temporal_parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#extent"/>
+        <Class IRI="#spatial_parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#formula"/>
+        <Class IRI="#control_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geocentric_datum"/>
+        <Class IRI="#spatial_reference_system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geodetic_datum"/>
+        <Class IRI="#spatial_reference_system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identity_claim"/>
+        <Class IRI="#claim_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#indicator"/>
+        <Class IRI="#claim_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#instant"/>
+        <Class IRI="#temporal_parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#line"/>
+        <Class IRI="#extent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location"/>
+        <Class IRI="#spatial_parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#measurement_system"/>
+        <Class IRI="#control_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mesurement_instrument"/>
+        <Class IRI="#instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_process"/>
+        <Class IRI="#process_(n)"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#operator"/>
@@ -207,17 +363,109 @@
         <Class IRI="#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#procedure"/>
-        <Class IRI="#control"/>
+        <Class IRI="#period"/>
+        <Class IRI="#temporal_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#standard"/>
-        <Class IRI="#instrument"/>
+        <Class IRI="#project"/>
+        <Class IRI="#process_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#claim(v)"/>
+        <Class IRI="#project_developer"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#role"/>
+        <Class IRI="#control_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_parameter"/>
+        <Class IRI="#parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_reference_system"/>
+        <Class IRI="#measurement_system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_parameter"/>
+        <Class IRI="#parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_reference_system"/>
+        <Class IRI="#measurement_system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#time_position"/>
+        <Class IRI="#temporal_parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#validate"/>
         <Class IRI="#activity"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#verifier"/>
+        <Class IRI="#role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volume"/>
+        <Class IRI="#extent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#audit_(n)"/>
+        <Class IRI="#claim_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#audit_(v)"/>
+        <Class IRI="#verify_(v)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#claim_(v)"/>
+        <Class IRI="#activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#impact_claim_(n)"/>
+        <Class IRI="#claim_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#measure_(v)"/>
+        <Class IRI="#activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#report_(n)"/>
+        <Class IRI="#claim_(n)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#report_(v)"/>
+        <Class IRI="#claim_(v)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#verify_(v)"/>
+        <Class IRI="#activity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#area"/>
+        <Class IRI="#line"/>
+        <Class IRI="#volume"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#geocentric_datum"/>
+        <Class IRI="#geodetic_datum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#identity_claim"/>
+        <Class IRI="#indicator"/>
+        <Class IRI="#audit_(n)"/>
+        <Class IRI="#impact_claim_(n)"/>
+        <Class IRI="#report_(n)"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#natural_process"/>
+        <Class IRI="#project"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#spatial_reference_system"/>
+        <Class IRI="#temporal_reference_system"/>
+    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#parameter"/>
         <NamedIndividual IRI="#amount_of_co2_in_atmosphere"/>
@@ -268,7 +516,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#guidesClaim"/>
-        <Class IRI="#standard"/>
+        <Class IRI="#mesurement_instrument"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasInputParameters"/>
@@ -296,7 +544,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isStatementAboutThing"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
@@ -324,7 +572,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#auditsClaim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#enactsRole"/>
@@ -340,7 +588,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#guidesClaim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasInputParameters"/>
@@ -372,7 +620,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#makesClaim"/>
-        <Class IRI="#claim(n)"/>
+        <Class IRI="#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#operatesInstrument"/>
