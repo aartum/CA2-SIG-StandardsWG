@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting"
+     xml:base="http://purl.org/aiaontology"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting">
-    <Prefix name="" IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting"/>
+     ontologyIRI="http://purl.org/aiaontology">
+    <Prefix name="" IRI="http://purl.org/aiaontology"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -17,679 +17,679 @@
         <Literal>https://wiki.hyperledger.org/display/CASIG/Standards+WG</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#agent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#area"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#area"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#auditor"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#calculate"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calculate"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#calibrator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calibrator"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claimant"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claimant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#class"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#class"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#classification_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#classification_system"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#duration"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#environment"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#event"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#event"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#extent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#formula"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#formula"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#geocentric_datum"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geocentric_datum"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#geodetic_datum"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geodetic_datum"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#identity_claim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#identity_claim"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#indicator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#indicator"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#instant"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instant"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#instrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#line"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#line"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#location"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#measurement_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_instrument"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#mesurement_instrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#natural_process"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#natural_process"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#operator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operator"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#owner"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#owner"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#period"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#period"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#project"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#project_developer"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project_developer"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#spatial_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#spatial_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#state"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#state"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#temporal_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#temporal_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_reference_system"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#time_position"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time_position"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#validate"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#validate"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#verifier"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verifier"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#volume"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#volume"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#audit_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(n)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#audit_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(v)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#claim_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(v)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#control_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#impact_claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impact_claim_(n)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#measure_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measure_(v)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#process_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#report_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(n)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#report_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(v)"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#verify_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verify_(v)"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#auditsClaim"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditsClaim"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#enactsRole"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#enactsRole"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#engagesInActivity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#engagesInActivity"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#guidesActivity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesActivity"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#guidesClaim"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesClaim"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasInputParameters"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasInputParameters"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasOutputParameters"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasOutputParameters"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#impactsEnvironment"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isDefinedByParameters"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isDefinedByParameters"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isPerformedWithInstrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isPerformedWithInstrument"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isStatementAboutThing"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isStatementAboutThing"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isTimeDependentValueOfParameter"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#makesClaim"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#makesClaim"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#operatesInstrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operatesInstrument"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#ownsThing"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ownsThing"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesInstrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#usesInstrument"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#agentType"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agentType"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasAccountingPeriod"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasAccountingPeriod"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#name"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#parameterDefinition"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameterDefinition"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#unitOfMeasure"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#unitOfMeasure"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#amount_of_co2_in_atmosphere"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_co2_in_atmosphere"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#amount_of_wood_burned_per_person"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_wood_burned_per_person"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#distance"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#distance"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#duration"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#humidity"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#humidity"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#location"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#temperature"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#temperature_sensor"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature_sensor"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#time"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time"/>
     </Declaration>
     <Declaration>
-        <Datatype IRI="#AgentType"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#AgentType"/>
     </Declaration>
     <Declaration>
-        <Datatype IRI="#ImpactPathwayPosition"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ImpactPathwayPosition"/>
     </Declaration>
     <Declaration>
-        <Datatype IRI="#MethodologyType"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#MethodologyType"/>
     </Declaration>
     <Declaration>
-        <Datatype IRI="#Modality"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#Modality"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#area"/>
-        <Class IRI="#extent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#area"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#auditor"/>
-        <Class IRI="#verifier"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditor"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verifier"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#calculate"/>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calculate"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#calibrator"/>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calibrator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#claimant"/>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claimant"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#class"/>
-        <Class IRI="#parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#class"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#classification_system"/>
-        <Class IRI="#control_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#classification_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#duration"/>
-        <Class IRI="#temporal_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#extent"/>
-        <Class IRI="#spatial_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#formula"/>
-        <Class IRI="#control_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#formula"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#geocentric_datum"/>
-        <Class IRI="#spatial_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geocentric_datum"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#geodetic_datum"/>
-        <Class IRI="#spatial_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geodetic_datum"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#identity_claim"/>
-        <Class IRI="#claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#identity_claim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#indicator"/>
-        <Class IRI="#claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#indicator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#instant"/>
-        <Class IRI="#temporal_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instant"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#line"/>
-        <Class IRI="#extent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#line"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#location"/>
-        <Class IRI="#spatial_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#measurement_system"/>
-        <Class IRI="#control_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_instrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#mesurement_instrument"/>
-        <Class IRI="#instrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#natural_process"/>
-        <Class IRI="#process_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#natural_process"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#operator"/>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#owner"/>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#owner"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#period"/>
-        <Class IRI="#temporal_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#period"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#project"/>
-        <Class IRI="#process_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#project_developer"/>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project_developer"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#role"/>
-        <Class IRI="#control_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#spatial_parameter"/>
-        <Class IRI="#parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#spatial_reference_system"/>
-        <Class IRI="#measurement_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#temporal_parameter"/>
-        <Class IRI="#parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#temporal_reference_system"/>
-        <Class IRI="#measurement_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#time_position"/>
-        <Class IRI="#temporal_parameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time_position"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#validate"/>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#validate"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#verifier"/>
-        <Class IRI="#role"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verifier"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#volume"/>
-        <Class IRI="#extent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#volume"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#audit_(n)"/>
-        <Class IRI="#claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#audit_(v)"/>
-        <Class IRI="#verify_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verify_(v)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#claim_(v)"/>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#impact_claim_(n)"/>
-        <Class IRI="#claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impact_claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#measure_(v)"/>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measure_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#report_(n)"/>
-        <Class IRI="#claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#report_(v)"/>
-        <Class IRI="#claim_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(v)"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#verify_(v)"/>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verify_(v)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#area"/>
-        <Class IRI="#line"/>
-        <Class IRI="#volume"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#area"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#line"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#volume"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#geocentric_datum"/>
-        <Class IRI="#geodetic_datum"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geocentric_datum"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geodetic_datum"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#identity_claim"/>
-        <Class IRI="#indicator"/>
-        <Class IRI="#audit_(n)"/>
-        <Class IRI="#impact_claim_(n)"/>
-        <Class IRI="#report_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#identity_claim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#indicator"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impact_claim_(n)"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(n)"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#natural_process"/>
-        <Class IRI="#project"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#natural_process"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#spatial_reference_system"/>
-        <Class IRI="#temporal_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_reference_system"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#amount_of_co2_in_atmosphere"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_co2_in_atmosphere"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#amount_of_wood_burned_per_person"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_wood_burned_per_person"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#distance"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#distance"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#duration"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#humidity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#humidity"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#location"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#temperature"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#parameter"/>
-        <NamedIndividual IRI="#time"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time"/>
     </ClassAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#impactsEnvironment"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#auditsClaim"/>
-        <Class IRI="#auditor"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditsClaim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#enactsRole"/>
-        <Class IRI="#agent"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#enactsRole"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#engagesInActivity"/>
-        <Class IRI="#agent"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#engagesInActivity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#guidesClaim"/>
-        <Class IRI="#mesurement_instrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesClaim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_instrument"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasInputParameters"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasInputParameters"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasOutputParameters"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasOutputParameters"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#impactsEnvironment"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#impactsEnvironment"/>
-        <Class IRI="#event"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isDefinedByParameters"/>
-        <Class IRI="#environment"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isDefinedByParameters"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPerformedWithInstrument"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isPerformedWithInstrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isStatementAboutThing"/>
-        <Class IRI="#claim_(n)"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isStatementAboutThing"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
-        <Class IRI="#state"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isTimeDependentValueOfParameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#state"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#makesClaim"/>
-        <Class IRI="#claimant"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#makesClaim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claimant"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#operatesInstrument"/>
-        <Class IRI="#operator"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operatesInstrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operator"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#ownsThing"/>
-        <Class IRI="#owner"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ownsThing"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#owner"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usesInstrument"/>
-        <Class IRI="#agent"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#usesInstrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <Class IRI="#agent"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#auditsClaim"/>
-        <Class IRI="#claim_(n)"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditsClaim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#enactsRole"/>
-        <Class IRI="#role"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#enactsRole"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#engagesInActivity"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#engagesInActivity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#guidesActivity"/>
-        <Class IRI="#activity"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesActivity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#guidesClaim"/>
-        <Class IRI="#claim_(n)"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesClaim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasInputParameters"/>
-        <Class IRI="#parameter"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasInputParameters"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasOutputParameters"/>
-        <Class IRI="#parameter"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasOutputParameters"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#impactsEnvironment"/>
-        <Class IRI="#environment"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isDefinedByParameters"/>
-        <Class IRI="#parameter"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isDefinedByParameters"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPerformedWithInstrument"/>
-        <Class IRI="#instrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isPerformedWithInstrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isStatementAboutThing"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isStatementAboutThing"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isTimeDependentValueOfParameter"/>
-        <Class IRI="#parameter"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isTimeDependentValueOfParameter"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#makesClaim"/>
-        <Class IRI="#claim_(n)"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#makesClaim"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#operatesInstrument"/>
-        <Class IRI="#instrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operatesInstrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#ownsThing"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ownsThing"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#usesInstrument"/>
-        <Class IRI="#instrument"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#usesInstrument"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <Class IRI="#activity"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
-        <DataProperty IRI="#unitOfMeasure"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#unitOfMeasure"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
-        <DataProperty IRI="#agentType"/>
-        <Class IRI="#role"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agentType"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#name"/>
-        <Class IRI="#role"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#name"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#parameterDefinition"/>
-        <Class IRI="#parameter"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameterDefinition"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#unitOfMeasure"/>
-        <Class IRI="#parameter"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#unitOfMeasure"/>
+        <Class IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#agentType"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agentType"/>
         <DataOneOf>
             <Literal>LEGAL_PERSON</Literal>
             <Literal>NATURAL_PERSON</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasAccountingPeriod"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasAccountingPeriod"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#name"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#name"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#parameterDefinition"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameterDefinition"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#unitOfMeasure"/>
+        <DataProperty IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#unitOfMeasure"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DatatypeDefinition>
-        <Datatype IRI="#AgentType"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#AgentType"/>
         <DataOneOf>
             <Literal>LEGAL_PERSON</Literal>
             <Literal>NATURAL_PERSON</Literal>
         </DataOneOf>
     </DatatypeDefinition>
     <DatatypeDefinition>
-        <Datatype IRI="#ImpactPathwayPosition"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ImpactPathwayPosition"/>
         <DataOneOf>
             <Literal>DRIVER</Literal>
             <Literal>EFFECT</Literal>
@@ -699,7 +699,7 @@
         </DataOneOf>
     </DatatypeDefinition>
     <DatatypeDefinition>
-        <Datatype IRI="#MethodologyType"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#MethodologyType"/>
         <DataOneOf>
             <Literal>CALCULATION</Literal>
             <Literal>MEASUREMENT</Literal>
@@ -707,7 +707,7 @@
         </DataOneOf>
     </DatatypeDefinition>
     <DatatypeDefinition>
-        <Datatype IRI="#Modality"/>
+        <Datatype IRI="http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#Modality"/>
         <DataOneOf>
             <Literal>COUNTERFACTUAL</Literal>
             <Literal>REAL</Literal>
