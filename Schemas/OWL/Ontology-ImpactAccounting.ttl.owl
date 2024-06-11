@@ -1,0 +1,555 @@
+@prefix : <http://purl.org/aiaontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/aiaontology> .
+
+<http://purl.org/aiaontology> rdf:type owl:Ontology ;
+                               rdfs:comment "https://wiki.hyperledger.org/display/CASIG/Standards+WG" .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#AgentType
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#AgentType> rdf:type rdfs:Datatype ;
+                                                                                 owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:oneOf [ rdf:type rdf:List ;
+                                                                                                                   rdf:first "LEGAL_PERSON" ;
+                                                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                                                              rdf:first "NATURAL_PERSON" ;
+                                                                                                                              rdf:rest rdf:nil
+                                                                                                                            ]
+                                                                                                                 ]
+                                                                                                     ] .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ImpactPathwayPosition
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ImpactPathwayPosition> rdf:type rdfs:Datatype ;
+                                                                                             owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                                                   owl:oneOf [ rdf:type rdf:List ;
+                                                                                                                               rdf:first "DRIVER" ;
+                                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                          rdf:first "EFFECT" ;
+                                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                     rdf:first "EXPOSURE" ;
+                                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                rdf:first "PRESSURE" ;
+                                                                                                                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                           rdf:first "STATE" ;
+                                                                                                                                                                           rdf:rest rdf:nil
+                                                                                                                                                                         ]
+                                                                                                                                                              ]
+                                                                                                                                                   ]
+                                                                                                                                        ]
+                                                                                                                             ]
+                                                                                                                 ] .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#MethodologyType
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#MethodologyType> rdf:type rdfs:Datatype ;
+                                                                                       owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                                             owl:oneOf [ rdf:type rdf:List ;
+                                                                                                                         rdf:first "CALCULATION" ;
+                                                                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                    rdf:first "MEASUREMENT" ;
+                                                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                               rdf:first "SOURCE" ;
+                                                                                                                                               rdf:rest rdf:nil
+                                                                                                                                             ]
+                                                                                                                                  ]
+                                                                                                                       ]
+                                                                                                           ] .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#Modality
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#Modality> rdf:type rdfs:Datatype ;
+                                                                                owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:oneOf [ rdf:type rdf:List ;
+                                                                                                                  rdf:first "COUNTERFACTUAL" ;
+                                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                                             rdf:first "REAL" ;
+                                                                                                                             rdf:rest rdf:nil
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                    ] .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditsClaim
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditsClaim> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditor> ;
+                                                                                   rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#enactsRole
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#enactsRole> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#engagesInActivity
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#engagesInActivity> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesActivity
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesActivity> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesClaim
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#guidesClaim> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_instrument> ;
+                                                                                   rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasInputParameters
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasInputParameters> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasOutputParameters
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasOutputParameters> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> ;
+                                                                                           rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impactsEnvironment> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> ,
+                                                                                                      <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#event> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isDefinedByParameters
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isDefinedByParameters> rdf:type owl:ObjectProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment> ;
+                                                                                             rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isPerformedWithInstrument
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isPerformedWithInstrument> rdf:type owl:ObjectProperty ;
+                                                                                                 rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> ;
+                                                                                                 rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isStatementAboutThing
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isStatementAboutThing> rdf:type owl:ObjectProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> ;
+                                                                                             rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isTimeDependentValueOfParameter
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#isTimeDependentValueOfParameter> rdf:type owl:ObjectProperty ;
+                                                                                                       rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#state> ;
+                                                                                                       rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#makesClaim
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#makesClaim> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claimant> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operatesInstrument
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operatesInstrument> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operator> ;
+                                                                                          rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ownsThing
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#ownsThing> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#owner> ;
+                                                                                 rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#usesInstrument
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#usesInstrument> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument> .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent> ;
+                      rdfs:range <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agentType
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agentType> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> ;
+                                                                                 rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                                              owl:oneOf [ rdf:type rdf:List ;
+                                                                                                          rdf:first "LEGAL_PERSON" ;
+                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                     rdf:first "NATURAL_PERSON" ;
+                                                                                                                     rdf:rest rdf:nil
+                                                                                                                   ]
+                                                                                                        ]
+                                                                                            ] .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasAccountingPeriod
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#hasAccountingPeriod> rdf:type owl:DatatypeProperty ;
+                                                                                           rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#name
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#name> rdf:type owl:DatatypeProperty ;
+                                                                            rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> ;
+                                                                            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameterDefinition
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameterDefinition> rdf:type owl:DatatypeProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> ;
+                                                                                           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#unitOfMeasure
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#unitOfMeasure> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> ;
+                                                                                     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#agent> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#area
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#area> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditor
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#auditor> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verifier> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calculate
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calculate> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calibrator
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#calibrator> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claimant
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claimant> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#class
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#class> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#classification_system
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#classification_system> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#environment> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#event
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#event> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#formula
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#formula> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geocentric_datum
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geocentric_datum> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system> ;
+                                                                                        owl:disjointWith <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geodetic_datum> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geodetic_datum
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#geodetic_datum> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#identity_claim
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#identity_claim> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#indicator
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#indicator> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instant
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instant> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#line
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#line> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_instrument
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_instrument> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#instrument> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#natural_process
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#natural_process> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)> ;
+                                                                                       owl:disjointWith <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operator
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#operator> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#owner
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#owner> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#period
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#period> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project_developer
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#project_developer> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_parameter> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#spatial_reference_system> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system> ;
+                                                                                                owl:disjointWith <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_reference_system> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#state
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#state> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_reference_system
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_reference_system> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measurement_system> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time_position
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time_position> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temporal_parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#validate
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#validate> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verifier
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verifier> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#role> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#volume
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#volume> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#extent> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(n)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(n)> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(v)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(v)> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verify_(v)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(v)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(v)> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#control_(n)> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impact_claim_(n)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impact_claim_(n)> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measure_(v)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#measure_(v)> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#process_(n)> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(n)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(n)> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(n)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(v)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(v)> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#claim_(v)> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verify_(v)
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#verify_(v)> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#activity> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_co2_in_atmosphere
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_co2_in_atmosphere> rdf:type owl:NamedIndividual ,
+                                                                                                            <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_wood_burned_per_person
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#amount_of_wood_burned_per_person> rdf:type owl:NamedIndividual ,
+                                                                                                                 <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#distance
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#distance> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#duration> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#humidity
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#humidity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#location> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature> rdf:type owl:NamedIndividual ,
+                                                                                            <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature_sensor
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#temperature_sensor> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time
+<http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#time> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#parameter> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#area>
+                <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#line>
+                <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#volume>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#identity_claim>
+                <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#indicator>
+                <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#audit_(n)>
+                <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#impact_claim_(n)>
+                <http://www.semanticweb.org/aliiix/ontologies/2022/4/ImpactAccounting#report_(n)>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
