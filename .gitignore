@@ -6,3 +6,4 @@
 *.docx
 *.pdf
 *.Rhistory
+.DS_Store
