@@ -3,7 +3,7 @@ name: Update Documentation
 on:
   push:
     branches:
-      - clean-up-structure
+      - main
     paths:
       - Schemas/OWL/aia.owl
 
