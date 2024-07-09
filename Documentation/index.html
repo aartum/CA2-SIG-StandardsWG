@@ -508,6 +508,12 @@ td {
                   </li>
                   <li>
                     <span>
+                      <a href="#Represent(v)">Represent(v)</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#Verify(v)">Verify(v)</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -792,14 +798,14 @@ td {
               <td><span>
   <span>
     <span>
-      <a href="#compliesWithRequirements">compliesWithRequirements</a>
+      <a href="#isVerifierOf">isVerifierOf</a>
       <sup class="sup-op" title="OWL Object Property">op</sup>
     </span>some<br>
   </span>
 </span> <span class="cardinality">and</span> <span>
   <span>
     <span>
-      <a href="#isVerifierOf">isVerifierOf</a>
+      <a href="#compliesWithRequirements">compliesWithRequirements</a>
       <sup class="sup-op" title="OWL Object Property">op</sup>
     </span>some<br>
   </span>
@@ -1190,6 +1196,30 @@ td {
               <td>
                 <span>
                   <a href="#Agent">Agent</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="DataFormat">
+          <h3>Data Format
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/aiaontology#DataFormat</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Control(n)">Control(n)</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2993,6 +3023,25 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
             </tr>
           </table>
         </div>
+        <div class="property entity" id="Labelhere">
+          <h3>Label here
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/aiaontology#TESTCLASS</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Here's a definition for this class.</p></td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="TemporalParameter">
           <h3>Temporal Parameter
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -3558,6 +3607,12 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
                   </li>
                   <li>
                     <span>
+                      <a href="#DataFormat">DataFormat</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#Formula">Formula</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -3740,6 +3795,30 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
               <td>
                 <span>
                   <a href="#Claim(v)">Claim (v)</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="Represent(v)">
+          <h3>Represent(V)
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/aiaontology#Represent(v)</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Activity">Activity</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -7259,6 +7338,9 @@ Used to relate the subject and value of a Control, for example:</p>
               <a href="#CyberPersona">CyberPersona</a>
             </li>
             <li>
+              <a href="#DataFormat">Data Format</a>
+            </li>
+            <li>
               <a href="#Environment">Environment</a>
             </li>
             <li>
@@ -7355,6 +7437,9 @@ Used to relate the subject and value of a Control, for example:</p>
               <a href="#State">State</a>
             </li>
             <li>
+              <a href="#Labelhere">Label here</a>
+            </li>
+            <li>
               <a href="#TemporalParameter">Temporal Parameter</a>
             </li>
             <li>
@@ -7401,6 +7486,9 @@ Used to relate the subject and value of a Control, for example:</p>
             </li>
             <li>
               <a href="#Report(v)">Report (v)</a>
+            </li>
+            <li>
+              <a href="#Represent(v)">Represent(V)</a>
             </li>
             <li>
               <a href="#Verify(v)">Verify(v)</a>
