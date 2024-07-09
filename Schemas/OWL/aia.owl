@@ -1546,15 +1546,6 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
     
 
 
-    <!-- http://purl.org/aiaontology#TESTCLASS -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#TESTCLASS">
-        <rdfs:label>Label here</rdfs:label>
-        <skos:definition>Here&apos;s a definition for this class.</skos:definition>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/aiaontology#TemporalParameter -->
 
     <owl:Class rdf:about="http://purl.org/aiaontology#TemporalParameter">
