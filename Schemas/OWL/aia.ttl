@@ -805,6 +805,11 @@ Media can be digital or physical"""^^xsd:string ,
               rdfs:label "CyberPersona" .
 
 
+###  http://purl.org/aiaontology#DataFormat
+:DataFormat rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> .
+
+
 ###  http://purl.org/aiaontology#Environment
 :Environment rdf:type owl:Class ;
              rdfs:comment "(PROPOSED) The surroundings and conditions in which a thing exists."@en ;
@@ -1166,6 +1171,11 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
                                         rdfs:subClassOf <http://purl.org/aiaontology#Claim(v)> ;
                                         rdfs:label "Report (v)"^^xsd:string ;
                                         skos:definition "The activity of making a claim about an activity or event according to a specification."^^xsd:string .
+
+
+###  http://purl.org/aiaontology#Represent(v)
+<http://purl.org/aiaontology#Represent(v)> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Activity .
 
 
 ###  http://purl.org/aiaontology#Verify(v)

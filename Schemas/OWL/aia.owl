@@ -1196,6 +1196,14 @@ Media can be digital or physical</rdfs:comment>
     
 
 
+    <!-- http://purl.org/aiaontology#DataFormat -->
+
+    <owl:Class rdf:about="http://purl.org/aiaontology#DataFormat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/aiaontology#Environment -->
 
     <owl:Class rdf:about="http://purl.org/aiaontology#Environment">
@@ -1708,6 +1716,14 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
         <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(v)"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Report (v)</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of making a claim about an activity or event according to a specification.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/aiaontology#Represent(v) -->
+
+    <owl:Class rdf:about="http://purl.org/aiaontology#Represent(v)">
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
     </owl:Class>
     
 
