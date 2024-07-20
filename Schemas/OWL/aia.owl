@@ -9,7 +9,7 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.org/aiaontology">
-        <terms:description xml:lang="en">The aim of this ontology is to provide a general and exhaustive standard for the accounting of human impact on their environment/s</terms:description>
+        <terms:description xml:lang="en">This ontology is a tool for aggregating and consolidating anthropogenic impact accounting data across different standards and vocabularies. The ontology is intended to be generic enough to be used for anthropogenic impact accounting in almost any discipline and context, including climate action impact accounting./s</terms:description>
         <terms:source rdf:resource="https://wiki.hyperledger.org/display/CASIG/An+ontology+for+anthropogenic+impact+accounting"/>
         <terms:title xml:lang="en">An Ontology for Anthropogenic Impact Accounting</terms:title>
     </owl:Ontology>
@@ -144,16 +144,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.org/aiaontology#calculateHasResult -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#calculateHasResult">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Calculate"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Calculation"/>
-    </owl:ObjectProperty>
-    
+   
 
 
     <!-- http://purl.org/aiaontology#calibratedBy -->
@@ -178,8 +169,7 @@
     <!-- http://purl.org/aiaontology#compliesWithRequirements -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#compliesWithRequirements">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Auditor"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Control(n)"/>
+        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
     </owl:ObjectProperty>
     
 
@@ -301,7 +291,16 @@
         <rdfs:domain rdf:resource="http://purl.org/aiaontology#Calculation"/>
         <rdfs:range rdf:resource="http://purl.org/aiaontology#Formula"/>
     </owl:ObjectProperty>
-    
+
+
+
+    <!-- http://purl.org/aiaontology#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasInput">
+        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
+        <rdfs:range rdf:resource="http://purl.org/aiaontology#Thing"/>
+    </owl:ObjectProperty>
+
 
 
     <!-- http://purl.org/aiaontology#hasInstrument -->
@@ -327,6 +326,15 @@
         <rdfs:range rdf:resource="http://purl.org/aiaontology#Control(n)"/>
     </owl:ObjectProperty>
     
+
+
+    <!-- http://purl.org/aiaontology#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasOutput">
+        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
+        <rdfs:range rdf:resource="http://purl.org/aiaontology#Thing"/>
+    </owl:ObjectProperty>
+
 
 
     <!-- http://purl.org/aiaontology#hasParVal -->
@@ -587,19 +595,19 @@
     
 
 
-    <!-- http://purl.org/aiaontology#performedWith -->
+    <!-- http://purl.org/aiaontology#isPerformedWith -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#performedWith">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#usedToPerform"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isPerformedWith">
+        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isUsedToPerform"/>
         <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
         <rdfs:range rdf:resource="http://purl.org/aiaontology#Instrument"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/aiaontology#usedToPerform -->
+    <!-- http://purl.org/aiaontology#isUsedToPerform -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#usedToPerform">
+    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isUsedToPerform">
         <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
         <rdfs:range rdf:resource="http://purl.org/aiaontology#Activity"/>
     </owl:ObjectProperty>
@@ -995,9 +1003,10 @@ is equivalent to the condition (Control) that Activity B only commence after the
     <owl:Class rdf:about="http://purl.org/aiaontology#Activity">
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Activity"/>
         <owl:disjointWith rdf:resource="http://purl.org/aiaontology#Event"/>
-        <rdfs:comment xml:lang="en">A thing that an agent does, which impacts an environment.</rdfs:comment>
-        <rdfs:comment xml:lang="en">An Activity may comprise other Activity/ies, e.g. a project (an Activity) consists of many Activities. Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A thing that an agent does and which impacts an environment.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An Activity may comprise other Activities, e.g., a project (an Activity) consists of many Activities. Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
         <skos:altLabel xml:lang="en">Action</skos:altLabel>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1007,10 +1016,10 @@ is equivalent to the condition (Control) that Activity B only commence after the
     <owl:Class rdf:about="http://purl.org/aiaontology#Agent">
         <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/AgentClass"/>
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:comment xml:lang="en">&quot;An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity.&quot; (http://www.w3.org/ns/prov#Agent)</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:comment xml:lang="en">An agent is a thing that bears some form of responsibility for an activity taking place or for the existence of another thing, and which can be held accountable for it.</rdfs:comment>
         <rdfs:label xml:lang="en">Agent</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1040,6 +1049,7 @@ is equivalent to the condition (Control) that Activity B only commence after the
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim that is validated by formal statement of an official authority</rdfs:comment>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
         <rdfs:label>Attestation(n)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1047,20 +1057,6 @@ is equivalent to the condition (Control) that Activity B only commence after the
     <!-- http://purl.org/aiaontology#Auditor -->
 
     <owl:Class rdf:about="http://purl.org/aiaontology#Auditor">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#compliesWithRequirements"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Verifier"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Auditor</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for a certified agent who conducts an audit.</skos:definition>
@@ -1068,20 +1064,6 @@ is equivalent to the condition (Control) that Activity B only commence after the
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.org/aiaontology#Auditor"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#compliesWithRequirements"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:annotatedTarget>
         <rdfs:comment xml:lang="en">The requirement for an Agent to fulfill the Role of Auditor is that they verify some Claim AND complies with the (legal) Controls for being an Auditor</rdfs:comment>
     </owl:Axiom>
     
@@ -1209,6 +1191,7 @@ Media can be digital or physical</rdfs:comment>
     <owl:Class rdf:about="http://purl.org/aiaontology#Environment">
         <rdfs:comment xml:lang="en">(PROPOSED) The surroundings and conditions in which a thing exists.</rdfs:comment>
         <rdfs:label xml:lang="en">Environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1220,6 +1203,7 @@ Media can be digital or physical</rdfs:comment>
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
         <rdfs:label xml:lang="en">Event</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thing that happens or takes place and which impacts an environment. An event is differentiated from an activity by the absence of explicit human intention.</skos:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1283,6 +1267,7 @@ Media can be digital or physical</rdfs:comment>
     <owl:Class rdf:about="http://purl.org/aiaontology#Instrument">
         <rdfs:label xml:lang="en">Instrument</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thing used to perform an activity.</skos:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1444,6 +1429,7 @@ Media can be digital or physical</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parameter</rdfs:label>
         <skos:altLabel xml:lang="en">Attribute</skos:altLabel>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality or feature forming one of a set that defines something or sets the conditions of its existence or operation.</skos:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1542,6 +1528,7 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
         <rdfs:comment xml:lang="en">The State of an Environment comprises the collection of the States (i.e. the values) of that Environment&apos;s defining parameters.</rdfs:comment>
         <rdfs:label xml:lang="en">State</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A state is the value of a parameter at a specific time position.</skos:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1576,7 +1563,7 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
 
     <owl:Class rdf:about="http://purl.org/aiaontology#Validate">
         <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validate (v)</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validate</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of confirming or demonstrating that something satisfies a specification</skos:definition>
     </owl:Class>
     
@@ -1645,7 +1632,8 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
         <rdfs:label xml:lang="en">Claim (n)</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.w3.org/2003/glossary/keyword/All/assertion.html?keywords=assertion"/>
         <skos:altLabel xml:lang="en">Assertion</skos:altLabel>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim is a statement about a (some specific) thing expressed in a claim medium.</skos:definition>
+        <skos:deinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim is a statement about a (some specific) thing expressed in a claim medium.</skos:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
@@ -1654,7 +1642,7 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
 
     <owl:Class rdf:about="http://purl.org/aiaontology#Claim(v)">
         <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:label xml:lang="en">Claim (v)</rdfs:label>
+        <rdfs:label xml:lang="en">Claim(v)</rdfs:label>
         <skos:altLabel xml:lang="en">Assert</skos:altLabel>
         <skos:definition xml:lang="en">The activity of making a statement about a (specific) thing.</skos:definition>
     </owl:Class>
@@ -1666,6 +1654,7 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
     <owl:Class rdf:about="http://purl.org/aiaontology#Control(n)">
         <rdfs:comment xml:lang="en">A Control may comprise other Controls, e.g. a methodology (a Control) defines many conditions to be met (themselves Controls). Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A means of limiting or directing a thing.</skos:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
     
 
