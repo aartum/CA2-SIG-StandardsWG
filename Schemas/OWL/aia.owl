@@ -379,17 +379,7 @@
         <rdfs:range rdf:resource="http://purl.org/aiaontology#Reputation"/>
         <rdfs:comment xml:lang="en">EDIT</rdfs:comment>
     </owl:ObjectProperty>
-    
 
-
-    <!-- http://purl.org/aiaontology#hasRole -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasRole">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:comment xml:lang="en">EDIT</rdfs:comment>
-    </owl:ObjectProperty>
-    
 
 
     <!-- http://purl.org/aiaontology#hasSubject -->
