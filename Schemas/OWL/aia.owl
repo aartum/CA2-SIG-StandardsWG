@@ -524,7 +524,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isVerifiedBy">
         <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
         <rdfs:domain rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Auditor"/>
+        <rdfs:range rdf:resource="http://purl.org/aiaontology#Verifier"/>
     </owl:ObjectProperty>
     
 
@@ -532,10 +532,31 @@
     <!-- http://purl.org/aiaontology#isVerifierOf -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isVerifierOf">
+        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Verifier"/>
+        <rdfs:range rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://purl.org/aiaontology#isAuditedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isAuditedBy">
+        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isAuditorOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
+        <rdfs:range rdf:resource="http://purl.org/aiaontology#Auditor"/>
+    </owl:ObjectProperty>
+
+
+
+
+    <!-- http://purl.org/aiaontology#isAuditorOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isAuditorOf">
         <rdfs:domain rdf:resource="http://purl.org/aiaontology#Auditor"/>
         <rdfs:range rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
     </owl:ObjectProperty>
-    
+
+
 
 
     <!-- http://purl.org/aiaontology#limitsOrDirects -->
@@ -1036,7 +1057,7 @@ is equivalent to the condition (Control) that Activity B only commence after the
     <!-- http://purl.org/aiaontology#Attestation -->
 
     <owl:Class rdf:about="http://purl.org/aiaontology#Attestation">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim that is validated by formal statement of an official authority</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim that is validated by a formal statement of an official authority.</rdfs:comment>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
         <rdfs:label>Attestation(n)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
