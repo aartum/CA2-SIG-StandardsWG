@@ -1,18 +1,17 @@
 import { z } from "zod";
 
-export const OwlThing = z.object({});
-export type OwlThing = z.infer<typeof OwlThing>;
+export const Thing = z.object({});
+export type Thing = z.infer<typeof Thing>;
 
-type Attribute = OwlThing & {
+type Attribute = Thing & {
   name: string;
   //type: string;
-  value: any;
 };
 
-export const Agent = OwlThing.extend({});
+export const Agent = Thing.extend({});
 export type Agent = z.infer<typeof Agent>;
 
-export const Claim = OwlThing.extend({});
+export const Claim = Thing.extend({});
 export type Claim = z.infer<typeof Claim>;
 
 export const IdentityClaim = Claim.extend({});
@@ -27,7 +26,7 @@ export type StateClaim = z.infer<typeof StateClaim>;
 export const Report = Claim.extend({});
 export type Report = z.infer<typeof Report>;
 
-export const Control = OwlThing.extend({});
+export const Control = Thing.extend({});
 export type Control = z.infer<typeof Control>;
 
 export const ClassificationSystem = Control.extend({});
@@ -74,29 +73,29 @@ export type SpatialReferenceSystem = z.infer<typeof SpatialReferenceSystem>;
 export const TemporalReferenceSystem = Control.extend({});
 export type TemporalReferenceSystem = z.infer<typeof TemporalReferenceSystem>;
 
-export const Environment = OwlThing.extend({});
+export const Environment = Thing.extend({});
 export type Environment = z.infer<typeof Environment>;
 
-export const Event = OwlThing.extend({});
+export const Event = Thing.extend({});
 export type Event = z.infer<typeof Event>;
 
 export const Activity = Event.extend({});
 export type Activity = z.infer<typeof Activity>;
 
-export const Substantiation = OwlThing.extend({});
+export const Substantiation = Thing.extend({});
 export type Substantiation = z.infer<typeof Substantiation>;
 
-export const Instrument = OwlThing.extend({});
+export const Instrument = Thing.extend({});
 export type Instrument = z.infer<typeof Instrument>;
 
-export const Medium = OwlThing.extend({});
+export const Medium = Thing.extend({});
 export type Medium = z.infer<typeof Medium>;
 
-export const Process = OwlThing.extend({});
+export const Process = Thing.extend({});
 export type Process = z.infer<typeof Process>;
 
 export const Project = Process.extend({});
 export type Project = z.infer<typeof Project>;
 
-export const State = OwlThing.extend({});
+export const State = Thing.extend({});
 export type State = z.infer<typeof State>;
