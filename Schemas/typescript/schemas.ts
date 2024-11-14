@@ -9,100 +9,94 @@ type Attribute = OwlThing & {
   value: any;
 };
 
-export const AiaoAgent = OwlThing.extend({});
-export type AiaoAgent = z.infer<typeof AiaoAgent>;
+export const Agent = OwlThing.extend({});
+export type Agent = z.infer<typeof Agent>;
 
-export const AiaoClaim = OwlThing.extend({});
-export type AiaoClaim = z.infer<typeof AiaoClaim>;
+export const Claim = OwlThing.extend({});
+export type Claim = z.infer<typeof Claim>;
 
-export const AiaoIdentityClaim = AiaoClaim.extend({});
-export type AiaoIdentityClaim = z.infer<typeof AiaoIdentityClaim>;
+export const IdentityClaim = Claim.extend({});
+export type IdentityClaim = z.infer<typeof IdentityClaim>;
 
-export const AiaoImpactClaim = AiaoClaim.extend({});
-export type AiaoImpactClaim = z.infer<typeof AiaoImpactClaim>;
+export const ImpactClaim = Claim.extend({});
+export type ImpactClaim = z.infer<typeof ImpactClaim>;
 
-export const AiaoStateClaim = AiaoClaim.extend({});
-export type AiaoStateClaim = z.infer<typeof AiaoStateClaim>;
+export const StateClaim = Claim.extend({});
+export type StateClaim = z.infer<typeof StateClaim>;
 
-export const AiaoReport = AiaoClaim.extend({});
-export type AiaoReport = z.infer<typeof AiaoReport>;
+export const Report = Claim.extend({});
+export type Report = z.infer<typeof Report>;
 
-export const AiaoControl = OwlThing.extend({});
-export type AiaoControl = z.infer<typeof AiaoControl>;
+export const Control = OwlThing.extend({});
+export type Control = z.infer<typeof Control>;
 
-export const AiaoClassificationSystem = AiaoControl.extend({});
-export type AiaoClassificationSystem = z.infer<typeof AiaoClassificationSystem>;
+export const ClassificationSystem = Control.extend({});
+export type ClassificationSystem = z.infer<typeof ClassificationSystem>;
 
-export const AiaoIdentificationSystem = AiaoControl.extend({});
-export type AiaoIdentificationSystem = z.infer<typeof AiaoIdentificationSystem>;
+export const IdentificationSystem = Control.extend({});
+export type IdentificationSystem = z.infer<typeof IdentificationSystem>;
 
-export const AiaoMeasurementSystem = AiaoControl.extend({});
-export type AiaoMeasurementSystem = z.infer<typeof AiaoMeasurementSystem>;
+export const MeasurementSystem = Control.extend({});
+export type MeasurementSystem = z.infer<typeof MeasurementSystem>;
 
-export const AiaoSpatialMeasurementSystem = AiaoMeasurementSystem.extend({});
-export type AiaoSpatialMeasurementSystem = z.infer<
-  typeof AiaoSpatialMeasurementSystem
+export const SpatialMeasurementSystem = MeasurementSystem.extend({});
+export type SpatialMeasurementSystem = z.infer<typeof SpatialMeasurementSystem>;
+
+export const TemporalMeasurementSystem = MeasurementSystem.extend({});
+export type TemporalMeasurementSystem = z.infer<
+  typeof TemporalMeasurementSystem
 >;
 
-export const AiaoTemporalMeasurementSystem = AiaoMeasurementSystem.extend({});
-export type AiaoTemporalMeasurementSystem = z.infer<
-  typeof AiaoTemporalMeasurementSystem
->;
+export const CalculationFormula = Control.extend({});
+export type CalculationFormula = z.infer<typeof CalculationFormula>;
 
-export const AiaoCalculationFormula = AiaoControl.extend({});
-export type AiaoCalculationFormula = z.infer<typeof AiaoCalculationFormula>;
+export const Indicator = Control.extend({});
+export type Indicator = z.infer<typeof Indicator>;
 
-export const AiaoIndicator = AiaoControl.extend({});
-export type AiaoIndicator = z.infer<typeof AiaoIndicator>;
+export const Objective = Control.extend({});
+export type Objective = z.infer<typeof Objective>;
 
-export const AiaoObjective = AiaoControl.extend({});
-export type AiaoObjective = z.infer<typeof AiaoObjective>;
+export const Parameter = Control.extend({});
+export type Parameter = z.infer<typeof Parameter>;
 
-export const AiaoParameter = AiaoControl.extend({});
-export type AiaoParameter = z.infer<typeof AiaoParameter>;
+export const SpatialParameter = Parameter.extend({});
+export type SpatialParameter = z.infer<typeof SpatialParameter>;
 
-export const AiaoSpatialParameter = AiaoParameter.extend({});
-export type AiaoSpatialParameter = z.infer<typeof AiaoSpatialParameter>;
+export const TemporalParameter = Parameter.extend({});
+export type TemporalParameter = z.infer<typeof TemporalParameter>;
 
-export const AiaoTemporalParameter = AiaoParameter.extend({});
-export type AiaoTemporalParameter = z.infer<typeof AiaoTemporalParameter>;
+export const Role = Control.extend({});
+export type Role = z.infer<typeof Role>;
 
-export const AiaoRole = AiaoControl.extend({});
-export type AiaoRole = z.infer<typeof AiaoRole>;
+export const SpatialReferenceSystem = Control.extend({});
+export type SpatialReferenceSystem = z.infer<typeof SpatialReferenceSystem>;
 
-export const AiaoSpatialReferenceSystem = AiaoControl.extend({});
-export type AiaoSpatialReferenceSystem = z.infer<
-  typeof AiaoSpatialReferenceSystem
->;
+export const TemporalReferenceSystem = Control.extend({});
+export type TemporalReferenceSystem = z.infer<typeof TemporalReferenceSystem>;
 
-export const AiaoTemporalReferenceSystem = AiaoControl.extend({});
-export type AiaoTemporalReferenceSystem = z.infer<
-  typeof AiaoTemporalReferenceSystem
->;
+export const Environment = OwlThing.extend({});
+export type Environment = z.infer<typeof Environment>;
 
-export const AiaoEnvironment = OwlThing.extend({});
-export type AiaoEnvironment = z.infer<typeof AiaoEnvironment>;
+export const Event = OwlThing.extend({});
+export type Event = z.infer<typeof Event>;
 
-export const AiaoEvent = OwlThing.extend({});
-export type AiaoEvent = z.infer<typeof AiaoEvent>;
+export const Activity = Event.extend({});
+export type Activity = z.infer<typeof Activity>;
 
-export const AiaoActivity = AiaoEvent.extend({});
-export type AiaoActivity = z.infer<typeof AiaoActivity>;
+export const Substantiation = OwlThing.extend({});
+export type Substantiation = z.infer<typeof Substantiation>;
 
-export const AiaoSubstantiation = OwlThing.extend({});
-export type AiaoSubstantiation = z.infer<typeof AiaoSubstantiation>;
+export const Instrument = OwlThing.extend({});
+export type Instrument = z.infer<typeof Instrument>;
 
-export const AiaoInstrument = OwlThing.extend({});
-export type AiaoInstrument = z.infer<typeof AiaoInstrument>;
+export const Medium = OwlThing.extend({});
+export type Medium = z.infer<typeof Medium>;
 
-export const AiaoMedium = OwlThing.extend({});
-export type AiaoMedium = z.infer<typeof AiaoMedium>;
+export const Process = OwlThing.extend({});
+export type Process = z.infer<typeof Process>;
 
-export const AiaoProcess = OwlThing.extend({});
-export type AiaoProcess = z.infer<typeof AiaoProcess>;
+export const Project = Process.extend({});
+export type Project = z.infer<typeof Project>;
 
-export const AiaoProject = AiaoProcess.extend({});
-export type AiaoProject = z.infer<typeof AiaoProject>;
-
-export const AiaoState = OwlThing.extend({});
-export type AiaoState = z.infer<typeof AiaoState>;
+export const State = OwlThing.extend({});
+export type State = z.infer<typeof State>;
