@@ -27,6 +27,8 @@ export type Control = z.infer<typeof Control>;
 export const Attribute = Thing.extend({
   key: z.string(),
   description: z.string().optional(),
+  type: z.string().optional(), // E.g., 'string', 'number', 'Agent', 'Environment',...
+  unitOfMeasure: z.string().optional(), //TODO. Not sure about this.
   control: Control.optional(),
 });
 export type Attribute = z.infer<typeof Attribute>;
