@@ -25,25 +25,24 @@ export const Control = Thing.extend({
 export type Control = z.infer<typeof Control>;
 
 export const Attribute = Thing.extend({
-  key: z.string(),
-  description: z.string().optional(),
-  type: z.string().optional(), // E.g., 'string', 'number', 'Agent', 'Environment',...
-  unitOfMeasure: z.string().optional(), //TODO. Not sure about this.
-  control: Control.optional(),
+  key: z.string(), // Must be unique across Tolam's system.
+  definition: z.string(),
+  controls: z.array(Control).optional(),
+  // Common controls are:
+  // * type, e.g., 'string', 'number', 'boolean',
+  // * format, e.g., [alnum][16]
+  // * unit of measure, e.g., 'kilogramme'
+  // * range
 });
 export type Attribute = z.infer<typeof Attribute>;
 
 export const AttributeValue = Claim.extend({
-  attributeId: SystemId, // TODO: or attributeKey. Restrict.
-  value: z.unknown(),
-});
-export const ParameterValue = Claim.extend({
-  parameterId: SystemId, // TODO. Restrict.
+  key: z.string(),
   value: z.unknown(),
 });
 
 export const Agent = Thing.extend({
-  attributeValues: z.array(AttributeValue).optional(),
+  attributes: z.array(AttributeValue).optional(),
 });
 export type Agent = z.infer<typeof Agent>;
 
@@ -82,11 +81,21 @@ export type CalculationFormula = z.infer<typeof CalculationFormula>;
 export const Indicator = Control.extend({});
 export type Indicator = z.infer<typeof Indicator>;
 
+export const IndicatorValue = Claim.extend({
+  indicatorId: SystemId,
+  value: z.unknown(),
+});
+
 export const Objective = Control.extend({});
 export type Objective = z.infer<typeof Objective>;
 
 export const Parameter = Control.extend({});
 export type Parameter = z.infer<typeof Parameter>;
+
+export const ParameterValue = Claim.extend({
+  parameterId: SystemId, // TODO. Restrict.
+  value: z.unknown(),
+});
 
 export const SpatialParameter = Parameter.extend({});
 export type SpatialParameter = z.infer<typeof SpatialParameter>;
@@ -94,7 +103,11 @@ export type SpatialParameter = z.infer<typeof SpatialParameter>;
 export const TemporalParameter = Parameter.extend({});
 export type TemporalParameter = z.infer<typeof TemporalParameter>;
 
-export const Role = Control.extend({});
+export const Role = Control.extend({
+  requirements: z.array(z.union([z.string(), Control])),
+  responsibilities: z.array(z.unknown()),
+  restrictions: z.array(z.unknown()),
+});
 export type Role = z.infer<typeof Role>;
 
 export const SpatialReferenceSystem = Control.extend({});
@@ -109,12 +122,31 @@ export const Environment = Thing.extend({
 export type Environment = z.infer<typeof Environment>;
 
 export const Event = Thing.extend({
-  parameters: z.array(Parameter),
+  parameters: z.object({
+    spatialParameters: z.array(SpatialParameter).min(1),
+    temporalParameters: z.array(TemporalParameter).min(1),
+  }),
+  parentId: SystemId.optional(),
+  events: z.array(z.union([SystemId, Event])).optional(),
 });
 export type Event = z.infer<typeof Event>;
 
-export const Activity = Event.extend({});
+export const Activity = Event.extend({
+  controls: z.object({
+    objectives: z.array(z.union([SystemId, Control])).min(1),
+    methodologies: z.array(z.union([SystemId, Control])),
+  }),
+  parentId: SystemId.optional(),
+  activities: z.array(z.union([SystemId, Activity])).optional(),
+});
 export type Activity = z.infer<typeof Activity>;
+
+export const ActivityAgentRelation = Thing.extend({
+  agentId: SystemId,
+  roleId: SystemId,
+  activityId: SystemId,
+});
+export type ActivityAgentRelation = z.infer<typeof ActivityAgentRelation>;
 
 export const Substantiation = Thing.extend({});
 export type Substantiation = z.infer<typeof Substantiation>;
@@ -169,7 +201,7 @@ const allKnownAttributes: Attribute[] = [
       x: "AttributeValue.value",
       operator: "oneOf",
       y: ["NATURAL_PERSON", "LEGAL_ENTITY", "CYBER_PERSONA"],
-    },
+    }, // Maybe collapse the 'control' field to a single string, "Must be one of 'NATURAL_PERSON', 'LEGAL_ENTITY' or 'CYBERPERSONA'." - to make JSON examples easier.
   },
   {
     id: "3456-3456-3456-3456",
@@ -178,7 +210,7 @@ const allKnownAttributes: Attribute[] = [
       "The legal name of the person according to the national register of names for natural persons of their country of citizenship.",
     control: {
       mode: "binding",
-      x: "AttributeVvalue.value",
+      x: "AttributeValue.value",
       operator: "oneOf",
       y: "<all names in the natural persons register of the agent's country of citizenship>",
     },
