@@ -8,3 +8,4 @@
 *.Rhistory
 .DS_Store
 Schemas/typescript/node_modules
+projectDocuments/
