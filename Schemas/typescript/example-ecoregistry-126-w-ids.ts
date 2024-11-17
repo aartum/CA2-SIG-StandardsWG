@@ -9,8 +9,6 @@
 //
 // Document: Project Description Document
 
-// BWB. p.7
-
 // START FROM THE IMPACT CLAIM AND WORK BACKWARDS TO MORE AND MORE DETAIL.
 
 // Agents
@@ -133,8 +131,6 @@
     indicators: []; // Which indicators can be used to express the state of this environment?
   }
 }
-
-// States
 
 // Activities
 {
@@ -272,13 +268,8 @@
   controls: [];
 }
 
-// Controls
+// Impacts
 {
-}
-
-// Claims
-{
-  // Impact claims
   {
     id: "5852-8525-8882-2258";
     environment: "4545-4545-4545-4549";
@@ -297,11 +288,13 @@
     impactValue: 2955.365;
     //impacts: [];
   }
-
   {
     // Social benefits to the local area through their The Social Development Program
   }
+}
 
+// Claims
+{
   // Activity-impact claims
   {
     {
@@ -322,6 +315,7 @@
       id: "1471-2582-3693-9879";
       agent: "<id of the eventual buyer of the right to make the impact claim>";
       impacts: ["5852-8525-8882-2258"];
+      // The publication of this on the Hashgraph marks the end of the validity period of the previous claim.
     }
   }
 }
@@ -334,7 +328,7 @@
   }
 }
 
-// Documents (just "Things")
+// Other "Things"
 {
   {
     // The Cercarbono carbon credits issuance certificate
