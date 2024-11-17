@@ -6,7 +6,7 @@
   controls: [
     // Must be a string of the format [alnum]{6}-[alnum]{6}-[alnum]{6}-[alnum]{4}.
   ];
-  aliases: [];
+  aliases: ["id"];
 }
 {
   key: "id_00054";

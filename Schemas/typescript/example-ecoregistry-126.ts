@@ -11,52 +11,62 @@
 
 // BWB. p.7
 
-
-
-
-
-
-
-// START FROM THE CLAIM AND WORK BACKWARDS TO MORE AND MORE DETAIL.
-
-
-
-
-
+// START FROM THE IMPACT CLAIM AND WORK BACKWARDS TO MORE AND MORE DETAIL.
 
 // Agents
 {
   {
+    id: "7777-8888-9999-4141";
     attributes: [
-      {
-        key: "id_00000",
-        value: "1234-1234-1234-1234"
-      },
+      // {
+      //   key: "id_00000",
+      //   value: "7777-8888-9999-4141"
+      // }
+    ];
+    // Kalyon Güneş Enerjisi Üretim A.Ş
+    // Identification 705818
+    // Location Ehlibeyt, Mevlana Blv. No:201, NEV201 İş Merkezi C Blok
+    // Kat: 33 PK:06520 Çankaya/ANKARA-TÜRKİYE
+    // Telephone number(s) +90 536 271 81 13
+    // E-mail address enerji-iletisim@kalyonenerji.com
+    //
+    // role: project owner
+  }
+
+  {
+    id: "1234-1234-1234-1234";
+    attributes: [
+      // {
+      //   key: "id_00000",
+      //   value: "1234-1234-1234-1234"
+      // },
       {
         key: "commercial_entity_type_00000",
-        value: "LIMITED_LIABILITY_COMPANY"
+        value: "LIMITED_LIABILITY_COMPANY",
       },
       {
         key: "name_5a99c",
-        value: "Ekobil Cevre Hizmetleri Danismanlik Egitim Tarim Hayvancilik Madencilik Insaat Ithalat Ihracat Turizm ve Ticaret Ltd. Sti."
+        value:
+          "Ekobil Cevre Hizmetleri Danismanlik Egitim Tarim Hayvancilik Madencilik Insaat Ithalat Ihracat Turizm ve Ticaret Ltd. Sti.",
       },
       {
         key: "name_5a99d",
-        value: "Ekobil Environmental Services and Consultancy Ltd."
+        value: "Ekobil Environmental Services and Consultancy Ltd.",
       },
       {
         key: "physical_address_00000",
-        value: "<Ahlatlibel Mahallesi 1839 Sokak No 56 , 06805 Çankaya/Ankara, TURKEY>"
+        value:
+          "<Ahlatlibel Mahallesi 1839 Sokak No 56 , 06805 Çankaya/Ankara, TURKEY>",
       },
       {
         key: "email_address_00000",
-        value: "asli.ozcelik@ekobil.com"
+        value: "asli.ozcelik@ekobil.com",
       },
       {
         key: "phone_number_00000",
-        value: "+905057089098"
-      }
-    ]
+        value: "+905057089098",
+      },
+    ];
     // Ekobil Environmental Services and Consultancy Ltd.
     // Ekobil Cevre Hizmetleri Danismanlik Egitim Tarim Hayvancilik Madencilik Insaat Ithalat Ihracat Turizm ve
     // Ticaret Ltd. Sti. Is a limited liability company registered to the Ankara Chamber of Commerce with the
@@ -67,19 +77,11 @@
     //
     // role in the project: project developer (i.e., service provider) (Prepared the Project Description Document)
   }
-  {
-    // Kalyon Güneş Enerjisi Üretim A.Ş
-    // Identification 705818
-    // Location Ehlibeyt, Mevlana Blv. No:201, NEV201 İş Merkezi C Blok
-    // Kat: 33 PK:06520 Çankaya/ANKARA-TÜRKİYE
-    // Telephone number(s) +90 536 271 81 13
-    // E-mail address enerji-iletisim@kalyonenerji.com
-    //
-    // role: project owner
-  }
+
   {
     // TODO: The project design validator(s).
   }
+
   {
     // TODO: The monitoring period result verifier(s).
   }
@@ -92,27 +94,90 @@
     //
     // role: contact person at/for Ekobil w.r.t. this project
   }
+
   {
     // Dr. Murtaza Ata
     // CEO of Kalyon Güneş Enerjisi Üretim A.Ş
   }
+
   {
     // Dr. G. Aslı Sezer Özçelik
     // Contact person at Ekobil Environmental Services and Consultancy Ltd.
   }
-
 }
 
 // Environments
-{}
+{
+  {
+    id: "4545-4545-4545-4549";
+    description: "The atmosphere of planet Earth.";
+    attributes: [
+      // {
+      //   key: "id_00000",
+      //   value: "4545-4545-4545-4549"
+      // }
+    ];
+    parameters: [
+      // parameter-value pairs
+      {
+        id: "", // ID for the parameter that is a vertical extent measured in meter, starting from sea level.
+        value: 6000,
+      },
+      {
+        // temporal parameter
+      },
+      {
+        // content parameter
+      },
+    ];
+    indicators: []; // Which indicators can be used to express the state of this environment?
+  }
+}
+
+// States
 
 // Activities
 {
   {
-    // description: Construction of the solar power plant
-  }
-  {
-    // description: Operation of the solar power plant
+    id: "2222-1111-2222-4241";
+    description: "Construction and operation of the solar power plant. <Can be an entire paragraph or more here.>";
+    attributes: [
+      {
+        name: "Karapinar YEKA Solar Power Plant Project",
+      },
+    ];
+    parameters: [
+      {
+        // Spatial extent
+      },
+      {
+        // Temporal extent
+        startDate: "2020-09-20",
+        endDate: "2030-09-19",
+      },
+    ];
+
+    controls: [
+      // Objectives
+      {
+        // Contribute to the reduction of GHG emissions of Turkey by providing a greenfield power source
+      },
+      {
+        // Contribute solving of the unemployment problem by recruiting local workforce during construction and operation stages.
+      },
+      {
+        // Contribute energy independency of Turkey by providing an alternative for the electricity mix
+      },
+      {
+        // Help reduce thermal power related environmental problems such as air pollution
+      },
+
+      // The PDD as a control.
+      {},
+    ];
+    activities: [
+      // The IDs of all the activities listed hereafter.
+    ];
   }
   {
     // description: Creating and running The Social Development Program
@@ -133,29 +198,29 @@
 
     // (sub-)activities:
     {
-      In April 2021, the project site was opened for grazing for sheep for a while, and 8
-animal crossing ramps were built for sheep to pass through concrete borders. The
-company has started experiments to support the successful implementation of
-grazing within solar energy plants by developing a viable business model. These experiments involve grazing flocks of sheep in the Karapınar Solar Power Plant area.
-In Turkey, the practice of opening solar power plant areas for grazing is not yet
-widespread among plant operators.3
+      //       In April 2021, the project site was opened for grazing for sheep for a while, and 8
+      // animal crossing ramps were built for sheep to pass through concrete borders. The
+      // company has started experiments to support the successful implementation of
+      // grazing within solar energy plants by developing a viable business model. These experiments involve grazing flocks of sheep in the Karapınar Solar Power Plant area.
+      // In Turkey, the practice of opening solar power plant areas for grazing is not yet
+      // widespread among plant operators.3
     }
     {
-      The first grazing trial took place on August 10, 2023, between 06:00 AM and 07:00
-AM, with a flock of around 70 sheep, and it was successfully completed. The
-following day, another trial was conducted using a flock of approximately 300
-sheep under the solar panels.
+      //       The first grazing trial took place on August 10, 2023, between 06:00 AM and 07:00
+      // AM, with a flock of around 70 sheep, and it was successfully completed. The
+      // following day, another trial was conducted using a flock of approximately 300
+      // sheep under the solar panels.
     }
     {
-      As of August 21, 2023, grazing experiments continue with a flock of 600 sheep, and
-the continuation of these trials is planned. In Turkey, the practice of opening solar
-power plant areas for grazing is not yet widespread among plant operators. This is
-mainly due to lack of information, fear of innovation, and numerous
-misconceptions. There is a common concern that sheep might damage solar
-energy installations. However, according to the companies literature research,
-grazing with sheep, particularly aside from goats and cattle, does not harm the
-solar panels and does not pose any security risks from the perspective of the
-sheep. The field studies conducted so far also support this data.(See Annex 3)
+      //       As of August 21, 2023, grazing experiments continue with a flock of 600 sheep, and
+      // the continuation of these trials is planned. In Turkey, the practice of opening solar
+      // power plant areas for grazing is not yet widespread among plant operators. This is
+      // mainly due to lack of information, fear of innovation, and numerous
+      // misconceptions. There is a common concern that sheep might damage solar
+      // energy installations. However, according to the companies literature research,
+      // grazing with sheep, particularly aside from goats and cattle, does not harm the
+      // solar panels and does not pose any security risks from the perspective of the
+      // sheep. The field studies conducted so far also support this data.(See Annex 3)
     }
   }
   {
@@ -171,13 +236,12 @@ sheep. The field studies conducted so far also support this data.(See Annex 3)
     {
       // objectives
       {
-       // ...achieve a net positive impact on biodiversity.  
+        // ...achieve a net positive impact on biodiversity.
       }
     }
   }
   {
     // Each of the following is an activity in its own:
-
     // * Food boxes were donated to 100 households in need during Ramadan.
     // • Saplings were planted by participating in the sapling planting event organized by
     // the Karapınar Municipality.
@@ -195,7 +259,6 @@ sheep. The field studies conducted so far also support this data.(See Annex 3)
     // 2 points for 5 days.
     // • A teacher's lodge is being built by Kalyon Energy in the city center of Karapınar
     // • Student trips to the project are organized frequently.
-
   }
 }
 
@@ -206,43 +269,7 @@ sheep. The field studies conducted so far also support this data.(See Annex 3)
   agentRole: "";
   startDate: "";
   endDate: "";
-  controls: []
-}
-
-// Projects
-{
-  {
-    // name/title: Karapınar YEKA Solar Power Plant Project
-
-    // description:
-    // Kalyon Güneş Enerjisi Üretim A.Ş installed the Karapınar YEKA Solar Power Plant Project in
-    // Konya province,Karapınar district on a 19.2 km2 land. The project is designed as a greenfield
-    // solar photovoltaic power plant and the produced energy will be fed into the Turkish
-    // national grid. The project is the largest solar power plant within the Turkey with the 1000
-    // MWe2 capacity.The project start production on the 20/09/2020.The implementation of
-    // the project lasted approximately three years and it is concluded on the 01/03/2023. The
-    // project aims to generate electricity by using solar power to supply the increasing national
-    // electricity demand in a cleaner and sustainable manner. It reduces the air pollution caused
-    // by the grid connected power plants which are mostly fossil fuel fired.
-    // The project is expected to contribute 4 SDGs which are SDG 7, 8, 11 and 13.
-
-    // Controls
-    {
-      // Objectives
-      {
-        // Contribute to the reduction of GHG emissions of Turkey by providing a greenfield power source
-      }
-      {
-        // Contribute solving of the unemployment problem by recruiting local workforce during construction and operation stages.
-      }
-      {
-        // Contribute energy independency of Turkey by providing an alternative for the electricity mix
-      }
-      {
-        // Help reduce thermal power related environmental problems such as air pollution
-      }
-    }
-  }
+  controls: [];
 }
 
 // Controls
@@ -254,8 +281,41 @@ sheep. The field studies conducted so far also support this data.(See Annex 3)
   // Impact claims
   {
     {
+      id: "9878-8787-7676-5444";
+      claimant: "7777-8888-9999-4141";
+      activity: "2222-1111-2222-4241";
+      impact: {
+        environment: "4545-4545-4545-4549";
+        parameters: [
+          {
+            id: "temporal_extent_00012",
+            value: ["2020-09-20", "2023-09-30"],
+          },
+          {
+            id: "spatial_extent_00004",
+            value: "<same as that of environment 4545-4545-4545-4549>",
+          },
+        ];
+        indicator: ""; // ID for "The amount of GHGs, directly attributable to human activity and expressed in tCO2e, in the specified environment."
+        impactType: "AVOIDED_INCREASE";
+        impactValue: 2955.365;
+        impacts: [];
+      }
+      attributes: [];
+      impactClaims: [];
+    }
+
+    {
       // Social benefits to the local area through their The Social Development Program
     }
+  }
+}
+
+// Substantiations
+{
+  {
+    claim: "9878-8787-7676-5444";
+    substantiation: "8887-7776-5554-4443";
   }
 }
 
@@ -263,8 +323,22 @@ sheep. The field studies conducted so far also support this data.(See Annex 3)
 
 // Documents
 {
-  // Project Description Document
-  // url: ...
-  // Author: Ekobil Environmental Services and Consultancy Ltd
-  // date: 01.03.2024
+  {
+    // The Cercarbono carbon credits issuance certificate
+    id: "8887-7776-5554-4443";
+    description: "Cercarbono carbon credits issuance certificate to Kalyon Güneş Enerjisi Üretim A.Ş. for the first impact verification period of their Karapinar YEKA Solar Power Plant Project.";
+    attributes: [
+      {
+        id: "external_url_0000",
+        value:
+          "<the URL to the Cercarbono carbon credits issuance certificate>",
+      },
+    ];
+  }
+  {
+    // Project Description Document
+    // url: ...
+    // Author: Ekobil Environmental Services and Consultancy Ltd
+    // date: 01.03.2024
+  }
 }

@@ -8,19 +8,13 @@ export const Thing = z.object({
 });
 export type Thing = z.infer<typeof Thing>;
 
-export const Claim = Thing.extend({
-  claimantId: SystemId.optional(), // Must be limited to IDs of agents.
-  content: z.unknown(),
-});
-export type Claim = z.infer<typeof Claim>;
-
 export const Control = Thing.extend({
   mode: z.string().optional(), // TODO: "binding" or "non-binding".
   x: z.unknown(),
   operator: z.string().optional(),
   y: z.unknown(),
   controls: z.array(z.unknown()).optional(), // TODO: An array of Control.
-  applicability: z.array(z.unknown()).optional(), // TODO. An array of Control.
+  applicability: z.array(z.unknown()).optional(), // TODO. An array of State.
 });
 export type Control = z.infer<typeof Control>;
 
@@ -46,6 +40,13 @@ export const Agent = Thing.extend({
 });
 export type Agent = z.infer<typeof Agent>;
 
+export const Claim = Thing.extend({
+  claimant: z.union([SystemId, Agent]),
+  subject: z.union([SystemId, Thing]),
+  content: z.unknown(),
+});
+export type Claim = z.infer<typeof Claim>;
+
 export const IdentityClaim = Claim.extend({});
 export type IdentityClaim = z.infer<typeof IdentityClaim>;
 
@@ -54,6 +55,15 @@ export type ImpactClaim = z.infer<typeof ImpactClaim>;
 
 export const StateClaim = Claim.extend({});
 export type StateClaim = z.infer<typeof StateClaim>;
+
+export const State = Thing.extend({
+  subjectId: SystemId,
+  timestamp: z.string(), // TODO: An ISO8601 date-time string.
+  indicatorId: SystemId.optional(),
+  indicatorValue: z.unknown().optional(),
+  states: z.array(State).optional(),
+});
+export type State = z.infer<typeof State>;
 
 export const Report = Claim.extend({});
 export type Report = z.infer<typeof Report>;
@@ -122,11 +132,8 @@ export const Environment = Thing.extend({
 export type Environment = z.infer<typeof Environment>;
 
 export const Event = Thing.extend({
-  parameters: z.object({
-    spatialParameters: z.array(SpatialParameter).min(1),
-    temporalParameters: z.array(TemporalParameter).min(1),
-  }),
-  parentId: SystemId.optional(),
+  parameters: z.array(ParameterValue), // typically spatial and temporal
+  parent: z.union([SystemId, Event]).optional(),
   events: z.array(z.union([SystemId, Event])).optional(),
 });
 export type Event = z.infer<typeof Event>;
@@ -136,10 +143,28 @@ export const Activity = Event.extend({
     objectives: z.array(z.union([SystemId, Control])).min(1),
     methodologies: z.array(z.union([SystemId, Control])),
   }),
-  parentId: SystemId.optional(),
+  parent: z.union([SystemId, Activity]).optional(),
   activities: z.array(z.union([SystemId, Activity])).optional(),
 });
 export type Activity = z.infer<typeof Activity>;
+
+export const Impact = Event.extend({
+  environment: z.union([SystemId, Environment]),
+  parameters: z.array(ParameterValue),
+  // The spatial parameters will typically be the same as the spatial parameters of the environment
+  // that was impacted, so if environment is specified and properly defined, then they do not have
+  // to be provided again here.
+  // The temporal parameters should indicate the period over which the impact occurred.
+  indicator: z.union([SystemId, Indicator]),
+  impactType: z.union([
+    z.literal("INCREASE"),
+    z.literal("DECREASE"),
+    z.literal("AVOIDED_INCREASE"),
+    z.literal("AVOIDED_DECREASE"),
+  ]),
+  impactValue: z.number(),
+  impacts: z.array(z.union([SystemId, Impact])).optional(),
+});
 
 export const ActivityAgentRelation = Thing.extend({
   agentId: SystemId,
@@ -148,7 +173,10 @@ export const ActivityAgentRelation = Thing.extend({
 });
 export type ActivityAgentRelation = z.infer<typeof ActivityAgentRelation>;
 
-export const Substantiation = Thing.extend({});
+export const Substantiation = Thing.extend({
+  claimId: SystemId,
+  content: z.union([SystemId, Thing]),
+});
 export type Substantiation = z.infer<typeof Substantiation>;
 
 export const Instrument = Thing.extend({});
@@ -162,15 +190,6 @@ export type Process = z.infer<typeof Process>;
 
 export const Project = Process.extend({});
 export type Project = z.infer<typeof Project>;
-
-export const State = Thing.extend({
-  subjectId: SystemId,
-  timestamp: z.string(), // TODO: An ISO8601 date-time string.
-  indicatorId: SystemId.optional(),
-  indicatorValue: z.unknown().optional(),
-  states: z.array(z.unknown()).optional(), // TODO: Replace z.unknown() here with a recursive reference to State.
-});
-export type State = z.infer<typeof State>;
 
 export const SpatialLocation = Indicator.extend({
   spatialReferenceSystemId: SystemId,
@@ -189,56 +208,3 @@ export const TemporalLocation = Indicator.extend({
 //
 //
 //
-
-const allKnownAttributes: Attribute[] = [
-  {
-    id: "2345-2345-2345-2345",
-    key: "agentType",
-    description:
-      "The type of agent. Allowable values are NATURAL_PERSON, LEGAL_ENTITY and CYBERPERSONA.",
-    control: {
-      mode: "binding",
-      x: "AttributeValue.value",
-      operator: "oneOf",
-      y: ["NATURAL_PERSON", "LEGAL_ENTITY", "CYBER_PERSONA"],
-    }, // Maybe collapse the 'control' field to a single string, "Must be one of 'NATURAL_PERSON', 'LEGAL_ENTITY' or 'CYBERPERSONA'." - to make JSON examples easier.
-  },
-  {
-    id: "3456-3456-3456-3456",
-    key: "naturalPersonlegalName",
-    description:
-      "The legal name of the person according to the national register of names for natural persons of their country of citizenship.",
-    control: {
-      mode: "binding",
-      x: "AttributeValue.value",
-      operator: "oneOf",
-      y: "<all names in the natural persons register of the agent's country of citizenship>",
-    },
-  },
-  {
-    id: "4567-4567-4567-4567",
-    key: "bodyMassInKg",
-    description: "The mass of the natural person expressed in kilogramme.",
-    control: {
-      // Well, unit of measure should be kg. Must be greater than 0, etc.
-    },
-  },
-];
-
-const agent1: Agent = {
-  id: "1234-1234-1234-1234",
-  attributeValues: [
-    {
-      attributeId: "2345-2345-2345-2345", // The system ID for the 'agent type' attribute.
-      value: "NATURAL_PERSON",
-    },
-    {
-      attributeId: "3456-3456-3456-3456", // The system ID for the 'legal name according to national register for names of natural persons' attribute.
-      value: "Marcus Alex-Ivan Howard",
-    },
-    {
-      attributeId: "4567-4567-4567-4567", // The system ID for the 'body mass in kg' attribute.
-      value: 56,
-    },
-  ],
-};
