@@ -14,3 +14,10 @@ const state1 = {
     },
   ],
 };
+
+// Remember:
+// We are not trying to describe our own technical implementation in terms of AIAO;
+// we are trying to create a technical implementation that will allow us to describe
+// the world out there (the world of impact accounting) in terms of AIAO.
+
+//  WE NEED TO COMMUNICATE THIS IN JSON! DO NOT LET THE TYPESCRIPT BITS DISTRACT YOU!

@@ -280,38 +280,53 @@
 {
   // Impact claims
   {
-    {
-      id: "9878-8787-7676-5444";
-      claimant: "7777-8888-9999-4141";
-      activity: "2222-1111-2222-4241";
-      impact: {
-        environment: "4545-4545-4545-4549";
-        parameters: [
-          {
-            id: "temporal_extent_00012",
-            value: ["2020-09-20", "2023-09-30"],
-          },
-          {
-            id: "spatial_extent_00004",
-            value: "<same as that of environment 4545-4545-4545-4549>",
-          },
-        ];
-        indicator: ""; // ID for "The amount of GHGs, directly attributable to human activity and expressed in tCO2e, in the specified environment."
-        impactType: "AVOIDED_INCREASE";
-        impactValue: 2955.365;
-        impacts: [];
-      }
-      attributes: [];
-      impactClaims: [];
-    }
+    id: "5852-8525-8882-2258";
+    environment: "4545-4545-4545-4549";
+    parameters: [
+      {
+        id: "temporal_extent_00012",
+        value: ["2020-09-20", "2023-09-30"],
+      },
+      // {
+      //   id: "spatial_extent_00004",
+      //   value: "<same as that of environment 4545-4545-4545-4549>",
+      // },
+    ];
+    indicator: "anthropogenic_ghgs_00000";
+    impactType: "AVOIDED_INCREASE";
+    impactValue: 2955.365;
+    //impacts: [];
+  }
 
+  {
+    // Social benefits to the local area through their The Social Development Program
+  }
+
+  // Activity-impact claims
+  {
     {
-      // Social benefits to the local area through their The Social Development Program
+      id: "1111-2222-7771-8881";
+      activity: "2222-1111-2222-4241";
+      impacts: ["5852-8525-8882-2258"];
+    }
+  }
+
+  // Agent-impact claims
+  {
+    {
+      id: "2221-3332-4443-5554";
+      agent: "7777-8888-9999-4141"; // The project owner.
+      impacts: ["5852-8525-8882-2258"];
+    }
+    {
+      id: "1471-2582-3693-9879";
+      agent: "<id of the eventual buyer of the right to make the impact claim>";
+      impacts: ["5852-8525-8882-2258"];
     }
   }
 }
 
-// Substantiations
+// Claim substantiations
 {
   {
     claim: "9878-8787-7676-5444";
@@ -319,9 +334,7 @@
   }
 }
 
-// Reports
-
-// Documents
+// Documents (just "Things")
 {
   {
     // The Cercarbono carbon credits issuance certificate
@@ -340,5 +353,8 @@
     // url: ...
     // Author: Ekobil Environmental Services and Consultancy Ltd
     // date: 01.03.2024
+  }
+  {
+    // The verification report for the first impact verification period
   }
 }

@@ -67,7 +67,7 @@
       {
         mode: "BINDING",
         operator: "ADHERE_TO",
-        x: "utm_wgs_84_00000",
+        object: "utm_wgs_84_00000",
       },
       {
         // Further rules and requirements applicable to specifically Zone 36N.
@@ -84,6 +84,19 @@
     controls: [
       {
         // Universal Transverse Mercator WGS 84 Zone 36N
+      },
+    ];
+  }
+}
+
+// Indicators
+{
+  {
+    id: "anthropogenic_ghgs_00000";
+    definition: "The amount of GHGs, directly attributable to human activity and expressed in tCO2e, in the specified environment.";
+    controls: [
+      {
+        // Unit of measure is tCO2e.
       },
     ];
   }
