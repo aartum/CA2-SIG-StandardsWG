@@ -1,5 +1,10 @@
+// This file has a .ts extension simply because a .json file does not allow commenting.
+
 // Internally defined sets of values
 {
+  // atomic types:
+  const atomicTypes = ["string", "number", "boolean"]; // TODO: Complete.
+
   // control modes:
   const controlModes = ["BINDING", "NON_BINDING"];
 
@@ -29,7 +34,7 @@
   // TODO: How to specify the level of detail to provide per layer for things like quantification methodologies?
   // TODO: How to specify which agents' details need to be provided per layer? I think this will come from claim-things-by-layer.
 }
-
+//
 // Externally defined sets of values
 {
   {
@@ -47,6 +52,10 @@
   {
     id: "7878-4545-5656-2323";
     description: "The register of identifiers for non-natural legal entities registered with the Ankara Chamber of Commerce.";
+  }
+  {
+    id: "5959-1515-3535-5757";
+    description: "Cercarbono CCS's register of names of activities, projects and programmes.";
   }
 }
 
@@ -74,4 +83,12 @@
       },
     ];
   }
+}
+
+{
+  // The validated project design, as captured in the final, validated version of the Project Design/Description Document is a
+  // control created by the project owner to which they will subject their project.
+  // url: ...
+  // Author: Ekobil Environmental Services and Consultancy Ltd
+  // date: 01.03.2024
 }

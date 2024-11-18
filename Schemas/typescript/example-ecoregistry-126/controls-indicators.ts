@@ -1,3 +1,5 @@
+// This file has a .ts extension simply because a .json file does not allow commenting.
+
 // Indicators
 {
   {

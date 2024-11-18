@@ -1,3 +1,5 @@
+// This file has a .ts extension simply because a .json file does not allow commenting.
+
 // Attribute definitions
 
 {
@@ -9,13 +11,21 @@
   aliases: ["id"];
 }
 {
+  key: "description_00000";
+  definition: "A textual elaboration about a thing.";
+  controls: [
+    // Type must be 'string'.
+  ];
+  aliases: ["description"];
+}
+{
   key: "id_00054";
   definition: "The registration number of a non-natural legal entity as assigned to them by the Ankara Chamber of Commerce.";
   controls: [
     {
       mode: "BINDING",
       operator: "IN",
-      x: "7878-4545-5656-2323",
+      target: "7878-4545-5656-2323",
     },
   ];
 }
@@ -26,7 +36,7 @@
     {
       mode: "BINDING",
       operator: "IN",
-      x: "2487-1652-8442-1646",
+      target: "2487-1652-8442-1646",
     },
   ];
 }
@@ -37,7 +47,7 @@
     {
       mode: "BINDING",
       operator: "IN",
-      x: "8513-5778-2232-5444",
+      target: "8513-5778-2232-5444",
     },
   ];
 }
@@ -48,9 +58,18 @@
     {
       mode: "BINDING",
       operator: "IN",
-      x: "8513-5778-2232-5447",
+      target: "8513-5778-2232-5447",
     },
   ];
+}
+{
+  key: "name_24145";
+  definition: "The name of an activity, project or programme as recorded in the corresponding register of Cercarbono Certified Carbon Standard.";
+  {
+    mode: "BINDING";
+    operator: "IN";
+    target: "5959-1515-3535-5757";
+  }
 }
 {
   key: "phone_number_00000";
@@ -81,7 +100,7 @@
     {
       mode: "BINDING",
       operator: "IN",
-      x: [
+      target: [
         "LIMITED_LIABILITY_COMPANY",
         "PRIVATE_COMPANY",
         "SOLE_PROPRIETORSHIP",

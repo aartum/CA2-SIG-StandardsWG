@@ -3,7 +3,7 @@ import { z } from "zod";
 export const Thing = z.object({
     attributes: z.array(AttributeValue).optional(),
     boundaries: z.array(ParameterValue).optional(),
-    states: z.array(IndicatorValue).optional(),
+    // and then indicators that can be used to express the state(s) of the thing
 });
 
 export const Attribute = z.object({
