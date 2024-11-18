@@ -6,8 +6,6 @@
 // Registry: EcoRegistry
 // Methodology: CDM - ACM0002: Grid-connected electricity generation from renewable sources
 // URL: https://www.ecoregistry.io/projects/126
-//
-// Document: Project Description Document
 
 // START FROM THE IMPACT CLAIM AND WORK BACKWARDS TO MORE AND MORE DETAIL.
 
