@@ -2,7 +2,7 @@
 
 {
   id: "5852-8525-8882-2258";
-  environment: "4545-4545-4545-4549";
+  subject: "4545-4545-4545-4549"; // The ID of the environment that underwent a state change.
   parameters: [
     {
       id: "temporal_extent_00012",
@@ -14,9 +14,9 @@
     // },
   ];
   indicator: "anthropogenic_ghgs_00000";
-  impactType: "AVOIDED_INCREASE";
-  impactValue: 2955.365;
-  //impacts: [];
+  stateChangeType: "INCREASE";
+  stateChangeMagnitude: 2955.365;
+  //stateChanges: [];
 }
 
 {

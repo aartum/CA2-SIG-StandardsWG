@@ -148,22 +148,17 @@ export const Activity = Event.extend({
 });
 export type Activity = z.infer<typeof Activity>;
 
-export const Impact = Event.extend({
-  environment: z.union([SystemId, Environment]),
+export const StateChange = Event.extend({
+  subject: z.union([SystemId, Thing]), // The (ID of the) thing that underwent a state change.
   parameters: z.array(ParameterValue),
-  // The spatial parameters will typically be the same as the spatial parameters of the environment
-  // that was impacted, so if environment is specified and properly defined, then they do not have
-  // to be provided again here.
-  // The temporal parameters should indicate the period over which the impact occurred.
+  // The spatial parameters will typically be the same as the spatial parameters of the thing
+  // that underwent the state change, so if that thing has been specified and properly defined,
+  // then the spatial parameters do not have to be repeated here.
+  // The temporal parameters should indicate the period over which the state change occurred.
   indicator: z.union([SystemId, Indicator]),
-  impactType: z.union([
-    z.literal("INCREASE"),
-    z.literal("DECREASE"),
-    z.literal("AVOIDED_INCREASE"),
-    z.literal("AVOIDED_DECREASE"),
-  ]),
-  impactValue: z.number(),
-  impacts: z.array(z.union([SystemId, Impact])).optional(),
+  stateChangeType: z.union([z.literal("INCREASE"), z.literal("DECREASE")]),
+  stateChangeMagnitude: z.number(),
+  stateChanges: z.array(z.union([SystemId, StateChange])).optional(),
 });
 
 export const ActivityAgentRelation = Thing.extend({

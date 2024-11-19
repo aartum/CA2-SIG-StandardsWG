@@ -92,3 +92,19 @@
   // Author: Ekobil Environmental Services and Consultancy Ltd
   // date: 01.03.2024
 }
+
+{
+  key: "role_activity_owner_00256";
+  description: "The owner of activity '<id of the solar plant activity>'";
+  controls: [
+    {
+      // rules
+    },
+    {
+      // responsibilities
+    },
+    {
+      // requirements
+    },
+  ];
+}

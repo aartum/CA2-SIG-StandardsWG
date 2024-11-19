@@ -20,7 +20,7 @@ const state1 = {
 // we are trying to create a technical implementation that will allow us to describe
 // the world out there (the world of impact accounting) in terms of AIAO.
 
-// WE NEED TO COMMUNICATE THIS IN JSON. DO NOT LET THE TYPESCRIPT BITS DISTRACT YOU!
+// WE NEED TO COMMUNICATE THIS IN JSON. DO NOT LET THE TYPESCRIPT BITS DISTRACT YOU.
 
 // START FROM THE IMPACT CLAIM AND WORK BACKWARDS TO MORE AND MORE DETAIL.
 
@@ -32,8 +32,8 @@ const state1 = {
   // The right of the project owner to claim that they were responsible for the (project's) impact.
   id: "9656-9655-9654-9653";
   claimant: "7777-8888-9999-4141"; // Kalyon Güneş Enerjisi Üretim A.Ş.
-  description: "The claimant hereby claims that they have the right to claim responsibility for the specified proportion of the specified impact.";
-  impact: "5852-8525-8882-2258";
+  description: "The claimant hereby claims that they have the right to claim responsibility for the specified proportion of the specified state change.";
+  stateChange: "5852-8525-8882-2258";
   proportion: "2955.365 / 2955.365";
   substantiations: [
     // The Cercarbono Credits Issuance Certificate

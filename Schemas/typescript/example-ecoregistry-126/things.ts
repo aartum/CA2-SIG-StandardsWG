@@ -8,7 +8,12 @@
   activity: "2222-1111-2222-4241"; // "Karapinar YEKA Solar Power Plant Project"
   controls: [
     {
-      // role: 'PROJECT_OWNER' // synonym (alias) for 'ACTIVITY_OWNER'
+      mode: "BINDING",
+      operator: "ADHERE_TO",
+      target: "role_activity_owner_00256",
+    },
+    {
+      // The temporal parameters within which this relation is valid.
     },
   ];
 }

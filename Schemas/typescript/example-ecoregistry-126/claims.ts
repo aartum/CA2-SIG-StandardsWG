@@ -8,8 +8,11 @@
   {
     id: "1111-2222-7771-8881";
     claimant: "7777-8888-9999-4141"; // Kalyon Güneş Enerjisi Üretim A.Ş (the project OWNER, not the project DEVELOPER - the latter, as a service provider to the former, always acts ON BEHALF OF the former, so the former always carries ultimate responsibility.)
+    description: "";
     activity: "2222-1111-2222-4241"; // The Karapinar YEKA Solar Power Plant Project
-    impacts: ["5852-8525-8882-2258"]; // TODO: Where do we list the additional, claimed but not formally quantified impacts?
+    causalRelation: "PREVENTED"; // TODO. Can only be 'CAUSED' or 'PREVENTED'
+    stateChanges: ["5852-8525-8882-2258"]; // TODO: Where do we list the additional, claimed but not formally quantified impacts?
+    proportion: "2955.365 / 2955.365";
     attributes: [
       {
         // external_reference: <the URL of the monitoring report for the first impact verification period>
@@ -34,7 +37,8 @@
     id: "2221-3332-4443-5554"; // The ID for this agent-impact claim.
     claimant: "7777-8888-9999-4141"; // The agent exercising their right to make the impact statement.
     description: "The claimant hereby exercises their right to claim responsibility for the specified proportion of the specified impact.";
-    impact: "5852-8525-8882-2258";
+    causalRelation: "PREVENTED";
+    stateChanges: ["5852-8525-8882-2258"];
     proportion: "1 / 2955.365";
     substantiations: [
       {
