@@ -12,6 +12,9 @@
     "standards": "http://tolam.io/schemas/v1.0/standards",
     "methodologies": "http://tolam.io/schemas/v1.0/methodologies", 
     "country": "https://schema.org/countryOfOrigin",
+    "projectOwner": "http://tolam.io/schemas/v1.0/projectOwner",
+    "projectDeveloper": "http://tolam.io/schemas/v1.0/projectDeveloper",
+    "verifier": "http://tolam.io/schemas/v1.0/verifier",
     "monitoringPeriod": "http://tolam.io/schemas/v1.0/monitoringPeriod",
     "impactIndicator": 
     {
