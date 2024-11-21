@@ -1,0 +1,215 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "aiao": "http://purl.org/aiaontology#",
+    "tolam": "http://tolam.io/schemas#"
+  },
+  "@graph": [
+    
+    {
+      "@id": "tolam:ActivityImpactSummary",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A summary of an activity-impact claim.",
+      "rdfs:label": "ActivityImpactSummary",
+      "rdfs:subClassOf": {
+        "@id": "aiao:Claim(n)"
+      }
+    },
+    
+    {
+      "@id": "tolam:activityNameL1",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The Tolam Layer 1 name for the activity, programme or project, as recorded in Tolam's register of known activies, programmes and projects.",
+      "rdfs:label": "activityNameL1",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:Activity"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:standards",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The names of the verification standards that were adhered to during a specific impact quantification process. Each name must be recorded in Tolam's register of known standards.",
+      "rdfs:label": "standards",
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "schema:domainIncludes": {
+        "@id": "tolam:ActivityImpactSummary"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:methodologies",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The identifiers of the verification methodologies that were followed during a specific impact quantitification process. Each identifier must be recorded in Tolam's register of known quantification methodologies.",
+      "rdfs:label": "methodologies",
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "schema:domainIncludes": {
+        "@id": "tolam:ActivityImpactSummary"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:monitoringPeriod",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The monitoring period for a specific impact, provided as an array of two strings, with the first string specifying the start date of the monitoring period (inclusively), and the second string specifying the end date of the monitoring period (inclusively). Both strings must be fully qualified ISO 8601 date strings.",
+      "rdfs:label": "monitoringPeriod",
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "schema:domainIncludes": {
+        "@id": "tolam:ActivityImpactSummary"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:impactIndicatorDescriptionL1",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The Tolam Layer 1 description for an indicator of impact, as recorded in Tolam's register of indicators.",
+      "rdfs:label": "impactIndicatorDescriptionL1",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:ImpactIndicator"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:impactType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The type of an impact. Can only be one of 'INCREASE', 'DECREASE', 'AVOIDED_INCREASE', 'AVOIDED_DECREASE', 'REDUCTION', and 'REMOVAL'.",
+      "rdfs:label": "impactType",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:ActivityImpact"
+        },
+        {
+          "@id": "tolam:AgentImpact"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:impactMagnitude",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The magnitude of an impact, expressed as a numeric quantity.",
+      "rdfs:label": "impactMagnitude",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:ActivityImpact"
+        },
+        {
+          "@id": "tolam:AgentImpact"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Number"
+      }
+    },
+    
+    {
+      "@id": "tolam:registry",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of an activity registry, project registry or programme registry, as recorded in Tolam's register of registries.",
+      "rdfs:label": "registry",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:Activity"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "tolam:registryReference",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The registry's reference for the verified impact. Examples include CARBONCER serial numbers and EcoRegistry serial numbers.",
+      "rdfs:label": "registryReference",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:ActivityImpact"
+        },
+        {
+          "@id": "tolam:AgentImpact"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    
+    {
+      "@id": "aiao:substantiations",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A list of references to sources, resources and other things presented in support of a specific claim.",
+      "rdfs:label": "substantiations",
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "aiao:Claim"
+        },
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:ActivityImpact"
+        },
+        {
+          "@id": "tolam:AgentImpact"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    }
+  ]
+}

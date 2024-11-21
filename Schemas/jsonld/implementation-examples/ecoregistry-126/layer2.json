@@ -1,0 +1,30 @@
+{
+  "@context": "http://purl.org/aiaontology/ActivityImpactClaim.jsonld",
+  "@id": "http://tolam.io/activity-impact-claims/<some ID assigned by Tolam to this claim>",
+
+  "claimant": {},
+  "activity": {},
+  "stateChanges": [{}],
+  "substantiations": [{}]
+}
+
+
+
+
+
+{
+  "@context": "https://json-ld.org/contexts/aiao/activity.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+
+{
+  "@context": "https://json-ld.org/contexts/aiao/environment.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+

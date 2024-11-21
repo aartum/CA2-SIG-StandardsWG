@@ -1,0 +1,27 @@
+
+{
+  "@context":
+  {
+    "ActivityImpactSummary": "http://tolam.io/schemas/v1.0/ActivityImpactSummary",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "activityName": 
+    {
+      "@id": "http://tolam.io/schemas/v1.0/activityNameL1",
+      "@type": "@id"
+    },
+    "standards": "http://tolam.io/schemas/v1.0/standards",
+    "methodologies": "http://tolam.io/schemas/v1.0/methodologies", 
+    "country": "https://schema.org/countryOfOrigin",
+    "monitoringPeriod": "http://tolam.io/schemas/v1.0/monitoringPeriod",
+    "impactIndicator": 
+    {
+      "@id": "http://tolam.io/schemas/v1.0/impactIndicatorDescriptionL1",
+      "@type": "@id"
+    },
+    "impactType": "http://tolam.io/schemas/v1.0/impactType",
+    "impactMagnitude": "http://tolam.io/schemas/v1.0/impactMagnitude",
+    "registry": "http://tolam.io/schemas/v1.0/registry",
+    "registryReference": "http://tolam.io/schemas/v1.0/registryReference",
+    "substantiations": "http://tolam.io/schemas/v1.0/substantiations"
+  }
+}

@@ -1,0 +1,55 @@
+{
+    "@context": {
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology#"
+    },
+    "@graph": [
+
+        {
+            "@id": "aiao:claimant",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The agent who is making the claim.",
+            "rdfs:label": "claimant",
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Claim"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                },
+                {
+                    "@id": "aiao:Agent"
+                }
+            ]   
+        },
+        
+        {
+            "@id": "aiao:substantiations",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A list of things, or references to things, presented in support of a specific claim.",
+            "rdfs:label": "substantiations",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Claim"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                },
+                {
+                    "@id": "aiao:Thing"
+                }
+            ]
+        }
+    ]  
+}

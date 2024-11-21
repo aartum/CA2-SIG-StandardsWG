@@ -1,0 +1,12 @@
+{
+    "@context":
+    {
+        "ActivityImpactClaim": "http://purl.org/aiaontology/ActivityImpactClaim",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        
+        "claimant": "http://purl.org/aiaontology/claimant",
+        "activity": "http://purl.org/aiaontology/activity",
+        "stateChange": "http://purl.org/aiaontology/stateChange",
+        "substantiations": "http://purl.org/aiaontology/substantiations"
+    }
+}
