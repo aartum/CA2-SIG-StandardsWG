@@ -39,3 +39,5 @@ const state1 = {
     // The Cercarbono Credits Issuance Certificate
   ];
 }
+
+("This token instance represents the right of the holder to claim responsibility for the specified proportion of the specified impact.");
