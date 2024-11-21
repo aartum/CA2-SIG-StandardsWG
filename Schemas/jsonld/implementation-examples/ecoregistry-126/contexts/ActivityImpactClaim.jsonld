@@ -1,0 +1,46 @@
+
+{
+    "@context":
+    {
+        "ActivityImpactClaim": "http://tolam.io/schemas/v1.0/ActivityImpactClaim",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "activity": {
+            "identifiers": "http://purl.org/aiaontology/identifiers",
+            "description": "http://purl.org/aiaontology/description",
+            "agents": "http://purl.org/aiaontology/agentRoles",
+            "country": "https://schema.org/countryOfOrigin",
+            "registry": "http://tolam.io/schemas/v1.0/registry",
+            "registryReference": "http://tolam.io/schemas/v1.0/registryReference", // This should be part of the registry {}.
+            "activityPeriod": "",
+            "activityArea": "",
+            "objectives": "",
+            "attributes": "",
+            "activities": []
+        },
+        "impacts": [
+            {
+                "description": ".../text",
+                "impactVerificationStandards": "http://tolam.io/schemas/v1.0/impactVerificationStandards",
+                "quantificationMethodologies": [""],
+                "methodologicalTools": [""],
+                "baselineScenario": "",
+                "activityScenario": "",
+                "leakage": "",
+                "additionality": "",
+                "monitoringPeriod": "http://tolam.io/schemas/v1.0/monitoringPeriod",
+                "impactParameters": "", // E.g., in the case of GHG projects, this should list the GHGs considered.
+                "impactIndicator": 
+                {
+                    "@id": "http://tolam.io/schemas/v1.0/impactIndicatorDescriptionL1",
+                    "@type": "@id"
+                },
+                "impactType": "http://tolam.io/schemas/v1.0/impactType",
+                "impactMagnitude": "http://tolam.io/schemas/v1.0/impactMagnitude",
+                "impactBuffer": "http://tolam.io/schemas/v1.0/impactBuffer",
+                "verifier": "http://tolam.io/schemas/v1.0/verifier"
+            }
+        },
+        "substantiations": "http://tolam.io/schemas/v1.0/substantiations",
+        "activityImpactClaims": []
+    }
+}
