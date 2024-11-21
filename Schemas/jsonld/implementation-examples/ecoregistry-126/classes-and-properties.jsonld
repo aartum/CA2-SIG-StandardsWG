@@ -147,6 +147,27 @@
     },
     
     {
+      "@id": "tolam:impactBuffer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "<TODO: The quantity set aside for risk. Same unit as impactMagnitude.>",
+      "rdfs:label": "impactBuffer",
+      "schema:domainIncludes": [
+        {
+          "@id": "tolam:ActivityImpactSummary"
+        },
+        {
+          "@id": "tolam:ActivityImpact"
+        },
+        {
+          "@id": "tolam:AgentImpact"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Number"
+      }
+    },
+
+    {
       "@id": "tolam:registry",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of an activity registry, project registry or programme registry, as recorded in Tolam's register of registries.",

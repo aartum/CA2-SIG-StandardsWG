@@ -1,0 +1,14 @@
+{
+    "@context":
+    {
+        "Activity": "http://purl.org/aiaontology/Activity",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+        "description": "http://purl.org/aiaontology/description",
+        "identifiers": "http://purl.org/aiaontology/identifiers",
+        "temporalExtent": "http://purl.org/aiaontology/temporalExtent",
+        "spatialExtent": "http://purl.org/aiaontology/spatialExtent",
+        "controls": "http://purl.org/aiaontology/controls",
+        "activities": "http://purl.org/aiaontology/activities"
+    }
+}

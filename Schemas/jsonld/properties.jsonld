@@ -1,0 +1,224 @@
+{
+    "@context": {
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology#"
+    },
+    "@graph": [
+
+        {
+            "@id": "aiao:description",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A textual, human-friendly description of a thing.",
+            "rdfs:label": "description",
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                }
+            ]   
+        },
+
+        {
+            "@id": "aiao:attributes",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A list of qualities or features of a thing that can be used, whether independently or in conjunction with other attributes, to identify it.",
+            "rdfs:label": "attributes",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Attribute"
+                }
+            ]   
+        },
+
+        {
+            "@id": "aiao:claimant",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The agent who is making the claim.",
+            "rdfs:label": "claimant",
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Claim"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                },
+                {
+                    "@id": "aiao:Agent"
+                }
+            ]   
+        },
+        
+        {
+            "@id": "aiao:substantiations",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A list of things, or references to things, presented in support of a specific claim.",
+            "rdfs:label": "substantiations",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Claim"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                },
+                {
+                    "@id": "aiao:Thing"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:identifiers",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A list of qualified identifiers, such as names or identification numbers, for a thing.",
+            "rdfs:label": "identifiers",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                },
+                {
+                    "@id": "aiao:Identifier"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:temporalExtent",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The temporal extent of a thing, expressed as a period or duration.",
+            "rdfs:label": "temporalExtent",
+            "rdfs:subClassOf": {
+                "@id": "aiao:TemporalParameter"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Period"
+                },
+                {
+                    "@id": "aiao:Duration"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:spatialExtent",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The spatial extent of a thing, expressed as a line (one dimension), area (two dimensions) or volume (three dimensions).",
+            "rdfs:label": "substantiations",
+            "rdfs:subClassOf": {
+                "@id": "aiao:SpatialParameter"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Line"
+                },
+                {
+                    "@id": "aiao:Area"
+                },
+                {
+                    "@id": "aiao:Volume"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:controls",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The controls (whether binding or non-binding) that limit or guide a thing.",
+            "rdfs:label": "controls",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Control"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:activities",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The activities that an event comprises.",
+            "rdfs:label": "activities",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Activity"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:things",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The things that a thing comprises.",
+            "rdfs:label": "things",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ]
+        }
+    ]  
+}

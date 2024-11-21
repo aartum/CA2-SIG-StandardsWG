@@ -1,0 +1,53 @@
+{
+    "@context": {
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology#"
+    },
+    "@graph": [
+
+        {
+            "@id": "aiao:Attribute",
+            "@type": "rdf:Class",
+            "rdfs:comment": "A quality or feature of a thing that can be used, whether independently or in conjunction with other attributes, to identify it.",
+            "rdfs:label": "Attribute",
+            "rdfs:subClassOf": {
+                "@id": "aiao:Claim"
+            }
+        },
+
+        {
+            "@id": "aiao:Identifier",
+            "@type": "rdf:Class",
+            "rdfs:comment": "A qualified identifier, such as a name or an identification number, for a thing.",
+            "rdfs:label": "Identifier",
+            "rdfs:subClassOf": {
+                "@id": "aiao:Attribute"
+            }
+        },
+
+        {
+            "@id": "aiao:Period",
+            "@type": "rdf:Class",
+            "rdfs:comment": "A period of time specified as a pair of date-time ISO 8601 strings, with the first string indicating the start of the period (inclusively) and the second string indicating the end of the period (inclusively).",
+            "rdfs:label": "Period",
+            "rdfs:subClassOf": {
+                "@id": "aiao:Thing"
+            }
+        },
+
+        {
+            "@id": "aiao:ImpactQuantificationMethodology",
+            "@type": "rdf:Class",
+            "rdfs:comment": "A set of rules and guidelines for quantifying the impact of a particular type of activity.",
+            "rdfs:label": "ImpactQuantificationMethodology",
+            "rdfs:subClassOf": {
+                "@id": "aiao:Control"
+            }
+        }
+
+    ]  
+}

@@ -1,0 +1,10 @@
+{
+    "@context":
+    {
+        "Identifier": "http://purl.org/aiaontology/Identifier",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "key": "https://schema.org/Text",
+        "value": "https://schema.org/Text",
+        "reference": "https://schema.org/Text"
+    }
+}

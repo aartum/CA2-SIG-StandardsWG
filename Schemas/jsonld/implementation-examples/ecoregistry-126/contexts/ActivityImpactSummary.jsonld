@@ -23,6 +23,7 @@
     },
     "impactType": "http://tolam.io/schemas/v1.0/impactType",
     "impactMagnitude": "http://tolam.io/schemas/v1.0/impactMagnitude",
+    "impactBuffer": "http://tolam.io/schemas/v1.0/impactBuffer",
     "registry": "http://tolam.io/schemas/v1.0/registry",
     "registryReference": "http://tolam.io/schemas/v1.0/registryReference",
     "substantiations": "http://tolam.io/schemas/v1.0/substantiations"

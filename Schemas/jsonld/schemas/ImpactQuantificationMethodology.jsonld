@@ -1,0 +1,7 @@
+{
+    "@context":
+    {
+        "Thing": "http://purl.org/aiaontology/Thing",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+}
