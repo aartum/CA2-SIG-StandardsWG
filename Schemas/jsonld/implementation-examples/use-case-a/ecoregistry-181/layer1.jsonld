@@ -1,0 +1,25 @@
+// What about Carbon Buffer?
+// impactIndicator and impactType?
+// List all registryReference?
+{
+    //"@context": "https://json-ld.org/contexts/tolam/activityImpactSummary.jsonld",
+    //"@id": "http://tolam.io/activity-impacts-by-monitoring-period/<Tolam's FID>",
+    "activityName": "PROYECTO CARBONO HASS",
+    "standards": ["Cercarbono Certified Carbon Standard"],
+    "methodologies": ["M/UT/F-A01, v1.1"],
+    "country": "Cloumbia",
+    "projectOwner": "Agrícola Ara S.A.S., Agrocapitan Zomac S.A.S., Agrojar S.A.S. and others",
+    "projectDeveloper": "Forestry Consulting Group S.A.S.",
+    "verifier": "ICONTEC",
+    "monitoringPeriod": ["2018-01-07T00:00:00.000Z", "2023-06-27T23:59:59.999Z"],
+    "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",
+    "impactType": "REMOVAL",
+    "impactMagnitude": "19028",
+    "impactBuffer": "1998",
+    "registry": "EcoRegistry",
+    "registryReference": ["CDC_181_1_29_321_14_R1_XX_CO_1_1_2019_1 to CDC_181_1_29_321_14_R1_XX_CO_1_1_2019_2419"],
+    //"substantiations": [
+        //"<the link to the Cercarbono issuance certificate>",
+        //"<the link to our layer 2 JSON blob for this impact>"
+    ]
+}

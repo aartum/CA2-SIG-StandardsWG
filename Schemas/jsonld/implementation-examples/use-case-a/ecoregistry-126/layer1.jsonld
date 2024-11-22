@@ -1,0 +1,23 @@
+{
+    "@context": "https://json-ld.org/contexts/tolam/activityImpactSummary.jsonld",
+    "@id": "http://tolam.io/activity-impacts-by-monitoring-period/<Tolam's FID>",
+    "activityName": "Karapinar YEKA Solar Power Plant Project",
+    "standards": ["Cercarbono Certified Carbon Standard"],
+    "methodologies": ["ACM0002,v21.0"], 
+    "country": "Turkey",
+    "projectOwner": "KALYON GÜNEŞ ENERJİSİ ÜRETİM ANONİM ŞİRKETİ",
+    "projectDeveloper": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.", 
+    "verifier": "4K Earth Science Private Limited",
+    "monitoringPeriod": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"],
+    "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",
+    "impactType": "REDUCTION",
+    "impactMagnitude": "2955365",
+    "impactBuffer": "0", 
+    "registry": "EcoRegistry",
+    "registryReference": ["CDC_126_19_5_332_1_R6_XX_TR_1_1"],
+    "substantiations": [
+        "<the link to the Cercarbono issuance certificate>",
+        "<the link to our layer 2 JSON blob for this impact>"
+    ]
+}
+// TODO. What about other, unquantified/unverified impacts?

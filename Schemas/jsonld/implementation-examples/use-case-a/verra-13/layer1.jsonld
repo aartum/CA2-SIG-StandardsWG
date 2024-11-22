@@ -1,0 +1,22 @@
+{
+    //"@context": "https://json-ld.org/contexts/tolam/activityImpactSummary.jsonld",
+    //"@id": "http://tolam.io/activity-impacts-by-monitoring-period/<Tolam's FID>",
+    "activityName": "Coal Mine Methane Capture and Use Project at the North Antelope Rochelle Coal Mine Complex",
+    "standards": ["Verified Carbon Standard"],
+    //"methodologies": ["AM0034, v3.2; AM0028, V4.1"],
+    "country": "United States",
+    "projectOwner": "Peabody Energy Corporation",
+    //"projectDeveloper": "",
+    "verifier": "First Environment, Inc.",
+    //"monitoringPeriod": ["2010-01-07T00:00:00.000Z", "2011-05-23T23:59:59.999Z"],
+    "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",
+    "impactType": "REDUCTION",
+    "impactMagnitude": "90462",
+    "impactBuffer": "0",
+    "registry": "Verra",
+    //"registryReference": ["1261-55463905-55464600-VCU-009-APX-CN-5-575-01012010-30062010-0"],
+    //"substantiations": [
+        //"<the link to the Cercarbono issuance certificate>",
+        //"<the link to our layer 2 JSON blob for this impact>"
+    ]
+}
