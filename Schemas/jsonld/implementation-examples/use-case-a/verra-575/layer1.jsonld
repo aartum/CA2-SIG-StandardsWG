@@ -14,7 +14,7 @@
     "impactMagnitude": "492900",
     "impactBuffer": "0",
     "registry": "Verra",
-    "registryReference": ["1261-55463905-55464600-VCU-009-APX-CN-5-575-01012010-30062010-0"],
+    "registryReferences": ["1261-55463905-55464600-VCU-009-APX-CN-5-575-01012010-30062010-0"],
     //"substantiations": [
         //"<the link to the Cercarbono issuance certificate>",
         //"<the link to our layer 2 JSON blob for this impact>"

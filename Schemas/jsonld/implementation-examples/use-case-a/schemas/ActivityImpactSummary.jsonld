@@ -15,16 +15,23 @@
     "projectDeveloper": "http://tolam.io/schemas/v1.0/projectDeveloper",
     "verifier": "http://tolam.io/schemas/v1.0/verifier",
     "monitoringPeriod": "http://tolam.io/schemas/v1.0/monitoringPeriod",
-    "impactIndicator": 
-    {
-      "@id": "http://tolam.io/schemas/v1.0/impactIndicatorDescriptionL1",
-      "@type": "@id"
+    "creditingPeriod": "TODO",
+    "impacts": { 
+        "quantifiedImpacts": "TODO",
+        "unquantifiedImpacts": "TODO"
     },
-    "impactType": "http://tolam.io/schemas/v1.0/impactType",
-    "impactMagnitude": "http://tolam.io/schemas/v1.0/impactMagnitude",
-    "impactBuffer": "http://tolam.io/schemas/v1.0/impactBuffer",
+    // "impactIndicator": 
+    // {
+    //   "@id": "http://tolam.io/schemas/v1.0/impactIndicatorDescriptionL1",
+    //   "@type": "@id"
+    // },
+    // "impactType": "http://tolam.io/schemas/v1.0/impactType",
+    // "impactMagnitude": "http://tolam.io/schemas/v1.0/impactMagnitude",
+    // "tokenProportion": "TODO",
+    // "unitOfMeasure": "TODO",
+    // "impactBuffer": "http://tolam.io/schemas/v1.0/impactBuffer",
     "registry": "http://tolam.io/schemas/v1.0/registry",
-    "registryReference": "http://tolam.io/schemas/v1.0/registryReference",
+    "registryReferences": "http://tolam.io/schemas/v1.0/registryReferences",
     "substantiations": "http://tolam.io/schemas/v1.0/substantiations"
   }
 }

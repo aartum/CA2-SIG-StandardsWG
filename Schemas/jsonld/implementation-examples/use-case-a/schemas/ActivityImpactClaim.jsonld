@@ -10,9 +10,9 @@
             "agents": "http://purl.org/aiaontology/agentRoles",
             "country": "https://schema.org/countryOfOrigin",
             "registry": "http://tolam.io/schemas/v1.0/registry",
-            "registryReference": "http://tolam.io/schemas/v1.0/registryReference", // This should be part of the registry {}.
+            "registryReferences": "http://tolam.io/schemas/v1.0/registryReferences", // This should be part of the registry {}.
             "activityPeriod": "",
-            "activityArea": "",
+            "activityArea": "TODO: two layers: (a) polygon (where possible); (b) ",
             "objectives": "",
             "attributes": "",
             "activities": []
@@ -36,6 +36,7 @@
                 },
                 "impactType": "http://tolam.io/schemas/v1.0/impactType",
                 "impactMagnitude": "http://tolam.io/schemas/v1.0/impactMagnitude",
+                "unitOfMeasure": "TODO.",
                 "impactBuffer": "http://tolam.io/schemas/v1.0/impactBuffer",
                 "verifier": "http://tolam.io/schemas/v1.0/verifier"
             }

@@ -1,6 +1,8 @@
+// Layer 1 should be applicable to any market room. Things like sectoral scope and project/activity scale are therefore not included in Layer 1.
 {
-    "@context": "https://json-ld.org/contexts/tolam/activityImpactSummary.jsonld",
+    "@context": "https://json-ld.org/contexts/tolam/ActivityImpactSummary.jsonld",
     "@id": "http://tolam.io/activity-impacts-by-monitoring-period/<Tolam's FID>",
+    
     "activityName": "Karapinar YEKA Solar Power Plant Project",
     "standards": ["Cercarbono Certified Carbon Standard"],
     "methodologies": ["ACM0002,v21.0"], 
@@ -9,15 +11,27 @@
     "projectDeveloper": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.", 
     "verifier": "4K Earth Science Private Limited",
     "monitoringPeriod": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"],
-    "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",
-    "impactType": "REDUCTION",
-    "impactMagnitude": "2955365",
-    "impactBuffer": "0", 
+    "creditingPeriod": ["2020-09-20T00:00:00.000Z", "2030-09-19T00:00:00.000Z"], // TODO: Fix the 'Z' here to indicate local time, not UCT.
+    "impacts": {
+        "quantifiedImpacts": [{
+            "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",
+            "impactType": "AVOIDANCE",
+            "impactMagnitude": 2955365,
+            //"tokenProportion": "1/2955365", // If this JSON blob becomes token instance metadata, perhaps add this field to make it clear that the token instance only represents 1 of the 299... tonnes.
+            "unitOfMeasure": "tCO2e",
+            "impactBuffer": 0
+        }],
+        "unquantifiedImpacts": [
+            "SDG 7", 
+            "SDG 8",
+            "SDG 11",
+            "SDG 13"
+        ]
+    },
     "registry": "EcoRegistry",
-    "registryReference": ["CDC_126_19_5_332_1_R6_XX_TR_1_1"],
+    "registryReferences": ["CDC_126_19_5_332_1_R6_XX_TR_1_1"], // Try to keep this of length = 1 as far as possible
     "substantiations": [
-        "<the link to the Cercarbono issuance certificate>",
-        "<the link to our layer 2 JSON blob for this impact>"
+        "<the link to the Cercarbono issuance certificate>"//,
+        //"<the link to our layer 2 JSON blob for this impact>" // Link to layer 2 won't work, because that means that L2 should be finalised before token instances can be minted.
     ]
 }
-// TODO. What about other, unquantified/unverified impacts?

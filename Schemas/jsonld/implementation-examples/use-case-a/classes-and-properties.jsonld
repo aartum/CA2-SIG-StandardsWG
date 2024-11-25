@@ -186,10 +186,13 @@
     },
     
     {
-      "@id": "tolam:registryReference",
+      "@id": "tolam:registryReferences",
       "@type": "rdf:Property",
       "rdfs:comment": "The registry's reference for the verified impact. Examples include CARBONCER serial numbers and EcoRegistry serial numbers.",
-      "rdfs:label": "registryReference",
+      "rdfs:label": "registryReferences",
+      "rdfs:subClassOf": {
+        "@id": "schema:ItemList"
+      },
       "schema:domainIncludes": [
         {
           "@id": "tolam:ActivityImpactSummary"

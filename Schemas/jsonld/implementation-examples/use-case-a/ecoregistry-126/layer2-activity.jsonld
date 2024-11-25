@@ -1,0 +1,128 @@
+{
+  "@context": "http://purl.org/aiaontology/Activity.jsonld",
+  "@id": "http://tolam.io/activity/<some ID assigned by Tolam to this activity>",
+  
+  "identifiers": [
+    {
+      "key": "title",
+      "value": "Karapinar YEKA Solar Power Plant Project",
+      "reference": "The name of the project, as registered with Cercarbono."
+    },
+    {
+      "key": "Cercarbono Project ID",
+      "value": "126",
+      "reference": "Cercarbono's ID for the project."
+    }
+  ],
+  "description": "Kalyon Güneş Enerjisi Üretim A.Ş installed the Karapinar YEKA Solar Power Plant Project in Konya province,Karapinar district on a 19.2 km2 land. The project is designed as a greenfield solar photovoltaic power plant and the produced energy will be fed into the Turkish national grid. The project is the largest solar power plant within the Turkey with the 1000 MWe2 capacity.The project start production on the 20/09/2020.The implementation of the project lasted approximately three years and it is concluded on the 01/03/2023. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner. It reduces the air pollution caused by the grid connected power plants which are mostly fossil fuel fired. The project is expected to contribute 4 SDGs which are SDG 7, 8, 11 and 13.",    
+  "agents": [
+    {
+      "@context": "",
+      "@id": "<Tolam's ID for the agent>",
+      "identifiers": [
+        {
+          "key": "name",
+          "value": "KALYON GÜNEŞ ENERJİSİ ÜRETİM ANONİM ŞİRKETİ",
+          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."     
+        },
+        {
+          "key": "chamber_registration_number",
+          "value": "472799-5",
+          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+        },
+        {
+          "key": "central_registration_system_number",
+          "value": "0457059777800001",
+          "reference": "?"
+        }
+      ],
+      "role": "PROJECT_OWNER"
+    },
+    {
+      "@context": "",
+      "@id": "<Tolam's ID for the agent>",
+      "identifiers": [
+        {
+          "key": "name",
+          "value": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.",
+          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."     
+        },
+        {
+          "key": "chamber_registration_number",
+          "value": "415104",
+          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+        },
+        {
+          "key": "mersis_number",
+          "value": "0330013236000012",
+          "reference": "?"
+        }
+      ],
+      "role": "PROJECT_DEVELOPER"
+    }
+  ],
+  "country": "Turkey",
+  "registry": {
+    // TODO: name + reference
+  },
+  "temporalScope": {
+    "activityPeriod": {
+      "description": "The commissioning date of the first inverter is 20.09.2020. Therefore, the start date of the project activity is 20.09.2020. Project license has obtained on 03.09.2020. This license is granted for 31 years 9 months 12 days. Therefore the time limit is defined as: 20.09.2020 and 02.07.2052.",
+      "startDate": "2020-09-20T00:00:00.000", // TODO. Add the time zone qualifier here.
+      "endDate": "2052-07-02T23:59:59:999" // TODO. Add the time zone qualifier here.
+    },
+    "creditingPeriods": {
+      "description": "The crediting period will be equal to 10 years renewable twice. For this project's additionality, the methodological tool 'Additionality of first-of-its-kind project activities Version 03.0' was used. According to this tool, the crediting period of first-of-its kind projects should be 10 years. Therefore, the crediting period of the project was chosen as 10 years. At the end of 10 years, we reserve to apply for a crediting period renewal for two times.",
+      "periods": [
+        {
+          "id": "1",
+          "startDate": "2020-09-20T00:00:00.000Z",
+          "endDate": "2030-09-19T00:00:00.000Z"
+        }
+      ]
+    },
+    "monitoringPeriods": {
+      "description": "The first Monitoring Period is planned to cover the period between 20.09.2020 and 31.07.2023. After the first monitoring period the subsequent monitoring events are planned to be annual if not biannual.",
+      "periods": [
+        {
+          "id": "1",
+          "startDate": "2020-09-20T00:00:00.000Z",
+          "endDate": "2023-09-30T23:59:59.999Z"
+        }
+      ]
+    }
+  },
+  "spatialScope": {
+    "description": "The project is located in the Central Anatolian Region of Turkey, Konya Province, Karapinar District. The closest settlements are located in the west of the Project Area and within the administrative boundaries of Reşadiye Mahallesi. These settlements are Seyit haci, Ekmekçi, Krikitoğlu, Küçükkarakuyu and Büyükkarakuyu from north to south. The spatial extent of the project boundary includes the project power plant / unit and all power plants / units connected physically to the electricity system that the project power plant is connected to. Latitude: 37°45'12.82'' N; Longitude: 33°33'50.92''E.",
+    "spatialExtent": "<TODO: Get from shapefile.>"
+  },
+  "objectives": [
+    "Contribute to the reduction of GHG emissions of Turkey by providing a greenfield power source", 
+    "Contribute solving of the unemployment problem by recruiting local workforce during construction and operation stages.",
+    "Contribute energy independency of Turkey by providing an alternative for the electricity mix.",
+    "Help reduce thermal power related environmental problems such as air pollution."
+  ],
+  "attributes": [
+    {
+      "key": "sectoral_scope",
+      "value": "Sectoral Scope 1-Energy Industries (renewable and non-renewable sources)",
+      "reference": "CDM rules"
+    },
+    {
+      "key": "project_scale",
+      "value": "...removing more than 10,000 tons of CO2e per year. This project is a large-scale project according to the CDM rules.",
+      "reference": "CDM rules"
+    },
+    {
+      "key": "project_type",
+      "value": "avoidance",
+      "reference": "?"
+    }
+  ],
+  "activities": [
+    // TODO?
+  ],
+  "substantiations": "http://tolam.io/schemas/v1.0/substantiations"
+}
+
+

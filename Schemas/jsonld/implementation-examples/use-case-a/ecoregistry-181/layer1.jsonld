@@ -17,7 +17,7 @@
     "impactMagnitude": "19028",
     "impactBuffer": "1998",
     "registry": "EcoRegistry",
-    "registryReference": ["CDC_181_1_29_321_14_R1_XX_CO_1_1_2019_1 to CDC_181_1_29_321_14_R1_XX_CO_1_1_2019_2419"],
+    "registryReferences": ["CDC_181_1_29_321_14_R1_XX_CO_1_1_2019_1 to CDC_181_1_29_321_14_R1_XX_CO_1_1_2019_2419"],
     //"substantiations": [
         //"<the link to the Cercarbono issuance certificate>",
         //"<the link to our layer 2 JSON blob for this impact>"
