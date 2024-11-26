@@ -1,7 +1,10 @@
+// The actual project activity.
+
 {
   "@context": "http://purl.org/aiaontology/Activity.jsonld",
   "@id": "http://tolam.io/activity/<some ID assigned by Tolam to this activity>",
   
+  "description": "Kalyon Güneş Enerjisi Üretim A.Ş installed the Karapinar YEKA Solar Power Plant Project in Konya province,Karapinar district on a 19.2 km2 land. The project is designed as a greenfield solar photovoltaic power plant and the produced energy will be fed into the Turkish national grid. The project is the largest solar power plant within the Turkey with the 1000 MWe2 capacity.The project start production on the 20/09/2020.The implementation of the project lasted approximately three years and it is concluded on the 01/03/2023. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner. It reduces the air pollution caused by the grid connected power plants which are mostly fossil fuel fired. The project is expected to contribute 4 SDGs which are SDG 7, 8, 11 and 13.",    
   "identifiers": [
     {
       "key": "title",
@@ -14,7 +17,6 @@
       "reference": "Cercarbono's ID for the project."
     }
   ],
-  "description": "Kalyon Güneş Enerjisi Üretim A.Ş installed the Karapinar YEKA Solar Power Plant Project in Konya province,Karapinar district on a 19.2 km2 land. The project is designed as a greenfield solar photovoltaic power plant and the produced energy will be fed into the Turkish national grid. The project is the largest solar power plant within the Turkey with the 1000 MWe2 capacity.The project start production on the 20/09/2020.The implementation of the project lasted approximately three years and it is concluded on the 01/03/2023. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner. It reduces the air pollution caused by the grid connected power plants which are mostly fossil fuel fired. The project is expected to contribute 4 SDGs which are SDG 7, 8, 11 and 13.",    
   "agents": [
     {
       "@context": "",

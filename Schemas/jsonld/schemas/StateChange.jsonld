@@ -1,0 +1,1 @@
+// The states should be ordered as such that state1 - state2 will always result in a positive (or zero) value.

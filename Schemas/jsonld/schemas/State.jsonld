@@ -22,6 +22,7 @@
                 "value": "",
                 "provenance": {} // How was this value obtained by the claimant?
             }
-        ]
+        ],
+        "provenance": {}
     }
 }

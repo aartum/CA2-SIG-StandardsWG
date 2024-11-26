@@ -115,7 +115,7 @@
         {
             "@id": "aiao:parameters",
             "@type": "rdf:Property",
-            "rdfs:comment": "A list of parameters defining a particular scope of a thing.",
+            "rdfs:comment": "A list of parameters defining a particular scope or extent of a thing.",
             "rdfs:label": "parameters",
             "rdfs:subClassOf": {
                 "@id": "schema:ItemList"
@@ -261,17 +261,11 @@
         {
             "@id": "aiao:provenance",
             "@type": "rdf:Property",
-            "rdfs:comment": "The source of a value assigned to an attribute, parameter or indicator.",
+            "rdfs:comment": "The source or cause of the thing in question.",
             "rdfs:label": "provenance",
             "schema:domainIncludes": [
                 {
-                    "@id": "aiao:AttributeValue"
-                },
-                {
-                    "@id": "aiao:ParameterValue"
-                },
-                {
-                    "@id": "aiao:IndicatorValue"
+                    "@id": "aiao:Thing"
                 }
             ],
             "schema:rangeIncludes": [

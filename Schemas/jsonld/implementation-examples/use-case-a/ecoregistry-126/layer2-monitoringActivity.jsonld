@@ -1,0 +1,76 @@
+// The activity of monitoring and quantifying the impact of the project activity.
+
+// The actual project activity.
+
+{
+    "@context": "http://purl.org/aiaontology/Activity.jsonld",
+    "@id": "http://tolam.io/activity/<some ID assigned by Tolam to this activity>",
+    
+    "description": "Monitoring and quantifying the impact of the Karapinar YEKA Solar Power Plant Project during its first monitoring period.",    
+    
+    "agents": [
+        {
+            "@context": "",
+            "@id": "<Tolam's ID for the agent>",
+            "identifiers": [
+                {
+                    "key": "name",
+                    "value": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.",
+                    "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."     
+                },
+                {
+                    "key": "chamber_registration_number",
+                    "value": "415104",
+                    "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+                },
+                {
+                    "key": "mersis_number",
+                    "value": "0330013236000012",
+                    "reference": "?"
+                }
+            ],
+            "role": "PRIMARY_AGENT" //?
+        }
+    ],
+    
+    "controls": {
+        "objectives": [
+            "Monitor and quantify the impact of the project activity."
+        ],
+        "monitoringProcedures": {
+            // TODO. (Should be detailed in both the monitoring report and the PDD.)
+        },
+        "impactQuantificationStandards": [
+            {
+                "name": "Cercarbono Certified Carbon Standard",
+                "specification": "Protocol version 4.2"
+            }
+        ],
+        "quantificationMethodologies": [
+            {
+                "code": "ACM0002",
+                "name": "ACM0002: Grid connected electricity generation from renewable sources",
+                "specification": "v21.0"
+            }
+        ],
+        "methodologicalTools": [
+            {
+                "code": "TOOL 02",
+                "name": "TOOL 02: Combined tool to identify the baseline scenario and demonstrate additionality",
+                "specification": "v07.0"
+            },
+            {
+                "code": "TOOL 05",
+                "name": "TOOL 05: Baseline, project and/or leakage emissions from electricity consumption and monitoring of electricity generation",
+                "specification": "v03.0"
+            },
+            {
+                "code": "TOOL 07",
+                "name":  "TOOL 07: Tool to calculate the emission factor for an electricity system",
+                "specification": "v07.0" 
+            }
+        ]
+    }
+}
+
+

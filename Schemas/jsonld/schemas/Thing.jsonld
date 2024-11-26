@@ -3,10 +3,13 @@
     {
         "Thing": "http://purl.org/aiaontology/Thing",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/", 
 
-        "description": "http://purl.org/aiaontology/description",
-        "attributes": "http://purl.org/aiaontology/attributes",
-        "controls": "http://purl.org/aiaontology/controls",
-        "things": "http://purl.org/aiaontology/things"
+        "id": "<A semantic web IRI according to this specification: https://datatracker.ietf.org/doc/html/rfc3987>",
+        "description": "aiao:description",
+        "attributes": "aiao:attributes",
+        "parameters": "aiao:parameters",
+        "things": "aiao:things",
+        "provenance": "aiao:provenance"
     }
 }
