@@ -1,0 +1,141 @@
+{
+    "@context": "http://purl.org/aiaontology/StateChangeClaim.jsonld",
+    "@id": "http://tolam.io/state-change-claims/<some ID assigned by Tolam to this claim>",
+    
+    "claimant": {
+        "@id": "<Tolam's ID for the project owner.>"
+    },
+    
+    "stateChanges": [
+        {
+            "description": "Intentional state change caused by the Karapinar YEKA Solar Power Plant Project. Avoidance of GHG emissions from non-renewable energy sources by supplying electricity from renewable energy sources to Turkey's national electricity grid.",
+            "subject": {},
+            "state1": {
+                "description": "Baseline scenario. In the baseline scenario of the project, Karapinar YEKA Solar Power Plant has an effect on power generation of existing power plants attached to the grid; the electricity generation from these existing generators is reduced. Since Turkey's grid mainly consists of thermal power plants, this has resulted in GHG emissions. Therefore baseline emissions for this project include only CO2 emissions from electricity generation in fossil fuel fired power plants that are displaced due to the project activity.",
+                "subject": {}, // The thing of which this is a state.
+                "modality": "AVOIDED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                "temporalLocation": "", // TODO: When this state occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+                "indicatorValues": [
+                    {
+                        "indicator": {
+                            "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                            "unitOfMeasure": "tCO2e",
+                            "controls": []
+                        },
+                        "value": "",
+                        "provenance": "TODO, if necessary."
+                    }
+                ],
+                "provenance": {
+                    "description": "Electricity generation for supply to Turkey's national electricity grid, in the absence of the project activity."
+                }
+            },
+            "state2": {
+                "description": "Project scenario. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner.",
+                "subject": {}, // The thing of which this is a state.
+                "modality": "REALISED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                "temporalLocation": "", // TODO: When this state occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+                "indicatorValues": [
+                    {
+                        "indicator": {
+                            "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                            "unitOfMeasure": "tCO2e",
+                            "controls": []
+                        },
+                        "value": "",
+                        "provenance": {
+                            "@id": "<Tolam's ID for the activity (by the proj dev/owner) of monitoring and quantifying the project's impact.>"
+                        }
+                    }
+                ],
+                "provenance": {
+                    "@id": "<Tolam's ID for the project activity.>"
+                }
+            },
+            "additionality": "The project activity meets the criteria for additionality since project activity is first of its kind due to the new technologies utilized and the size of the CCMP. Cercarbono's Tool to Demonstrate Additionality of Climate Change Mitigation Initiatives Version 2.0.1 shall be used to demonstrate the additionality of the proposed project activity. There is no reason to believe that the state change would have occurred without the presence of the project activity.",
+            "asImpact": {
+                "impactIndicator": "Greenhouse gas emissions within the project activity area and attributable to the project activity.",
+                "impactType": "AVOIDED_INCREASE",
+                "impactMagnitude": 2955365,
+                "unitOfMeasure": "tCO2e"
+            }
+        },
+        {
+            "description": "Unintentional state change (leakage) caused by the Karapinar YEKA Solar Power Plant Project. The main emissions potentially giving rise to leakage are emissions arising due to activities such as power plant construction and upstream emissions from fossil fuel use (e.g. extraction, processing, transport). However according to ACM0002 Version 21.0 para 61 ,these emission sources can be neglected, therefore there are no leakage emissions related to project activity. There is also no Project emission in the Project which is detailed in the section 3.2.",
+            "subject": {},
+            "state1": {
+                "description": "Activity scenario...",
+                "subject": {}, // The thing of which this is a state.
+                "modality": "REALISED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                "temporalLocation": "", // TODO: When this state occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+                "indicatorValues": [
+                    {
+                        "indicator": {
+                            "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                            "unitOfMeasure": "tCO2e",
+                            "controls": []
+                        },
+                        "value": "",
+                        "provenance": "" // TODO: provenance vs. substantiation.
+                    }
+                ]
+            },
+            "state2": {
+                "description": "Baseline scenario...",
+                "subject": {}, // The thing of which this is a state.
+                "modality": "AVOIDED", // One of "COUNTERFACTUAL", "REALISED" (with "BASELINE" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                "temporalLocation": "", // TODO: When this state occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+                "indicatorValues": [
+                    {
+                        "indicator": {
+                            "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                            "unitOfMeasure": "tCO2e",
+                            "controls": []
+                        },
+                        "value": "",
+                        "provenance": ""
+                    }
+                ]
+            },
+            "additionality": "The leakage would not have occurred if the project activity did not occur.",
+            "asImpact": {
+                "impactIndicator": "Greenhouse gas emissions outside of the project activity area and attributable to the project activity.",
+                "impactType": "REALISED_INCREASE",
+                "impactMagnitude": 0,
+                "unitOfMeasure": "tCO2e"
+            }
+        }
+    ],
+    
+    "substantiations": [
+        {
+            // The attestation by the verifier
+            "claimant": {
+                "attributes": [
+                    {
+                        "key": "name",
+                        "value": "4K Earth Science Private Limited",
+                        "reference": "?"
+                    },
+                    {
+                        // UNFCCC Ref No. CDM-E-0069
+                        // Contact information:
+                        // Their physical address, email address, email address
+                    },
+                    {
+                        // website
+                        "http://www.4kearthscience.com"
+                    }
+                ]
+            },
+            "scope": "<Verification report and annexes, section 1.5>",
+            "substantiations": ["<link to the verifier's verification statement>"]
+        },
+        "<link to the verified monitoring report>", 
+        "<link to the verifier's feedback on the monitoring report>",
+        "<links to any public raw data>"
+    ]
+}
+
+
+
