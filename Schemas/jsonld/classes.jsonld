@@ -30,6 +30,16 @@
         },
 
         {
+            "@id": "aiao:Parameter",
+            "@type": "rdf:Class",
+            "rdfs:comment": "A limit or boundary wich defines the scope or extent of a thing.",
+            "rdfs:label": "Parameter",
+            "rdfs:subClassOf": {
+                "@id": "aiao:Control"
+            }
+        },
+
+        {
             "@id": "aiao:Period",
             "@type": "rdf:Class",
             "rdfs:comment": "A period of time specified as a pair of date-time ISO 8601 strings, with the first string indicating the start of the period (inclusively) and the second string indicating the end of the period (inclusively).",

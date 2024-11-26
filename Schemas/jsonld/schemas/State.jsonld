@@ -1,0 +1,27 @@
+{
+    "@context":
+    {
+        "State": "http://purl.org/aiaontology/State",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/",
+        
+        "description": "",
+        "subject": {
+            "@id": ""
+        }, // The thing of which this is a state.
+        "modality": "", // One of "COUNTERFACTUAL", "REALISED" (with "BASELINE" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+        "temporalExtent": "", // TODO: When this state (would have) occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+        "indicatorValues": [
+            {
+                "indicator": {
+                    "@id": "", 
+                    "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                    "unitOfMeasure": "tCO2e",
+                    "controls": []
+                },
+                "value": "",
+                "provenance": {} // How was this value obtained by the claimant?
+            }
+        ]
+    }
+}

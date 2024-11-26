@@ -24,6 +24,7 @@ export const Attribute = z.object({
 export const AttributeValue = Claim.extend({
   key: z.string(), // The key of the attribute
   value: z.unknown(),
+  provenance: Thing
 });
 
 
@@ -57,6 +58,7 @@ export const Parameter = Control.extend({});
 export const ParameterValue = Claim.extend({
   parameterId: SystemId, // TODO. Restrict.
   value: z.unknown(),
+  provenance: Thing
 });
 
 export const Indicator = Control.extend({});
@@ -64,6 +66,7 @@ export const Indicator = Control.extend({});
 export const IndicatorValue = Claim.extend({
   indicatorId: SystemId,
   value: z.unknown(),
+  provenance: Thing
 });
 
 

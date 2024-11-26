@@ -3,12 +3,13 @@
     {
         "Activity": "http://purl.org/aiaontology/Activity",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/",
 
-        "description": "http://purl.org/aiaontology/description",
-        "identifiers": "http://purl.org/aiaontology/identifiers",
-        "temporalExtent": "http://purl.org/aiaontology/temporalExtent",
-        "spatialExtent": "http://purl.org/aiaontology/spatialExtent",
-        "controls": "http://purl.org/aiaontology/controls",
-        "activities": "http://purl.org/aiaontology/activities"
+        "description": "aiao:description",
+        "identifiers": "aiao:identifiers",
+        "temporalExtent": "aiao:temporalExtent",
+        "spatialExtent": "aiao:spatialExtent",
+        "controls": "aiao:controls",
+        "activities": "aiao:activities"
     }
 }
