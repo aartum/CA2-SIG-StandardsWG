@@ -11,7 +11,7 @@
     "projectDeveloper": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.", 
     "verifier": "4K Earth Science Private Limited",
     "monitoringPeriod": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"],
-    "creditingPeriod": ["2020-09-20T00:00:00.000Z", "2030-09-19T00:00:00.000Z"], // TODO: Fix the 'Z' here to indicate local time, not UCT.
+    "creditingPeriod": ["2020-09-20T00:00:00.000Z", "2030-09-19T00:00:00.000Z"], // TODO: Fix the 'Z' here to indicate local time, not UTC.
     "impacts": {
         "quantifiedImpacts": [{
             "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",

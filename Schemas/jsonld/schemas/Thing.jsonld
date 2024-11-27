@@ -9,7 +9,7 @@
         "description": "aiao:description",
         "attributes": "aiao:attributes",
         "parameters": "aiao:parameters",
-        "things": "aiao:things",
-        "provenance": "aiao:provenance"
+        "provenance": "aiao:provenance",
+        "things": "aiao:things"
     }
 }
