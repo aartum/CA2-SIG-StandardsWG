@@ -1,0 +1,15 @@
+{
+    "@context":
+    {
+        "StateChangeClaim": "http://purl.org/aiaontology/StateChangeClaim",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/",
+
+        "claimant": "aia:agent",
+        "stateChange": "aia:stateChange",
+        "substantiations": "aia:substantiations"
+    }
+}
+
+
+

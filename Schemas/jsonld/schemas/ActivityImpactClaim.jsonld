@@ -8,11 +8,11 @@
         "subjectActivity": "",
         "impactMonitoringActivity": "",
         "impactQuantificationActivity": "",
-        "impactQuantificationResults": ""
+        "impactQuantificationResults": "",
         //"impactVerificationActivity": "" No the results/outcome/all-things-verification should go under "substantiations" as an attestation.
 
 
-        "activity": "aiao:Activity",
+        "activity": "aiao:subject",
         "monitoringPeriod": "aiao:temporalExtent",
         "impactParameters": [
             {

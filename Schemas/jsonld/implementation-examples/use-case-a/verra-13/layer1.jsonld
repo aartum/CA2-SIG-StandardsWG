@@ -1,22 +1,51 @@
 {
-    //"@context": "https://json-ld.org/contexts/tolam/activityImpactSummary.jsonld",
-    //"@id": "http://tolam.io/activity-impacts-by-monitoring-period/<Tolam's FID>",
+    "@context": "https://json-ld.org/contexts/tolam/activityImpactSummary.jsonld",
+    "@id": "http://tolam.io/activity-impacts-by-monitoring-period/<Tolam's FID>",
+
     "activityName": "Coal Mine Methane Capture and Use Project at the North Antelope Rochelle Coal Mine Complex",
-    "standards": ["Verified Carbon Standard"],
-    //"methodologies": ["AM0034, v3.2; AM0028, V4.1"],
-    "country": "United States",
-    "projectOwner": "Peabody Energy Corporation",
-    //"projectDeveloper": "",
+    "standards": ["VCS"],
+    "methodologies": ["VMR0001"],
+    "country": "USA",
+    "projectOwner": "Peabody Natural Gas, LLC", // According to MONIT_REP_13_28MAR2006_to_31OCT2007.pdf, 17 Aug 2015; also according to Verra's website.
+    // "projectOwner": "Blue Source, LLC", // According to Issuance Deed of Rep-Blue Source-NARM.pdf, 30 Mar 2009
+    "projectDeveloper": "Blue Source, LLC",
     "verifier": "First Environment, Inc.",
-    //"monitoringPeriod": ["2010-01-07T00:00:00.000Z", "2011-05-23T23:59:59.999Z"],
-    "impactIndicator": "Greenhouse gas emissions attributable to the activity, measured in tCO2e.",
-    "impactType": "REDUCTION",
-    "impactMagnitude": "90462",
-    "impactBuffer": "0",
+    "monitoringPeriod": ["2006-03-28T00:00:00.000Z", "2007-10-31T23:59:59.999Z"],
+    "creditingPeriod": ["2006-03-28T00:00:00.000Z", "2016-03-27T23:59:59.999Z"], // TODO: Fix the 'Z' here to indicate local time, not UTC.
+    "impacts": {
+        "quantifiedImpacts": [{
+            "impactIndicator": "ANTHROPOGENIC_GHGS_TCO2",
+            "impactType": "REDUCTION",
+            "impactMagnitude": 193750,
+            //"tokenProportion": "1/193750", // If this JSON blob becomes token instance metadata, perhaps add this field to make it clear that the token instance only represents 1 of the 193750 tonnes.
+            "impactBuffer": 0 //?
+        }],
+        "unquantifiedImpacts": []
+    },
     "registry": "Verra",
-    //"registryReferences": ["1261-55463905-55464600-VCU-009-APX-CN-5-575-01012010-30062010-0"],
-    //"substantiations": [
-        //"<the link to the Cercarbono issuance certificate>",
-        //"<the link to our layer 2 JSON blob for this impact>"
+    "registryReferences": [
+        "VCU-002-APX-US-8-13-28032006-31122006-0",
+        "VCU-002-APX-US-8-13-01012007-31102007-0",
+        "VCU-002-APX-US-8-13-01112007-31122007-0"
+        // "4030-172523153-172530443-VCU-002-APX-US-8-13-28032006-31122006-0", "27-371146-380966-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "27-351146-371145-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "27-341146-351145-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "27-331146-341145-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "27-321146-331145-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "27-240832-321145-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "27-240832-380966-VCU-002-APX-US-8-13-28032006-31122006-0",
+        // "6-202134-240831-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "6-202123-202133-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "6-111515-202122-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "6-111049-111514-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "6-57331-111048-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "6-39851-57330-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "4031-172610444-172664372-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "4031-172664373-172716902-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "4031-172530444-172610443-VCU-002-APX-US-8-13-01012007-31102007-0",
+        // "280-9560512-9589777-VCU-002-APX-US-8-13-01112007-31122007-0"
+    ],
+    "substantiations": [
+        "<the links to the issuance certificates, e.g., https://registry.verra.org/mymodule/rpt/CertificateInfo.asp?rhid=526 (?)>"
     ]
 }

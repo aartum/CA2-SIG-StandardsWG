@@ -196,4 +196,3 @@ export const Medium = Thing.extend({});
 export const Process = Thing.extend({});
 
 export const Project = Process.extend({});
-

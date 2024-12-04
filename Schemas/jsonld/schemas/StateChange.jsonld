@@ -1,1 +1,135 @@
 // The states should be ordered as such that state1 - state2 will always result in a positive (or zero) value.
+// TODO. Finish this.
+{
+    "@context":
+    {
+        "StateChange": "http://purl.org/aiaontology/StateChange",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/",
+
+        "subject": "aiao:subject",
+        "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"],
+        "netStateDifference": [
+            {
+                "indicator": "Greenhouse gas emissions attributable to the project activity.",
+                "magnitude": 2955365,
+                "unitOfMeasure": "tCO2e",
+                "stateDifferenceType": "AVOIDED_INCREASE"
+            }
+        ],
+        "provenance": {
+            "@id": "<Tolam's ID on for the project activity.>"
+        },
+        "stateChanges": [
+            {
+                "description": "Intentional state change caused by the Karapinar YEKA Solar Power Plant Project. Avoidance of GHG emissions from non-renewable energy sources by supplying electricity from renewable energy sources to Turkey's national electricity grid.",
+                "intentionality": "INTENTIONAL", // Can only be 'INTENTIONAL' or 'UNINTENTIONAL'.
+                "subject": {
+                    "description": "The atmosphere of Earth extending from sea level to 6 km outwards." //"The environment directly affected by Turkey's electricity generation from non-renewable energy sources."
+                },
+                "state1": {
+                    "description": "Baseline scenario. In the baseline scenario of the project, Karapinar YEKA Solar Power Plant has an effect on power generation of existing power plants attached to the grid; the electricity generation from these existing generators is reduced. Since Turkey's grid mainly consists of thermal power plants, this has resulted in GHG emissions. Therefore baseline emissions for this project include only CO2 emissions from electricity generation in fossil fuel fired power plants that are displaced due to the project activity.",
+                    //"subject": {}, // Same as above.
+                    "modality": "AVOIDED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                    "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"], // Technically not necessary to specify it here, because it is the same as the parent. 
+                    "indicatorValues": [
+                        {
+                            "indicator": {
+                                "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                                "unitOfMeasure": "tCO2e",
+                                "controls": []
+                            },
+                            "value": "<x + amount avoided by project activity>",
+                            "provenance": "TODO, if necessary."
+                        }
+                    ],
+                    "provenance": {
+                        "description": "Electricity generation for supply to Turkey's national electricity grid, in the absence of the project activity."
+                    }
+                },
+                "state2": {
+                    "description": "Project scenario. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner.",
+                    "modality": "REALISED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                    "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"], // Technically not necessary to specify it here, because it is the same as the parent. 
+                    "indicatorValues": [
+                        {
+                            "indicator": {
+                                "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                                "unitOfMeasure": "tCO2e",
+                                "controls": []
+                            },
+                            "value": "x",
+                            "provenance": {
+                                "@id": "<Tolam's ID for the impact monitoring and quantification activity.>"
+                            }
+                        }
+                    ],
+                    "provenance": {
+                        "@id": "<Tolam's ID for the project activity.>"
+                    }
+                },
+                "additionality": "The project activity meets the criteria for additionality since project activity is first of its kind due to the new technologies utilized and the size of the CCMP. Cercarbono's Tool to Demonstrate Additionality of Climate Change Mitigation Initiatives Version 2.0.1 shall be used to demonstrate the additionality of the proposed project activity. There is no reason to believe that the state change would have occurred without the presence of the project activity.",
+                "netStateDifference": [
+                    {
+                        "indicator": "Greenhouse gas emissions within the project activity area and attributable to the project activity.",
+                        "magnitude": 2955365,
+                        "unitOfMeasure": "tCO2e",
+                        "stateDifferenceType": "AVOIDED_INCREASE" // Can only be 'AVOIDED_INCREASE', 'AVOIDED_DECREASE', 'REALISED_INCREASE', 'REALISED_DECREASE'
+                    }
+                ]
+            },
+            {
+                "description": "Unintentional state change (leakage) caused by the Karapinar YEKA Solar Power Plant Project. The main emissions potentially giving rise to leakage are emissions arising due to activities such as power plant construction and upstream emissions from fossil fuel use (e.g. extraction, processing, transport). However according to ACM0002 Version 21.0 para 61 ,these emission sources can be neglected, therefore there are no leakage emissions related to project activity. There is also no Project emission in the Project which is detailed in the section 3.2.",
+                "subject": {
+                    "description": "The atmosphere of Earth extending from sea level to 6 km outwards."
+                },
+                "intentionality": "UNINTENTIONAL",
+                "state1": {
+                    "description": "Activity scenario...",
+                    "subject": {}, // The thing of which this is a state.
+                    "modality": "REALISED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                    "temporalLocation": "", // TODO: When this state occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+                    "indicatorValues": [
+                        {
+                            "indicator": {
+                                "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                                "unitOfMeasure": "tCO2e",
+                                "controls": []
+                            },
+                            "value": 0,
+                            "provenance": {
+                                "@id": "<Tolam's ID for the impact monitoring and quantification activity.>"
+                            } 
+                        }
+                    ]
+                },
+                "state2": {
+                    "description": "Baseline scenario...",
+                    "subject": {}, // The thing of which this is a state.
+                    "modality": "AVOIDED", // One of "COUNTERFACTUAL", "REALISED" (with "BASELINE" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
+                    "temporalLocation": "", // TODO: When this state occurred. A period (e.g., the same as the monitoring period) or a timestamp (e.g., the end of the monitoring period) 
+                    "indicatorValues": [
+                        {
+                            "indicator": {
+                                "description": "Greenhouse gas emissions attributable to anthropogenic activity, measured in tCO2e.",
+                                "unitOfMeasure": "tCO2e",
+                                "controls": []
+                            },
+                            "value": "",
+                            "provenance": ""
+                        }
+                    ]
+                },
+                "additionality": "The leakage would not have occurred if the project activity had not occur.",
+                "netStateDifference": [
+                    {
+                        "indicator": "Greenhouse gas emissions outside of the project activity area and attributable to the project activity.",
+                        "magnitude": 0,
+                        "unitOfMeasure": "tCO2e",
+                        "stateDifferenceType": "REALISED_INCREASE"
+                    }
+                ]
+            }
+        ]
+    }
+}

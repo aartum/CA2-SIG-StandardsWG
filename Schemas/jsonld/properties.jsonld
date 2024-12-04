@@ -182,6 +182,29 @@
         },
 
         {
+            "@id": "aiao:temporalLocation",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The temporal location of a thing, expressed as a period or duration.",
+            "rdfs:label": "temporalExtent",
+            "rdfs:subClassOf": {
+                "@id": "aiao:TemporalParameter"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Period"
+                },
+                {
+                    "@id": "aiao:Duration"
+                }
+            ]
+        },
+
+        {
             "@id": "aiao:controls",
             "@type": "rdf:Property",
             "rdfs:comment": "The controls (whether binding or non-binding) that limit or guide a thing.",
@@ -222,18 +245,24 @@
         },
 
         {
-            "@id": "aiao:activity",
+            "@id": "aiao:subject",
             "@type": "rdf:Property",
-            "rdfs:comment": "The activity as the subject of an impact claim.",
-            "rdfs:label": "activity",
+            "rdfs:comment": "The thing in question. As a property of aiao:Claim it is the thing about which the claim is being made; as a property of aiao:State it is the thing of which the state is being describe; as a property of aiao:StateChange it is the thing that underwent a state change.",
+            "rdfs:label": ["subject", "activity", "agent"],
             "schema:domainIncludes": [
                 {
                     "@id": "aiao:Claim"
+                },
+                {
+                    "@id": "aiao:State"
+                },
+                {
+                    "@id": "aiao:StateChange"
                 }
             ],
             "schema:rangeIncludes": [
                 {
-                    "@id": "aiao:Activity"
+                    "@id": "aiao:Thing"
                 }
             ]
         },

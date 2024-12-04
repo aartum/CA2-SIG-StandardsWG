@@ -1,0 +1,26 @@
+// Example of a described environment.
+{
+    "@context": "http://purl.org/aiaontology/Environment.jsonld",
+    "@id": "http://tolam.io/environments/<some ID assigned by Tolam to this environment>",
+
+    "description": "The environment that encompasses both the Coal Mine Methane Capture and Use Project (at NARCMC) and its impacts.",
+
+    "fixedProperties": [
+        {
+            "spatialExtent": "..."
+        },
+        {
+            "content": [
+                // the agents and their FIXED properties
+                // the activities and their fixed and variable properties
+                // the instruments and their fixed and variable properties
+                // other things within the environment with VARIABLE properties
+            ]
+        }
+
+    ],
+}
+
+// Then the variable properties of the content of the environment become the variable properties of the environment itself in terms of which its state is expressed and monitored.
+// Each and every property (whether fixed or variable) has a reference system.
+// Only numeric / quantifiable properties (whether fixed or variable) also have measurement systems.
