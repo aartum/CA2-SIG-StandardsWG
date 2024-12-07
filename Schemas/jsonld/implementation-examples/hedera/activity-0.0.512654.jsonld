@@ -1,0 +1,169 @@
+// In this example we assume that Hedera topic 0.0.512654 is an aiao:Activity topic for some specific activity.
+// The topic has two subtopics: 0.0.512655 for public data, and 0.0.512658 for protected/private/permissioned data.
+
+// The top-level activity topic (0.0.512654) is, immediately after creation, initialised as an aiao:Activity topic 
+// by posting the following JSON-LD blob to it as a Hedera Consensus message:
+{
+    "@context": {
+        "aiao": "http://purl.org/aiaontology/1.0"
+    },
+    "@type": "aiao:Activity"
+}
+
+// The public subtopic (0.0.512655) is, immedately after creation, initialised by posting the following
+// JSON-LD blob to it as an HCS message:
+{
+    "http://purl.org/tolamgov/1.1/permissioned": false
+}
+
+// The private subtopic (0.0.512658) is, immedately after creation, initialised by posting the following
+// JSON-LD blob to it as an HCS message:
+{
+    "http://purl.org/tolamgov/1.1/permissioned": true
+}
+
+// The public topic gets populated over time through the posting of further JSON-LD blobs, e.g.:
+// Note: If the content of a message will exceed the 1024 character limit of HCS, we'll just post it to
+// IPFS instead and submit the IPFS URI to the Hedera network as the content of the HCS message.
+{
+{
+    // First data message
+    "@context": {
+        "aiao": "http://purl.org/aiaontology/1.0",
+        "tolam": "http://purl.org/tolamvocab/1.3"
+    },
+    "tolam:title": "West Nature Solar Power Plant Project",
+    "tolam:activityStartDate": "2021-03-07 00:00:00.000Z",
+    "aiao:agentRelations": [
+        {
+            "@id": "<the DID of some agent>",
+            "aiao:role": "ACTIVITY_OWNER"
+        },
+        {
+            "@id": "<the DID of some agent>",
+            "aiao:role": "SERVICE_PROVIDER",
+            "tolam:role": "PROJECT_DEVELOPER"
+        }
+    ],
+    "tolam:hostCountry": "MDG"
+},
+{
+    // Second data message
+    "@context": {
+        "tolam": "http://purl.org/tolamvocab/1.3"
+    },
+    "creditingPeriod": {"2021-05-01 00:00:00.000Z", "2023-12-31 23:59:59.999Z"},
+    "creditingPeriodType": "FIXED",
+    "monitoringPeriods": [
+        {"2021-05-01 00:00:00.000Z", "2021-12-31 23:59:59.999Z"},
+        {"2022-01-01 00:00:00.000Z", "2022-12-31 23:59:59:999Z"},
+        {"2023-01-01 00:00:00.000Z", "2023-12-31 23:59:59:999Z"}
+    ]
+},
+// ...
+{
+    // Nth data message
+    // Project Design Document uploaded to IPFS
+    "@context": {
+        "tolam": "http://purl.org/tolamvocab/1.3"
+    },
+    "@type": "http://purl.org/tolamvocab/ExternalArtifact",
+    "artifactType": "DOCUMENT",
+    "artifactFormat": ".pdf",
+    "artifactClass1": "PROJECT_DESIGN_DOCUMENT",
+    "title": "Project Description Document for Solar Power Plant CCMP by West Nature",
+    "version": "1.0",
+    "ipfsUri": "bafybeifayq6ijgmw6zndv6ahytw37ijprqz24l3f2nno4pebjkaujripvi"
+},
+// ...
+{
+    // Nth +10 data message 
+    // Project developer changed
+    "@context": {
+        "aiao": "http://purl.org/aiaontology/1.0",
+        "tolam": "http://purl.org/tolamvocab/1.3"
+    },
+    "aiao:agentRelations": [
+        {
+            "@id": "<the DID of some agent>",
+            "aiao:role": "SERVICE_PROVIDER",
+            "tolam:role": "PROJECT_DEVELOPER"
+        }
+    ]
+}
+}
+
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted, e.g.:
+{
+{
+    "sdfgs868dfgskljdn84952p384n729834572yon348f5u234p985fb284992dum349dum2pf9348572n3489dp2348rsu2m34p89b5f2934n5238b4..."
+    // ...where the above string is an encryption of:
+    // {
+    //     "@context": {
+    //         "tolam": "http://purl.org/tolamvocab/1.3"
+    //     },
+    //     "projectParticipantGeoLocations": {
+    //         "version": "1.0",
+    //         "ipfsUri": "bafybeifayq6ijgmw6zndv6ahytw37ijprqz24l3jripvif2nno4pebjkau"
+    //     }
+    // }
+    // ... and the file(s) stored on IPFS at ${ipfsUri} is also encrypted.
+}
+}
+
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated over time through the posting of further JSON-LD blobs, albeit encrypted,
+// Similarly, the private topic gets populated o
+
+{
+    "@context": {
+        "aiao": "http://purl.org/aiaontology/1.0",
+        "tolam": "http://purl.org/tolamvocab/1.3"
+    },
+    "tolam:activityStartDate": "?",
+    "tolam:creditingPeriod": {"?", "?"},
+    "tolam:creditingPeriodType": "?",
+    "aiao:agentRelations": [
+        {
+            "@id": "?",
+            "aiao:role": "ACTIVITY_OWNER"
+        }
+    ],
+    "tolam:hostCountry": "?",
+    "tolam:cdmSectoralScope": "?"
+}
+
+{
+    "@context":
+    {
+        "Activity": "http://tolam.io/vocab/Activity",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/",
+        "tolam": "http://tolam.io/vocab",
+
+        "title": "tolam:activityTitle",
+        "description": "aiao:description",
+        "identifiers": "aiao:identifiers",
+        "temporalExtent": "aiao:temporalExtent",
+        "creditingPeriod": "aiao:creditingPeriod",
+        "monitoringPeriods": "tolam:monitoringPeriods",
+        "spatialExtent": "aiao:spatialExtent",
+        "headOfficeAddress": "tolam:headOfficeAddress",
+        "website": "tolam:websiteAddress",
+        "projectProponent": "tolam:projectProponent",
+        "projectDeveloper": "tolam:projectDeveloper",
+        "hostCountry": "tolam:cdmHostCountry",
+        "objective": "aiao:objective",
+        "vcmProjectRegistry": "tolam:vcmProjectRegistry",
+        "targetedSdgs": "tolam:targetedSdgs",
+        "jurisdiction": "tolam:jurisdiction",
+        "otherControls": "aiao:controls",
+        "activities": "aiao:activities"
+    }
+}
