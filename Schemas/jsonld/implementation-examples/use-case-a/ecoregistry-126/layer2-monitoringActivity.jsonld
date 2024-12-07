@@ -1,6 +1,5 @@
 // The activity of monitoring and quantifying the impact of the project activity.
-
-// The actual project activity.
+// This is actually a sub-activity of the project activity.
 
 {
     "@context": "http://purl.org/aiaontology/Activity.jsonld",
