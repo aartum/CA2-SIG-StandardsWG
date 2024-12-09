@@ -20,7 +20,7 @@
                     "controls": []
                 },
                 "value": "",
-                "provenance": {} // How was this value obtained by the claimant?
+                "provenance": {} // The activity through which the value was obtained by the claimant.
             }
         ],
         "provenance": {}

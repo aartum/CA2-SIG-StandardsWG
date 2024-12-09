@@ -10,7 +10,7 @@
             "spatialExtent": "..."
         },
         {
-            "content": [
+            "contents": [
                 // the agents and their FIXED properties
                 // the activities and their fixed and variable properties
                 // the instruments and their fixed and variable properties

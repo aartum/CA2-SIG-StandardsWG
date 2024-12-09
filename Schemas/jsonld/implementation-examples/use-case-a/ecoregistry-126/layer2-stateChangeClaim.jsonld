@@ -31,7 +31,7 @@
                     "description": "Baseline scenario. In the baseline scenario of the project, Karapinar YEKA Solar Power Plant has an effect on power generation of existing power plants attached to the grid; the electricity generation from these existing generators is reduced. Since Turkey's grid mainly consists of thermal power plants, this has resulted in GHG emissions. Therefore baseline emissions for this project include only CO2 emissions from electricity generation in fossil fuel fired power plants that are displaced due to the project activity.",
                     //"subject": {}, // Same as above.
                     "modality": "AVOIDED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
-                    "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"], // Technically not necessary to specify it here, because it is the same as the parent. 
+                    "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"], // Technically not necessary to specify it here, because it is the same as its superinstance. 
                     "indicatorValues": [
                         {
                             "indicator": {
@@ -50,7 +50,7 @@
                 "state2": {
                     "description": "Project scenario. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner.",
                     "modality": "REALISED", // One of "COUNTERFACTUAL", "REALISED" (with "AVOIDED" and "HYPOTHETICAL" being synonyms for "COUNTERFACTUAL"), 
-                    "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"], // Technically not necessary to specify it here, because it is the same as the parent. 
+                    "temporalLocation": ["2020-09-20T00:00:00.000Z", "2023-09-30T23:59:59.999Z"], // Technically not necessary to specify it here, because it is the same as its superinstance. 
                     "indicatorValues": [
                         {
                             "indicator": {

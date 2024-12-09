@@ -149,7 +149,7 @@
 
         "title": "tolam:activityTitle",
         "description": "aiao:description",
-        "identifiers": "aiao:identifiers",
+        "identifications": "aiao:identifications",
         "temporalExtent": "aiao:temporalExtent",
         "creditingPeriod": "aiao:creditingPeriod",
         "monitoringPeriods": "tolam:monitoringPeriods",

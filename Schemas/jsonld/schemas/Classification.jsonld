@@ -1,0 +1,10 @@
+{
+    "@context": {
+        "Classification": "http://purl.org/aiaontology/Classification",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/", 
+
+        "value": "aiao:value",
+        "classifier": "aiao:classifier"
+    }
+}

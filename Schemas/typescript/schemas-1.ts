@@ -133,7 +133,7 @@ export const Environment = Thing.extend({
 
 export const Event = Thing.extend({
   parameters: z.array(ParameterValue), // typically spatial and temporal
-  parent: z.union([SystemId, Event]).optional(),
+  superinstance: z.union([SystemId, Event]).optional(),
   events: z.array(z.union([SystemId, Event])).optional(),
 });
 
@@ -142,7 +142,7 @@ export const Activity = Event.extend({
     objectives: z.array(z.union([SystemId, Control])).min(1),
     methodologies: z.array(z.union([SystemId, Control])),
   }),
-  parent: z.union([SystemId, Activity]).optional(),
+  superinstance: z.union([SystemId, Activity]).optional(),
   activities: z.array(z.union([SystemId, Activity])).optional(),
 });
 

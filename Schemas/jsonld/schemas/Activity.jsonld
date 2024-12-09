@@ -6,7 +6,7 @@
         "aiao": "http://purl.org/aiaontology/",
 
         "description": "aiao:description",
-        "identifiers": "aiao:identifiers",
+        "identifications": "aiao:identifications",
         "temporalExtent": "aiao:temporalExtent",
         "spatialExtent": "aiao:spatialExtent",
         "controls": "aiao:controls",

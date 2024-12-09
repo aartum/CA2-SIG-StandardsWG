@@ -47,6 +47,35 @@
         },
 
         {
+            "@id": "aiao:value",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The value of an identifier, classifier, parameter or indicator at a specific point in time.",
+            "rdfs:label": "value",
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Classification"
+                },
+                {
+                    "@id": "aiao:Identification"
+                },
+                {
+                    "@id": "aiao:State"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "schema:Text"
+                },
+                {
+                    "@id": "schema:Number"
+                },
+                {
+                    "@id": "schema:Boolean"
+                }
+            ]   
+        },
+        
+        {
             "@id": "aiao:claimant",
             "@type": "rdf:Property",
             "rdfs:comment": "The agent who is making the claim.",
@@ -90,10 +119,27 @@
         },
 
         {
-            "@id": "aiao:identifiers",
+            "@id": "aiao:identifier",
             "@type": "rdf:Property",
-            "rdfs:comment": "A list of qualified identifiers, such as names or identification numbers, for a thing.",
-            "rdfs:label": "identifiers",
+            "rdfs:comment": "An identification system.",
+            "rdfs:label": "identifier",
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Identification"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:IdentificationSystem"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:identifications",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A list of identifications for a thing.",
+            "rdfs:label": "identifications",
             "rdfs:subClassOf": {
                 "@id": "schema:ItemList"
             },
@@ -104,10 +150,44 @@
             ],
             "schema:rangeIncludes": [
                 {
-                    "@id": "schema:Text"
-                },
+                    "@id": "aiao:Identification"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:classifier",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A classification system.",
+            "rdfs:label": "classifier",
+            "schema:domainIncludes": [
                 {
-                    "@id": "aiao:Identifier"
+                    "@id": "aiao:Classification"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:ClassificationSystem"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:classifications",
+            "@type": "rdf:Property",
+            "rdfs:comment": "A list of classifications of a thing.",
+            "rdfs:label": "classifications",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Classification"
                 }
             ]
         },
@@ -268,13 +348,27 @@
         },
 
         {
-            "@id": "aiao:things",
+            "@id": "aiao:provenance",
             "@type": "rdf:Property",
-            "rdfs:comment": "The things that a thing comprises.",
-            "rdfs:label": "things",
-            "rdfs:subClassOf": {
-                "@id": "schema:ItemList"
-            },
+            "rdfs:comment": "The cause of the thing in question. Must be an event or an activity.",
+            "rdfs:label": "provenance",
+            "schema:domainIncludes": [
+                {
+                    "@id": "aiao:Thing"
+                }
+            ],
+            "schema:rangeIncludes": [
+                {
+                    "@id": "aiao:Event"
+                }
+            ]
+        },
+
+        {
+            "@id": "aiao:superinstance",
+            "@type": "rdf:Property",
+            "rdfs:comment": "The encompassing instance, if any, of a thing. Must be of the same class as the thing itself, or one of the superclasses thereof.",
+            "rdfs:label": "superinstance",
             "schema:domainIncludes": [
                 {
                     "@id": "aiao:Thing"
@@ -288,10 +382,13 @@
         },
 
         {
-            "@id": "aiao:provenance",
+            "@id": "aiao:subinstances",
             "@type": "rdf:Property",
-            "rdfs:comment": "The source or cause of the thing in question.",
-            "rdfs:label": "provenance",
+            "rdfs:comment": "The instances, if any, that are encompassed by the thing in question. Must be of the same class as the thing itself, or one of the subclasses thereof.",
+            "rdfs:label": "things",
+            "rdfs:subClassOf": {
+                "@id": "schema:ItemList"
+            },
             "schema:domainIncludes": [
                 {
                     "@id": "aiao:Thing"

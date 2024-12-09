@@ -5,7 +5,7 @@
         "ActivityImpactClaim": "http://tolam.io/schemas/v1.0/ActivityImpactClaim",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "activity": {
-            "identifiers": "http://purl.org/aiaontology/identifiers",
+            "identifications": "http://purl.org/aiaontology/identifications",
             "description": "http://purl.org/aiaontology/description",
             "agents": "http://purl.org/aiaontology/agentRoles",
             "country": "https://schema.org/countryOfOrigin",

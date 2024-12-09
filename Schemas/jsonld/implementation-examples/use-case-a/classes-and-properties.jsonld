@@ -57,7 +57,7 @@
     {
       "@id": "tolam:methodologies",
       "@type": "rdf:Property",
-      "rdfs:comment": "The identifiers of the verification methodologies that were followed during a specific impact quantitification process. Each identifier must be recorded in Tolam's register of known quantification methodologies.",
+      "rdfs:comment": "The list that identifies the impact quantification methodologies that were followed during a specific impact quantitification process.",
       "rdfs:label": "methodologies",
       "rdfs:subClassOf": {
         "@id": "schema:ItemList"

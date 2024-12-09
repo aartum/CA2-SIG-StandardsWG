@@ -11,21 +11,27 @@
         {
             "@context": "",
             "@id": "<Tolam's ID for the agent>",
-            "identifiers": [
+            "identifications": [
                 {
-                    "key": "name",
                     "value": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.",
-                    "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."     
+                    "identifier": {
+                        "key": "name",
+                        "reference": "The register of non-legal entities known to the Ankara Chamber of Commerce."
+                    }
                 },
                 {
-                    "key": "chamber_registration_number",
                     "value": "415104",
-                    "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+                    "identifier": {
+                        "key": "chamber_registration_number",
+                        "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+                    }
                 },
                 {
-                    "key": "mersis_number",
                     "value": "0330013236000012",
-                    "reference": "?"
+                    "identifier": {
+                        "key": "mersis_number",
+                        "reference": "?"
+                    }
                 }
             ],
             "role": "PRIMARY_AGENT" //?

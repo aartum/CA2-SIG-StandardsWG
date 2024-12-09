@@ -13,7 +13,7 @@ export const Control = Thing.extend({
   x: z.unknown(),
   operator: z.string().optional(),
   y: z.unknown(),
-  controls: z.array(z.unknown()).optional(), // TODO: An array of Control.
+  subinstances: z.array(z.unknown()).optional(), // TODO: An array of Control.
   applicability: z.array(z.unknown()).optional(), // TODO. An array of State.
 });
 export type Control = z.infer<typeof Control>;
@@ -61,7 +61,7 @@ export const State = Thing.extend({
   timestamp: z.string(), // TODO: An ISO8601 date-time string.
   indicatorId: SystemId.optional(),
   indicatorValue: z.unknown().optional(),
-  states: z.array(State).optional(),
+  subinstances: z.array(State).optional(),
 });
 export type State = z.infer<typeof State>;
 
@@ -133,8 +133,8 @@ export type Environment = z.infer<typeof Environment>;
 
 export const Event = Thing.extend({
   parameters: z.array(ParameterValue), // typically spatial and temporal
-  parent: z.union([SystemId, Event]).optional(),
-  events: z.array(z.union([SystemId, Event])).optional(),
+  superinstance: z.union([SystemId, Event]).optional(),
+  subinstances: z.array(z.union([SystemId, Event])).optional(),
 });
 export type Event = z.infer<typeof Event>;
 
@@ -143,8 +143,8 @@ export const Activity = Event.extend({
     objectives: z.array(z.union([SystemId, Control])).min(1),
     methodologies: z.array(z.union([SystemId, Control])),
   }),
-  parent: z.union([SystemId, Activity]).optional(),
-  activities: z.array(z.union([SystemId, Activity])).optional(),
+  superinstance: z.union([SystemId, Activity]).optional(),
+  subinstances: z.array(z.union([SystemId, Activity])).optional(),
 });
 export type Activity = z.infer<typeof Activity>;
 
@@ -158,7 +158,7 @@ export const StateChange = Event.extend({
   indicator: z.union([SystemId, Indicator]),
   stateChangeType: z.union([z.literal("INCREASE"), z.literal("DECREASE")]),
   stateChangeMagnitude: z.number(),
-  stateChanges: z.array(z.union([SystemId, StateChange])).optional(),
+  subinstances: z.array(z.union([SystemId, StateChange])).optional(),
 });
 
 export const ActivityAgentRelation = Thing.extend({

@@ -5,35 +5,45 @@
   "@id": "http://tolam.io/activity/<some ID assigned by Tolam to this activity>",
   
   "description": "Kalyon Güneş Enerjisi Üretim A.Ş installed the Karapinar YEKA Solar Power Plant Project in Konya province,Karapinar district on a 19.2 km2 land. The project is designed as a greenfield solar photovoltaic power plant and the produced energy will be fed into the Turkish national grid. The project is the largest solar power plant within the Turkey with the 1000 MWe2 capacity.The project start production on the 20/09/2020.The implementation of the project lasted approximately three years and it is concluded on the 01/03/2023. The project aims to generate electricity by using solar power to supply the increasing national electricity demand in a cleaner and sustainable manner. It reduces the air pollution caused by the grid connected power plants which are mostly fossil fuel fired. The project is expected to contribute 4 SDGs which are SDG 7, 8, 11 and 13.",    
-  "identifiers": [
+  "identifications": [
     {
       "value": "Karapinar YEKA Solar Power Plant Project",
-      "reference": "The name of the project, as registered with Cercarbono."
+      "identifier": {
+        "reference": "Cercarbono's register of names for Cercarbono projects."
+      }
     },
     {
       "value": "126",
-      "reference": "Cercarbono's ID for the project."
+      "identifier": {
+        "reference": "Cercarbono's register of identifiers for Cercarbono projects."
+      }
     }
   ],
   "agents": [
     {
       "@context": "",
       "@id": "<Tolam's ID for the agent>",
-      "identifiers": [
+      "identifications": [
         {
-          "key": "name",
           "value": "KALYON GÜNEŞ ENERJİSİ ÜRETİM ANONİM ŞİRKETİ",
-          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."     
+          "identifier": {
+            "key": "name",
+            "reference": "The register of non-legal entities known to the Ankara Chamber of Commerce."     
+          }
         },
         {
-          "key": "chamber_registration_number",
           "value": "472799-5",
-          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+          "identifier": {
+            "key": "chamber_registration_number",
+            "reference": "The register of non-legal entities known to the Ankara Chamber of Commerce."
+          }
         },
         {
-          "key": "central_registration_system_number",
           "value": "0457059777800001",
-          "reference": "?"
+          "identifier": {
+            "key": "central_registration_system_number",
+            "reference": "?"
+          }
         }
       ],
       "role": "PROJECT_OWNER"
@@ -41,21 +51,27 @@
     {
       "@context": "",
       "@id": "<Tolam's ID for the agent>",
-      "identifiers": [
+      "identifications": [
         {
-          "key": "name",
           "value": "EKOBIL ENVIRONMENTAL SERVICES AND CONSULTANCY LTD.",
-          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."     
+          "identifier": {
+            "key": "name",
+            "reference": "The register of non-legal entities known to the Ankara Chamber of Commerce."     
+          }
         },
         {
-          "key": "chamber_registration_number",
           "value": "415104",
-          "reference": "As recorded in the register of non-legal entities known to the Ankara Chamber of Commerce."
+          "identifier": {
+            "key": "chamber_registration_number",
+            "reference": "The register of non-legal entities known to the Ankara Chamber of Commerce."
+          }
         },
         {
-          "key": "mersis_number",
           "value": "0330013236000012",
-          "reference": "?"
+          "identifier": {
+            "key": "mersis_number",
+            "reference": "?"
+          }
         }
       ],
       "role": "PROJECT_DEVELOPER"

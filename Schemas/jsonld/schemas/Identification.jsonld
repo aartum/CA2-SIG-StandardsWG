@@ -1,0 +1,10 @@
+{
+    "@context": {
+        "Identification": "http://purl.org/aiaontology/Identification",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "aiao": "http://purl.org/aiaontology/", 
+
+        "value": "aiao:value",
+        "identifier": "aiao:identifier"
+    }
+}

@@ -5,11 +5,24 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "aiao": "http://purl.org/aiaontology/", 
 
-        "id": "<A semantic web IRI according to this specification: https://datatracker.ietf.org/doc/html/rfc3987>",
-        "description": "aiao:description",
-        "attributes": "aiao:attributes",
-        "parameters": "aiao:parameters",
+        //"id": "<A semantic web IRI according to this specification: https://datatracker.ietf.org/doc/html/rfc3987>",
+        "description": "aiao:description", // this is actually just from OWL
+        "identifications": "aiao:identifications", // 'Identification' is a subclass of 'Attribute'?
+        "classifications": "aiao:classifications", // 'Classification' is a subclass of 'Attribute'?
+        
+        "parameters": { // spatial location, temporal location, position, dimensions
+            "fixed": {},
+            "variable": { // The variable parameters are the state indicators.
+
+            } 
+        },
+        "controls": {}, // The things by which this thing is controlled.
         "provenance": "aiao:provenance",
-        "things": "aiao:things"
+        "superinstance": "aiao:superinstance",
+        "subinstances": "aiao:subinstances"
     }
 }
+
+
+
+
