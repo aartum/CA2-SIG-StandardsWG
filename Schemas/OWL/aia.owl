@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://purl.org/aiaontology">
-    <Prefix name="" IRI="http://purl.org/aiaontology"/>
+    <Prefix name="" IRI="http://purl.org/aiaontology#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -234,9 +234,6 @@
         <Class IRI="http://purl.org/dc/dcmitype/Event"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="terms:AgentClass"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="terms:Location"/>
     </Declaration>
     <Declaration>
@@ -267,22 +264,10 @@
         <Class IRI="http://www.wikidata.org/wiki/Q3778211"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#calculateHasResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#calibratedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#calibrates"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#compliesWithRequirements"/>
+        <ObjectProperty IRI="#activityImpacts"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#comprises"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#defines"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#enacts"/>
@@ -291,19 +276,13 @@
         <ObjectProperty IRI="#engagesIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#forParameter"/>
+        <ObjectProperty IRI="#eventImpacts"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasActivity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCalculation"/>
+        <ObjectProperty IRI="#expressedInMedium"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasClaimant"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCondition"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasControl"/>
@@ -312,10 +291,7 @@
         <ObjectProperty IRI="#hasDuration"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasEnvironment"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasFormula"/>
+        <ObjectProperty IRI="#hasInput"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasInstrument"/>
@@ -324,115 +300,40 @@
         <ObjectProperty IRI="#hasLocation"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMethodology"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasParVal"/>
+        <ObjectProperty IRI="#hasOutput"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPeriod"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasPoint"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProvenance"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasReputation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRole"/>
+        <ObjectProperty IRI="#hasStateDiff"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSubject"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSymbol"/>
+        <ObjectProperty IRI="#impactedByActivity"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasVariable"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#impacts"/>
+        <ObjectProperty IRI="#impactedByEvent"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isDefinedBy"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isEnactedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isImpactedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isOperatedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isOwnedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isParValOf"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isPerformedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isStateDiffFrom"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isStatementAbout"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isVerifiedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isVerifierOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#limitsOrDirects"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#makesClaim"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#makesImpactClaim"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#operates"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#owns"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#performedWith"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usedToPerform"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#usesSymbol"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="owl:equivalentClass"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#appliesToParameters"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#hasAccuracy"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasActivityCode"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasCodeInRegistry"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasConfLowerBound"/>
@@ -442,15 +343,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasConfidenceLevel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDefinition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasExpression"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasLabel"/>
@@ -468,28 +360,10 @@
         <DataProperty IRI="#hasModel"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasName"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#hasPrecision"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasRationale"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasReferenceSystem"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasRegistry"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasRegistryVersion"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSource"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSymbol"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasTimestamp"/>
@@ -502,18 +376,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#isBinding"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#isSymbol"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#pointHasAltitude"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#pointHasLatitude"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#pointHasLongtitude"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#wasCalibratedOn"/>
@@ -587,47 +449,7 @@
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Agent"/>
-        <Class abbreviatedIRI="terms:AgentClass"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Agent"/>
         <Class IRI="http://www.w3.org/ns/prov#Agent"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdf:type"/>
-            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Auditor is that they verify some Claim AND complies with the (legal) Controls for being an Auditor</Literal>
-        </Annotation>
-        <Class IRI="#Auditor"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#compliesWithRequirements"/>
-                <Class IRI="#Control"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isVerifierOf"/>
-                <Class IRI="#Claim"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdf:type"/>
-            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Calibrator is that they calibrate some Instrument.</Literal>
-        </Annotation>
-        <Class IRI="#Calibrator"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#calibrates"/>
-            <Class IRI="#MeasurementInstrument"/>
-        </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
         <Annotation>
@@ -665,53 +487,8 @@
         <Class IRI="http://www.wikidata.org/wiki/Q154954"/>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdf:type"/>
-            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Operator is that they operate some Instrument.</Literal>
-        </Annotation>
-        <Class IRI="#Operator"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#operates"/>
-            <Class IRI="#Instrument"/>
-        </ObjectSomeValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdf:type"/>
-            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Owner is that they own some owl:Thing.</Literal>
-        </Annotation>
-        <Class IRI="#Owner"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#owns"/>
-            <Class abbreviatedIRI="owl:Thing"/>
-        </ObjectSomeValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
         <Class IRI="#Period"/>
         <Class abbreviatedIRI="terms:PeriodOfTime"/>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdf:type"/>
-            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Verifier is that they verify some Claim.</Literal>
-        </Annotation>
-        <Class IRI="#Verifier"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isVerifierOf"/>
-            <Class IRI="#Claim"/>
-        </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class abbreviatedIRI="owl:Thing"/>
@@ -977,64 +754,30 @@
             </DataSomeValuesFrom>
         </ObjectIntersectionOf>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Activity"/>
-        <Class IRI="#Event"/>
-    </DisjointClasses>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#calibratedBy"/>
-        <ObjectProperty IRI="#calibrates"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#defines"/>
-        <ObjectProperty IRI="#isDefinedBy"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#enacts"/>
-        <ObjectProperty IRI="#isEnactedBy"/>
+        <ObjectProperty IRI="#activityImpacts"/>
+        <ObjectProperty IRI="#impactedByActivity"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#engagesIn"/>
         <ObjectProperty IRI="#isPerformedBy"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#eventImpacts"/>
+        <ObjectProperty IRI="#impactedByEvent"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasClaimant"/>
         <ObjectProperty IRI="#makesClaim"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasParVal"/>
-        <ObjectProperty IRI="#isParValOf"/>
+        <ObjectProperty IRI="#hasControl"/>
+        <ObjectProperty IRI="#hasSubject"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#impacts"/>
-        <ObjectProperty IRI="#isImpactedBy"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
-        <ObjectProperty IRI="#limitsOrDirects"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isOperatedBy"/>
-        <ObjectProperty IRI="#operates"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isOwnedBy"/>
-        <ObjectProperty IRI="#owns"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isVerifiedBy"/>
-        <ObjectProperty IRI="#isVerifierOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#performedWith"/>
+        <ObjectProperty IRI="#hasInstrument"/>
         <ObjectProperty IRI="#usedToPerform"/>
     </InverseObjectProperties>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#isParValOf"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#limitsOrDirects"/>
-    </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#comprises"/>
     </TransitiveObjectProperty>
@@ -1042,20 +785,8 @@
         <ObjectProperty IRI="#comprises"/>
     </ReflexiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#calculateHasResult"/>
-        <Class IRI="#Calculating"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#calibratedBy"/>
-        <Class IRI="#MeasurementInstrument"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#calibrates"/>
-        <Class IRI="#Calibrator"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#compliesWithRequirements"/>
-        <Class IRI="#Auditor"/>
+        <ObjectProperty IRI="#activityImpacts"/>
+        <Class IRI="#Activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#enacts"/>
@@ -1066,151 +797,67 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eventImpacts"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasClaimant"/>
         <Class IRI="#Claim"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCondition"/>
-        <Class IRI="#Control"/>
+        <ObjectProperty IRI="#hasControl"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDuration"/>
         <Class IRI="#Period"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEnvironment"/>
-        <Class IRI="#State"/>
+        <ObjectProperty IRI="#hasInput"/>
+        <Class IRI="#Activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasInstrument"/>
         <Class IRI="#Activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasParVal"/>
-        <Class IRI="#Parameter"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPoint"/>
-        <Class IRI="#Location"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasProvenance"/>
-        <Class IRI="#State"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasReputation"/>
-        <Class IRI="#Agent"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRole"/>
-        <Class IRI="#Agent"/>
+        <ObjectProperty IRI="#hasOutput"/>
+        <Class IRI="#Activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSubject"/>
         <Class IRI="#Control"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasType"/>
-        <Class IRI="#Location"/>
+        <ObjectProperty IRI="#impactedByActivity"/>
+        <Class IRI="#Environment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#impacts"/>
-        <Class IRI="#Activity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#impacts"/>
-        <Class IRI="#Event"/>
+        <ObjectProperty IRI="#impactedByEvent"/>
+        <Class IRI="#State"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isDefinedBy"/>
         <Class IRI="#Environment"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isEnactedBy"/>
-        <Class IRI="#Role"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isImpactedBy"/>
-        <Class IRI="#Environment"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isOperatedBy"/>
-        <Class IRI="#Instrument"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isOwnedBy"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isParValOf"/>
-        <Class IRI="#State"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPerformedBy"/>
         <Class IRI="#Activity"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isStateDiffFrom"/>
-        <Class IRI="#State"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isStatementAbout"/>
         <Class IRI="#Claim"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isVerifiedBy"/>
-        <Class IRI="#Claim"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isVerifierOf"/>
-        <Class IRI="#Auditor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#limitsOrDirects"/>
-        <Class IRI="#Control"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#makesClaim"/>
         <Class IRI="#Agent"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#makesImpactClaim"/>
-        <Class IRI="#Agent"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#operates"/>
-        <Class IRI="#Operator"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#owns"/>
-        <Class IRI="#Owner"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#performedWith"/>
-        <Class IRI="#Activity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedToPerform"/>
         <Class IRI="#Instrument"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#calibratedBy"/>
-        <Class IRI="#Calibrator"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#calibrates"/>
-        <Class IRI="#MeasurementInstrument"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#compliesWithRequirements"/>
-        <Class IRI="#Control"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#defines"/>
+        <ObjectProperty IRI="#activityImpacts"/>
         <Class IRI="#Environment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1222,20 +869,12 @@
         <Class IRI="#Activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#forParameter"/>
-        <Class IRI="#Parameter"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasActivity"/>
-        <Class IRI="#Activity"/>
+        <ObjectProperty IRI="#eventImpacts"/>
+        <Class IRI="#State"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasClaimant"/>
         <Class IRI="#Agent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCondition"/>
-        <Class IRI="#State"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasControl"/>
@@ -1246,10 +885,6 @@
         <Class IRI="http://www.w3.org/2006/time#Duration"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEnvironment"/>
-        <Class IRI="#Environment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasInstrument"/>
         <Class IRI="#Instrument"/>
     </ObjectPropertyRange>
@@ -1258,67 +893,19 @@
         <Class IRI="#Location"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMethodology"/>
-        <Class IRI="#Control"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasParVal"/>
-        <Class IRI="#State"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPeriod"/>
         <Class IRI="#Period"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasProvenance"/>
+        <ObjectProperty IRI="#impactedByActivity"/>
         <Class IRI="#Activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasReputation"/>
-        <Class IRI="#Reputation"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRole"/>
-        <Class IRI="#Role"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasType"/>
-        <Class IRI="#Location"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#impacts"/>
-        <Class IRI="#Environment"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isDefinedBy"/>
-        <Class IRI="#Parameter"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isEnactedBy"/>
-        <Class IRI="#Agent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isImpactedBy"/>
-        <Class IRI="#Activity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isImpactedBy"/>
+        <ObjectProperty IRI="#impactedByEvent"/>
         <Class IRI="#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
-        <Class IRI="#Control"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isOperatedBy"/>
-        <Class IRI="#Operator"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isOwnedBy"/>
-        <Class IRI="#Owner"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isParValOf"/>
+        <ObjectProperty IRI="#isDefinedBy"/>
         <Class IRI="#Parameter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1326,44 +913,12 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isStateDiffFrom"/>
-        <Class IRI="#State"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#isStatementAbout"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isVerifiedBy"/>
-        <Class IRI="#Auditor"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isVerifierOf"/>
-        <Class IRI="#Claim"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#limitsOrDirects"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#makesClaim"/>
         <Class IRI="#Claim"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#makesImpactClaim"/>
-        <Class IRI="#ImpactClaim"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#operates"/>
-        <Class IRI="#Instrument"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#owns"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#performedWith"/>
-        <Class IRI="#Instrument"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usedToPerform"/>
@@ -1372,10 +927,6 @@
     <DataPropertyDomain>
         <DataProperty IRI="#hasAccuracy"/>
         <Class IRI="#MeasurementInstrument"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasCodeInRegistry"/>
-        <Class IRI="#Parameter"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasConfLowerBound"/>
@@ -1388,18 +939,6 @@
     <DataPropertyDomain>
         <DataProperty IRI="#hasConfidenceLevel"/>
         <Class IRI="#State"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasDefinition"/>
-        <Class IRI="#Parameter"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasDescription"/>
-        <Class IRI="#Environment"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasDescription"/>
-        <Class IRI="#Instrument"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasLabel"/>
@@ -1418,10 +957,6 @@
         <Class IRI="#Instrument"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasName"/>
-        <Class IRI="#Agent"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#hasPrecision"/>
         <Class IRI="#MeasurementInstrument"/>
     </DataPropertyDomain>
@@ -1434,40 +969,12 @@
         <Class IRI="#Parameter"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#hasReferenceSystem"/>
-        <Class IRI="#Location"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasRegistry"/>
-        <Class IRI="#Instrument"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasRegistry"/>
-        <Class IRI="#Parameter"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasRegistryVersion"/>
-        <Class IRI="#Instrument"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasRegistryVersion"/>
-        <Class IRI="#Parameter"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#hasTimestamp"/>
         <Class IRI="#State"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasUnitOfMeasure"/>
         <Class IRI="#Parameter"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasValue"/>
-        <Class IRI="#Control"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasValue"/>
-        <Class IRI="#State"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isBinding"/>
@@ -1494,20 +1001,8 @@
         <Class IRI="#Period"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#appliesToParameters"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#hasAccuracy"/>
         <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasActivityCode"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasCodeInRegistry"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasConfLowerBound"/>
@@ -1520,18 +1015,6 @@
     <DataPropertyRange>
         <DataProperty IRI="#hasConfidenceLevel"/>
         <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDefinition"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDescription"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasExpression"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasLabel"/>
@@ -1554,10 +1037,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#hasPrecision"/>
         <Datatype abbreviatedIRI="xsd:float"/>
     </DataPropertyRange>
@@ -1566,56 +1045,16 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasReferenceSystem"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasRegistry"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasRegistryVersion"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasSource"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasSymbol"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#hasTimestamp"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasUnitOfMeasure"/>
-        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasValue"/>
-        <Datatype abbreviatedIRI="rdfs:Resource"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#isBinding"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#isSymbol"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#pointHasAltitude"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#pointHasLatitude"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#pointHasLongtitude"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#wasCalibratedOn"/>
@@ -2071,15 +1510,14 @@ Media can be digital or physical</Literal>
         <Literal xml:lang="en">A control for expressing the scope, extent or capacity of a thing.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Period</IRI>
-        <Literal xml:lang="en">Activity, Project, and Event are in the domain of hasPeriod; the range is Period.
-Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDuration predicates.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Period</IRI>
         <Literal xml:lang="en">Period</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Period</IRI>
+        <Literal xml:lang="en">A non-zero extent of time defined by two known instants.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2278,28 +1716,8 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#appliesToParameters</IRI>
-        <Literal xml:lang="en">The parameters to which this methodology applies.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#comprises</IRI>
         <Literal xml:lang="en">USE: For Activity, Control, Agent</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#defines</IRI>
-        <Literal xml:lang="en">A collection of Parameters defines an Environment.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasCondition</IRI>
-        <Literal xml:lang="en">Indicates the State that must exist for the specific Control to be applicable.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasEnvironment</IRI>
-        <Literal xml:lang="en">The Environment for which the Parameter&apos;s value was measured/calculated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2323,21 +1741,6 @@ is equivalent to the condition (Control) that Activity B only commence after the
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasModality</IRI>
         <Literal xml:lang="en">Counterfactual (FALSE) or real (TRUE).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasReferenceSystem</IRI>
-        <Literal xml:lang="en">EDIT for use with Location</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasReputation</IRI>
-        <Literal xml:lang="en">EDIT</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasRole</IRI>
-        <Literal xml:lang="en">EDIT</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2390,11 +1793,6 @@ is equivalent to the condition (Control) that Activity B only commence after the
         <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
         <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
         <Literal xml:lang="en">Object</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>owl:equivalentClass</AbbreviatedIRI>
-        <Literal>equivalentClass</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
