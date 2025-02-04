@@ -1,742 +1,2315 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.org/aiaontology#"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://purl.org/aiaontology"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="http://purl.org/aiaontology">
-        <terms:description xml:lang="en">The aim of this ontology is to provide a general and exhaustive standard for the accounting of human impact on their environment/s</terms:description>
-        <terms:source rdf:resource="https://wiki.hyperledger.org/display/CASIG/An+ontology+for+anthropogenic+impact+accounting"/>
-        <terms:title xml:lang="en">An Ontology for Anthropogenic Impact Accounting</terms:title>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/source -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#equivalentClass -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#equivalentProperty -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentProperty"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#sameAs -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#broader -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#definition -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#related -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#related"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://dbpedia.org/ontology/person -->
-
-    <rdfs:Datatype rdf:about="http://dbpedia.org/ontology/person"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/date -->
-
-    <rdfs:Datatype rdf:about="http://purl.org/dc/terms/date"/>
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date">
-        <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/date"/>
-    </rdfs:Datatype>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/aiaontology#calculateHasResult -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#calculateHasResult">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Calculate"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Calculation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#calibratedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#calibratedBy">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#calibrates"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#MeasurementInstrument"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Calibrator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#calibrates -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#calibrates">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Calibrator"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#MeasurementInstrument"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#compliesWithRequirements -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#compliesWithRequirements">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Auditor"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#comprises -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#comprises">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-        <rdfs:comment xml:lang="en">USE: For Activity, Control, Agent</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#defines -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#defines">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isDefinedBy"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Environment"/>
-        <rdfs:comment xml:lang="en">A collection of Parameters defines an Environment.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#enacts -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#enacts">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isEnactedBy"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Role"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#engagesIn -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#engagesIn">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isPerformedBy"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Activity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#forParameter -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#forParameter">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Parameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasActivity -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasActivity">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Activity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasCalculation -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasCalculation">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Calculation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasClaimant -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasClaimant">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#makesClaim"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasCondition -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasCondition">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:comment xml:lang="en">Indicates the State that must exist for the specific Control to be applicable.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasControl -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasControl">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasDuration -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasDuration">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Period"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Duration"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasEnvironment -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasEnvironment">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Environment"/>
-        <rdfs:comment xml:lang="en">The Environment for which the Parameter&apos;s value was measured/calculated</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasFormula -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasFormula">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Calculation"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Formula"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasInstrument -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasInstrument">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Instrument"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasLocation -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasLocation">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Location"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasMethodology -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasMethodology">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasParVal -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasParVal">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isParValOf"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#State"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasPeriod -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasPeriod">
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Period"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasPoint -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasPoint">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Location"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasProvenance -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasProvenance">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Activity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasReputation -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasReputation">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Reputation"/>
-        <rdfs:comment xml:lang="en">EDIT</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasRole -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasRole">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:comment xml:lang="en">EDIT</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasSubject -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasSubject">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasSymbol -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasSymbol"/>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasType -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasType">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Location"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Location"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasVariable -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#hasVariable">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Calculation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#impacts -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#impacts">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isImpactedBy"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Event"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Environment"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isDefinedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isDefinedBy">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Environment"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Parameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isEnactedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isEnactedBy">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isImpactedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isImpactedBy">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Environment"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Event"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isLimitedOrDirectedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isLimitedOrDirectedBy">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#limitsOrDirects"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isOperatedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isOperatedBy">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#operates"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Operator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isOwnedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isOwnedBy">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#owns"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Owner"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isParValOf -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isParValOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Parameter"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isPerformedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isPerformedBy">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isStateDiffFrom -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isStateDiffFrom">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#State"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isStatementAbout -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isStatementAbout">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isVerifiedBy -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isVerifiedBy">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Auditor"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isVerifierOf -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#isVerifierOf">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Auditor"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#limitsOrDirects -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#limitsOrDirects">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#makesClaim -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#makesClaim">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:comment xml:lang="en">FIX: this does not work while Role exists/Auditor etc. is not a subClassOf Agent.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#makesImpactClaim -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#makesImpactClaim">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#ImpactClaim(n)"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#operates -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#operates">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Operator"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Instrument"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#owns -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#owns">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Owner"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#performedWith -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#performedWith">
-        <owl:inverseOf rdf:resource="http://purl.org/aiaontology#usedToPerform"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Instrument"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#usedToPerform -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#usedToPerform">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:range rdf:resource="http://purl.org/aiaontology#Activity"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#usesSymbol -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/aiaontology#usesSymbol">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Formula"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#equivalentClass -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/aiaontology#appliesToParameters -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#appliesToParameters">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The parameters to which this methodology applies.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasAccuracy -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasAccuracy">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#MeasurementInstrument"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasActivityCode -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasActivityCode">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasCodeInRegistry -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasCodeInRegistry">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasConfLowerBound -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasConfLowerBound">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasConfUpperBound -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasConfUpperBound">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasConfidenceLevel -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasConfidenceLevel">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasDefinition -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasDefinition">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasDescription">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Environment"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasExpression -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasExpression">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Formula"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasLabel -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasLabel">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">A optional human-understandable label for an entity of type Location, eg. a street adress.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasLogicalOperator -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasLogicalOperator">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Less than, greater than, equal to, include, exclude, etc.
+     ontologyIRI="http://purl.org/aiaontology">
+    <Prefix name="" IRI="http://purl.org/aiaontology"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <Literal xml:lang="en">The aim of this ontology is to provide a general and exhaustive standard for the accounting of human impact on their environment/s</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:source"/>
+        <IRI>https://wiki.hyperledger.org/display/CASIG/An+ontology+for+anthropogenic+impact+accounting</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+        <Literal xml:lang="en">An Ontology for Anthropogenic Impact Accounting</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#AccountingPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attestation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Auditing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Auditor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calculating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CalculationFormula"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calibrator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Claim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClaimMedium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Claimant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Claiming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClassificationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicationMedium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CreditingPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CyberPersona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Extent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeocentricDatum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeodeticDatum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IdentificationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IdentityClaim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImpactClaim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indicator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegalPerson"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Line"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeasurementInstrument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeasurementSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measuring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalPerson"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Objective"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Owner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Period"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjectDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjectPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Report"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reporting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Representing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reputation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialMeasurementSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateClaim"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateDifference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalMeasurementSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimePosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Validating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Verifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Verifying"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/dc/dcmitype/Event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="terms:AgentClass"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="terms:Location"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="terms:PeriodOfTime"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2006/time#Duration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/prov#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/prov#Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.wikidata.org/wiki/Q154954"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.wikidata.org/wiki/Q3778211"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#calculateHasResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#calibratedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#calibrates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#compliesWithRequirements"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#comprises"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#defines"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enacts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#engagesIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#forParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCalculation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasClaimant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasControl"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDuration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFormula"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInstrument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMethodology"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParVal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPeriod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPoint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProvenance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReputation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSymbol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVariable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#impacts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDefinedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEnactedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isImpactedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOperatedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOwnedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isParValOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPerformedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStateDiffFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStatementAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isVerifiedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isVerifierOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#limitsOrDirects"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makesClaim"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makesImpactClaim"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#owns"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usedToPerform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesSymbol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="owl:equivalentClass"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#appliesToParameters"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAccuracy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasActivityCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCodeInRegistry"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasConfLowerBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasConfUpperBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasConfidenceLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDefinition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasExpression"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLabel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLogicalOperator"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMake"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasModality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasModel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPrecision"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRationale"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasReferenceSystem"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRegistry"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRegistryVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSymbol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUnitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isBinding"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isSymbol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pointHasAltitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pointHasLatitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pointHasLongtitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wasCalibratedOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wasManufacturedOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/prov#endedAtTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/prov#startedAtTime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GPS"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdf:type"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:equivalentClass"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:equivalentProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:sameAs"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:broader"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:narrower"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos:related"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="http://dbpedia.org/ontology/person"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="terms:date"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="rdfs:Resource"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="http://www.w3.org/ns/prov#Activity"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Agent"/>
+        <Class abbreviatedIRI="terms:AgentClass"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Agent"/>
+        <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Auditor is that they verify some Claim AND complies with the (legal) Controls for being an Auditor</Literal>
+        </Annotation>
+        <Class IRI="#Auditor"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#compliesWithRequirements"/>
+                <Class IRI="#Control"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isVerifierOf"/>
+                <Class IRI="#Claim"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Calibrator is that they calibrate some Instrument.</Literal>
+        </Annotation>
+        <Class IRI="#Calibrator"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#calibrates"/>
+            <Class IRI="#MeasurementInstrument"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Claimant is that they make some Claim.</Literal>
+        </Annotation>
+        <Class IRI="#Claimant"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#makesClaim"/>
+            <Class IRI="#Claim"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Event"/>
+        <Class IRI="http://purl.org/dc/dcmitype/Event"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Event"/>
+        <Class IRI="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LegalPerson"/>
+        <Class IRI="http://www.wikidata.org/wiki/Q3778211"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="terms:Location"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NaturalPerson"/>
+        <Class IRI="http://www.wikidata.org/wiki/Q154954"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Operator is that they operate some Instrument.</Literal>
+        </Annotation>
+        <Class IRI="#Operator"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#operates"/>
+            <Class IRI="#Instrument"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Owner is that they own some owl:Thing.</Literal>
+        </Annotation>
+        <Class IRI="#Owner"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#owns"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Period"/>
+        <Class abbreviatedIRI="terms:PeriodOfTime"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The requirement for an Agent to fulfill the Role of Verifier is that they verify some Claim.</Literal>
+        </Annotation>
+        <Class IRI="#Verifier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isVerifierOf"/>
+            <Class IRI="#Claim"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <Class IRI="http://www.w3.org/ns/prov#Entity"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AccountingPeriod"/>
+        <Class IRI="#Period"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Area"/>
+        <Class IRI="#Extent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attestation"/>
+        <Class IRI="#Claim"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Auditing"/>
+        <Class IRI="#Verifying"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Auditor"/>
+        <Class IRI="#Verifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calculating"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CalculationFormula"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calibrator"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClaimMedium"/>
+        <Class IRI="#Medium"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Claimant"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Claiming"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClassificationSystem"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationMedium"/>
+        <Class IRI="#Medium"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CreditingPeriod"/>
+        <Class IRI="#Period"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CyberPersona"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataFormat"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Extent"/>
+        <Class IRI="#SpatialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeocentricDatum"/>
+        <Class IRI="#SpatialMeasurementSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeodeticDatum"/>
+        <Class IRI="#SpatialMeasurementSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IdentificationSystem"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IdentityClaim"/>
+        <Class IRI="#Claim"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImpactClaim"/>
+        <Class IRI="#Claim"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Indicator"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instant"/>
+        <Class IRI="#TemporalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LegalPerson"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Line"/>
+        <Class IRI="#Extent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#SpatialParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeasurementInstrument"/>
+        <Class IRI="#Instrument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeasurementSystem"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measuring"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Monitoring"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalPerson"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalProcess"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Objective"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operator"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Owner"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parameter"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Period"/>
+        <Class IRI="#TemporalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjectDeveloper"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjectPeriod"/>
+        <Class IRI="#Period"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Report"/>
+        <Class IRI="#Claim"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reporting"/>
+        <Class IRI="#Claiming"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Representing"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reputation"/>
+        <Class IRI="#Indicator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Role"/>
+        <Class IRI="#Control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialMeasurementSystem"/>
+        <Class IRI="#MeasurementSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateClaim"/>
+        <Class IRI="#Claim"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StateDifference"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalMeasurementSystem"/>
+        <Class IRI="#MeasurementSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimePosition"/>
+        <Class IRI="#TemporalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Validating"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Verifier"/>
+        <Class IRI="#Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Verifying"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Volume"/>
+        <Class IRI="#Extent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/2006/time#Duration"/>
+        <Class IRI="#TemporalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdf:type"/>
+            <AbbreviatedIRI>owl:Axiom</AbbreviatedIRI>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="en">The class of all things that have a duration is a subclass of the set of all things that have a start as well as end time. In other words, everything which has a duration must have started at some time and ended at some time.</Literal>
+        </Annotation>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasDuration"/>
+            <Class IRI="http://www.w3.org/2006/time#Duration"/>
+        </ObjectSomeValuesFrom>
+        <ObjectIntersectionOf>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="http://www.w3.org/ns/prov#endedAtTime"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="http://www.w3.org/ns/prov#startedAtTime"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Event"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#calibratedBy"/>
+        <ObjectProperty IRI="#calibrates"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#defines"/>
+        <ObjectProperty IRI="#isDefinedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#enacts"/>
+        <ObjectProperty IRI="#isEnactedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#engagesIn"/>
+        <ObjectProperty IRI="#isPerformedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasClaimant"/>
+        <ObjectProperty IRI="#makesClaim"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasParVal"/>
+        <ObjectProperty IRI="#isParValOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#impacts"/>
+        <ObjectProperty IRI="#isImpactedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
+        <ObjectProperty IRI="#limitsOrDirects"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isOperatedBy"/>
+        <ObjectProperty IRI="#operates"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isOwnedBy"/>
+        <ObjectProperty IRI="#owns"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isVerifiedBy"/>
+        <ObjectProperty IRI="#isVerifierOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#performedWith"/>
+        <ObjectProperty IRI="#usedToPerform"/>
+    </InverseObjectProperties>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isParValOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#limitsOrDirects"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#comprises"/>
+    </TransitiveObjectProperty>
+    <ReflexiveObjectProperty>
+        <ObjectProperty IRI="#comprises"/>
+    </ReflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#calculateHasResult"/>
+        <Class IRI="#Calculating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#calibratedBy"/>
+        <Class IRI="#MeasurementInstrument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#calibrates"/>
+        <Class IRI="#Calibrator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#compliesWithRequirements"/>
+        <Class IRI="#Auditor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enacts"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#engagesIn"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasClaimant"/>
+        <Class IRI="#Claim"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDuration"/>
+        <Class IRI="#Period"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEnvironment"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInstrument"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParVal"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPoint"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProvenance"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReputation"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRole"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubject"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasType"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impacts"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impacts"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDefinedBy"/>
+        <Class IRI="#Environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEnactedBy"/>
+        <Class IRI="#Role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isImpactedBy"/>
+        <Class IRI="#Environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOperatedBy"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOwnedBy"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isParValOf"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPerformedBy"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStateDiffFrom"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStatementAbout"/>
+        <Class IRI="#Claim"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isVerifiedBy"/>
+        <Class IRI="#Claim"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isVerifierOf"/>
+        <Class IRI="#Auditor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#limitsOrDirects"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#makesClaim"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#makesImpactClaim"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operates"/>
+        <Class IRI="#Operator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#owns"/>
+        <Class IRI="#Owner"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performedWith"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usedToPerform"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#calibratedBy"/>
+        <Class IRI="#Calibrator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#calibrates"/>
+        <Class IRI="#MeasurementInstrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#compliesWithRequirements"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#defines"/>
+        <Class IRI="#Environment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enacts"/>
+        <Class IRI="#Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#engagesIn"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#forParameter"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActivity"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasClaimant"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasControl"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDuration"/>
+        <Class IRI="http://www.w3.org/2006/time#Duration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEnvironment"/>
+        <Class IRI="#Environment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInstrument"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMethodology"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParVal"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPeriod"/>
+        <Class IRI="#Period"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProvenance"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReputation"/>
+        <Class IRI="#Reputation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRole"/>
+        <Class IRI="#Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasType"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#impacts"/>
+        <Class IRI="#Environment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDefinedBy"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEnactedBy"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isImpactedBy"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isImpactedBy"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLimitedOrDirectedBy"/>
+        <Class IRI="#Control"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOperatedBy"/>
+        <Class IRI="#Operator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOwnedBy"/>
+        <Class IRI="#Owner"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isParValOf"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPerformedBy"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isStateDiffFrom"/>
+        <Class IRI="#State"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isStatementAbout"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isVerifiedBy"/>
+        <Class IRI="#Auditor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isVerifierOf"/>
+        <Class IRI="#Claim"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#limitsOrDirects"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#makesClaim"/>
+        <Class IRI="#Claim"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#makesImpactClaim"/>
+        <Class IRI="#ImpactClaim"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operates"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#owns"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performedWith"/>
+        <Class IRI="#Instrument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usedToPerform"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAccuracy"/>
+        <Class IRI="#MeasurementInstrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCodeInRegistry"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasConfLowerBound"/>
+        <Class IRI="#State"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasConfUpperBound"/>
+        <Class IRI="#State"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasConfidenceLevel"/>
+        <Class IRI="#State"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDefinition"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#Environment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#Instrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLabel"/>
+        <Class IRI="#Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLogicalOperator"/>
+        <Class IRI="#Control"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMake"/>
+        <Class IRI="#Instrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasModel"/>
+        <Class IRI="#Instrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class IRI="#Agent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPrecision"/>
+        <Class IRI="#MeasurementInstrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPrecision"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRationale"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReferenceSystem"/>
+        <Class IRI="#Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRegistry"/>
+        <Class IRI="#Instrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRegistry"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRegistryVersion"/>
+        <Class IRI="#Instrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRegistryVersion"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTimestamp"/>
+        <Class IRI="#State"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUnitOfMeasure"/>
+        <Class IRI="#Parameter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasValue"/>
+        <Class IRI="#Control"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasValue"/>
+        <Class IRI="#State"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isBinding"/>
+        <Class IRI="#Control"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#wasCalibratedOn"/>
+        <Class IRI="#MeasurementInstrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#wasManufacturedOn"/>
+        <Class IRI="#Instrument"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+        <Class IRI="#Period"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/prov#endedAtTime"/>
+        <Class IRI="#Period"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/prov#startedAtTime"/>
+        <Class IRI="#Period"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#appliesToParameters"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAccuracy"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasActivityCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCodeInRegistry"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasConfLowerBound"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasConfUpperBound"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasConfidenceLevel"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDefinition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasExpression"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLabel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLogicalOperator"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMake"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasModality"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasModel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPrecision"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRationale"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasReferenceSystem"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRegistry"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRegistryVersion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSource"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSymbol"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTimestamp"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUnitOfMeasure"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasValue"/>
+        <Datatype abbreviatedIRI="rdfs:Resource"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isBinding"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isSymbol"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#pointHasAltitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#pointHasLatitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#pointHasLongtitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wasCalibratedOn"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wasManufacturedOn"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/prov#endedAtTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/prov#startedAtTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AccountingPeriod</IRI>
+        <Literal xml:lang="en">AccountingPeriod</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">A thing that an agent does, which impacts an environment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">Action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">An event that is orchestrated by an agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en">&quot;An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity.&quot; (http://www.w3.org/ns/prov#Agent)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Agent</IRI>
+        <IRI>http://www.w3.org/ns/prov#Agent</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en">Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Agent</IRI>
+        <IRI>http://www.w3.org/ns/prov#Agent</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Agent</IRI>
+        <Literal xml:lang="en">A thing that bears some form of accountability for the occurrence of another thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Area</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Attestation</IRI>
+        <Literal xml:lang="en">Attestation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Attestation</IRI>
+        <Literal xml:lang="en">A formal statement made by an agent in which they claim to have witnessed or been presented with sufficient evidence to consider a specific claim made by another agent as truthful or accurate.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Attribute</IRI>
+        <Literal xml:lang="en">Attribute</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Attribute</IRI>
+        <Literal xml:lang="en">A quality or feature of a thing that can be used, whether independently or in conjunction with other attributes, to identify it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Auditing</IRI>
+        <Literal xml:lang="en">Auditing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Auditing</IRI>
+        <Literal xml:lang="en">The activity, performed by an auditor, of following a formal procedure to verify a claim.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Auditor</IRI>
+        <Literal xml:lang="en">Auditor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Auditor</IRI>
+        <Literal xml:lang="en">A predefined set of requirements, responsibilities and/or actions for an agent who conducts an audit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Calculating</IRI>
+        <Literal xml:lang="en">Calculating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Calculating</IRI>
+        <Literal xml:lang="en">The activity of deriving the value of a parameter or indicator from one or more other values, according to some mathematical calculation formula.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CalculationFormula</IRI>
+        <Literal xml:lang="en">Calculation Formula</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#CalculationFormula</IRI>
+        <Literal xml:lang="en">A control that guides a mathematical calculation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Calibrator</IRI>
+        <Literal xml:lang="en">Calibrator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Calibrator</IRI>
+        <Literal xml:lang="en">A predefined set of requirements, responsibilities and/or actions for an agent who calibrates an instrument.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Claim</IRI>
+        <Literal xml:lang="en">A Claim may comprise other Claims, e.g. a report (a Claim) consists of many Claims. Use the &apos;comprises&apos; property to indicate this.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Claim</IRI>
+        <Literal xml:lang="en">Claim</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Claim</IRI>
+        <IRI>https://www.w3.org/2003/glossary/keyword/All/assertion.html?keywords=assertion</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#Claim</IRI>
+        <Literal xml:lang="en">Assertion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Claim</IRI>
+        <Literal xml:lang="en">A statement made by an agent about a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClaimMedium</IRI>
+        <Literal>A means of representation though a control:format
+
+Media can be digital or physical</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClaimMedium</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ClaimMedium</IRI>
+        <Literal>Claim Medium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Claimant</IRI>
+        <Literal xml:lang="en">Claimant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Claimant</IRI>
+        <Literal xml:lang="en">A predefined set of requirements, responsibilities and/or actions for an agent who makes a claim.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Claiming</IRI>
+        <Literal xml:lang="en">Claiming</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#Claiming</IRI>
+        <Literal xml:lang="en">Asserting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Claiming</IRI>
+        <Literal xml:lang="en">The activity of making a statement about a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ClassificationSystem</IRI>
+        <Literal xml:lang="en">Classification System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#ClassificationSystem</IRI>
+        <Literal xml:lang="en">A system for organising things into groups according to their attributes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CommunicationMedium</IRI>
+        <Literal xml:lang="en">Communication Medium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#CommunicationMedium</IRI>
+        <Literal xml:lang="en">A thing that is altered, either temporarily or permanently, to preserve information during transport through space and/or time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Control</IRI>
+        <Literal xml:lang="en">A Control may comprise other Controls, e.g. a methodology (a Control) defines many conditions to be met (themselves Controls). Use the &apos;comprises&apos; property to indicate this.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Control</IRI>
+        <Literal xml:lang="en">A thing that limits or directs another thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CyberPersona</IRI>
+        <Literal>CyberPersona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Environment</IRI>
+        <Literal xml:lang="en">Environment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Environment</IRI>
+        <Literal xml:lang="en">The surroundings and conditions in which a thing occurs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Event</IRI>
+        <Literal xml:lang="en">Event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Event</IRI>
+        <Literal xml:lang="en">A thing that occurs over a period of time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Extent</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GPS</IRI>
+        <Literal xml:lang="en">This is but one example of a CRS (Coordinate Reference System) - there are many more that may be defined in implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GeocentricDatum</IRI>
+        <Literal>TODO:definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GeodeticDatum</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IdentificationSystem</IRI>
+        <Literal xml:lang="en">Identification System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#IdentificationSystem</IRI>
+        <Literal xml:lang="en">A system for distinguishing individual things from one another.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IdentityClaim</IRI>
+        <Literal xml:lang="en">Identity Claim</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#IdentityClaim</IRI>
+        <Literal xml:lang="en">A statement made by an agent about their identity, with reference to some identification system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ImpactClaim</IRI>
+        <Literal xml:lang="en">Impact Claim</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#ImpactClaim</IRI>
+        <Literal xml:lang="en">A statement about the causal relation between an event and a state difference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Indicator</IRI>
+        <Literal xml:lang="en">Indicator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Indicator</IRI>
+        <Literal xml:lang="en">A control for indicating the state or level of a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Instant</IRI>
+        <Literal>Instant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Instrument</IRI>
+        <Literal xml:lang="en">Instrument</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Instrument</IRI>
+        <Literal xml:lang="en">A thing used to perform an activity, but which is not an input.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Line</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en">An entity of type Location can be a Point, Line, Path, Polygon, or Volume. A point has a x and y (and optional z) coordinate. If no z coordinate is specified, sea level is assumed. A line comprises exactly two points. A path is two or more continuous lines. A polygon is the area enclosed by three or more points. A volume is the area enclosed by four or more polygons where each edge is shared by exactly two polygons. Length can be derived from a given Line, area from a given Polygon, and volume from a given Volume.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MeasurementSystem</IRI>
+        <Literal>Measurement System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#MeasurementSystem</IRI>
+        <Literal>A system for expressing and comparing quantities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Measuring</IRI>
+        <Literal xml:lang="en">Measuring</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Measuring</IRI>
+        <Literal xml:lang="en">The activity of determining the value of a parameter or indicator through observation (as opposed to calculation).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Medium</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Medium</IRI>
+        <Literal>Medium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Monitoring</IRI>
+        <Literal xml:lang="en">Monitoring</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Monitoring</IRI>
+        <Literal xml:lang="en">The activity of repeatedly observing a state over a period of time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NaturalProcess</IRI>
+        <Literal>Natural Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#NaturalProcess</IRI>
+        <Literal>A series of interrelated or interacting natural events without a primary human cause.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Objective</IRI>
+        <Literal xml:lang="en">Objective</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <IRI>#Objective</IRI>
+        <Literal>Goal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Objective</IRI>
+        <Literal xml:lang="en">A desired state to be effected by an activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Operator</IRI>
+        <Literal xml:lang="en">Operator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Operator</IRI>
+        <Literal xml:lang="en">A predefined set of requirements, responsibilities and/or actions for an agent who operates a specific thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Owner</IRI>
+        <Literal xml:lang="en">Owner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Owner</IRI>
+        <Literal xml:lang="en">A predefined set of requirements, responsibilities and/or actions for an agent who owns a specific thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Parameter</IRI>
+        <Literal>A quality or feature forming one of a set that defines something or sets the conditions of its existence or operation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Parameter</IRI>
+        <Literal xml:lang="en">Parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Parameter</IRI>
+        <Literal xml:lang="en">A control for expressing the scope, extent or capacity of a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Period</IRI>
+        <Literal xml:lang="en">Activity, Project, and Event are in the domain of hasPeriod; the range is Period.
+Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDuration predicates.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Period</IRI>
+        <Literal xml:lang="en">Period</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Process</IRI>
+        <Literal xml:lang="en">Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Process</IRI>
+        <Literal xml:lang="en">A series of interrelated and/or interacting events.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Project</IRI>
+        <Literal>Project</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Project</IRI>
+        <Literal xml:lang="en">A coordinated set of activities, undertaken to achieve an objective, subject to specific controls, of which one must be a limited duration.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ProjectDeveloper</IRI>
+        <Literal>Project Developer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#ProjectDeveloper</IRI>
+        <Literal>A set of predefined behaviours for an agent who defines and prepares the conditions for an activity or a set of activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Report</IRI>
+        <Literal xml:lang="en">Report</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Report</IRI>
+        <Literal>A statement, made according to some specification, about a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Reporting</IRI>
+        <Literal xml:lang="en">Reporting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Reporting</IRI>
+        <Literal xml:lang="en">TODO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Representing</IRI>
+        <Literal xml:lang="en">Representing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Representing</IRI>
+        <Literal xml:lang="en">The activity of acting on behalf of another thing, usually - but not necessarily - in a different medium and/or different environment (or context) than that in which the represented thing occurs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reputation</IRI>
+        <Literal xml:lang="en">NOT FINAL &quot;[T]he beliefs or opinions that are generally held about someone or something.&quot; (OED, Google)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reputation</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Reputation</IRI>
+        <Literal xml:lang="en">Reputation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Role</IRI>
+        <Literal xml:lang="en">Role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Role</IRI>
+        <Literal xml:lang="en">A control that specifies the scope of and/or requirements for an agent&apos;s relation to an activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpatialMeasurementSystem</IRI>
+        <Literal xml:lang="en">Spatial Measurement System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#SpatialMeasurementSystem</IRI>
+        <Literal xml:lang="en">A system for expressing and comparing spatial quantities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpatialParameter</IRI>
+        <Literal xml:lang="en">Spatial Parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#SpatialParameter</IRI>
+        <Literal xml:lang="en">A control for expressing the spatial scope or spatial extent of a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#State</IRI>
+        <Literal xml:lang="en">State</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#State</IRI>
+        <Literal xml:lang="en">The condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StateClaim</IRI>
+        <Literal xml:lang="en">State Claim</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#StateClaim</IRI>
+        <Literal xml:lang="en">A statement about a state.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StateDifference</IRI>
+        <Literal xml:lang="en">State Difference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#StateDifference</IRI>
+        <Literal xml:lang="en">A difference between two states of a thing, attributable to an event as its impact.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemporalMeasurementSystem</IRI>
+        <Literal xml:lang="en">Temporal Measurement System</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#TemporalMeasurementSystem</IRI>
+        <Literal xml:lang="en">A system for expressing and comparing temporal quantities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemporalParameter</IRI>
+        <Literal xml:lang="en">Temporal Parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#TemporalParameter</IRI>
+        <Literal xml:lang="en">A control for expressing the temporal scope or temporal extent of a thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TimePosition</IRI>
+        <Literal>Time Position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Validating</IRI>
+        <Literal xml:lang="en">Validating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Validating</IRI>
+        <Literal xml:lang="en">The activity of ascertaining that the form, structure or type of some thing satisfies a specification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Verifier</IRI>
+        <Literal xml:lang="en">Verifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Verifier</IRI>
+        <Literal xml:lang="en">A predefined set of requirements, responsibilities and/or actions for an agent who verifies a claim.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Verifying</IRI>
+        <Literal xml:lang="en">Verifying</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:definition"/>
+        <IRI>#Verifying</IRI>
+        <Literal xml:lang="en">The activity of ascertaining that the content of a claim satisfies a particular specification for accuracy, truthfulness or demonstrability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Volume</IRI>
+        <Literal>TODO: definition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#appliesToParameters</IRI>
+        <Literal xml:lang="en">The parameters to which this methodology applies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#comprises</IRI>
+        <Literal xml:lang="en">USE: For Activity, Control, Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#defines</IRI>
+        <Literal xml:lang="en">A collection of Parameters defines an Environment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCondition</IRI>
+        <Literal xml:lang="en">Indicates the State that must exist for the specific Control to be applicable.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEnvironment</IRI>
+        <Literal xml:lang="en">The Environment for which the Parameter&apos;s value was measured/calculated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLabel</IRI>
+        <Literal xml:lang="en">A optional human-understandable label for an entity of type Location, eg. a street adress.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLogicalOperator</IRI>
+        <Literal xml:lang="en">Less than, greater than, equal to, include, exclude, etc.
 Used to relate the subject and value of a Control, for example:
 
 C a Control ;
@@ -744,1170 +2317,130 @@ C a Control ;
    hasValue ActivityA.endDate ;
    hasOperator &gt;= .
 
-is equivalent to the condition (Control) that Activity B only commence after the end of Activity A.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasMake -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasMake">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasModality -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasModality">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">Counterfactual (FALSE) or real (TRUE).</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasModel -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasModel">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasName -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasName">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasPrecision -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasPrecision">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#MeasurementInstrument"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasRationale -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasRationale">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasReferenceSystem -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasReferenceSystem">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">EDIT for use with Location</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasRegistry -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasRegistry">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasRegistryVersion -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasRegistryVersion">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasSource -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasSource">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasSymbol -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasSymbol">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasTimestamp -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasTimestamp">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</rdfs:comment>
-        <rdfs:comment xml:lang="en">The moment of measurement of the value of a Parameter that defines the State.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasUnitOfMeasure -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasUnitOfMeasure">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#hasValue -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#hasValue">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#State"/>
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isBinding -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#isBinding">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">Used to indicate whether a Control is obligatory (TRUE) or non-obligatory (FALSE)</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#isSymbol -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#isSymbol">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#pointHasAltitude -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#pointHasAltitude">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#pointHasLatitude -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#pointHasLatitude">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#pointHasLongtitude -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#pointHasLongtitude">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#wasCalibratedOn -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#wasCalibratedOn">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#MeasurementInstrument"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/aiaontology#wasManufacturedOn -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/aiaontology#wasManufacturedOn">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Instrument"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="en">Format: eg. 2022-01-16</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2006/time#hasDuration -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#hasDuration">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Period"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#endedAtTime -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#endedAtTime">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Period"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#startedAtTime -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#startedAtTime">
-        <rdfs:domain rdf:resource="http://purl.org/aiaontology#Period"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/aiaontology#AccountingPeriod -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#AccountingPeriod">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Period"/>
-        <rdfs:label xml:lang="en">AccountingPeriod</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Activity -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Activity">
-        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-        <owl:disjointWith rdf:resource="http://purl.org/aiaontology#Event"/>
-        <rdfs:comment xml:lang="en">A thing that an agent does, which impacts an environment.</rdfs:comment>
-        <rdfs:comment xml:lang="en">An Activity may comprise other Activity/ies, e.g. a project (an Activity) consists of many Activities. Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
-        <skos:altLabel xml:lang="en">Action</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Agent -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Agent">
-        <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/AgentClass"/>
-        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:comment xml:lang="en">&quot;An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity.&quot; (http://www.w3.org/ns/prov#Agent)</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:label xml:lang="en">Agent</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Area -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Area">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Extent"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Attest -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Attest">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO definition</rdfs:comment>
-        <rdfs:label>Attest</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Attestation -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Attestation">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim that is validated by formal statement of an official authority</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label>Attestation(n)</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Auditor -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Auditor">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#compliesWithRequirements"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Verifier"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Auditor</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for a certified agent who conducts an audit.</skos:definition>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/aiaontology#Auditor"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#compliesWithRequirements"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">The requirement for an Agent to fulfill the Role of Auditor is that they verify some Claim AND complies with the (legal) Controls for being an Auditor</rdfs:comment>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.org/aiaontology#Calculate -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Calculate">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Calculation -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Calculation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:label xml:lang="en">Calculation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Calibrator -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Calibrator">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#calibrates"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#MeasurementInstrument"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calibrator</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent who calibrates a measurement instrument.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#ClaimMedium -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#ClaimMedium">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Medium"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A means of representation though a control:format
-
-Media can be digital or physical</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label>Claim Medium</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Claimant -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Claimant">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#makesClaim"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Claimant</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent who makes a claim in the context of a specific activity.</skos:definition>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/aiaontology#Claimant"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#makesClaim"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">The requirement for an Agent to fulfill the Role of Claimant is that they make some Claim.</rdfs:comment>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.org/aiaontology#Class -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Class">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:comment xml:lang="en">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#ClassificationSystem -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#ClassificationSystem">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Classification System</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#CreditingPeriod -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#CreditingPeriod">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Period"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#CyberPersona -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#CyberPersona">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Agent"/>
-        <rdfs:label>CyberPersona</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#DataFormat -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#DataFormat">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Environment -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Environment">
-        <rdfs:comment xml:lang="en">(PROPOSED) The surroundings and conditions in which a thing exists.</rdfs:comment>
-        <rdfs:label xml:lang="en">Environment</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Event -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Event">
-        <owl:equivalentClass rdf:resource="http://purl.org/dc/dcmitype/Event"/>
-        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
-        <rdfs:label xml:lang="en">Event</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thing that happens or takes place and which impacts an environment. An event is differentiated from an activity by the absence of explicit human intention.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Extent -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Extent">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#SpatialParameter"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Formula -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Formula">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#GeocentricDatum -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#GeocentricDatum">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#SpatialReferenceSystem"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO:definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#GeodeticDatum -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#GeodeticDatum">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#SpatialReferenceSystem"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Indicator -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Indicator">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:label>Indicator</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A calculated interpretation of measured parameters that indicates the state or level of something.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Instant -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Instant">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#TemporalParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Instrument -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Instrument">
-        <rdfs:label xml:lang="en">Instrument</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thing used to perform an activity.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#LegalPerson -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#LegalPerson">
-        <owl:equivalentClass rdf:resource="http://www.wikidata.org/wiki/Q3778211"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Agent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Line -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Line">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Extent"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Location -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Location">
-        <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#SpatialParameter"/>
-        <rdfs:comment xml:lang="en">An entity of type Location can be a Point, Line, Path, Polygon, or Volume. A point has a x and y (and optional z) coordinate. If no z coordinate is specified, sea level is assumed. A line comprises exactly two points. A path is two or more continuous lines. A polygon is the area enclosed by three or more points. A volume is the area enclosed by four or more polygons where each edge is shared by exactly two polygons. Length can be derived from a given Line, area from a given Polygon, and volume from a given Volume.</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label xml:lang="en">Location</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Measurement -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Measurement">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label>Measurement</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#MeasurementInstrument -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#MeasurementInstrument">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Instrument"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#MeasurementSystem -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#MeasurementSystem">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurement System</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measurement system allows the expression of the state of a parameter.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Medium -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Medium">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label>Medium</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#NaturalPerson -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#NaturalPerson">
-        <owl:equivalentClass rdf:resource="http://www.wikidata.org/wiki/Q154954"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Agent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#NaturalProcess -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#NaturalProcess">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Process"/>
-        <rdfs:label>Natural Process</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of interrelated or interacting natural events without a primary human cause.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Objective -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Objective">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:label>Objective</rdfs:label>
-        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goal</skos:altLabel>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;[R]esult to be achieved.&quot; (ISO Annex SL Appendix 2)</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Operator -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Operator">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#operates"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Instrument"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Operator</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent who operates a specific thing (e.g., an instrument) in the context of a specific activity.</skos:definition>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/aiaontology#Operator"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#operates"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Instrument"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">The requirement for an Agent to fulfill the Role of Operator is that they operate some Instrument.</rdfs:comment>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.org/aiaontology#Owner -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Owner">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#owns"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Owner</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent who owns a specific thing in the context of a specific activity</skos:definition>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/aiaontology#Owner"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#owns"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">The requirement for an Agent to fulfill the Role of Owner is that they own some owl:Thing.</rdfs:comment>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.org/aiaontology#Parameter -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Parameter">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parameter</rdfs:label>
-        <skos:altLabel xml:lang="en">Attribute</skos:altLabel>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality or feature forming one of a set that defines something or sets the conditions of its existence or operation.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Period -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Period">
-        <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/PeriodOfTime"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#TemporalParameter"/>
-        <rdfs:comment xml:lang="en">Activity, Project, and Event are in the domain of hasPeriod; the range is Period.
-Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDuration predicates.</rdfs:comment>
-        <rdfs:label xml:lang="en">Period</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Process -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Process">
-        <rdfs:label>Process (n)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of interrelated or interacting events or activities.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Project -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Project">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Process"/>
-        <rdfs:label>Project</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unique process, consisting of a set of coordinated activities, undertaken to achieve an objective under specific controls.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#ProjectDeveloper -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#ProjectDeveloper">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Project Developer</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent who defines and prepares the conditions for an activity or a set of activities.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#ProjectPeriod -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#ProjectPeriod">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Period"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Reputation -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Reputation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:comment xml:lang="en">NOT FINAL &quot;[T]he beliefs or opinions that are generally held about someone or something.&quot; (OED, Google)</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label xml:lang="en">Reputation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Role -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Role">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control(n)"/>
-        <rdfs:label xml:lang="en">Role</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent with regards to a specific activity.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#SpatialParameter -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#SpatialParameter">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Parameter"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#SpatialReferenceSystem -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#SpatialReferenceSystem">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#MeasurementSystem"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#State -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#State">
-        <rdfs:comment xml:lang="en">The State of an Environment comprises the collection of the States (i.e. the values) of that Environment&apos;s defining parameters.</rdfs:comment>
-        <rdfs:label xml:lang="en">State</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A state is the value of a parameter at a specific time position.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#TemporalParameter -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#TemporalParameter">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Parameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#TemporalReferenceSystem -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#TemporalReferenceSystem">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#MeasurementSystem"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#TimePosition -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#TimePosition">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#TemporalParameter"/>
-        <rdfs:label>TimePosition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Validate -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Validate">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Validate (v)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of confirming or demonstrating that something satisfies a specification</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Verifier -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Verifier">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Role"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verifier</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of predefined behaviours for an agent who verifies a claim.</skos:definition>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/aiaontology#Verifier"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#isVerifierOf"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">FIX: more complex and complete Controls for Agents to fulfill certain Roles to be added</rdfs:comment>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.org/aiaontology#Volume -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Volume">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Extent"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Audit(n) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Audit(n)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audit (n)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The result of an auditing process.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Audit(v) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Audit(v)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Verify(v)"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audit (v)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of performing a systematic, independent, objective and documented evaluation of a claim and its supporting evidence to determine the extent to which it complies with specific criteria (thing:control)</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Claim(n) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Claim(n)">
-        <rdfs:comment xml:lang="en">A Claim may comprise other Claim/s, e.g. a report (a Claim) consists of many Claims. Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
-        <rdfs:label xml:lang="en">Claim (n)</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://www.w3.org/2003/glossary/keyword/All/assertion.html?keywords=assertion"/>
-        <skos:altLabel xml:lang="en">Assertion</skos:altLabel>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim is a statement about a (some specific) thing expressed in a claim medium.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Claim(v) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Claim(v)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:label xml:lang="en">Claim (v)</rdfs:label>
-        <skos:altLabel xml:lang="en">Assert</skos:altLabel>
-        <skos:definition xml:lang="en">The activity of making a statement about a (specific) thing.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Control(n) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Control(n)">
-        <rdfs:comment xml:lang="en">A Control may comprise other Controls, e.g. a methodology (a Control) defines many conditions to be met (themselves Controls). Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A means of limiting or directing a thing.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#IdentityClaim(n) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#IdentityClaim(n)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: definition</rdfs:comment>
-        <rdfs:label>Identity claim (n)</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#ImpactClaim(n) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#ImpactClaim(n)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Impact Claim (n)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An impact claim is a statement about the relation between an activity and a state change, typically following an impact accounting methodology (thing:control).</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Measure(v) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Measure(v)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:label>Measure(v)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of ascertaining the value of a parameter defining a state.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Report(n) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Report(n)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(n)"/>
-        <rdfs:label>Report (n)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A report is a claim that satisfies a specification about an activity or event.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Report(v) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Report(v)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Claim(v)"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Report (v)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of making a claim about an activity or event according to a specification.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Represent(v) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Represent(v)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/aiaontology#Verify(v) -->
-
-    <owl:Class rdf:about="http://purl.org/aiaontology#Verify(v)">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Activity"/>
-        <rdfs:label>Verify(v)</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activity of confirming or demonstrating that something is true, accurate, or justified.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/dc/dcmitype/Event -->
-
-    <owl:Class rdf:about="http://purl.org/dc/dcmitype/Event"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/AgentClass -->
-
-    <owl:Class rdf:about="http://purl.org/dc/terms/AgentClass"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/Location -->
-
-    <owl:Class rdf:about="http://purl.org/dc/terms/Location"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/PeriodOfTime -->
-
-    <owl:Class rdf:about="http://purl.org/dc/terms/PeriodOfTime"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#Thing -->
-
-    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
-        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-        <rdfs:comment xml:lang="en">&quot;Anything perceivable or conceivable.&quot; (&quot;object&quot; - ISO 9000:2015(E))
-
-&quot;An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.&quot; (https://www.w3.org/ns/prov#Entity)</rdfs:comment>
-        <skos:altLabel xml:lang="en">Entity</skos:altLabel>
-        <skos:altLabel xml:lang="en">Item</skos:altLabel>
-        <skos:altLabel xml:lang="en">Object</skos:altLabel>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#Duration -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#Duration">
-        <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#TemporalParameter"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Activity -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Agent -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#Entity -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
-    
-
-
-    <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent"/>
-    
-
-
-    <!-- http://www.wikidata.org/wiki/Q154954 -->
-
-    <owl:Class rdf:about="http://www.wikidata.org/wiki/Q154954">
-        <rdfs:comment xml:lang="en">&quot;real human being as opposed to a non-human legal person&quot; (https://www.wikidata.org/wiki/Q154954)</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.wikidata.org/wiki/Q154954"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Natural Person</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.wikidata.org/wiki/Q3778211 -->
-
-    <owl:Class rdf:about="http://www.wikidata.org/wiki/Q3778211">
-        <rdfs:comment xml:lang="en">&quot;any human or non-human entity that is recognized as having privileges and obligations; a legal fiction which is used to abstract away the differences between natural persons, juridical persons and other entities such as countries&quot; (https://www.wikidata.org/wiki/Q3778211)</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://www.wikidata.org/wiki/Q3778211"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Legal Person</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/aiaontology#GPS -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/aiaontology#GPS">
-        <rdfs:comment xml:lang="en">This is but one example of a CRS (Coordinate Reference System) - there are many more that may be defined in implementation</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#equivalentClass">
-        <rdfs:label>equivalentClass</rdfs:label>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <owl:Axiom>
-        <owl:annotatedSource>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/aiaontology#hasDuration"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Duration"/>
-                <rdfs:subClassOf>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
-                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
-                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </rdfs:subClassOf>
-            </owl:Restriction>
-        </owl:annotatedSource>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:annotatedTarget>
-        <rdfs:comment xml:lang="en">The class of all things that have a duration is a subclass of the set of all things that have a start as well as end time. In other words, everything which has a duration must have started at some time and ended at some time.</rdfs:comment>
-    </owl:Axiom>
-</rdf:RDF>
+is equivalent to the condition (Control) that Activity B only commence after the end of Activity A.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasModality</IRI>
+        <Literal xml:lang="en">Counterfactual (FALSE) or real (TRUE).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReferenceSystem</IRI>
+        <Literal xml:lang="en">EDIT for use with Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReputation</IRI>
+        <Literal xml:lang="en">EDIT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRole</IRI>
+        <Literal xml:lang="en">EDIT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTimestamp</IRI>
+        <Literal xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTimestamp</IRI>
+        <Literal xml:lang="en">The moment of measurement of the value of a Parameter that defines the State.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isBinding</IRI>
+        <Literal xml:lang="en">Used to indicate whether a Control is obligatory (TRUE) or non-obligatory (FALSE)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#makesClaim</IRI>
+        <Literal xml:lang="en">FIX: this does not work while Role exists/Auditor etc. is not a subClassOf Agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wasCalibratedOn</IRI>
+        <Literal xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wasManufacturedOn</IRI>
+        <Literal xml:lang="en">Format: eg. 2022-01-16</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal xml:lang="en">&quot;Anything perceivable or conceivable.&quot; (&quot;object&quot; - ISO 9000:2015(E))
+
+&quot;An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.&quot; (https://www.w3.org/ns/prov#Entity)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal xml:lang="en">Entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal xml:lang="en">Item</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:altLabel"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal xml:lang="en">Object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>owl:equivalentClass</AbbreviatedIRI>
+        <Literal>equivalentClass</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/prov#endedAtTime</IRI>
+        <Literal xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/prov#startedAtTime</IRI>
+        <Literal xml:lang="en">Format: YYYY-MM-DDThh:mm:ss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.wikidata.org/wiki/Q154954</IRI>
+        <Literal xml:lang="en">&quot;real human being as opposed to a non-human legal person&quot; (https://www.wikidata.org/wiki/Q154954)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.wikidata.org/wiki/Q154954</IRI>
+        <IRI>https://www.wikidata.org/wiki/Q154954</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.wikidata.org/wiki/Q154954</IRI>
+        <Literal>Natural Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.wikidata.org/wiki/Q3778211</IRI>
+        <Literal xml:lang="en">&quot;any human or non-human entity that is recognized as having privileges and obligations; a legal fiction which is used to abstract away the differences between natural persons, juridical persons and other entities such as countries&quot; (https://www.wikidata.org/wiki/Q3778211)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.wikidata.org/wiki/Q3778211</IRI>
+        <IRI>https://www.wikidata.org/wiki/Q3778211</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.wikidata.org/wiki/Q3778211</IRI>
+        <Literal>Legal Person</Literal>
+    </AnnotationAssertion>
+    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="xsd:date"/>
+        <Datatype abbreviatedIRI="terms:date"/>
+    </DatatypeDefinition>
+</Ontology>
 
 
 

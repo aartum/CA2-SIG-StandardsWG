@@ -1,4 +1,4 @@
-@prefix : <http://purl.org/aiaontology#> .
+@prefix : <http://purl.org/aiaontology> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -92,8 +92,7 @@ xsd:date rdf:type rdfs:Datatype ;
 
 ###  http://purl.org/aiaontology#calculateHasResult
 :calculateHasResult rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Calculate ;
-                    rdfs:range :Calculation .
+                    rdfs:domain :Calculating .
 
 
 ###  http://purl.org/aiaontology#calibratedBy
@@ -112,7 +111,7 @@ xsd:date rdf:type rdfs:Datatype ;
 ###  http://purl.org/aiaontology#compliesWithRequirements
 :compliesWithRequirements rdf:type owl:ObjectProperty ;
                           rdfs:domain :Auditor ;
-                          rdfs:range <http://purl.org/aiaontology#Control(n)> .
+                          rdfs:range :Control .
 
 
 ###  http://purl.org/aiaontology#comprises
@@ -154,27 +153,26 @@ xsd:date rdf:type rdfs:Datatype ;
 
 
 ###  http://purl.org/aiaontology#hasCalculation
-:hasCalculation rdf:type owl:ObjectProperty ;
-                rdfs:range :Calculation .
+:hasCalculation rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/aiaontology#hasClaimant
 :hasClaimant rdf:type owl:ObjectProperty ;
              owl:inverseOf :makesClaim ;
-             rdfs:domain <http://purl.org/aiaontology#Claim(n)> ;
+             rdfs:domain :Claim ;
              rdfs:range :Agent .
 
 
 ###  http://purl.org/aiaontology#hasCondition
 :hasCondition rdf:type owl:ObjectProperty ;
-              rdfs:domain <http://purl.org/aiaontology#Control(n)> ;
+              rdfs:domain :Control ;
               rdfs:range :State ;
               rdfs:comment "Indicates the State that must exist for the specific Control to be applicable."@en .
 
 
 ###  http://purl.org/aiaontology#hasControl
 :hasControl rdf:type owl:ObjectProperty ;
-            rdfs:range <http://purl.org/aiaontology#Control(n)> .
+            rdfs:range :Control .
 
 
 ###  http://purl.org/aiaontology#hasDuration
@@ -191,9 +189,7 @@ xsd:date rdf:type rdfs:Datatype ;
 
 
 ###  http://purl.org/aiaontology#hasFormula
-:hasFormula rdf:type owl:ObjectProperty ;
-            rdfs:domain :Calculation ;
-            rdfs:range :Formula .
+:hasFormula rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/aiaontology#hasInstrument
@@ -209,7 +205,7 @@ xsd:date rdf:type rdfs:Datatype ;
 
 ###  http://purl.org/aiaontology#hasMethodology
 :hasMethodology rdf:type owl:ObjectProperty ;
-                rdfs:range <http://purl.org/aiaontology#Control(n)> .
+                rdfs:range :Control .
 
 
 ###  http://purl.org/aiaontology#hasParVal
@@ -251,7 +247,7 @@ xsd:date rdf:type rdfs:Datatype ;
 
 ###  http://purl.org/aiaontology#hasSubject
 :hasSubject rdf:type owl:ObjectProperty ;
-            rdfs:domain <http://purl.org/aiaontology#Control(n)> .
+            rdfs:domain :Control .
 
 
 ###  http://purl.org/aiaontology#hasSymbol
@@ -265,8 +261,7 @@ xsd:date rdf:type rdfs:Datatype ;
 
 
 ###  http://purl.org/aiaontology#hasVariable
-:hasVariable rdf:type owl:ObjectProperty ;
-             rdfs:domain :Calculation .
+:hasVariable rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/aiaontology#impacts
@@ -300,7 +295,7 @@ xsd:date rdf:type rdfs:Datatype ;
 :isLimitedOrDirectedBy rdf:type owl:ObjectProperty ;
                        owl:inverseOf :limitsOrDirects ;
                        rdfs:domain owl:Thing ;
-                       rdfs:range <http://purl.org/aiaontology#Control(n)> .
+                       rdfs:range :Control .
 
 
 ###  http://purl.org/aiaontology#isOperatedBy
@@ -338,41 +333,41 @@ xsd:date rdf:type rdfs:Datatype ;
 
 ###  http://purl.org/aiaontology#isStatementAbout
 :isStatementAbout rdf:type owl:ObjectProperty ;
-                  rdfs:domain <http://purl.org/aiaontology#Claim(n)> ;
+                  rdfs:domain :Claim ;
                   rdfs:range owl:Thing .
 
 
 ###  http://purl.org/aiaontology#isVerifiedBy
 :isVerifiedBy rdf:type owl:ObjectProperty ;
               owl:inverseOf :isVerifierOf ;
-              rdfs:domain <http://purl.org/aiaontology#Claim(n)> ;
+              rdfs:domain :Claim ;
               rdfs:range :Auditor .
 
 
 ###  http://purl.org/aiaontology#isVerifierOf
 :isVerifierOf rdf:type owl:ObjectProperty ;
               rdfs:domain :Auditor ;
-              rdfs:range <http://purl.org/aiaontology#Claim(n)> .
+              rdfs:range :Claim .
 
 
 ###  http://purl.org/aiaontology#limitsOrDirects
 :limitsOrDirects rdf:type owl:ObjectProperty ,
                           owl:AsymmetricProperty ;
-                 rdfs:domain <http://purl.org/aiaontology#Control(n)> ;
+                 rdfs:domain :Control ;
                  rdfs:range owl:Thing .
 
 
 ###  http://purl.org/aiaontology#makesClaim
 :makesClaim rdf:type owl:ObjectProperty ;
             rdfs:domain :Agent ;
-            rdfs:range <http://purl.org/aiaontology#Claim(n)> ;
+            rdfs:range :Claim ;
             rdfs:comment "FIX: this does not work while Role exists/Auditor etc. is not a subClassOf Agent."@en .
 
 
 ###  http://purl.org/aiaontology#makesImpactClaim
 :makesImpactClaim rdf:type owl:ObjectProperty ;
                   rdfs:domain :Agent ;
-                  rdfs:range <http://purl.org/aiaontology#ImpactClaim(n)> .
+                  rdfs:range :ImpactClaim .
 
 
 ###  http://purl.org/aiaontology#operates
@@ -401,8 +396,7 @@ xsd:date rdf:type rdfs:Datatype ;
 
 
 ###  http://purl.org/aiaontology#usesSymbol
-:usesSymbol rdf:type owl:ObjectProperty ;
-            rdfs:domain :Formula .
+:usesSymbol rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#equivalentClass
@@ -469,7 +463,6 @@ owl:equivalentClass rdf:type owl:ObjectProperty .
 
 ###  http://purl.org/aiaontology#hasExpression
 :hasExpression rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Formula ;
                rdfs:range xsd:string .
 
 
@@ -482,7 +475,7 @@ owl:equivalentClass rdf:type owl:ObjectProperty .
 
 ###  http://purl.org/aiaontology#hasLogicalOperator
 :hasLogicalOperator rdf:type owl:DatatypeProperty ;
-                    rdfs:domain <http://purl.org/aiaontology#Control(n)> ;
+                    rdfs:domain :Control ;
                     rdfs:range xsd:string ;
                     rdfs:comment """Less than, greater than, equal to, include, exclude, etc.
 Used to relate the subject and value of a Control, for example:
@@ -579,14 +572,14 @@ is equivalent to the condition (Control) that Activity B only commence after the
 
 ###  http://purl.org/aiaontology#hasValue
 :hasValue rdf:type owl:DatatypeProperty ;
-          rdfs:domain :State ,
-                      <http://purl.org/aiaontology#Control(n)> ;
+          rdfs:domain :Control ,
+                      :State ;
           rdfs:range rdfs:Resource .
 
 
 ###  http://purl.org/aiaontology#isBinding
 :isBinding rdf:type owl:DatatypeProperty ;
-           rdfs:domain <http://purl.org/aiaontology#Control(n)> ;
+           rdfs:domain :Control ;
            rdfs:range xsd:boolean ;
            rdfs:comment "Used to indicate whether a Control is obligatory (TRUE) or non-obligatory (FALSE)"@en .
 
@@ -657,10 +650,11 @@ is equivalent to the condition (Control) that Activity B only commence after the
 ###  http://purl.org/aiaontology#Activity
 :Activity rdf:type owl:Class ;
           owl:equivalentClass <http://www.w3.org/ns/prov#Activity> ;
+          rdfs:subClassOf :Event ;
           owl:disjointWith :Event ;
-          rdfs:comment "A thing that an agent does, which impacts an environment."@en ,
-                       "An Activity may comprise other Activity/ies, e.g. a project (an Activity) consists of many Activities. Use the 'comprises' property to indicate this."@en ;
-          skos:altLabel "Action"@en .
+          rdfs:comment "A thing that an agent does, which impacts an environment."@en ;
+          skos:altLabel "Action"@en ;
+          skos:definition "An event that is orchestrated by an agent."@en .
 
 
 ###  http://purl.org/aiaontology#Agent
@@ -670,56 +664,63 @@ is equivalent to the condition (Control) that Activity B only commence after the
        rdfs:comment "\"An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.\" (http://www.w3.org/ns/prov#Agent)"@en ;
        rdfs:isDefinedBy <http://www.w3.org/ns/prov#Agent> ;
        rdfs:label "Agent"@en ;
-       rdfs:seeAlso <http://www.w3.org/ns/prov#Agent> .
+       rdfs:seeAlso <http://www.w3.org/ns/prov#Agent> ;
+       skos:definition "A thing that bears some form of accountability for the occurrence of another thing."@en .
 
 
 ###  http://purl.org/aiaontology#Area
 :Area rdf:type owl:Class ;
       rdfs:subClassOf :Extent ;
-      rdfs:comment "TODO: definition"^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Attest
-:Attest rdf:type owl:Class ;
-        rdfs:subClassOf :Activity ;
-        rdfs:comment "TODO definition"^^xsd:string ;
-        rdfs:label "Attest" .
+      rdfs:comment "TODO: definition" .
 
 
 ###  http://purl.org/aiaontology#Attestation
 :Attestation rdf:type owl:Class ;
-             rdfs:comment "A claim that is validated by formal statement of an official authority"^^xsd:string ,
-                          "TODO: definition"^^xsd:string ;
-             rdfs:label "Attestation(n)" .
+             rdfs:subClassOf :Claim ;
+             rdfs:label "Attestation"@en ;
+             skos:definition "A formal statement made by an agent in which they claim to have witnessed or been presented with sufficient evidence to consider a specific claim made by another agent as truthful or accurate."@en .
+
+
+###  http://purl.org/aiaontology#Attribute
+:Attribute rdf:type owl:Class ;
+           rdfs:label "Attribute"@en ;
+           skos:definition "A quality or feature of a thing that can be used, whether independently or in conjunction with other attributes, to identify it."@en .
+
+
+###  http://purl.org/aiaontology#Auditing
+:Auditing rdf:type owl:Class ;
+          rdfs:subClassOf :Verifying ;
+          rdfs:label "Auditing"@en ;
+          skos:definition "The activity, performed by an auditor, of following a formal procedure to verify a claim."@en .
 
 
 ###  http://purl.org/aiaontology#Auditor
 :Auditor rdf:type owl:Class ;
          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                       owl:onProperty :compliesWithRequirements ;
-                                                      owl:someValuesFrom <http://purl.org/aiaontology#Control(n)>
+                                                      owl:someValuesFrom :Control
                                                     ]
                                                     [ rdf:type owl:Restriction ;
                                                       owl:onProperty :isVerifierOf ;
-                                                      owl:someValuesFrom <http://purl.org/aiaontology#Claim(n)>
+                                                      owl:someValuesFrom :Claim
                                                     ]
                                                   ) ;
                                rdf:type owl:Class
                              ] ;
          rdfs:subClassOf :Verifier ;
-         rdfs:label "Auditor"^^xsd:string ;
-         skos:definition "A set of predefined behaviours for a certified agent who conducts an audit."^^xsd:string .
+         rdfs:label "Auditor"@en ;
+         skos:definition "A predefined set of requirements, responsibilities and/or actions for an agent who conducts an audit."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Auditor ;
    owl:annotatedProperty owl:equivalentClass ;
    owl:annotatedTarget [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                 owl:onProperty :compliesWithRequirements ;
-                                                owl:someValuesFrom <http://purl.org/aiaontology#Control(n)>
+                                                owl:someValuesFrom :Control
                                               ]
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty :isVerifierOf ;
-                                                owl:someValuesFrom <http://purl.org/aiaontology#Claim(n)>
+                                                owl:someValuesFrom :Claim
                                               ]
                                             ) ;
                          rdf:type owl:Class
@@ -728,15 +729,18 @@ is equivalent to the condition (Control) that Activity B only commence after the
  ] .
 
 
-###  http://purl.org/aiaontology#Calculate
-:Calculate rdf:type owl:Class ;
-           rdfs:subClassOf :Activity .
+###  http://purl.org/aiaontology#Calculating
+:Calculating rdf:type owl:Class ;
+             rdfs:subClassOf :Activity ;
+             rdfs:label "Calculating"@en ;
+             skos:definition "The activity of deriving the value of a parameter or indicator from one or more other values, according to some mathematical calculation formula."@en .
 
 
-###  http://purl.org/aiaontology#Calculation
-:Calculation rdf:type owl:Class ;
-             rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-             rdfs:label "Calculation"@en .
+###  http://purl.org/aiaontology#CalculationFormula
+:CalculationFormula rdf:type owl:Class ;
+                    rdfs:subClassOf :Control ;
+                    rdfs:label "Calculation Formula"@en ;
+                    skos:definition "A control that guides a mathematical calculation."@en .
 
 
 ###  http://purl.org/aiaontology#Calibrator
@@ -746,8 +750,27 @@ is equivalent to the condition (Control) that Activity B only commence after the
                                   owl:someValuesFrom :MeasurementInstrument
                                 ] ;
             rdfs:subClassOf :Role ;
-            rdfs:label "Calibrator"^^xsd:string ;
-            skos:definition "A set of predefined behaviours for an agent who calibrates a measurement instrument."^^xsd:string .
+            rdfs:label "Calibrator"@en ;
+            skos:definition "A predefined set of requirements, responsibilities and/or actions for an agent who calibrates an instrument."@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :Calibrator ;
+   owl:annotatedProperty owl:equivalentClass ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty :calibrates ;
+                         owl:someValuesFrom :MeasurementInstrument
+                       ] ;
+   rdfs:comment "The requirement for an Agent to fulfill the Role of Calibrator is that they calibrate some Instrument."@en
+ ] .
+
+
+###  http://purl.org/aiaontology#Claim
+:Claim rdf:type owl:Class ;
+       rdfs:comment "A Claim may comprise other Claims, e.g. a report (a Claim) consists of many Claims. Use the 'comprises' property to indicate this."@en ;
+       rdfs:label "Claim"@en ;
+       rdfs:seeAlso <https://www.w3.org/2003/glossary/keyword/All/assertion.html?keywords=assertion> ;
+       skos:altLabel "Assertion"@en ;
+       skos:definition "A statement made by an agent about a thing."@en .
 
 
 ###  http://purl.org/aiaontology#ClaimMedium
@@ -755,8 +778,8 @@ is equivalent to the condition (Control) that Activity B only commence after the
              rdfs:subClassOf :Medium ;
              rdfs:comment """A means of representation though a control:format
 
-Media can be digital or physical"""^^xsd:string ,
-                          "TODO: definition"^^xsd:string ;
+Media can be digital or physical""" ,
+                          "TODO: definition" ;
              rdfs:label "Claim Medium" .
 
 
@@ -764,34 +787,49 @@ Media can be digital or physical"""^^xsd:string ,
 :Claimant rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :makesClaim ;
-                                owl:someValuesFrom <http://purl.org/aiaontology#Claim(n)>
+                                owl:someValuesFrom :Claim
                               ] ;
           rdfs:subClassOf :Role ;
-          rdfs:label "Claimant"^^xsd:string ;
-          skos:definition "A set of predefined behaviours for an agent who makes a claim in the context of a specific activity."^^xsd:string .
+          rdfs:label "Claimant"@en ;
+          skos:definition "A predefined set of requirements, responsibilities and/or actions for an agent who makes a claim."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Claimant ;
    owl:annotatedProperty owl:equivalentClass ;
    owl:annotatedTarget [ rdf:type owl:Restriction ;
                          owl:onProperty :makesClaim ;
-                         owl:someValuesFrom <http://purl.org/aiaontology#Claim(n)>
+                         owl:someValuesFrom :Claim
                        ] ;
    rdfs:comment "The requirement for an Agent to fulfill the Role of Claimant is that they make some Claim."@en
  ] .
 
 
-###  http://purl.org/aiaontology#Class
-:Class rdf:type owl:Class ;
-       rdfs:subClassOf :Parameter ;
-       rdfs:comment "TODO: definition"@en .
+###  http://purl.org/aiaontology#Claiming
+:Claiming rdf:type owl:Class ;
+          rdfs:subClassOf :Activity ;
+          rdfs:label "Claiming"@en ;
+          skos:altLabel "Asserting"@en ;
+          skos:definition "The activity of making a statement about a thing."@en .
 
 
 ###  http://purl.org/aiaontology#ClassificationSystem
 :ClassificationSystem rdf:type owl:Class ;
-                      rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> ;
-                      rdfs:comment "TODO: definition"^^xsd:string ;
-                      rdfs:label "Classification System"^^xsd:string .
+                      rdfs:subClassOf :Control ;
+                      rdfs:label "Classification System"@en ;
+                      skos:definition "A system for organising things into groups according to their attributes."@en .
+
+
+###  http://purl.org/aiaontology#CommunicationMedium
+:CommunicationMedium rdf:type owl:Class ;
+                     rdfs:subClassOf :Medium ;
+                     rdfs:label "Communication Medium"@en ;
+                     skos:definition "A thing that is altered, either temporarily or permanently, to preserve information during transport through space and/or time."@en .
+
+
+###  http://purl.org/aiaontology#Control
+:Control rdf:type owl:Class ;
+         rdfs:comment "A Control may comprise other Controls, e.g. a methodology (a Control) defines many conditions to be met (themselves Controls). Use the 'comprises' property to indicate this."@en ;
+         skos:definition "A thing that limits or directs another thing."@en .
 
 
 ###  http://purl.org/aiaontology#CreditingPeriod
@@ -807,13 +845,13 @@ Media can be digital or physical"""^^xsd:string ,
 
 ###  http://purl.org/aiaontology#DataFormat
 :DataFormat rdf:type owl:Class ;
-            rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> .
+            rdfs:subClassOf :Control .
 
 
 ###  http://purl.org/aiaontology#Environment
 :Environment rdf:type owl:Class ;
-             rdfs:comment "(PROPOSED) The surroundings and conditions in which a thing exists."@en ;
-             rdfs:label "Environment"@en .
+             rdfs:label "Environment"@en ;
+             skos:definition "The surroundings and conditions in which a thing occurs."@en .
 
 
 ###  http://purl.org/aiaontology#Event
@@ -821,49 +859,65 @@ Media can be digital or physical"""^^xsd:string ,
        owl:equivalentClass <http://purl.org/dc/dcmitype/Event> ,
                            <http://www.w3.org/ns/prov#InstantaneousEvent> ;
        rdfs:label "Event"@en ;
-       skos:definition "A thing that happens or takes place and which impacts an environment. An event is differentiated from an activity by the absence of explicit human intention."^^xsd:string .
+       skos:definition "A thing that occurs over a period of time."@en .
 
 
 ###  http://purl.org/aiaontology#Extent
 :Extent rdf:type owl:Class ;
         rdfs:subClassOf :SpatialParameter ;
-        rdfs:comment "TODO: definition"^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Formula
-:Formula rdf:type owl:Class ;
-         rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> ;
-         rdfs:comment "TODO: definition"^^xsd:string .
+        rdfs:comment "TODO: definition" .
 
 
 ###  http://purl.org/aiaontology#GeocentricDatum
 :GeocentricDatum rdf:type owl:Class ;
-                 rdfs:subClassOf :SpatialReferenceSystem ;
-                 rdfs:comment "TODO:definition"^^xsd:string .
+                 rdfs:subClassOf :SpatialMeasurementSystem ;
+                 rdfs:comment "TODO:definition" .
 
 
 ###  http://purl.org/aiaontology#GeodeticDatum
 :GeodeticDatum rdf:type owl:Class ;
-               rdfs:subClassOf :SpatialReferenceSystem ;
-               rdfs:comment "TODO: definition"^^xsd:string .
+               rdfs:subClassOf :SpatialMeasurementSystem ;
+               rdfs:comment "TODO: definition" .
+
+
+###  http://purl.org/aiaontology#IdentificationSystem
+:IdentificationSystem rdf:type owl:Class ;
+                      rdfs:subClassOf :Control ;
+                      rdfs:label "Identification System"@en ;
+                      skos:definition "A system for distinguishing individual things from one another."@en .
+
+
+###  http://purl.org/aiaontology#IdentityClaim
+:IdentityClaim rdf:type owl:Class ;
+               rdfs:subClassOf :Claim ;
+               rdfs:label "Identity Claim"@en ;
+               skos:definition "A statement made by an agent about their identity, with reference to some identification system."@en .
+
+
+###  http://purl.org/aiaontology#ImpactClaim
+:ImpactClaim rdf:type owl:Class ;
+             rdfs:subClassOf :Claim ;
+             rdfs:label "Impact Claim"@en ;
+             skos:definition "A statement about the causal relation between an event and a state difference."@en .
 
 
 ###  http://purl.org/aiaontology#Indicator
 :Indicator rdf:type owl:Class ;
-           rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-           rdfs:label "Indicator" ;
-           skos:definition "A calculated interpretation of measured parameters that indicates the state or level of something."^^xsd:string .
+           rdfs:subClassOf :Control ;
+           rdfs:label "Indicator"@en ;
+           skos:definition "A control for indicating the state or level of a thing."@en .
 
 
 ###  http://purl.org/aiaontology#Instant
 :Instant rdf:type owl:Class ;
-         rdfs:subClassOf :TemporalParameter .
+         rdfs:subClassOf :TemporalParameter ;
+         rdfs:label "Instant" .
 
 
 ###  http://purl.org/aiaontology#Instrument
 :Instrument rdf:type owl:Class ;
             rdfs:label "Instrument"@en ;
-            skos:definition "A thing used to perform an activity."^^xsd:string .
+            skos:definition "A thing used to perform an activity, but which is not an input."@en .
 
 
 ###  http://purl.org/aiaontology#LegalPerson
@@ -875,7 +929,7 @@ Media can be digital or physical"""^^xsd:string ,
 ###  http://purl.org/aiaontology#Line
 :Line rdf:type owl:Class ;
       rdfs:subClassOf :Extent ;
-      rdfs:comment "TODO: definition"^^xsd:string .
+      rdfs:comment "TODO: definition" .
 
 
 ###  http://purl.org/aiaontology#Location
@@ -883,15 +937,8 @@ Media can be digital or physical"""^^xsd:string ,
           owl:equivalentClass terms:Location ;
           rdfs:subClassOf :SpatialParameter ;
           rdfs:comment "An entity of type Location can be a Point, Line, Path, Polygon, or Volume. A point has a x and y (and optional z) coordinate. If no z coordinate is specified, sea level is assumed. A line comprises exactly two points. A path is two or more continuous lines. A polygon is the area enclosed by three or more points. A volume is the area enclosed by four or more polygons where each edge is shared by exactly two polygons. Length can be derived from a given Line, area from a given Polygon, and volume from a given Volume."@en ,
-                       "TODO: definition"^^xsd:string ;
+                       "TODO: definition" ;
           rdfs:label "Location"@en .
-
-
-###  http://purl.org/aiaontology#Measurement
-:Measurement rdf:type owl:Class ;
-             rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-             rdfs:comment "TODO: definition"^^xsd:string ;
-             rdfs:label "Measurement" .
 
 
 ###  http://purl.org/aiaontology#MeasurementInstrument
@@ -901,15 +948,29 @@ Media can be digital or physical"""^^xsd:string ,
 
 ###  http://purl.org/aiaontology#MeasurementSystem
 :MeasurementSystem rdf:type owl:Class ;
-                   rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> ;
-                   rdfs:label "Measurement System"^^xsd:string ;
-                   skos:definition "A measurement system allows the expression of the state of a parameter."^^xsd:string .
+                   rdfs:subClassOf :Control ;
+                   rdfs:label "Measurement System" ;
+                   skos:definition "A system for expressing and comparing quantities." .
+
+
+###  http://purl.org/aiaontology#Measuring
+:Measuring rdf:type owl:Class ;
+           rdfs:subClassOf :Activity ;
+           rdfs:label "Measuring"@en ;
+           skos:definition "The activity of determining the value of a parameter or indicator through observation (as opposed to calculation)."@en .
 
 
 ###  http://purl.org/aiaontology#Medium
 :Medium rdf:type owl:Class ;
-        rdfs:comment "TODO: definition"^^xsd:string ;
+        rdfs:comment "TODO: definition" ;
         rdfs:label "Medium" .
+
+
+###  http://purl.org/aiaontology#Monitoring
+:Monitoring rdf:type owl:Class ;
+            rdfs:subClassOf :Activity ;
+            rdfs:label "Monitoring"@en ;
+            skos:definition "The activity of repeatedly observing a state over a period of time."@en .
 
 
 ###  http://purl.org/aiaontology#NaturalPerson
@@ -922,15 +983,15 @@ Media can be digital or physical"""^^xsd:string ,
 :NaturalProcess rdf:type owl:Class ;
                 rdfs:subClassOf :Process ;
                 rdfs:label "Natural Process" ;
-                skos:definition "A series of interrelated or interacting natural events without a primary human cause."^^xsd:string .
+                skos:definition "A series of interrelated or interacting natural events without a primary human cause." .
 
 
 ###  http://purl.org/aiaontology#Objective
 :Objective rdf:type owl:Class ;
-           rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> ;
-           rdfs:label "Objective" ;
-           skos:altLabel "Goal"^^xsd:string ;
-           skos:definition "\"[R]esult to be achieved.\" (ISO Annex SL Appendix 2)"^^xsd:string .
+           rdfs:subClassOf :Control ;
+           rdfs:label "Objective"@en ;
+           skos:altLabel "Goal" ;
+           skos:definition "A desired state to be effected by an activity."@en .
 
 
 ###  http://purl.org/aiaontology#Operator
@@ -940,8 +1001,8 @@ Media can be digital or physical"""^^xsd:string ,
                                 owl:someValuesFrom :Instrument
                               ] ;
           rdfs:subClassOf :Role ;
-          rdfs:label "Operator"^^xsd:string ;
-          skos:definition "A set of predefined behaviours for an agent who operates a specific thing (e.g., an instrument) in the context of a specific activity."^^xsd:string .
+          rdfs:label "Operator"@en ;
+          skos:definition "A predefined set of requirements, responsibilities and/or actions for an agent who operates a specific thing."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Operator ;
@@ -961,8 +1022,8 @@ Media can be digital or physical"""^^xsd:string ,
                              owl:someValuesFrom owl:Thing
                            ] ;
        rdfs:subClassOf :Role ;
-       rdfs:label "Owner"^^xsd:string ;
-       skos:definition "A set of predefined behaviours for an agent who owns a specific thing in the context of a specific activity"^^xsd:string .
+       rdfs:label "Owner"@en ;
+       skos:definition "A predefined set of requirements, responsibilities and/or actions for an agent who owns a specific thing."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Owner ;
@@ -977,9 +1038,10 @@ Media can be digital or physical"""^^xsd:string ,
 
 ###  http://purl.org/aiaontology#Parameter
 :Parameter rdf:type owl:Class ;
-           rdfs:label "Parameter"^^xsd:string ;
-           skos:altLabel "Attribute"@en ;
-           skos:definition "A quality or feature forming one of a set that defines something or sets the conditions of its existence or operation."^^xsd:string .
+           rdfs:subClassOf :Control ;
+           rdfs:comment "A quality or feature forming one of a set that defines something or sets the conditions of its existence or operation." ;
+           rdfs:label "Parameter"@en ;
+           skos:definition "A control for expressing the scope, extent or capacity of a thing."@en .
 
 
 ###  http://purl.org/aiaontology#Period
@@ -993,22 +1055,22 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
 
 ###  http://purl.org/aiaontology#Process
 :Process rdf:type owl:Class ;
-         rdfs:label "Process (n)" ;
-         skos:definition "A series of interrelated or interacting events or activities."^^xsd:string .
+         rdfs:label "Process"@en ;
+         skos:definition "A series of interrelated and/or interacting events."@en .
 
 
 ###  http://purl.org/aiaontology#Project
 :Project rdf:type owl:Class ;
          rdfs:subClassOf :Process ;
          rdfs:label "Project" ;
-         skos:definition "A unique process, consisting of a set of coordinated activities, undertaken to achieve an objective under specific controls."^^xsd:string .
+         skos:definition "A coordinated set of activities, undertaken to achieve an objective, subject to specific controls, of which one must be a limited duration."@en .
 
 
 ###  http://purl.org/aiaontology#ProjectDeveloper
 :ProjectDeveloper rdf:type owl:Class ;
                   rdfs:subClassOf :Role ;
-                  rdfs:label "Project Developer"^^xsd:string ;
-                  skos:definition "A set of predefined behaviours for an agent who defines and prepares the conditions for an activity or a set of activities."^^xsd:string .
+                  rdfs:label "Project Developer" ;
+                  skos:definition "A set of predefined behaviours for an agent who defines and prepares the conditions for an activity or a set of activities." .
 
 
 ###  http://purl.org/aiaontology#ProjectPeriod
@@ -1016,173 +1078,135 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
                rdfs:subClassOf :Period .
 
 
+###  http://purl.org/aiaontology#Report
+:Report rdf:type owl:Class ;
+        rdfs:subClassOf :Claim ;
+        rdfs:label "Report"@en ;
+        skos:definition "A statement, made according to some specification, about a thing." .
+
+
+###  http://purl.org/aiaontology#Reporting
+:Reporting rdf:type owl:Class ;
+           rdfs:subClassOf :Claiming ;
+           rdfs:label "Reporting"@en ;
+           skos:definition "TODO"@en .
+
+
+###  http://purl.org/aiaontology#Representing
+:Representing rdf:type owl:Class ;
+              rdfs:subClassOf :Activity ;
+              rdfs:label "Representing"@en ;
+              skos:definition "The activity of acting on behalf of another thing, usually - but not necessarily - in a different medium and/or different environment (or context) than that in which the represented thing occurs."@en .
+
+
 ###  http://purl.org/aiaontology#Reputation
 :Reputation rdf:type owl:Class ;
-            rdfs:subClassOf :Parameter ;
+            rdfs:subClassOf :Indicator ;
             rdfs:comment "NOT FINAL \"[T]he beliefs or opinions that are generally held about someone or something.\" (OED, Google)"@en ,
-                         "TODO: definition"^^xsd:string ;
+                         "TODO: definition" ;
             rdfs:label "Reputation"@en .
 
 
 ###  http://purl.org/aiaontology#Role
 :Role rdf:type owl:Class ;
-      rdfs:subClassOf <http://purl.org/aiaontology#Control(n)> ;
+      rdfs:subClassOf :Control ;
       rdfs:label "Role"@en ;
-      skos:definition "A set of predefined behaviours for an agent with regards to a specific activity."^^xsd:string .
+      skos:definition "A control that specifies the scope of and/or requirements for an agent's relation to an activity."@en .
+
+
+###  http://purl.org/aiaontology#SpatialMeasurementSystem
+:SpatialMeasurementSystem rdf:type owl:Class ;
+                          rdfs:subClassOf :MeasurementSystem ;
+                          rdfs:label "Spatial Measurement System"@en ;
+                          skos:definition "A system for expressing and comparing spatial quantities."@en .
 
 
 ###  http://purl.org/aiaontology#SpatialParameter
 :SpatialParameter rdf:type owl:Class ;
                   rdfs:subClassOf :Parameter ;
-                  rdfs:comment "TODO: definition"^^xsd:string .
-
-
-###  http://purl.org/aiaontology#SpatialReferenceSystem
-:SpatialReferenceSystem rdf:type owl:Class ;
-                        rdfs:subClassOf :MeasurementSystem ;
-                        rdfs:comment "TODO: definition"^^xsd:string .
+                  rdfs:label "Spatial Parameter"@en ;
+                  skos:definition "A control for expressing the spatial scope or spatial extent of a thing."@en .
 
 
 ###  http://purl.org/aiaontology#State
 :State rdf:type owl:Class ;
-       rdfs:comment "The State of an Environment comprises the collection of the States (i.e. the values) of that Environment's defining parameters."@en ;
        rdfs:label "State"@en ;
-       skos:definition "A state is the value of a parameter at a specific time position."^^xsd:string .
+       skos:definition "The condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs."@en .
+
+
+###  http://purl.org/aiaontology#StateClaim
+:StateClaim rdf:type owl:Class ;
+            rdfs:subClassOf :Claim ;
+            rdfs:label "State Claim"@en ;
+            skos:definition "A statement about a state."@en .
+
+
+###  http://purl.org/aiaontology#StateDifference
+:StateDifference rdf:type owl:Class ;
+                 rdfs:subClassOf :Event ;
+                 rdfs:label "State Difference"@en ;
+                 skos:definition "A difference between two states of a thing, attributable to an event as its impact."@en .
+
+
+###  http://purl.org/aiaontology#TemporalMeasurementSystem
+:TemporalMeasurementSystem rdf:type owl:Class ;
+                           rdfs:subClassOf :MeasurementSystem ;
+                           rdfs:label "Temporal Measurement System"@en ;
+                           skos:definition "A system for expressing and comparing temporal quantities."@en .
 
 
 ###  http://purl.org/aiaontology#TemporalParameter
 :TemporalParameter rdf:type owl:Class ;
-                   rdfs:subClassOf :Parameter .
-
-
-###  http://purl.org/aiaontology#TemporalReferenceSystem
-:TemporalReferenceSystem rdf:type owl:Class ;
-                         rdfs:subClassOf :MeasurementSystem ;
-                         rdfs:comment "TODO: definition"^^xsd:string .
+                   rdfs:subClassOf :Parameter ;
+                   rdfs:label "Temporal Parameter"@en ;
+                   skos:definition "A control for expressing the temporal scope or temporal extent of a thing."@en .
 
 
 ###  http://purl.org/aiaontology#TimePosition
 :TimePosition rdf:type owl:Class ;
               rdfs:subClassOf :TemporalParameter ;
-              rdfs:label "TimePosition" .
+              rdfs:label "Time Position" .
 
 
-###  http://purl.org/aiaontology#Validate
-:Validate rdf:type owl:Class ;
-          rdfs:subClassOf :Activity ;
-          rdfs:label "Validate (v)"^^xsd:string ;
-          skos:definition "The activity of confirming or demonstrating that something satisfies a specification"^^xsd:string .
+###  http://purl.org/aiaontology#Validating
+:Validating rdf:type owl:Class ;
+            rdfs:subClassOf :Activity ;
+            rdfs:label "Validating"@en ;
+            skos:definition "The activity of ascertaining that the form, structure or type of some thing satisfies a specification."@en .
 
 
 ###  http://purl.org/aiaontology#Verifier
 :Verifier rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :isVerifierOf ;
-                                owl:someValuesFrom <http://purl.org/aiaontology#Claim(n)>
+                                owl:someValuesFrom :Claim
                               ] ;
           rdfs:subClassOf :Role ;
-          rdfs:label "Verifier"^^xsd:string ;
-          skos:definition "A set of predefined behaviours for an agent who verifies a claim."^^xsd:string .
+          rdfs:label "Verifier"@en ;
+          skos:definition "A predefined set of requirements, responsibilities and/or actions for an agent who verifies a claim."@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource :Verifier ;
    owl:annotatedProperty owl:equivalentClass ;
    owl:annotatedTarget [ rdf:type owl:Restriction ;
                          owl:onProperty :isVerifierOf ;
-                         owl:someValuesFrom <http://purl.org/aiaontology#Claim(n)>
+                         owl:someValuesFrom :Claim
                        ] ;
-   rdfs:comment "FIX: more complex and complete Controls for Agents to fulfill certain Roles to be added"@en
+   rdfs:comment "The requirement for an Agent to fulfill the Role of Verifier is that they verify some Claim."@en
  ] .
+
+
+###  http://purl.org/aiaontology#Verifying
+:Verifying rdf:type owl:Class ;
+           rdfs:subClassOf :Activity ;
+           rdfs:label "Verifying"@en ;
+           skos:definition "The activity of ascertaining that the content of a claim satisfies a particular specification for accuracy, truthfulness or demonstrability."@en .
 
 
 ###  http://purl.org/aiaontology#Volume
 :Volume rdf:type owl:Class ;
         rdfs:subClassOf :Extent ;
-        rdfs:comment "TODO: definition"^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Audit(n)
-<http://purl.org/aiaontology#Audit(n)> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-                                       rdfs:label "Audit (n)"^^xsd:string ;
-                                       skos:definition "The result of an auditing process."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Audit(v)
-<http://purl.org/aiaontology#Audit(v)> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://purl.org/aiaontology#Verify(v)> ;
-                                       rdfs:label "Audit (v)"^^xsd:string ;
-                                       skos:definition "The activity of performing a systematic, independent, objective and documented evaluation of a claim and its supporting evidence to determine the extent to which it complies with specific criteria (thing:control)"^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Claim(n)
-<http://purl.org/aiaontology#Claim(n)> rdf:type owl:Class ;
-                                       rdfs:comment "A Claim may comprise other Claim/s, e.g. a report (a Claim) consists of many Claims. Use the 'comprises' property to indicate this."@en ;
-                                       rdfs:label "Claim (n)"@en ;
-                                       rdfs:seeAlso <https://www.w3.org/2003/glossary/keyword/All/assertion.html?keywords=assertion> ;
-                                       skos:altLabel "Assertion"@en ;
-                                       skos:definition "A claim is a statement about a (some specific) thing expressed in a claim medium."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Claim(v)
-<http://purl.org/aiaontology#Claim(v)> rdf:type owl:Class ;
-                                       rdfs:subClassOf :Activity ;
-                                       rdfs:label "Claim (v)"@en ;
-                                       skos:altLabel "Assert"@en ;
-                                       skos:definition "The activity of making a statement about a (specific) thing."@en .
-
-
-###  http://purl.org/aiaontology#Control(n)
-<http://purl.org/aiaontology#Control(n)> rdf:type owl:Class ;
-                                         rdfs:comment "A Control may comprise other Controls, e.g. a methodology (a Control) defines many conditions to be met (themselves Controls). Use the 'comprises' property to indicate this."@en ;
-                                         skos:definition "A means of limiting or directing a thing."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#IdentityClaim(n)
-<http://purl.org/aiaontology#IdentityClaim(n)> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-                                               rdfs:comment "TODO: definition"^^xsd:string ;
-                                               rdfs:label "Identity claim (n)" .
-
-
-###  http://purl.org/aiaontology#ImpactClaim(n)
-<http://purl.org/aiaontology#ImpactClaim(n)> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-                                             rdfs:label "Impact Claim (n)"^^xsd:string ;
-                                             skos:definition "An impact claim is a statement about the relation between an activity and a state change, typically following an impact accounting methodology (thing:control)."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Measure(v)
-<http://purl.org/aiaontology#Measure(v)> rdf:type owl:Class ;
-                                         rdfs:subClassOf :Activity ;
-                                         rdfs:label "Measure(v)" ;
-                                         skos:definition "The activity of ascertaining the value of a parameter defining a state."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Report(n)
-<http://purl.org/aiaontology#Report(n)> rdf:type owl:Class ;
-                                        rdfs:subClassOf <http://purl.org/aiaontology#Claim(n)> ;
-                                        rdfs:label "Report (n)" ;
-                                        skos:definition "A report is a claim that satisfies a specification about an activity or event."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Report(v)
-<http://purl.org/aiaontology#Report(v)> rdf:type owl:Class ;
-                                        rdfs:subClassOf <http://purl.org/aiaontology#Claim(v)> ;
-                                        rdfs:label "Report (v)"^^xsd:string ;
-                                        skos:definition "The activity of making a claim about an activity or event according to a specification."^^xsd:string .
-
-
-###  http://purl.org/aiaontology#Represent(v)
-<http://purl.org/aiaontology#Represent(v)> rdf:type owl:Class ;
-                                           rdfs:subClassOf :Activity .
-
-
-###  http://purl.org/aiaontology#Verify(v)
-<http://purl.org/aiaontology#Verify(v)> rdf:type owl:Class ;
-                                        rdfs:subClassOf :Activity ;
-                                        rdfs:label "Verify(v)" ;
-                                        skos:definition "The activity of confirming or demonstrating that something is true, accurate, or justified."^^xsd:string .
+        rdfs:comment "TODO: definition" .
 
 
 ###  http://purl.org/dc/dcmitype/Event
@@ -1237,14 +1261,14 @@ owl:Thing rdf:type owl:Class ;
 <http://www.wikidata.org/wiki/Q154954> rdf:type owl:Class ;
                                        rdfs:comment "\"real human being as opposed to a non-human legal person\" (https://www.wikidata.org/wiki/Q154954)"@en ;
                                        rdfs:isDefinedBy <https://www.wikidata.org/wiki/Q154954> ;
-                                       rdfs:label "Natural Person"^^xsd:string .
+                                       rdfs:label "Natural Person" .
 
 
 ###  http://www.wikidata.org/wiki/Q3778211
 <http://www.wikidata.org/wiki/Q3778211> rdf:type owl:Class ;
                                         rdfs:comment "\"any human or non-human entity that is recognized as having privileges and obligations; a legal fiction which is used to abstract away the differences between natural persons, juridical persons and other entities such as countries\" (https://www.wikidata.org/wiki/Q3778211)"@en ;
                                         rdfs:isDefinedBy <https://www.wikidata.org/wiki/Q3778211> ;
-                                        rdfs:label "Legal Person"^^xsd:string .
+                                        rdfs:label "Legal Person" .
 
 
 #################################################################
