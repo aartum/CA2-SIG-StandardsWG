@@ -125,7 +125,9 @@ xsd:date rdf:type rdfs:Datatype ;
 
 
 ###  http://purl.org/aiaontology#expressedInMedium
-:expressedInMedium rdf:type owl:ObjectProperty .
+:expressedInMedium rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Claim ;
+                   rdfs:range :ClaimMedium .
 
 
 ###  http://purl.org/aiaontology#hasClaimant
