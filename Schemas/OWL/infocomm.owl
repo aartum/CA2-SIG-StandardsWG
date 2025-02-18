@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/infocomm#"
+     xml:base="http://example.org/infocomm"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="http://example.org/infocomm">
+        <rdfs:comment>An ontology for describing information communication.</rdfs:comment>
+    </owl:Ontology>
+
+    <!-- Classes with Definitions -->
+	<owl:Class rdf:ID="CommunicationEvent">
+        <rdfs:comment>The transport of information through space and/or time.</rdfs:comment>
+    </owl:Class>
+	
+    <owl:Class rdf:ID="Information">
+        <rdfs:comment>That which is communicated.</rdfs:comment>
+		<rdfs:comment>Examples include - but are not limited to - ideas, knowledge, facts, feelings and plans.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Sender">
+        <rdfs:comment>The entity that initiates a communication event.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Recipient">
+        <rdfs:comment>The entity that receives the communicated information.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Medium">
+        <rdfs:comment>A thing that is altered, either temporarily or permanently, to preserve information during a communication event.</rdfs:comment>
+    </owl:Class>
+	
+	<owl:Class rdf:ID="Format">
+        <rdfs:comment>The way in which a thing is altered to act as a medium during a communication event.</rdfs:comment>
+		<rdfs:comment>An encoding system (in computer terms) is an example of a format.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Protocol">
+        <rdfs:comment>A set of rules governing a communication event.</rdfs:comment>
+		<rdfs:comment>A language may be regarded as a protocol in itself.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:ID="hasSender">
+        <rdfs:domain rdf:resource="#CommunicationEvent"/>
+        <rdfs:range rdf:resource="#Sender"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="hasRecipient">
+        <rdfs:domain rdf:resource="#CommunicationEvent"/>
+        <rdfs:range rdf:resource="#Recipient"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="hasMedium">
+        <rdfs:domain rdf:resource="#CommunicationEvent"/>
+        <rdfs:range rdf:resource="#Medium"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasFormat">
+        <rdfs:domain rdf:resource="#CommunicationEvent"/>
+        <rdfs:range rdf:resource="#Format"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasProtocol">
+        <rdfs:domain rdf:resource="#CommunicationEvent"/>
+        <rdfs:range rdf:resource="#Protocol"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="transmits">
+        <rdfs:domain rdf:resource="#CommunicationEvent"/>
+        <rdfs:range rdf:resource="#Information"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Inverse Properties -->
+    <owl:ObjectProperty rdf:ID="senderOf">
+        <owl:inverseOf rdf:resource="#hasSender"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="recipientOf">
+        <owl:inverseOf rdf:resource="#hasRecipient"/>
+    </owl:ObjectProperty>
+
+    <!-- Disjoint Classes -->
+    <owl:AllDisjointClasses>
+		<rdf:Description rdf:about="#CommunicationEvent"/>
+		<rdf:Description rdf:about="#Information"/>
+        <rdf:Description rdf:about="#Sender"/>
+        <rdf:Description rdf:about="#Recipient"/>
+        <rdf:Description rdf:about="#Medium"/>
+		<rdf:Description rdf:about="#Format"/>
+        <rdf:Description rdf:about="#Protocol"/>
+    </owl:AllDisjointClasses>
+
+</rdf:RDF>
