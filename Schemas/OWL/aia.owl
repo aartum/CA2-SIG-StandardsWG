@@ -1586,7 +1586,7 @@ Period, in turn, is in the domain of the startedAtTime, endedAtTime, and hasDura
         <rdfs:label xml:lang="en">Claim (n)</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.w3.org/2003/glossary/keyword/All/assertion.html?keywords=assertion"/>
         <skos:altLabel xml:lang="en">Assertion</skos:altLabel>
-        <skos:deinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim is a statement about a (some specific) thing expressed in a claim medium.</skos:definition>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A claim is a statement about a (some specific) thing expressed in a claim medium.</skos:definition>
         <rdfs:comment xml:lang="en">A Claim may comprise other Claim/s, e.g., a report (a Claim) consists of many Claims. Use the &apos;comprises&apos; property to indicate this.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Thing"/>
     </owl:Class>
