@@ -32,17 +32,16 @@
         <rdfs:comment xml:lang="en">The condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs.</rdfs:comment>
     </owl:Class>
 
+	<owl:ObjectProperty rdf:about="#hasTemporalLocation"/>
+		<rdfs:domain rdf:resource="#State"/>
+		<rdfs:range rdf:resource="#TemporalLocation"/>
+	</owl:ObjectProperty>
+
    <!-- #TemporalLocation -->
     <owl:Class rdf:about="#TemporalLocation">
 		<rdfs:label xml:lang="en">Temporal Location</rdfs:label>   
         <rdfs:comment xml:lang="en">TODO.</rdfs:comment>
     </owl:Class>
-
-
-	<owl:ObjectProperty rdf:about="#hasTemporalLocation"/>
-		<rdfs:domain rdf:resource="#State"/>
-		<rdfs:range rdf:resource="#TemporalLocation"/>
-	</owl:ObjectProperty>
 
     <!-- #hasModality -->
 	<!--TODO: define the range-->
