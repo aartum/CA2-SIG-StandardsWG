@@ -3,67 +3,68 @@
      xml:base="http://www.example.org/claim-ontology"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	 xmlns:terms="http://purl.org/dc/terms/">
 
 	<owl:Ontology rdf:about="http://www.example.org/claim-ontology"/>
-		<rdfs:comment>An ontology for describing claims and their verification.</rdfs:comment>
+		<terms:title xml:lang="en">Claim Ontology</terms:title>
+		<terms:description xml:lang="en">An ontology for describing claims and their substantiation.</terms:description>
 	</owl:Ontology>
 
 	<!-- Classes with Definitions -->
 	<owl:Class rdf:ID="Claim">
 		<rdfs:label>Claim</rdfs:label>
-		<rdfs:comment>A statement about a thing.</rdfs:comment>
+		<skos:definition>A defeasible statement about a thing.</skos:definition>
+		<rdfs:comment>A Claim may comprise other Claims.</rdfs:comment>	
 	</owl:Class>	
 	
 	<owl:Class rdf:ID="Claimant">
 		<rdfs:label>Claimant</rdfs:label>
-		<rdfs:comment>An entity (person, organisation, system) that makes a claim.</rdfs:comment>
-	</owl:Class>
-	
-	<owl:Class rdf:ID="Verifier">
-		<rdfs:label>Verifier</rdfs:label>
-		<rdfs:comment>An entity that assesses the veracity of a claim.</rdfs:comment>
-		<rdfs:comment>"Verifying" is the activity of ascertaining that the content of a claim satisfies a particular specification for accuracy, truthfulness or demonstrability. Note that this is different from "validating" which is the activity of ascertaining that the form, structure or type of some thing satisfies a specification.</rdfs:comment>
-		<rdfs:comment>When a verifier follows some formal(ised) procedure to verify a claim, they are often referred to as an "auditor".</rdfs:comment>
+		<skos:definition>An entity (person, organisation, system) that makes a claim.</skos:definition>
 	</owl:Class>
 	
 	<owl:Class rdf:ID="Subject">
 		<rdfs:label>Subject</rdfs:label>
-		<rdfs:comment>The thing about which a claim is made.</rdfs:comment>
+		<skos:definition>The thing about which a claim is made.</skos:definition>
+		<owl:equivalentClass rdf:resource="owl:thing"/>
 	</owl:Class>
 	
 	<owl:Class rdf:ID="Predicate">
 		<rdfs:label>Predicate</rdfs:label>
-		<rdfs:comment>The characteristic, attribute, or relationship asserted about the subject.</rdfs:comment>
+		<skos:definition>The characteristic, attribute, or relationship asserted about the subject of a claim.</skos:definition>
 	</owl:Class>
 	
 	<owl:Class rdf:ID="Object">
 		<rdfs:label>Object</rdfs:label>
-		<rdfs:comment>The target or value associated with the predicate in a claim.</rdfs:comment>
+		<skos:definition>The target or value associated with the predicate in a claim.</skos:definition>
 	</owl:Class>
 	
 	<owl:Class rdf:ID="Substantiation">
 		<rdfs:label>Substantiation</rdfs:label>
-		<rdfs:comment>A thing presented in support of the truthfulness of a claim.</rdfs:comment>
+		<skos:definition>A thing presented in support of the truthfulness of a claim.</skos:definition>
 	</owl:Class>
 
 	<owl:Class rdf:ID="IdentityClaim">
 		<rdfs:subClassOf rdf:resource="#Claim"/>
 		<rdfs:label>Identity Claim</rdfs:label>
-		<rdfs:comment>A statement made by a claimant about their identity, usually with reference to some identification system.</rdfs:comment>
+		<skos:definition>A statement made by a claimant about their identity, usually with reference to some identification system.</skos:definition>
 	</owl:Class>
 
 	<owl:Class rdf:ID="Attestation">
 		<rdfs:subClassOf rdf:resource="#Claim"/>
 		<rdfs:label>Attestation</rdfs:label>
-		<rdfs:comment>A statement, usually formal, made by an entity in which they claim to have witnessed or been presented with sufficient evidence to consider a specific claim made by another claimant as truthful or accurate.</rdfs:comment>
+		<skos:definition>A statement, usually formal, made by an entity in which they claim to have witnessed or been presented with sufficient evidence to consider a specific claim made by another claimant as truthful or accurate.</skos:definition>
 		<rdfs:comment>In other words, it is a statement about a statement; it is a claim about a claim.</rdfs:comment>
+		<rdfs:comment>An Attestation can be presented as a Substantiation for the claim that it attests to.</rdfs:comment>
+		<rdfs:comment>A verifier's statement is an example of an attestation.</rdfs:comment>
+		
 	</owl:Class>
 	
 	<owl:Class rdf:ID="Report">
 		<rdfs:subClassOf rdf:resource="#Claim"/>
 		<rdfs:label>Report</rdfs:label>
-		<rdfs:comment>A claim made according to some specification.</rdfs:comment>
+		<skos:definition>A claim made according to some specification.</skos:definition>
 	</owl:Class>
 
 	<!-- Disjoint Classes -->
@@ -73,13 +74,6 @@
 			<owl:Class rdf:about="#Substantiation"/>
 		</owl:members>
 	</owl:AllDisjointClasses>	
-	
-	<owl:AllDisjointClasses>
-		<owl:members rdf:parseType="Collection">
-			<owl:Class rdf:about="#Claimant"/>
-			<owl:Class rdf:about="#Verifier"/>
-		</owl:members>
-	</owl:AllDisjointClasses>
 
 	<!-- Properties -->
 	<owl:ObjectProperty rdf:ID="madeBy">
@@ -102,15 +96,18 @@
 		<rdfs:range rdf:resource="#Object"/>
 	</owl:ObjectProperty>
 	
+	<owl:ObjectProperty rdf:ID="comprisesClaims">
+		<rdfs:domain rdf:resource="#Claim"/>
+		<rdfs:range rdf:resource="#Claim"/>
+	</owl:ObjectProperty>	
+	
 	<owl:ObjectProperty rdf:ID="supportedBy">
 		<rdfs:domain rdf:resource="#Claim"/>
 		<rdfs:range rdf:resource="#Substantiation"/>
+		<owl:inverseOf rdf:resource="#supports"/>		
 	</owl:ObjectProperty>
 
-	<owl:ObjectProperty rdf:ID="assessesVeracityOf">
-		<rdfs:domain rdf:resource="#Verifier"/>
-		<rdfs:range rdf:resource="#Claim"/>
-	</owl:ObjectProperty>
+
 
 </rdf:RDF>
 

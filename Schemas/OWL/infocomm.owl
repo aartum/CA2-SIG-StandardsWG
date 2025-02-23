@@ -6,7 +6,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
     <owl:Ontology rdf:about="http://example.org/infocomm">
-        <rdfs:comment>An ontology for describing information communication.</rdfs:comment>
+		<terms:title xml:lang="en">Information Communication Ontology</terms:title>
+        <terms:description xml:lang="en">An ontology for describing information communication.</terms:description>
     </owl:Ontology>
 
     <!-- Classes with Definitions -->

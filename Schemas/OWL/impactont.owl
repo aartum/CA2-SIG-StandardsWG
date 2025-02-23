@@ -10,8 +10,8 @@
      xmlns:terms="http://purl.org/dc/terms/">
 	 
     <owl:Ontology rdf:about="http://purl.org/impact-ontology">
-        <terms:description xml:lang="en">This is an ontology for describing how events impact things.</terms:description>
         <terms:title xml:lang="en">Impact Ontology</terms:title>
+		<terms:description xml:lang="en">An ontology for describing how events impact things.</terms:description>
     </owl:Ontology>
 
 	<owl:Class rdf:about="#Thing">
@@ -20,6 +20,7 @@
 	</owl:Class>
 
 	<owl:ObjectProperty rdf:about="#hasState"/>
+		<owl:inverseOf rdf:resource="#isStateOf"/>
 		<rdfs:domain rdf:resource="#Thing"/>
 		<rdfs:range rdf:resource="#State"/>
 	</owl:ObjectProperty>
@@ -27,9 +28,8 @@
     <!-- #State -->
     <owl:Class rdf:about="#State">
 		<rdfs:label xml:lang="en">State</rdfs:label>
-		<rdfs:subClassOf rdf:resource="#Thing"/>
+		<rdfs:subClassOf rdf:resource="owl:thing"/>
 		<skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs.</skos:definition>        
-        <rdfs:comment xml:lang="en">The condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs.</rdfs:comment>
     </owl:Class>
 
 	<owl:ObjectProperty rdf:about="#hasTemporalLocation"/>
@@ -39,6 +39,7 @@
 
    <!-- #TemporalLocation -->
     <owl:Class rdf:about="#TemporalLocation">
+		<rdfs:subClassOf rdf:resource="owl:thing"/>
 		<rdfs:label xml:lang="en">Temporal Location</rdfs:label>   
         <rdfs:comment xml:lang="en">TODO.</rdfs:comment>
     </owl:Class>
@@ -47,11 +48,11 @@
 	<!--TODO: define the range-->
     <owl:DatatypeProperty rdf:about="#hasModality">
         <rdfs:domain rdf:resource="#State"/>
-        <rdfs:comment xml:lang="en">(TODO: The range is "counterfactual" (FALSE) or "real" (TRUE).)</rdfs:comment>
+        <rdfs:comment xml:lang="en">(TODO: The range is "counterfactual" or "real".)</rdfs:comment>
     </owl:DatatypeProperty>
 
-  	<owl:ObjectProperty rdf:about="#isDefinedBy"/>
-		<owl:inverseOf rdf:resource="#defines"/>
+  	<owl:ObjectProperty rdf:about="#isDefinedByIndicator"/>
+		<owl:inverseOf rdf:resource="#definesState"/>
 		<rdfs:domain rdf:resource="#State"/>
 		<rdfs:range rdf:resource="#Indicator"/>
 	</owl:ObjectProperty>
@@ -66,16 +67,23 @@
     <!-- #Event -->
     <owl:Class rdf:about="#Event">
         <rdfs:label xml:lang="en">Event</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="owl:thing"/>
         <owl:equivalentClass rdf:resource="http://purl.org/dc/dcmitype/Event"/>
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in the state of a thing.</skos:definition>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in the state of a impactont:Thing.</skos:definition>
+		<rdfs:comment>An Event may comprise other Events. TODO: In such case, what would be the difference between an Event and a Process? Add a requirement to Process for stipulating the interactions/interrelations between events?</rdfs:comment>	
     </owl:Class>
+
+    <owl:ObjectProperty rdf:about="#comprisesEvents">
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="#Event"/>
+    </owl:ObjectProperty>
     
 	<!-- #Impact(n) -->
     <owl:Class rdf:about="#Impact(n)">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Impact(n)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+		<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Impact(n)</rdfs:label>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An event with an identifiable provenance.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="#Parameter"/>
     </owl:Class>
 	
     <!-- #hasProvenance -->
@@ -88,13 +96,16 @@
 
     <!-- #Indicator -->
     <owl:Class rdf:about="#Indicator">
+		<rdfs:subClassOf rdf:resource="owl:thing"/>
         <rdfs:label>Indicator</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convention for indicating the state of a thing.</skos:definition>
+		<rdfs:comment>TODO: Must have a description and a unit of measure. Can optionally have a rationale.</rdfs:comment>
     </owl:Class>
     
 
     <!-- #Process -->
     <owl:Class rdf:about="#Process">
+		<rdfs:subClassOf rdf:resource="owl:thing"/>
         <rdfs:label>Process (n)</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A series of interrelated or interacting events.</skos:definition>
     </owl:Class>
