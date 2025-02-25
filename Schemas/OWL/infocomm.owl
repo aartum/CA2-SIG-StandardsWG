@@ -3,7 +3,8 @@
      xml:base="http://example.org/infocomm"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:terms="http://purl.org/dc/terms/">
 
     <owl:Ontology rdf:about="http://example.org/infocomm">
 		<terms:title xml:lang="en">Information Communication Ontology</terms:title>
@@ -17,7 +18,7 @@
 	
     <owl:Class rdf:ID="Information">
         <rdfs:comment>That which is communicated.</rdfs:comment>
-		<rdfs:comment>Examples include - but are not limited to - ideas, knowledge, facts, feelings and plans.</rdfs:comment>
+		<rdfs:comment>Examples include - but are not limited to - ideas, knowledge, facts, claims, feelings and plans.</rdfs:comment>
     </owl:Class>
 
     <owl:Class rdf:ID="Sender">

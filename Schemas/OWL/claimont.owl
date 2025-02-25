@@ -7,7 +7,7 @@
 	 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 	 xmlns:terms="http://purl.org/dc/terms/">
 
-	<owl:Ontology rdf:about="http://www.example.org/claim-ontology"/>
+	<owl:Ontology rdf:about="http://www.example.org/claim-ontology">
 		<terms:title xml:lang="en">Claim Ontology</terms:title>
 		<terms:description xml:lang="en">An ontology for describing claims and their substantiation.</terms:description>
 	</owl:Ontology>

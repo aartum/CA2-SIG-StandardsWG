@@ -15,7 +15,7 @@
 		 xmlns:terms="http://purl.org/dc/terms/">
 		 
   <owl:Ontology rdf:about="http://purl.org/aiaontology">
-    <rdfs:label>Anthropogenic Impact Accounting Ontology</rdfs:label>
+    <terms:title xml:lang="en">Anthropogenic Impact Accounting Ontology</terms:title>
     <terms:description xml:lang="en">An ontology for accounting for human impact on their environments.</terms:description>
   </owl:Ontology>
   
@@ -131,7 +131,7 @@
 	  </owl:members>
   </owl:AllDisjointClasses>	    
   
-  <owl:ObjectProperty rdf:about="#hasObjective"/>
+  <owl:ObjectProperty rdf:about="#hasObjective">
 	  <rdfs:domain rdf:resource="#Activity"/>
 	  <rdfs:range rdf:resource="#Objective"/>
   </owl:ObjectProperty>
