@@ -46,10 +46,16 @@
     </owl:Class>
 
     <!-- #hasModality -->
-	<!--TODO: define the range-->
     <owl:DatatypeProperty rdf:about="#hasModality">
         <rdfs:domain rdf:resource="#State"/>
-        <rdfs:comment xml:lang="en">(TODO: The range is "counterfactual" or "real".)</rdfs:comment>
+		<rdfs:range>
+			<rdfs:Datatype>
+				<owl:oneOf rdf:parseType="Collection">
+					<rdf:Literal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">counterfactual</rdf:Literal>
+					<rdf:Literal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real</rdf:Literal>
+				</owl:oneOf>
+			</rdfs:Datatype>
+		</rdfs:range>		
     </owl:DatatypeProperty>
 
   	<owl:ObjectProperty rdf:about="#isDefinedByIndicator">
@@ -106,7 +112,6 @@
         <rdfs:range rdf:resource="#Event"/>
     </owl:ObjectProperty>
 
-
     <!-- #Indicator -->
     <owl:Class rdf:about="#Indicator">
 		<rdfs:subClassOf rdf:resource="owl:thing"/>
@@ -114,7 +119,6 @@
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convention for indicating the state of a thing.</skos:definition>
 		<rdfs:comment>TODO: Must have a description and a unit of measure. Can optionally have a rationale.</rdfs:comment>
     </owl:Class>
-    
 
     <!-- #Process -->
     <owl:Class rdf:about="#Process">
@@ -124,7 +128,6 @@
     </owl:Class>
 
 <!--TODO: Disjoint classes.-->
-
 
 </rdf:RDF>
 
