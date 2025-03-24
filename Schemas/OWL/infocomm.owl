@@ -27,15 +27,18 @@
 
     <owl:Class rdf:ID="Medium">
         <rdfs:comment>A thing that is altered, either temporarily or permanently, to preserve information during a communication event.</rdfs:comment>
+		<rdfs:comment>Radio waves (in wireless communication) and coaxial cables (in wired communication) are good examples.</rdfs:comment>
     </owl:Class>
 	
 	<owl:Class rdf:ID="Format">
         <rdfs:comment>The way in which a thing is altered to act as a medium during a communication event.</rdfs:comment>
+		<rdfs:comment>Formats include things like JSON, CSV and PDF, but also things like UTF-8 or base64 encoding.</rdfs:comment>
 		<rdfs:comment>An encoding system (in computer terms) is an example of a format.</rdfs:comment>
     </owl:Class>
 
     <owl:Class rdf:ID="Protocol">
         <rdfs:comment>A set of rules governing a communication event.</rdfs:comment>
+		<rdfs:comment>Bluetooth, SMS, TCP/IP are all examples of communication protocols.</rdfs:comment>
 		<rdfs:comment>A language may be regarded as a protocol in itself.</rdfs:comment>
     </owl:Class>
 
@@ -66,9 +69,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
 
-	<owl:ObjectProperty rdf:ID="hasProtocol">
-        <rdfs:domain rdf:resource="#CommunicationEvent"/>
-        <rdfs:range rdf:resource="#Protocol"/>
+	<owl:ObjectProperty rdf:ID="governs">
+        <rdfs:domain rdf:resource="#Protocol"/>
+        <rdfs:range rdf:resource="#CommunicationEvent"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
 
@@ -86,6 +89,10 @@
     <owl:ObjectProperty rdf:ID="recipientOf">
         <owl:inverseOf rdf:resource="#hasRecipient"/>
     </owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="isGovernedBy">
+		<owl:inverseOf rdf:resource="#governs"/>
+    </owl:ObjectProperty>
 
     <!-- Disjoint Classes -->
     <owl:AllDisjointClasses>
@@ -100,13 +107,18 @@
     <!-- Example Instances -->
 
     <!-- Example 1: Text Message from Alice to Bob -->
-    <owl:NamedIndividual rdf:ID="TextMessage123">
-        <rdf:type rdf:resource="#Information"/>
+	<owl:NamedIndividual rdf:ID="AliceInvitesBobToBirthdayParty">
+        <rdf:type rdf:resource="#CommunicationEvent"/>
+		<transmits rdf:resource="#BirthdayInvitationMessage"/>
         <hasSender rdf:resource="#Alice"/>
         <hasRecipient rdf:resource="#Bob"/>
-        <hasMedium rdf:resource="#SMSNetwork"/>
+        <hasMedium rdf:resource="#RadioWaves"/>
         <hasFormat rdf:resource="#PlainText"/>
-        <hasEncoding rdf:resource="#UTF8"/>
+        <isGovernedBy rdf:resource="#SMSProtocol"/>
+    </owl:NamedIndividual>
+	
+    <owl:NamedIndividual rdf:ID="BirthdayInvitationMessage">
+        <rdf:type rdf:resource="#Information"/>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="Alice">
@@ -117,7 +129,7 @@
         <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:ID="SMSNetwork">
+    <owl:NamedIndividual rdf:ID="RadioWaves">
         <rdf:type rdf:resource="#Medium"/>
     </owl:NamedIndividual>
 
@@ -125,18 +137,23 @@
         <rdf:type rdf:resource="#Format"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:ID="UTF8">
-        <rdf:type rdf:resource="#Encoding"/>
+    <owl:NamedIndividual rdf:ID="SMSProtocol">
+        <rdf:type rdf:resource="#Protocol"/>
     </owl:NamedIndividual>
 
     <!-- Example 2: Email from a Weather Station to a Subscriber -->
-    <owl:NamedIndividual rdf:ID="WeatherUpdateEmail">
-        <rdf:type rdf:resource="#Information"/>
+    <owl:NamedIndividual rdf:ID="WeatherUpdateEvent">
+        <rdf:type rdf:resource="#CommunicationEvent"/>
+		<transmits rdf:resource="#WeatherForecastUpdate"/>
         <hasSender rdf:resource="#WeatherStationService"/>
         <hasRecipient rdf:resource="#Subscriber"/>
-        <hasMedium rdf:resource="#EmailSystem"/>
+        <hasMedium rdf:resource="#FibreOpticCable"/>
         <hasFormat rdf:resource="#HTML"/>
-        <hasEncoding rdf:resource="#Base64"/>
+        <isGovernedBy rdf:resource="#HTTP"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="WeatherForecastUpdate">
+        <rdf:type rdf:resource="#Information"/>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="WeatherStationService">
@@ -147,7 +164,7 @@
         <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:ID="EmailSystem">
+    <owl:NamedIndividual rdf:ID="FibreOpticCable">
         <rdf:type rdf:resource="#Medium"/>
     </owl:NamedIndividual>
 
@@ -155,8 +172,8 @@
         <rdf:type rdf:resource="#Format"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:ID="Base64">
-        <rdf:type rdf:resource="#Encoding"/>
+    <owl:NamedIndividual rdf:ID="HTTP">
+        <rdf:type rdf:resource="#Protocol"/>
     </owl:NamedIndividual>
 
 </rdf:RDF>
