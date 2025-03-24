@@ -21,12 +21,8 @@
 		<rdfs:comment>Examples include - but are not limited to - ideas, knowledge, facts, claims, feelings and plans.</rdfs:comment>
     </owl:Class>
 
-    <owl:Class rdf:ID="Sender">
-        <rdfs:comment>The entity that initiates a communication event.</rdfs:comment>
-    </owl:Class>
-
-    <owl:Class rdf:ID="Recipient">
-        <rdfs:comment>The entity that receives the communicated information.</rdfs:comment>
+    <owl:Class rdf:ID="CommunicationParty">
+        <rdfs:comment>An entity that participates in the communication event.</rdfs:comment>
     </owl:Class>
 
     <owl:Class rdf:ID="Medium">
@@ -46,13 +42,15 @@
     <!-- Object Properties -->
     <owl:ObjectProperty rdf:ID="hasSender">
         <rdfs:domain rdf:resource="#CommunicationEvent"/>
-        <rdfs:range rdf:resource="#Sender"/>
+        <rdfs:range rdf:resource="#CommunicationParty"/>
+		<rdfs:comment>A communication party fulfils the 'sender' role if they transmit the communicated information.</rdfs:comment>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:ID="hasRecipient">
         <rdfs:domain rdf:resource="#CommunicationEvent"/>
-        <rdfs:range rdf:resource="#Recipient"/>
+        <rdfs:range rdf:resource="#CommunicationParty"/>
+		<rdfs:comment>A communication party fulfils the 'recipient' role if they receive the communicated information.</rdfs:comment>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
 
@@ -93,8 +91,7 @@
     <owl:AllDisjointClasses>
 		<rdf:Description rdf:about="#CommunicationEvent"/>
 		<rdf:Description rdf:about="#Information"/>
-        <rdf:Description rdf:about="#Sender"/>
-        <rdf:Description rdf:about="#Recipient"/>
+        <rdf:Description rdf:about="#CommunicationParty"/>
         <rdf:Description rdf:about="#Medium"/>
 		<rdf:Description rdf:about="#Format"/>
         <rdf:Description rdf:about="#Protocol"/>
@@ -113,11 +110,11 @@
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="Alice">
-        <rdf:type rdf:resource="#Sender"/>
+        <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="Bob">
-        <rdf:type rdf:resource="#Recipient"/>
+        <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="SMSNetwork">
@@ -143,11 +140,11 @@
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="WeatherStationService">
-        <rdf:type rdf:resource="#Sender"/>
+        <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="Subscriber">
-        <rdf:type rdf:resource="#Recipient"/>
+        <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:ID="EmailSystem">
