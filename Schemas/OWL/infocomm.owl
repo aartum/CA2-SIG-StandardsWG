@@ -100,4 +100,66 @@
         <rdf:Description rdf:about="#Protocol"/>
     </owl:AllDisjointClasses>
 
+    <!-- Example Instances -->
+
+    <!-- Example 1: Text Message from Alice to Bob -->
+    <owl:NamedIndividual rdf:ID="TextMessage123">
+        <rdf:type rdf:resource="#Information"/>
+        <hasSender rdf:resource="#Alice"/>
+        <hasRecipient rdf:resource="#Bob"/>
+        <hasMedium rdf:resource="#SMSNetwork"/>
+        <hasFormat rdf:resource="#PlainText"/>
+        <hasEncoding rdf:resource="#UTF8"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="Alice">
+        <rdf:type rdf:resource="#Sender"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="Bob">
+        <rdf:type rdf:resource="#Recipient"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="SMSNetwork">
+        <rdf:type rdf:resource="#Medium"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="PlainText">
+        <rdf:type rdf:resource="#Format"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="UTF8">
+        <rdf:type rdf:resource="#Encoding"/>
+    </owl:NamedIndividual>
+
+    <!-- Example 2: Email from a Weather Station to a Subscriber -->
+    <owl:NamedIndividual rdf:ID="WeatherUpdateEmail">
+        <rdf:type rdf:resource="#Information"/>
+        <hasSender rdf:resource="#WeatherStationService"/>
+        <hasRecipient rdf:resource="#Subscriber"/>
+        <hasMedium rdf:resource="#EmailSystem"/>
+        <hasFormat rdf:resource="#HTML"/>
+        <hasEncoding rdf:resource="#Base64"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="WeatherStationService">
+        <rdf:type rdf:resource="#Sender"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="Subscriber">
+        <rdf:type rdf:resource="#Recipient"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="EmailSystem">
+        <rdf:type rdf:resource="#Medium"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="HTML">
+        <rdf:type rdf:resource="#Format"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:ID="Base64">
+        <rdf:type rdf:resource="#Encoding"/>
+    </owl:NamedIndividual>
+
 </rdf:RDF>
