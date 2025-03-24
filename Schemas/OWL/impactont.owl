@@ -129,6 +129,54 @@
 
 <!--TODO: Disjoint classes.-->
 
+	<owl:NamedIndividual rdf:ID="ElectricityDistributionInfrastructureOfRiversideTown">
+        <rdf:type rdf:resource="#Thing"/>
+    </owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:ID="FloodOfMarch2025">
+        <rdf:type rdf:resource="#Event"/>
+    </owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:ID="ImpactOfFloodOfMarch2025OnRiversideTownEDI">
+        <rdf:type rdf:resource="#Impact"/>
+		<hasProvenance rdf:resource="#FloodOfMarch2025"/>
+		<hasStateA rdf:resource="#StateBeforeFlood"/>
+		<hasStateB rdf:resource="#StateAfterFlood"/>
+    </owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:ID="StateBeforeFlood">
+        <rdf:type rdf:resource="#State"/>
+		<hasTemporalLocation rdf:resource="#DayBeforeFlood"/>
+		<hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real</hasModality>
+		<isDefinedByIndicator rdf:resource="#EDIStateIndicator"/>
+		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</hasValue>
+    </owl:NamedIndividual>		
+	
+	<owl:NamedIndividual rdf:ID="StateAfterFlood">
+        <rdf:type rdf:resource="#State"/>
+		<hasTemporalLocation rdf:resource="#DayAfterFlood"/>
+		<hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real</hasModality>
+		<isDefinedByIndicator rdf:resource="#EDIStateIndicator"/>
+		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">32.4</hasValue>
+    </owl:NamedIndividual>		
+
+	<owl:NamedIndividual rdf:ID="DayBeforeFlood">
+        <rdf:type rdf:resource="#TemporalLocation"/>
+		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-13T09:00:00.000Z</hasValue>
+    </owl:NamedIndividual>		
+
+	<owl:NamedIndividual rdf:ID="DayAfterFlood">
+        <rdf:type rdf:resource="#TemporalLocation"/>
+		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-15T09:00:00.000Z</hasValue>
+    </owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:ID="EDIStateIndicator">
+        <rdf:type rdf:resource="#Indicator"/>
+		<hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator for the state of Riverside Town's electricity distribution infrastructure, expressed as the percentage of connections that are 'live'.</hasDefinition>
+		<hasRationale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO.</hasRationale>
+		<hasUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage</hasUnitOfMeasure>
+    </owl:NamedIndividual>	
+
 </rdf:RDF>
 
 
