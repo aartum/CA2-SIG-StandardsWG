@@ -44,7 +44,7 @@ prescribe such distinctions.
   <!-- aiao:StateClaim class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#StateClaim">
 	<rdfs:subClassOf rdf:resource="http://purl.org/claimont#Claim"/>
-	<rdfs:comment>A claim about a state.</rdfs:comment>
+	<rdfs:comment>A claim about the state of a thing.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:Activity class -->
@@ -150,7 +150,7 @@ limited duration.</rdfs:comment>
 
 	<owl:ObjectProperty rdf:ID="hasSubject">
 		<rdfs:domain rdf:resource="#StateClaim"/>
-		<rdfs:range rdf:resource="impactont:State"/>
+		<rdfs:range rdf:resource="impactont:Thing"/>
 	</owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:ID="hasAgentRelation">
@@ -169,16 +169,6 @@ limited duration.</rdfs:comment>
 		<rdfs:domain rdf:resource="#AgentRelation"/>
 		<rdfs:range rdf:resource="#Agent"/>
 	</owl:ObjectProperty>
-  
-	<owl:ObjectProperty rdf:ID="hasActivity">
-		<rdfs:domain rdf:resource="#AgentRelation"/>
-		<rdfs:range rdf:resource="#Activity"/>
-	</owl:ObjectProperty>
-  
-	<owl:ObjectProperty rdf:ID="hasProject">
-		<rdfs:domain rdf:resource="#AgentRelation"/>
-		<rdfs:range rdf:resource="#Project"/>
-	</owl:ObjectProperty>  
   
 	<owl:ObjectProperty rdf:ID="isPerformedWith">
 		<rdfs:domain rdf:resource="#Activity"/>
@@ -200,10 +190,12 @@ limited duration.</rdfs:comment>
 	
 	<owl:NamedIndividual rdf:ID="iofs(GS2767)drfysdf">
 		<rdf:type rdf:resource="#Project"/>
-		<comprisesActivity rdf:resource="GS2767Activity1">
-		<comprisesActivity rdf:resource="GS2767Activity2">
-		<comprisesActivity rdf:resource="GS2767Activity3">
+		<comprisesActivity rdf:resource="GS2767Activity1"/>
+		<comprisesActivity rdf:resource="GS2767Activity2"/>
+		<comprisesActivity rdf:resource="GS2767Activity3"/>
 		<hasObjective "Reduce the fuel consumption of ships through the application of advanced hull coatings."/>
+		<hasDuration rdf:resource="(2013 - 2021)">
+		<hasAgentRelation rdf:resource="dfadbe8798df987adffa"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:ID="GS2767Activity1">
@@ -225,51 +217,98 @@ limited duration.</rdfs:comment>
 		<rdf:type rdf:resource="#Agent"/>
 	</owl:NamedIndividual>		
 
-	<owl:NamedIndividual rdf:ID="123a(CoordinatingEntityRoleForGS2767)f678">
+	<owl:NamedIndividual rdf:ID="123a(ProjectOwnerOfGS2767)f678">
 		<rdf:type rdf:resource="#Role"/>
 	</owl:NamedIndividual>	
 	
 	<owl:NamedIndividual rdf:ID="dfadbe8798df987adffa">
 		<rdf:type rdf:resource="#AgentRelation"/>
 		<hasAgent rdf:resource="dsaf(InternationalPaintLtd)78df"/>
-		<hasProject rdf:resource="iofs(GS2767)drfysdf"/>
-		<isGovernedBy rdf:resource="123a(CoordinatingEntityRoleForGS2767)f678"/>
+		<isGovernedBy rdf:resource="123a(ProjectOwnerOfGS2767)f678"/>
 	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:ID="sadf(Ship9xxxx14/86366)aufy">
-		<rdf:type rdf:resource="impactont:Thing"/>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:ID="atsd(Ship9xxxx52/86375)aggy">
-		<rdf:type rdf:resource="impactont:Thing"/>
-	</owl:NamedIndividual> 
-	<!--A named individual like this must be created for each of the 17 ships that were involved in the project.-->
 	
 	<owl:NamedIndividual rdf:ID="erte(CO2emissionsFromShipIndicator)ttre">
 		<rdf:type rdf:resource="impactont:Indicator"/>
 		<hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The amount of carbon dioxide (CO2) emissions released per year by a maritime vessel due to the fuel consumption of its engines.</hasDefinition>
 		<hasUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tCO2/yr</hasUnitOfMeasure>
+	</owl:NamedIndividual>	
+	
+	
+	
+
+	<!--For each of the 17 ships involved in the project, the following individuals must be created:-->
+	
+	<owl:NamedIndividual rdf:ID="sadf(Ship9xxxx14/86366)aufy">
+		<rdf:type rdf:resource="impactont:Thing"/>
 	</owl:NamedIndividual>
 	
-	# TODO: Change this to "per sea mile" rather than "per year".
+	<owl:NamedIndividual rdf:ID="rfvf(VoyageLogForShip9xxxx14/86366)rfvf">
+		<rdf:type rdf:resource="claimont:Substantiation"/>
+	</owl:NamedIndividual>
+	<!--A named individual like this must be created for each of the voyage logs of the ship.-->
 	
-	
-	<owl:NamedIndividual rdf:ID="duifu(BaselineStateForShipShip9xxxx14/86366)dfdf">
-		<rdf:type rdf:resource="impactont:State"/>
-		<hasTemporalLocation rdf:resource="(10 September 2014 - 9 September 2015)"/>
-		<hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">counterfactual</hasModality>
-		<isDefinedByIndicator rdf:resource="#erte(CO2emissionsFromShipIndicator)ttre">"/>
-		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">119000</hasValue>		
+	<owl:NamedIndividual rdf:ID="dudf(ClaimAboutMonPer1BaselineStateForShip9xxxx14/86366)qwqw">
+		<rdf:type rdf:resource="#StateClaim"/>
+		<claimont:hasClaimant rdf:resource="dsaf(InternationalPaintLtd)78df"/>
+		<claimont:hasSubject rdf:resource="sadf(Ship9xxxx14/86366)aufy"/>
+		<claimont:hasPredicate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Had baseline state during monitoring period 1 of GS2767Activity1</>
+		<claimont:hasObject rdf:resource="duifu(MonPer1BaselineStateForShip9xxxx14/86366)dfdf"/>
+		<claimont:isSupportedBy rdf:resource="rfvf(VoyageLogForShip9xxxx14/86366)rfvf"/>
 	</owl:NamedIndividual>	
-	<!--A named individual like this must be created for the baseline scenario of each monitoring period of each ship, with the temporal location and value set as they are applicable to that specific vessel and monitoring period.-->
-  
-	<owl:NamedIndividual rdf:ID="duifu(ProjectStateForShipShip9xxxx14/86366)dfdf">
+	<!--A named individual like this must be created for each monitoring period.-->
+	
+	<owl:NamedIndividual rdf:ID="duifu(MonPer1BaselineStateForShip9xxxx14/86366)dfdf">
 		<rdf:type rdf:resource="impactont:State"/>
-		<hasTemporalLocation rdf:resource="(10 September 2014 - 9 September 2015)"/>
-		<hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real</hasModality>
-		<isDefinedByIndicator rdf:resource="#erte(CO2emissionsFromShipIndicator)ttre">"/>
-		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101002</hasValue>		
+		<impactont:hasTemporalLocation rdf:resource="(10 September 2014 - 9 September 2015)"/>
+		<impactont:hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">counterfactual</hasModality>
+		<impactont:isDefinedByIndicator rdf:resource="#erte(CO2emissionsFromShipIndicator)ttre">"/>
+		<impactont:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">119000</hasValue>		
+	</owl:NamedIndividual>	
+	<!--A named individual like this must be created for each monitoring period.-->
+  
+	<owl:NamedIndividual rdf:ID="dudf(ClaimAboutMonPer1ProjectStateForShip9xxxx14/86366)qwqw">
+		<rdf:type rdf:resource="#StateClaim"/>
+		<claimont:hasClaimant rdf:resource="dsaf(InternationalPaintLtd)78df"/>
+		<claimont:hasSubject rdf:resource="sadf(Ship9xxxx14/86366)aufy"/>
+		<claimont:hasPredicate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Had project state during monitoring period 1 of GS2767Activity1</>
+		<claimont:hasObject rdf:resource="yyifu(MonPer1ProjectStateForShip9xxxx14/86366)dfyy"/>
+		<claimont:isSupportedBy rdf:resource="rfvf(VoyageLogForShip9xxxx14/86366)rfvf"/>
 	</owl:NamedIndividual>	  
-	<!--A named individual like this must be created for the project scenario of each monitoring period of each ship, with the temporal location and value set as they are applicable to that specific vessel and monitoring period.-->  
+	<!--A named individual like this must be created for each monitoring period.-->
+  
+	<owl:NamedIndividual rdf:ID="yyifu(MonPer1ProjectStateForShip9xxxx14/86366)dfyy">
+		<rdf:type rdf:resource="impactont:State"/>
+		<impactont:hasTemporalLocation rdf:resource="(10 September 2014 - 9 September 2015)"/>
+		<impactont:hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real</hasModality>
+		<impactont:isDefinedByIndicator rdf:resource="#erte(CO2emissionsFromShipIndicator)ttre">"/>
+		<impactont:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101002</hasValue>		
+	</owl:NamedIndividual>	  
+	<!--A named individual like this must be created for each monitoring period.-->  
+  
+	<owl:NamedIndividual rdf:ID="tyuc(StateDifferenceForShip9xxxx14/86366DuringMonPer1)tyuy">
+        <rdf:type rdf:resource="impactont:Event"/>
+		<impactont:hasStateA rdf:resource="duifu(MonPer1BaselineStateForShip9xxxx14/86366)dfdf"/>
+		<impactont:hasStateB rdf:resource="yyifu(MonPer1ProjectStateForShip9xxxx14/86366)dfyy"/>
+    </owl:NamedIndividual>	  
+	<!--A named individual like this must be created for each monitoring period.-->
+  
+  	<owl:NamedIndividual rdf:ID="uuug(ClaimAboutImpactOfGS2767Activity1OnShip9xxxx14/86366DuringMonPer1)guuf">
+		<rdf:type rdf:resource="#ImpactClaim"/>
+		<claimont:hasClaimant rdf:resource="dsaf(InternationalPaintLtd)78df"/>
+		<claimont:hasSubject rdf:resource="GS2767Activity1"/>
+		<claimont:hasPredicate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caused</>
+		<claimont:hasObject rdf:resource="tyuc(StateDifferenceForShip9xxxx14/86366DuringMonPer1)tyuy"/>
+		<claimont:isSupportedBy rdf:resource="...(#TODO: project documentation)..."/>
+	</owl:NamedIndividual>	
+	<!--A named individual like this must be created for each monitoring period.-->
+
+	<owl:NamedIndividual rdf:ID="tyuc(ImpactOfGS2767Activity1OnShip9xxxx14/86366)tyuy">
+        <rdf:type rdf:resource="impactont:Impact"/>
+		<impactont:hasStateA rdf:resource="duifu(MonPer1BaselineStateForShip9xxxx14/86366)dfdf"/>
+		<impactont:hasStateB rdf:resource="yyifu(MonPer1ProjectStateForShip9xxxx14/86366)dfyy"/>
+		<impactont:hasProvenance rdf:resource="GS2767Activity1"/>
+    </owl:NamedIndividual>	
+	<!--A named individual like this must be created for each monitoring period for each ship.-->
+ 
   
 </rdf:RDF>
