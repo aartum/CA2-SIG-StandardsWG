@@ -146,7 +146,7 @@
         <rdf:type rdf:resource="#CommunicationEvent"/>
 		<transmits rdf:resource="#WeatherForecastUpdate"/>
         <hasSender rdf:resource="#WeatherStationService"/>
-        <hasRecipient rdf:resource="#Subscriber"/>
+        <hasRecipient rdf:resource="#Subscriber7845"/>
         <hasMedium rdf:resource="#FibreOpticCable"/>
         <hasFormat rdf:resource="#HTML"/>
         <isGovernedBy rdf:resource="#HTTP"/>
@@ -160,7 +160,7 @@
         <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:ID="Subscriber">
+    <owl:NamedIndividual rdf:ID="Subscriber7845">
         <rdf:type rdf:resource="#CommunicationParty"/>
     </owl:NamedIndividual>
 

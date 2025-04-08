@@ -52,13 +52,15 @@
 	</owl:Class>
 
 	<owl:Class rdf:ID="Attestation">
-		<rdfs:subClassOf rdf:resource="#Claim"/>
+		<rdfs:subClassOf rdf:resource="#Substantiation"/>
 		<rdfs:label>Attestation</rdfs:label>
-		<skos:definition>A statement, usually formal, made by an entity in which they claim to have witnessed or been presented with sufficient evidence to consider a specific claim made by another claimant as truthful or accurate.</skos:definition>
-		<rdfs:comment>In other words, it is a statement about a statement; it is a claim about a claim.</rdfs:comment>
-		<rdfs:comment>An Attestation can be presented as a Substantiation for the claim that it attests to.</rdfs:comment>
+		<skos:definition>An indefeasible statement, usually formal, made by an entity according to which they have witnessed or been presented with sufficient evidence to consider a specific claim made by another entity as truthful or accurate.</skos:definition>
 		<rdfs:comment>A verifier's statement is an example of an attestation.</rdfs:comment>
-		
+	</owl:Class>
+	
+	<owl:Class rdf:ID="Attester">
+		<rdfs:label>Attester</rdfs:label>
+		<skos:definition>An entity (person, organisation, system) that makes an attestation.</skos:definition>
 	</owl:Class>
 	
 	<owl:Class rdf:ID="Report">
@@ -76,15 +78,25 @@
 	</owl:AllDisjointClasses>	
 
 	<!-- Properties -->
-	<owl:ObjectProperty rdf:ID="madeBy">
+	<owl:ObjectProperty rdf:ID="isMadeBy">
 		<rdfs:domain rdf:resource="#Claim"/>
 		<rdfs:range rdf:resource="#Claimant"/>
 	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="isMadeBy">
+		<rdfs:domain rdf:resource="#Attestation"/>
+		<rdfs:range rdf:resource="#Attester"/>
+	</owl:ObjectProperty>	
 	
 	<owl:ObjectProperty rdf:ID="hasSubject">
 		<rdfs:domain rdf:resource="#Claim"/>
 		<rdfs:range rdf:resource="#Subject"/>
 	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="hasSubject">
+		<rdfs:domain rdf:resource="#Attestation"/>
+		<rdfs:range rdf:resource="#Claim"/>
+	</owl:ObjectProperty>	
 	
 	<owl:ObjectProperty rdf:ID="hasPredicate">
 		<rdfs:domain rdf:resource="#Claim"/>
@@ -101,13 +113,61 @@
 		<rdfs:range rdf:resource="#Claim"/>
 	</owl:ObjectProperty>	
 	
-	<owl:ObjectProperty rdf:ID="supportedBy">
+	<owl:ObjectProperty rdf:ID="isSupportedBy">
 		<rdfs:domain rdf:resource="#Claim"/>
 		<rdfs:range rdf:resource="#Substantiation"/>
 		<owl:inverseOf rdf:resource="#supports"/>		
 	</owl:ObjectProperty>
 
+	<!-- Example 1: Alice's Identity Claim -->
 
+	<owl:NamedIndividual rdf:ID="Alice">
+        <rdf:type rdf:resource="#Claimant"/>
+    </owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:ID="Claim1">
+		<rdf:type rdf:resource="#IdentityClaim"/>
+		<isMadeBy rdf:resource="Alice"/>
+		<hasSubject rdf:resource="Alice"/>
+		<hasPredicate rdf:resource="hasEmailAddress"/>
+		<hasObject rdf:datatype="xsd:string">alice@example.com</hasObject>
+		<isSupportedBy rdf:resource="EmailVerificationReport1"/>
+	</owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:ID="EmailVerificationReport1">
+		<rdf:type rdf:resource="#Report"/>
+	</owl:NamedIndividual>	  
+  
+    <!-- Example 2: Bob's Location Claim -->
+
+	<owl:NamedIndividual rdf:ID="Bob">
+        <rdf:type rdf:resource="#Claimant"/>
+    </owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:ID="Claim2">
+		<rdf:type rdf:resource="#Claim"/>
+		<isMadeBy rdf:resource="Bob"/>
+		<hasSubject rdf:resource="Bob"/>
+		<hasPredicate rdf:resource="wasInLocationOnDate"/>
+		<hasObject rdf:datatype="xsd:string">London on 20 March 2025</hasObject>
+	</owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:ID="AirLineTicket578456">
+		<rdf:type rdf:resource="#Substantiation"/>
+		<supports rdf:resource="Claim2">
+	</owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:ID="Jake">
+        <rdf:type rdf:resource="#Attester"/>
+    </owl:NamedIndividual>	
+
+	<owl:NamedIndividual rdf:ID="TestimonyOfFriendOfBob">
+		<rdf:type rdf:resource="#Attestation"/>
+		<isMadeBy rdf:resource="Jake"/>
+		<hasSubject rdf:resource="Claim2"/> 
+		<hasPredicate rdf:resource="is"/> <!--?-->
+		<hasObject rdf:datatype="xsd:boolean">true</hasObject> <!--?-->
+	</owl:NamedIndividual>	
 
 </rdf:RDF>
 
