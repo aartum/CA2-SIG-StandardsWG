@@ -57,7 +57,7 @@ prescribe such distinctions.
 	</rdfs:comment>
   </owl:Class>
   
-  <owl:Class rdf:about="http://purl.org/aiaontology#AgentActivityRelation">
+  <owl:Class rdf:about="http://purl.org/aiaontology#AgentRelation">
 	<rdfs:comment>The relation between an agent and an activity, typically governed by a formal control (such as an employment contract).
 </rdfs:comment>
   </owl:Class>
@@ -155,31 +155,37 @@ limited duration.</rdfs:comment>
 	
 	<owl:ObjectProperty rdf:ID="hasAgentRelation">
 		<rdfs:domain rdf:resource="#Activity"/>
-		<rdfs:range rdf:resource="#AgentActivityRelation"/>
+		<rdfs:domain rdf:resource="#Project"/>
+		<rdfs:range rdf:resource="#AgentRelation"/>
 	</owl:ObjectProperty>
 
 	<owl:ObjectProperty rdf:ID="governs">
 		<owl:inverseOf rdf:resource="#isGovernedBy"/>
 		<rdfs:domain rdf:resource="#Role"/>
-		<rdfs:range rdf:resource="#AgentActivityRelation"/>
+		<rdfs:range rdf:resource="#AgentRelation"/>
 	</owl:ObjectProperty>
 
 	<owl:ObjectProperty rdf:ID="hasAgent">
-		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
+		<rdfs:domain rdf:resource="#AgentRelation"/>
 		<rdfs:range rdf:resource="#Agent"/>
 	</owl:ObjectProperty>
   
 	<owl:ObjectProperty rdf:ID="hasActivity">
-		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
+		<rdfs:domain rdf:resource="#AgentRelation"/>
 		<rdfs:range rdf:resource="#Activity"/>
 	</owl:ObjectProperty>
+  
+	<owl:ObjectProperty rdf:ID="hasProject">
+		<rdfs:domain rdf:resource="#AgentRelation"/>
+		<rdfs:range rdf:resource="#Project"/>
+	</owl:ObjectProperty>  
   
 	<owl:ObjectProperty rdf:ID="isPerformedWith">
 		<rdfs:domain rdf:resource="#Activity"/>
 		<rdfs:range rdf:resource="#Instrument"/>
 	</owl:ObjectProperty>  
   
-		<owl:ObjectProperty rdf:ID="comprisesActivities">
+		<owl:ObjectProperty rdf:ID="comprisesActivity">
 		<rdfs:domain rdf:resource="#Project"/>
 		<rdfs:range rdf:resource="#Activity"/>
 	</owl:ObjectProperty>    
@@ -188,5 +194,82 @@ limited duration.</rdfs:comment>
 		<rdfs:domain rdf:resource="#Project"/>
 		<rdfs:range rdf:resource="(TODO: A fixed temporal duration.)"/>
 	</owl:ObjectProperty>     
+	
+	
+	
+	
+	<owl:NamedIndividual rdf:ID="iofs(GS2767)drfysdf">
+		<rdf:type rdf:resource="#Project"/>
+		<comprisesActivity rdf:resource="GS2767Activity1">
+		<comprisesActivity rdf:resource="GS2767Activity2">
+		<comprisesActivity rdf:resource="GS2767Activity3">
+		<hasObjective "Reduce the fuel consumption of ships through the application of advanced hull coatings."/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:ID="GS2767Activity1">
+		<rdf:type rdf:resource="#Activity"/>
+		<hasObjective "Apply Intersleek 700 (only) to selected vessels."/>		
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:ID="GS2767Activity2">
+		<rdf:type rdf:resource="#Activity"/>
+		<hasObjective "Apply Intersleek 700 and Intersleek 1100SR to selected vessels."/>		
+	</owl:NamedIndividual>
+
+	<owl:NamedIndividual rdf:ID="GS2767Activity3">
+		<rdf:type rdf:resource="#Activity"/>
+		<hasObjective "Apply Intersleek 900 (only) to selected vessels."/>		
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:ID="dsaf(InternationalPaintLtd)78df">
+		<rdf:type rdf:resource="#Agent"/>
+	</owl:NamedIndividual>		
+
+	<owl:NamedIndividual rdf:ID="123a(CoordinatingEntityRoleForGS2767)f678">
+		<rdf:type rdf:resource="#Role"/>
+	</owl:NamedIndividual>	
+	
+	<owl:NamedIndividual rdf:ID="dfadbe8798df987adffa">
+		<rdf:type rdf:resource="#AgentRelation"/>
+		<hasAgent rdf:resource="dsaf(InternationalPaintLtd)78df"/>
+		<hasProject rdf:resource="iofs(GS2767)drfysdf"/>
+		<isGovernedBy rdf:resource="123a(CoordinatingEntityRoleForGS2767)f678"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:ID="sadf(Ship9xxxx14/86366)aufy">
+		<rdf:type rdf:resource="impactont:Thing"/>
+	</owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:ID="atsd(Ship9xxxx52/86375)aggy">
+		<rdf:type rdf:resource="impactont:Thing"/>
+	</owl:NamedIndividual> 
+	<!--A named individual like this must be created for each of the 17 ships that were involved in the project.-->
+	
+	<owl:NamedIndividual rdf:ID="erte(CO2emissionsFromShipIndicator)ttre">
+		<rdf:type rdf:resource="impactont:Indicator"/>
+		<hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The amount of carbon dioxide (CO2) emissions released per year by a maritime vessel due to the fuel consumption of its engines.</hasDefinition>
+		<hasUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tCO2/yr</hasUnitOfMeasure>
+	</owl:NamedIndividual>
+	
+	# TODO: Change this to "per sea mile" rather than "per year".
+	
+	
+	<owl:NamedIndividual rdf:ID="duifu(BaselineStateForShipShip9xxxx14/86366)dfdf">
+		<rdf:type rdf:resource="impactont:State"/>
+		<hasTemporalLocation rdf:resource="(10 September 2014 - 9 September 2015)"/>
+		<hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">counterfactual</hasModality>
+		<isDefinedByIndicator rdf:resource="#erte(CO2emissionsFromShipIndicator)ttre">"/>
+		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">119000</hasValue>		
+	</owl:NamedIndividual>	
+	<!--A named individual like this must be created for the baseline scenario of each monitoring period of each ship, with the temporal location and value set as they are applicable to that specific vessel and monitoring period.-->
+  
+	<owl:NamedIndividual rdf:ID="duifu(ProjectStateForShipShip9xxxx14/86366)dfdf">
+		<rdf:type rdf:resource="impactont:State"/>
+		<hasTemporalLocation rdf:resource="(10 September 2014 - 9 September 2015)"/>
+		<hasModality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real</hasModality>
+		<isDefinedByIndicator rdf:resource="#erte(CO2emissionsFromShipIndicator)ttre">"/>
+		<hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101002</hasValue>		
+	</owl:NamedIndividual>	  
+	<!--A named individual like this must be created for the project scenario of each monitoring period of each ship, with the temporal location and value set as they are applicable to that specific vessel and monitoring period.-->  
   
 </rdf:RDF>
