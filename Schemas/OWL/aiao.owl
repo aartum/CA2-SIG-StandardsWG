@@ -1,119 +1,125 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.org/aiaontology#"
-         xml:base="http://purl.org/aiaontology"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-         xmlns:aiao="http://purl.org/aiaontology#"
-         xmlns:lrml="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
-         xmlns:prov="http://www.w3.org/ns/prov#"
-         xmlns:claimont="http://purl.org/claimont#"
-         xmlns:impactont="http://purl.org/impactont#"
-         xmlns:ruleml="http://www.ruleml.org/spec/"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+		 xml:base="http://purl.org/aiaontology"
+		 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		 xmlns:owl="http://www.w3.org/2002/07/owl#"
+		 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+		 xmlns:aiao="http://purl.org/aiaontology#"
+		 xmlns:lrml="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
+		 xmlns:prov="http://www.w3.org/ns/prov#"
+		 xmlns:claimont="http://purl.org/claimont#"
+		 xmlns:impactont="http://purl.org/impactont#"
+		 xmlns:ruleml="http://www.ruleml.org/spec/"
+		 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 		 xmlns:terms="http://purl.org/dc/terms/">
 		 
   <owl:Ontology rdf:about="http://purl.org/aiaontology">
-    <terms:title xml:lang="en">Anthropogenic Impact Accounting Ontology</terms:title>
-    <terms:description xml:lang="en">An ontology for accounting for human impact on their environments.</terms:description>
+	<terms:title xml:lang="en">Anthropogenic Impact Accounting Ontology</terms:title>
+	<terms:description xml:lang="en">An ontology for accounting for human impact on their environments. This ontology relies heavily on the 
+'claimont', 'impactont' and 'legalruleml' ontologies.</terms:description>
   </owl:Ontology>
   
   <!-- aiao:Agent class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Agent">
-    <rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/legalruleml/ns/v1.0/Agent"/>
-    <owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    <rdfs:comment>A thing that bears some form of accountability for the occurrence of another thing.</rdfs:comment>
-    <rdfs:comment>
-      This class includes all kinds of human and human-backed agents, such as natural persons, legal persons (e.g., companies) and cyber personas (e.g., User1234 on TalkSomeMore social media platform).
+	<rdfs:subClassOf rdf:resource="http://docs.oasis-open.org/legalruleml/ns/v1.0/Agent"/>
+	<owl:equivalentClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+	<rdfs:comment>A thing that bears some form of accountability for the occurrence of another thing.</rdfs:comment>
+	<rdfs:comment>
+	  This class includes all kinds of human and human-comprised agents, such as natural persons, legal persons (e.g., companies) and cyber 
+personas (e.g., User1234 on TalkSomeMore social media platform).
 
-      AIAO strongly recommends distinguishing between different types of agents (such as those listed above), but will neither require nor prescribe such distinctions.
-    </rdfs:comment>
-    <rdfs:comment>An Agent may comprise other Agents.</rdfs:comment>	
+	  AIAO strongly recommends distinguishing between different types of agents (such as those listed above), but will neither require nor 
+prescribe such distinctions.
+	</rdfs:comment>
+	<rdfs:comment>An Agent may comprise other Agents.</rdfs:comment>	
   </owl:Class>
   
   <!-- aiao:ImpactClaim class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#ImpactClaim">
-    <rdfs:subClassOf rdf:resource="http://purl.org/claimont#Claim"/>
-    <rdfs:comment>A claim about the causal relation between an event and a state difference.</rdfs:comment>
-	<rdfs:comment>TODO: Specify that the domain of the hasClaimant property is limited to aiao:Agent.</rdfs:comment>
-	<rdfs:comment>TODO: Specify that the range of the hasSubject property is limited to impactont:Impact.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="http://purl.org/claimont#Claim"/>
+	<rdfs:comment>A claim about the causal relation between an event and a state difference.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:StateClaim class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#StateClaim">
-    <rdfs:subClassOf rdf:resource="http://purl.org/claimont#Claim"/>
-    <rdfs:comment>A claim about a state.</rdfs:comment>
-	<rdfs:comment>TODO: Specify that the range of the hasSubject property is limited to impactont:State.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="http://purl.org/claimont#Claim"/>
+	<rdfs:comment>A claim about a state.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:Activity class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Activity">
-    <rdfs:subClassOf rdf:resource="http://purl.org/impactont#Event"/>
-    <rdfs:comment>An event that is orchestrated by an agent.</rdfs:comment>
-    <rdfs:comment>A thing that an agent does, which impacts an environment.</rdfs:comment>
-    <rdfs:comment>
-      Generating electricity, extracting minerals, protecting a forest, restoring a wetland, and transporting goods are all examples of activities.
-    </rdfs:comment>
-	<rdfs:comment>TODO: Define a hasPrimaryAgent predicate or something like that.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="http://purl.org/impactont#Event"/>
+	<rdfs:comment>An event that is orchestrated by an agent.</rdfs:comment>
+	<rdfs:comment>A thing that an agent does, which impacts an environment.</rdfs:comment>
+	<rdfs:comment>
+	  Generating electricity, extracting minerals, protecting a forest, restoring a wetland, and transporting goods are all examples of activities.
+	</rdfs:comment>
   </owl:Class>
   
+  <owl:Class rdf:about="http://purl.org/aiaontology#AgentActivityRelation">
+	<rdfs:comment>The relation between an agent and an activity, typically governed by a formal control (such as an employment contract).
+</rdfs:comment>
+  </owl:Class>
+   
   <!-- aiao:Instrument class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Instrument">
-    <rdfs:comment>A thing used to perform an activity, but which is neither an input, nor an output.</rdfs:comment>
-    <rdfs:comment>A boiler, a truck and a turbine are all examples of instruments.</rdfs:comment>
+	<rdfs:comment>A thing used to perform an activity, but which is neither an input to the activity, nor an output of the activity.</rdfs:comment>
+	<rdfs:comment>A boiler, a truck and a turbine are all examples of instruments.</rdfs:comment>
 	<rdfs:comment>An Instrument may comprise other Instruments.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:NaturalProcess class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#NaturalProcess">
-    <rdfs:subClassOf rdf:resource="http://purl.org/impactont#Process"/>
-    <rdfs:comment>A series of interrelated or interacting natural events without a primary human cause.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="http://purl.org/impactont#Process"/>
+	<rdfs:comment>A series of interrelated or interacting natural events without a primary human cause.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:Project class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Project">
-    <rdfs:subClassOf rdf:resource="http://purl.org/impactont#Process"/>
-    <rdfs:comment>A coordinated set of activities, subject to specific controls. The controls must include at least (a) an objective and (b) a limited duration.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="http://purl.org/impactont#Process"/>
+	<rdfs:comment>A coordinated set of activities, subject to specific controls. The controls must include at least (a) an objective and (b) a 
+limited duration.</rdfs:comment>
 	<rdfs:comment>TODO: Create object predicates for the required controls.</rdfs:comment>
-  </owl:Class>
+  </owl:Class>  
   
   <!-- aiao:Environment class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Environment">
-    <rdfs:comment>The surroundings and conditions in which a thing occurs.</rdfs:comment>
-    <rdfs:comment>
-      This definition is not limited to physical or natural environments - social, political, economic, legal, etc. environments are also included.
-    </rdfs:comment>	
+	<rdfs:subClassOf rdf:resource="http://purl.org/impactont#Thing"/>
+	<rdfs:comment>The surroundings and conditions in which a thing occurs.</rdfs:comment>
+	<rdfs:comment>
+	  This definition is not limited to physical or natural environments - social, political, economic, legal, etc. environments are also included.
+	</rdfs:comment>	
 	<rdfs:comment>An Environment may comprise other Environments.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:Control class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Control">
-    <owl:equivalentClass rdf:resource="http://www.ruleml.org/spec/Rule"/>
-    <rdfs:comment>A thing that limits or directs another thing.</rdfs:comment>
-    <rdfs:comment>
-      A Control may comprise other Controls, e.g., a methodology (a Control) defines many conditions to be met (which are Controls themselves).
-    </rdfs:comment>
-    <rdfs:comment>The implementation plan and monitoring plan for an activity are controls.</rdfs:comment>
+	<owl:equivalentClass rdf:resource="http://www.ruleml.org/spec/Rule"/>
+	<rdfs:comment>A thing that limits or directs another thing.</rdfs:comment>
+	<rdfs:comment>
+	  A Control may comprise other Controls, e.g., a methodology (a Control) defines many conditions to be met (which are Controls themselves).
+	</rdfs:comment>
+	<rdfs:comment>The implementation plan and monitoring plan for an activity are controls.</rdfs:comment>
   </owl:Class>
   
   <!-- aiao:Objective class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Objective">
-    <rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control"/>
-    <rdfs:comment>A desired state to be effected by an activity.</rdfs:comment>
-    <skos:altLabel>Goal</skos:altLabel>
+	<rdfs:subClassOf rdf:resource="http://purl.org/aiaontology#Control"/>
+	<rdfs:comment>A desired state to be effected by an activity.</rdfs:comment>
+	<skos:altLabel>Goal</skos:altLabel>
   </owl:Class>
   
   <!-- aiao:Role class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Role">
-    <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/legalruleml/ns/v1.0/Role"/>
-    <rdfs:comment>A control that specifies the scope of and/or requirements for an agent's relation to an activity.</rdfs:comment>
-    <rdfs:comment>
-      The extent to which an agent is accountable for the impact of an activity is determined by the role that they fulfil(led) in the activity.
-    </rdfs:comment>
-    <rdfs:comment>
-      Examples of roles include (but are not limited to) calibrator, operator, owner, representer, and project developer.
-    </rdfs:comment>
+	<owl:equivalentClass rdf:resource="http://docs.oasis-open.org/legalruleml/ns/v1.0/Role"/>
+	<rdfs:comment>A control that specifies the scope of and/or requirements for an agent's relation to an activity.</rdfs:comment>
+	<rdfs:comment>
+	  The extent to which an agent is accountable for the impact of an activity is determined by the role that they fulfil(led) in the activity.
+	</rdfs:comment>
+	<rdfs:comment>
+	  Examples of roles include (but are not limited to) calibrator, operator, owner, representer, and project developer.
+	</rdfs:comment>
   </owl:Class>
   
   <!-- Disjoint Classes -->
@@ -133,7 +139,54 @@
   
   <owl:ObjectProperty rdf:about="#hasObjective">
 	  <rdfs:domain rdf:resource="#Activity"/>
+	  <rdfs:domain rdf:resource="#Project"/>
 	  <rdfs:range rdf:resource="#Objective"/>
   </owl:ObjectProperty>
+  
+	<owl:ObjectProperty rdf:ID="hasSubject">
+		<rdfs:domain rdf:resource="#ImpactClaim"/>
+		<rdfs:range rdf:resource="impactont:Impact"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasSubject">
+		<rdfs:domain rdf:resource="#StateClaim"/>
+		<rdfs:range rdf:resource="impactont:State"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="hasAgentRelation">
+		<rdfs:domain rdf:resource="#Activity"/>
+		<rdfs:range rdf:resource="#AgentActivityRelation"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="governs">
+		<owl:inverseOf rdf:resource="#isGovernedBy"/>
+		<rdfs:domain rdf:resource="#Role"/>
+		<rdfs:range rdf:resource="#AgentActivityRelation"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:ID="hasAgent">
+		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
+		<rdfs:range rdf:resource="#Agent"/>
+	</owl:ObjectProperty>
+  
+	<owl:ObjectProperty rdf:ID="hasActivity">
+		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
+		<rdfs:range rdf:resource="#Activity"/>
+	</owl:ObjectProperty>
+  
+	<owl:ObjectProperty rdf:ID="isPerformedWith">
+		<rdfs:domain rdf:resource="#Activity"/>
+		<rdfs:range rdf:resource="#Instrument"/>
+	</owl:ObjectProperty>  
+  
+		<owl:ObjectProperty rdf:ID="comprisesActivities">
+		<rdfs:domain rdf:resource="#Project"/>
+		<rdfs:range rdf:resource="#Activity"/>
+	</owl:ObjectProperty>    
+  
+	<owl:ObjectProperty rdf:ID="hasDuration">
+		<rdfs:domain rdf:resource="#Project"/>
+		<rdfs:range rdf:resource="(TODO: A fixed temporal duration.)"/>
+	</owl:ObjectProperty>     
   
 </rdf:RDF>
