@@ -16,8 +16,7 @@
 		 
   <owl:Ontology rdf:about="http://purl.org/aiaontology">
 	<terms:title xml:lang="en">Anthropogenic Impact Accounting Ontology</terms:title>
-	<terms:description xml:lang="en">An ontology for accounting for human impact on their environments. This ontology relies heavily on the 
-'claimont', 'impactont' and 'legalruleml' ontologies.</terms:description>
+	<terms:description xml:lang="en">An ontology for accounting for human impact on their environments. This ontology relies heavily on the 'claimont', 'impactont' and 'legalruleml' ontologies.</terms:description>
   </owl:Ontology>
   
   <!-- aiao:Agent class -->
@@ -78,8 +77,7 @@ prescribe such distinctions.
   <!-- aiao:Project class -->
   <owl:Class rdf:about="http://purl.org/aiaontology#Project">
 	<rdfs:subClassOf rdf:resource="http://purl.org/impactont#Process"/>
-	<rdfs:comment>A coordinated set of activities, subject to specific controls. The controls must include at least (a) an objective and (b) a 
-limited duration.</rdfs:comment>
+	<rdfs:comment>A coordinated set of activities, subject to specific controls. The controls must include at least (a) an objective and (b) a limited duration.</rdfs:comment>
 	<rdfs:comment>TODO: Create object predicates for the required controls.</rdfs:comment>
   </owl:Class>  
   
@@ -118,7 +116,7 @@ limited duration.</rdfs:comment>
 	  The extent to which an agent is accountable for the impact of an activity is determined by the role that they fulfil(led) in the activity.
 	</rdfs:comment>
 	<rdfs:comment>
-	  Examples of roles include (but are not limited to) calibrator, operator, owner, representer, and project developer.
+	  Examples of roles include (but are not limited to) project developer, project owner, calibrator, operator, representer.
 	</rdfs:comment>
   </owl:Class>
   
@@ -169,6 +167,11 @@ limited duration.</rdfs:comment>
 		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
 		<rdfs:range rdf:resource="#Agent"/>
 	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:ID="hasActivity">
+		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
+		<rdfs:range rdf:resource="#Activity"/>
+	</owl:ObjectProperty>	
   
 	<owl:ObjectProperty rdf:ID="isPerformedWith">
 		<rdfs:domain rdf:resource="#Activity"/>
@@ -217,14 +220,15 @@ limited duration.</rdfs:comment>
 		<rdf:type rdf:resource="#Agent"/>
 	</owl:NamedIndividual>		
 
-	<owl:NamedIndividual rdf:ID="123a(ProjectOwnerOfGS3492)f678">
+	<owl:NamedIndividual rdf:ID="123a(ProjectOwnerOfAGoldStandardProject)f678">
 		<rdf:type rdf:resource="#Role"/>
 	</owl:NamedIndividual>	
 	
 	<owl:NamedIndividual rdf:ID="dfadbe8798df987adffa">
 		<rdf:type rdf:resource="#AgentActivityRelation"/>
 		<hasAgent rdf:resource="dsaf(InternationalPaintLtd)78df"/>
-		<isGovernedBy rdf:resource="123a(ProjectOwnerOfGS3492)f678"/>
+		<hasActivity rdf:resource="iofs(GS3492)drfysdf"/>
+		<isGovernedBy rdf:resource="123a(ProjectOwnerOfAGoldStandardProject)f678"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:ID="erte(CO2emissionsFromShipIndicator)ttre">
