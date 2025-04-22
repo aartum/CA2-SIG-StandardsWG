@@ -57,7 +57,7 @@ prescribe such distinctions.
 	</rdfs:comment>
   </owl:Class>
   
-  <owl:Class rdf:about="http://purl.org/aiaontology#AgentRelation">
+  <owl:Class rdf:about="http://purl.org/aiaontology#AgentActivityRelation">
 	<rdfs:comment>The relation between an agent and an activity, typically governed by a formal control (such as an employment contract).
 </rdfs:comment>
   </owl:Class>
@@ -153,20 +153,20 @@ limited duration.</rdfs:comment>
 		<rdfs:range rdf:resource="impactont:Thing"/>
 	</owl:ObjectProperty>
 	
-	<owl:ObjectProperty rdf:ID="hasAgentRelation">
+	<owl:ObjectProperty rdf:ID="hasAgentActivityRelation">
 		<rdfs:domain rdf:resource="#Activity"/>
 		<rdfs:domain rdf:resource="#Project"/>
-		<rdfs:range rdf:resource="#AgentRelation"/>
+		<rdfs:range rdf:resource="#AgentActivityRelation"/>
 	</owl:ObjectProperty>
 
 	<owl:ObjectProperty rdf:ID="governs">
 		<owl:inverseOf rdf:resource="#isGovernedBy"/>
 		<rdfs:domain rdf:resource="#Role"/>
-		<rdfs:range rdf:resource="#AgentRelation"/>
+		<rdfs:range rdf:resource="#AgentActivityRelation"/>
 	</owl:ObjectProperty>
 
 	<owl:ObjectProperty rdf:ID="hasAgent">
-		<rdfs:domain rdf:resource="#AgentRelation"/>
+		<rdfs:domain rdf:resource="#AgentActivityRelation"/>
 		<rdfs:range rdf:resource="#Agent"/>
 	</owl:ObjectProperty>
   
@@ -195,7 +195,7 @@ limited duration.</rdfs:comment>
 		<comprisesActivity rdf:resource="GS2767Activity3"/>
 		<hasObjective "Reduce the fuel consumption of ships through the application of advanced hull coatings."/>
 		<hasDuration rdf:resource="(2013 - 2021)">
-		<hasAgentRelation rdf:resource="dfadbe8798df987adffa"/>
+		<hasAgentActivityRelation rdf:resource="dfadbe8798df987adffa"/>
 	</owl:NamedIndividual>
 	
 	<owl:NamedIndividual rdf:ID="GS2767Activity1">
@@ -222,7 +222,7 @@ limited duration.</rdfs:comment>
 	</owl:NamedIndividual>	
 	
 	<owl:NamedIndividual rdf:ID="dfadbe8798df987adffa">
-		<rdf:type rdf:resource="#AgentRelation"/>
+		<rdf:type rdf:resource="#AgentActivityRelation"/>
 		<hasAgent rdf:resource="dsaf(InternationalPaintLtd)78df"/>
 		<isGovernedBy rdf:resource="123a(ProjectOwnerOfGS2767)f678"/>
 	</owl:NamedIndividual>
